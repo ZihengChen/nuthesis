@@ -1,0 +1,109 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% nuthesis-template.tex - Miguel A, Lerma - 4/23/2018
+%                         mlerma@math.northwestern.edu
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%% DISCLAIMER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+% In spite of the effort to accommodate this template and the nuthesis
+% class to the official requirements of the university to write a 
+% Ph.D. dissertation, it is not possible to guarantee that it will 
+% always work, and the author of the dissertation remains responsible
+% for checking that such requirements are actually fulfilled by 
+% his/her final work.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% The nuthesis class is based on % amsbook.cls.
+\documentclass[12pt]{nuthesis}
+\onehalfspacing
+
+\usepackage{graphicx}
+\usepackage{siunitx}
+\usepackage[acronym]{glossaries}
+\usepackage{cite}
+\input{frontmatter/glossary}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% DATA OF AUTHOR AND DISSERTATION %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\author{Ziheng Chen}
+\title{Measurement of $Br(W\to l \nu)$ based on p-p collision at $\sqrt{s}=13$ TeV}
+\degree{DOCTOR OF PHILOSOPHY}  
+\field{Physics}
+\graduationmonth{December}       
+\graduationyear{2020}
+% \includeonly{chap1,chap2,...}	
+
+
+
+
+
+
+
+
+
+\begin{document}
+
+    %%%%%%%%%%%%%%%%%%%%%%
+    % Some initial stuff %
+    %%%%%%%%%%%%%%%%%%%%%%
+    \include{frontmatter/frontmatter}
+
+    
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Actual text starts here %
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \mainmatter  
+    \acrfull{lhc}
+    
+    \part{CMS Analysis}    
+    \include{chapters/1_introduction/chapterMain}
+    \include{chapters/2_cmsDetector/chapterMain}
+    \include{chapters/3_dataAndSimulation/chapterMain}
+    \include{chapters/4_selection/chapterMain}
+    \include{chapters/5_backgroundEstimation/chapterMain}
+    \include{chapters/6_statisticalAnalysis/chapterMain}
+    \include{chapters/7_uncertainty/chapterMain}
+    \include{chapters/8_result/chapterMain}
+
+
+    \part{Extension}
+    \include{chapters/ext_shape/chapterMain}
+    \include{chapters/ext_run2/chapterMain}
+
+
+    \part{CMS Detector RD}
+    \include{chapters/rnd_hgcal/chapterMain}
+    \include{chapters/rnd_bcm1f/chapterMain}
+
+
+    
+    
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % some ending stuff       %
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    \begin{singlespace}
+    \bibliographystyle{unsrt}
+    \bibliography{
+        reference/reference_cms, 
+        reference/reference_thhep, 
+        reference/reference_exhep,
+        reference/reference_tech
+        }
+    \end{singlespace}
+
+    \appendix
+    \include{appendices/kinematicsPlots/chapterMain}
+    \include{appendices/ele27TriggerEff/chapterMain}
+    \include{appendices/jetToTauhReweighting/chapterMain}
+    \include{appendices/tauhBrReweighting/chapterMain}
+    \include{appendices/ttSystReweighting/chapterMain}
+    \include{appendices/qcdSF/chapterMain}
+
+
+    \include{vita}
+
+\end{document}
+

@@ -1,0 +1,240 @@
+\subsection{Physics object selection}
+\label{sec:objects}
+
+The event topologies of interest will require reconstructing electrons,
+muons, hadronically decaying tau leptons, hadronic jets, and missing
+tansverse energy (MET).  In this section, the reconstruction and
+selection of these physics objects is described.
+
+\FloatBarrier
+\subsubsection{Primary vertex}
+\label{sec:pv}
+
+Primary vertices (PV) are reconstructed based on information from the
+tracking subsystem, mainly through the inner pixel detector.
+Quality cuts are applied to reconstructed PVs to guarantee they come
+from a proton-proton hard scattering event.  These cuts are
+as follows,
+
+\begin{itemize}
+    \item $N_{d.o.f.}> 4$;
+    \item $\left|z\right| < 24~\mathrm{cm}$; 
+    \item $\sqrt{x^{2} + y^{2}} < 2~\mathrm{cm}$.
+\end{itemize}
+
+The PVs are ordered based on the sum \pt of tracks used in their
+reconstruction.  Selected physics objects are associated to the PV with
+the greatest sum \pt. 
+
+\FloatBarrier
+\subsubsection{Muons}
+\label{sec:muons}
+
+Muon candidates are reconstructed using both the muon and tracker
+systems.  The coverage of these two detector systems allows
+reconstruction of muons within $\left|\eta\right| < 2.4$ and $p_{T}$ as
+low as 5 GeV~\cite{Chatrchyan:2012xi}. 
+
+Muons are required to be reconstructed using both the \emph{global muon}
+and \emph{tracker muon} reconstruction algorithms.  These algorithms are
+distinct in that one begins with tracker information and extrapolates to
+find consistency with hits in the muons system (\emph{tracker muons}),
+while the other (\emph{global muon}) inverts the reconstruction steps
+starting from the muon system and finding tracks that are
+consistent.  The combination of these two algorithms makes for a
+muon reconstruction that is accurate in predicting muon momentum and
+efficient in detecting muons within the detector acceptance.
+
+In the interest of detecting muons decaying from vector bosons, a set of
+identification and isolation requirements are
+applied~\cite{Sirunyan:2018fpa}.  The muon identification requirements
+are designed to have high selection efficiency and a low probability of
+misidentifying nonprompt muons originating from non-bosonic decays.  The
+muon POG provided selection criteria are listed in
+table~\ref{tab:muon_id}.
+
+\begin{table}[h]
+    \begin{center}
+    \caption{Tight muon identification criteria as provided by muon POG 
+    \label{tab:muon_id}
+    }
+    \begin{tabular}{l|c}
+    variable                            & cut value \\
+    \hline
+    isGlobal                            & True      \\
+    isPF                                & True      \\
+    $\chi^{2}$                          & $< 10$    \\
+    number of matched stations          & $> 1$     \\
+    number of pixel hits                & $> 0$     \\
+    number of track layers              & $> 5$     \\
+    number of valid hits                & $> 0$     \\
+    $|d_{xy}|$                          & $< 0.2$   \\
+    $|d_{z}|$                           & $< 0.5$    \\
+    \hline
+    $ISO_{PF}/p_{T}$ ($\rho$ corrected) & $< 0.15$
+    \end{tabular}
+    \end{center}
+\end{table}
+
+\noindent 
+To increase the likelihood of selecting muons produced by the
+prompt decay of vector bosons, an isolation requirement is placed on all
+muons.  The isolation of the muon is calculated by summing the \pt of
+all charged hadronic, neutral hadronic, and photon particle flow
+candidates in a cone of radius $\Delta R = 0.4$ about the muon
+candidate.  This quantity is corrected to remove the contamination of
+the neutral component due to pileup by subtracting off the average
+energy deposited by pileup.  It is defined as,
+
+\begin{equation}
+    ISO_{PF} = Iso_{\rm ch. had} + max \left(0, Iso_{\rm neu. had} +
+    Iso_{\gamma} - 0.5 Iso_{\rm pileup}\right)
+\end{equation}
+
+Simulated events are reweighted to account for differences in the muon
+reconstruction, identification, and isolation efficiencies with respect
+to data.
+
+\FloatBarrier
+\subsubsection{Electrons}
+\label{sec:electrons}
+
+Electrons are reconstructed by combining information from the
+electromagnetic calorimeter and the tracking system using a gaussian-sum
+filter (GSF) method \cite{Baffioni:2006cd}.  Corrections are applied to
+account for mismeasurement of electron momentum scale and resolution. 
+
+All electrons are required to have $\pt \geq 20~\GeV$ and $|\eta| <
+2.5$.  Electrons are identified using a tight cut-based scheme.  The
+requirements for this selection are listed in
+table~\ref{tab:electron_id}.
+
+\begin{table}[h]
+    \begin{center}
+    \caption{Tight electron identification criteria as provided by the
+    egamma POG.
+    \label{tab:electron_id}}
+    \begin{tabular}{l|c|c}
+    variable                          & $|\eta| < 1.4446$ & $|\eta| \geq 1.566$ \\
+    \hline
+    $\sigma_{i\eta}\sigma_{i\eta}$    & $<0.00998$        & $0.0394$            \\
+    $|d\eta|$                         & $<0.00308$        & $0.0292$            \\
+    $|d\phi|$                         & $<0.0816$         & $0.00605$           \\
+    $H/E$                             & $<0.0414$         & $0.0641$            \\
+    $|\frac{1}{E} - \frac{1}{p}|$     & $<0.0129$         & $0.0129$            \\
+    missing hits                      & $\leq 1$          & $\leq 1$            \\
+    $|d_{0}|$                         & $<1.$             & $<1.$               \\
+    \hline
+    conversion rejection              & true              & true                \\
+    ISO$_{PF}$/$p_{T}$ (EA corrected) & $< 0.0588$        & $<0.0571$           \\
+    \end{tabular}
+    \end{center}
+\end{table}
+
+\noindent
+The electrons are also required to pass a tight isolation criteria. The
+isolation variable is constructed by summing the energy of charged and neutral
+particle flow objects within a cone of radius $\Delta R = 0.4$ about the
+electron candidate and subtracting off the
+contribution from pileup.  The combined particle flow isolation with the
+pileup correction is,
+
+\begin{equation}
+    Iso_{comb} = Iso_{\sf ch. had.} + max\left(0, Iso_{neu. had.} +
+    Iso_{\gamma} - \rho EA(|\eta_{e}|) \right).
+\end{equation}
+
+The pileup correction is dependent on the parameter $\rho$ which
+correlates with the average energy due to pileup, and the effective area
+which changes depending on the $|\eta|$ value of the electron.
+
+\FloatBarrier
+\subsubsection{Hadronic Taus}
+\label{sec:taus}
+
+Hadronically decaying $\tau$ leptons are reconstructed using the
+hadron-plus-strips algorithm~\cite{ref:cms-tau}.  This algorithm
+constructs candidates seeded by a PF jet that are consistent with either
+a single or triple charged pion decay of the $\tau$ lepton.  In the
+single charged pion decay mode, the presence of neutral pions is
+detected by reconstructing their photonic decays.  If the hadronic tau
+candidate is found to overlap ($\Delta R < 0.3$) with either an electron
+or muon passing the analysis selections listed above, the tau candidate
+is rejected.  Jets originating from non-$\tau$ decays are rejected with
+a MVA discriminator that takes into account the pileup contribution to the
+neutral component of the $\tau$ decay~\cite{CMS-TAU-16-003-001}.  
+
+Reconstructed hadronic taus are required to have $p_{T} > 20$ GeV and
+$|\eta| < 2.3$ unless noted otherwise.  It is
+observed that the counting analysis is more sensitive to
+misidentification of hadronic jets as hadronic tau candidates, so while
+the tight working point is used in the shape analysis, the very tight
+working point is used for the counting analysis.
+
+The scale factor accounting for different tau reconstruction and
+identification efficiencies were measured in several control
+regions~\cite{CMS-TAU-16-003-001}.  The measurement is carried out in
+both in two different control regions: one enriched in $\PZ\to\tau\tau$
+production and one enriched in \ttbar.  Because of the large overlap
+with our signal region in the case of the latter, the former measurement
+is used so that the datasets that are used are uncorrelated.  For the
+selection algorithm and tight working point a scale factor of
+$0.95 \pm 0.05$ is used; for the very tight working point it is $0.92
+\pm 0.05$.
+
+\FloatBarrier
+\subsubsection{Jets}
+\label{sec:jets}
+
+Jets are reconstructed from PF candidates \cite{ref:pf}. PF
+candidates combine information from all of the detector subsystems to
+facilitate the reconstruction and identification of individual
+particles.  These PF candidates are clustered using the anti-$k_{t}$
+algorigthm \cite{Cacciari:2008gp} with a cone size of $\Delta R = 0.4$.
+Once reconstructed, a number of corrections are applied to the jets to
+correct for pileup contamination, differing absolute response in jet
+\pt, and relative response in $\eta$ \cite{ref:jetscale}.  To reduce
+contamination from photons and prompt leptons, several ID requirements
+are placed on the jets and are listed in table~\ref{tab:jet_id_2016}.
+
+\begin{table}[h]
+    \begin{center}
+    \caption{Jet ID requirements for 2016. 
+    \label{tab:jet_id_2016}}
+    \begin{tabular}{l|ccc}
+    \hline
+                                   & $|\eta| < 2.4$ & $2.4 < |\eta| \leq 3.0$ & $3.0 < |\eta| \leq 4.7$ \\
+    \hline                                                                   
+    number of constituents         & $> 1$          & $> 1$                  & -- \\
+    neutral hadronic fraction      & $< 0.99$       & $< 0.99$               & -- \\
+    neutral EM fraction            & $< 0.99$       & $< 0.99$               & $<0.9$ \\
+    charged hadronic fraction      & $> 0$          & --                     & -- \\
+    charged EM fraction            & $< 0.99$       & --                     & -- \\
+    number of charged constituents & $> 0$          & --                     & -- \\
+    number of neutrals             & --             & --                     & $>10$                   \\
+    \hline
+    \end{tabular}
+    \end{center}
+\end{table}
+
+\noindent
+In addition to the above requirements, it is required that all jets have
+$\pt > 30$ GeV and $\left|\eta\right| < 4.7$.  Jets are vetoed if they
+overlap with a muon, electron, or tau passing the identification
+requirements described above within a cone size of $\Delta R = 0.3$. 
+
+The identification of jets originating from the decay of b quarks is
+done using the CSV b-tagging algorithm~\cite{Sirunyan:2298594} is used
+to optimize the efficiency for identifying b-jets while reducing the
+misidentification from jets originating from light quark (usdg).  In
+this analysis, the recommended medium working point ($\text{CSV} >
+0.8484$) supplied by the b tag POG is used.  
+
+To account for the difference in b tag efficiency in data and
+simulation, the b tag status of jets is modified based on a set of
+scale factors derived by the b tag POG.  The method used for applying
+the b tag scale factors modifies the status of individual jets to either
+promote or demote their b tagging status~\cite{twiki:btag_method}.  The
+method relies on the user measuring the b tag and mistag efficiencies
+in the simulated samples.  This is described further in
+appendix~\label{app:btag}.

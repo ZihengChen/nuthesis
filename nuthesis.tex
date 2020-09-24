@@ -16,12 +16,19 @@
 
 % The nuthesis class is based on % amsbook.cls.
 \documentclass[12pt]{nuthesis}
+
 \onehalfspacing
 
 \usepackage{graphicx}
 \usepackage{siunitx}
 \usepackage[acronym]{glossaries}
 \usepackage{cite}
+\usepackage{amsmath}
+\usepackage{xspace}
+\usepackage[italic,italicGreek]{heppennames2}
+\usepackage{ptdr-definitions}
+\usepackage{fullpage,rotating,booktabs,dcolumn}
+
 \input{frontmatter/glossary}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -33,7 +40,9 @@
 \field{Physics}
 \graduationmonth{December}       
 \graduationyear{2020}
-% \includeonly{chap1,chap2,...}	
+
+% \includeonly{chapters/4_selection/chapterMain}	
+
 
 
 
@@ -55,9 +64,8 @@
     % Actual text starts here %
     %%%%%%%%%%%%%%%%%%%%%%%%%%%
     \mainmatter  
-    \acrfull{lhc}
     
-    \part{CMS Analysis}    
+    \part{CMS Analysis}
     \include{chapters/1_introduction/chapterMain}
     \include{chapters/2_experiment/chapterMain}
     \include{chapters/3_dataAndSimulation/chapterMain}

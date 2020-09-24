@@ -1,0 +1,23 @@
+\begin{table}[ht]
+    \centering
+    \setlength{\tabcolsep}{2em}
+    \renewcommand{\arraystretch}{1.25}
+    % \small
+    \caption{Tight muon identification criteria as provided by muon POG}
+    \label{tab:muon_id}
+    \begin{tabular}{l|c}
+    variable                            & cut value \\
+    \hline
+    isGlobal                            & True      \\
+    isPF                                & True      \\
+    $\chi^{2}$                          & $< 10$    \\
+    number of matched stations          & $> 1$     \\
+    number of pixel hits                & $> 0$     \\
+    number of track layers              & $> 5$     \\
+    number of valid hits                & $> 0$     \\
+    $|d_{xy}|$                          & $< 0.2$   \\
+    $|d_{z}|$                           & $< 0.5$    \\
+    \hline
+    $ISO_{PF}/p_{T}$ ($\rho$ corrected) & $< 0.15$
+    \end{tabular}
+\end{table}

@@ -9,6 +9,7 @@
 
 # PDF output - usually a bad idea to keep this in Git
 #*.pdf
+nuthesis.pdf
 
 # Latexmk
 *.fdb_latexmk
@@ -24,7 +25,7 @@
 *.acn
 *.glo
 *.ist
-nuthesis.pdf
+
 
 # BibTeX
 *.bbl

@@ -1,4 +1,3 @@
-
 \chapter{Experiment}
 \label{chp:exp}
 
@@ -21,7 +20,7 @@ The \acrfull{lhc} \cite{exhep:lhc:Evans:2008zzb} is a 27 \si{\km} circular parti
 The main components of LHC include two tubes with ultrahigh vacuum and about ten thousand superconducting magnets with various sizes installed alone the ring, including 1232 dipole magnets with length of 15 \si{\m} to bend the beams and 392 quadrupole magnets with length of 5-7 \si{\m} to focus the beams \cite{exhep:lhcFactsFigures}. Magnets of higher multipole orders are also used for corrections of the magnetic field. A liquid helium cooling system is used to cool the superconducting electromagnets at a cryogenic temperature of -271.3 \si{\degreeCelsius}. 
 
 
-\begin{figure}[h]
+\begin{figure}[ht]
     \centering
     \includegraphics[width=0.8\textwidth]{chapters/2_experiment/figures/lhc.png}
     \caption{Schematic overview of the LHC and related accelerator complex: chain of proton source, RFQ, LINAC2, PSB, PS, SPS, LHC \cite{exhep:lhcInject:Benedikt:2004wm}.}
@@ -49,7 +48,7 @@ The operation of LHC from 2010 to 2035 consists of 6 runs with shutdown periods 
 % overview
 The CMS \cite{exhep:cms:Chatrchyan:2008aa} detector is a general-purpose apparatus operating at the LHC and is located about 100 meters underground at Point 5 of the LHC, close to the French village of Cessy, between Lake Geneva and the Jura mountains. As a general purpose detector, the CMS detector is designed to observe any new physics phenomena that the LHC might reveal \cite{cms:tdr2:Ball:2007zza}. At the designed LHC luminosity of \SI{e34}{\per\cm\squared \per\s}, on average about 20 inelastic collisions are superimposed on the event of interest every collision of bunch crossings, leading to a large flux of particles originating from the detector center to enter the detector every 25 ns. In order to discern them and trigger the interested events within 25 ns latency over the LHC run period until 2035, CMS detector is designed to be highly-segmented, radiation-hard and with good timing resolution \cite{exhep:cms:Chatrchyan:2008aa}.
 
-\begin{figure}
+\begin{figure}[ht]
     \centering
     \includegraphics[width=0.98\textwidth]{chapters/2_experiment/figures/cmsDetector.png}
     \caption{The layout of the CMS detector \cite{cms:detectorOverview}.}
@@ -81,7 +80,7 @@ The CMS superconducting magnet \cite{cms:magnetTdr:Acquistapace:1997fm} is used 
 The inner tracking system \cite{cms:trackerTdr:CMS:1997tlf} is used to measure the trajectories of charged particles. Covering region with $|\eta|<2.5$, it is consist of two major parts: pixel detector and Silicon strip tracker, layout of which is shown in Figure~\ref{fig:exp:trigger}. 
 
 
-\begin{figure}
+\begin{figure}[ht]
     \centering
     \includegraphics[width=0.98\textwidth]{chapters/2_experiment/figures/tracker.png}
     \caption{The layout of the CMS inner tracking system \cite{exhep:cms:Chatrchyan:2008aa}. It is consist of pixel detector and silicon strip tracker (TIB/TID, TOB, TEC), covering regions with $|\eta|<2.5$. }
@@ -89,7 +88,7 @@ The inner tracking system \cite{cms:trackerTdr:CMS:1997tlf} is used to measure t
 \end{figure}
 
 
-\begin{figure}
+\begin{figure}[ht]
     \centering
     \includegraphics[width=0.98\textwidth]{chapters/2_experiment/figures/trackerMaterial.png}
     \caption{The material thickness of inner tracking system before ECAL.}
@@ -107,7 +106,7 @@ The pixel detector, shown in the center of Figure~\ref{fig:exp:trigger}, is cons
 
 
 
-\begin{figure}
+\begin{figure}[ht]
     \centering
     \includegraphics[width=0.98\textwidth]{chapters/2_experiment/figures/detectorLayout.png}
     \caption{The layout of the CMS tracker, ECAL, HCAL, Magnets and muon system on the Z-r plane \cite{cms:muonChamberWebsite}. The full coverage of pseudorapidity is up to $\eta=5$. The details of tracker is shown in Figure~\ref{fig:exp:tracker}. }
@@ -170,7 +169,7 @@ CMS applies a two-tiered trigger system \cite{cms:trigger:Khachatryan:2016bia} t
 
 \subsection{Level-1 Trigger}
 
-\begin{figure}[h]
+\begin{figure}[ht]
     \centering
     \includegraphics[width=0.8\textwidth]{chapters/2_experiment/figures/trigger.png}
     \caption{The logic structure of L1T.}
@@ -218,7 +217,7 @@ The layer structure of CMS detector, tracking-ECAL-HCAL-Muon, is idea to particl
 
 Fig~\ref{fig:exp:pfa} illustrates the function of the sub dector and how different final state particles behave in them. Starting from the beam interaction region, particles first enter a tracker, in which charged-particle trajectories (tracks) and origins (vertices) are reconstructed from signals (hits) in the sensitive layers. The tracker is immersed in a magnetic field that bends the trajectories and allows the electric charges and momenta of charged particles to be measured. Electrons and photons are then absorbed in an electromagnetic calorimeter (ECAL). The corresponding electromagnetic showers are detected as clusters of energy recorded in neighbouring cells, from which the energy and direction of the particles can be determined. Charged and neutral hadrons may initiate a hadronic shower in the ECAL as well, which is subsequently fully absorbed in the hadron calorimeter (HCAL). The corresponding clusters are used to estimate their energies and directions. Muons and neutrinos traverse the calorimeters with little or no interactions. While neutrinos escape undetected, muons produce hits in additional tracking layers called muon detectors, located outside the calorimeters. As a result,  muons leaves tracks in the tracker and muon chamber with MIP in ECAL and HCAL. Electrons and phontons deposit energy in the ECAL with and without track correspondence respectively. Charged and neutral hadrons deposit energy in both ECAL and HCAL with and without track correspondence respectively. 
 
-\begin{figure}[h]
+\begin{figure}[ht]
     \centering
     \includegraphics[width=0.8\textwidth]{chapters/2_experiment/figures/pfa.png}
     \caption{Caption}
@@ -233,11 +232,11 @@ The FPA begins with computing PF element in each subdetector: tracks in the trac
 
 \subsection{Muon}
 
-The reconstruction of muon involves standalone reconstruction in the muon system, followed by globle muon reconstruction add trajectories in the tracker. The standalone reconstruction starts with the track segments in the individual muon chambers. The state vectors (track position, momentum, and direction) associated with the segments found in the innermost chambers are used to seed the muon trajectories, working from inside out, using the \acrfull{kf} technique \cite{tech:kf:Fruhwirth:1987fm,}. The track parameters and the corresponding errors are updated at each step. The procedure is iterated until the outermost measurement surface of the muon system is reached. A backward Kalman-filter is then applied, working from outside in, and the track parameters are defined at the innermost muon station. Finally, the track is extrapolated to the nominal interaction point and a vertex-constrained fit to the track parameters is performed.
+The reconstruction of muon involves standalone reconstruction in the muon system, followed by globle muon reconstruction add trajectories in the tracker. The standalone reconstruction starts with the track segments in the individual muon chambers. The state vectors (track position, momentum, and direction) associated with the segments found in the innermost chambers are used to seed the muon trajectories, working from inside out, using the \acrfull{kf} technique \cite{tech:kf:Fruhwirth:1987fm}. The track parameters and the corresponding errors are updated at each step. The procedure is iterated until the outermost measurement surface of the muon system is reached. A backward Kalman-filter is then applied, working from outside in, and the track parameters are defined at the innermost muon station. Finally, the track is extrapolated to the nominal interaction point and a vertex-constrained fit to the track parameters is performed.
 
 The global muon reconstruction consists in extending the muon trajectories to include hits in the silicon tracker. tarting from a standalone reconstructed muon, the muon trajectory is extrapolated from the innermost muon station to the outer tracker surface, taking into account the muon energy loss in the material and the effect of multiple scattering. This extrapolation and the associated uncertainty defines a region of interest in the tracker, where track candidates are seeded by hit doubles and reconstructed using Kalman-filter. A set of trajectory fits to the global hits are carried out to exact the muon momentum and impact parameters. This retain both prompt muons and muons from hadrons decays with the highest possible efficiency.
 
-\begin{figure}[h]
+\begin{figure}[ht]
     \centering
     \includegraphics[width=0.95\textwidth]{chapters/2_experiment/figures/resMu.png}
     \caption{Momentum resolution as a function of }
@@ -253,7 +252,7 @@ Figure~\ref{fig:exp:resMu} shows the transverse momentum resolution of muons wit
 
 \subsection{EGamma}
 
-\begin{figure}[h]
+\begin{figure}[ht]
     \centering
     \includegraphics[width=0.5\textwidth]{chapters/2_experiment/figures/resEle.png}
     \includegraphics[width=0.42\textwidth]{chapters/2_experiment/figures/resGamma.png}
@@ -276,7 +275,7 @@ Charge hadrons are made from the remaining calorimeter clusters and tracks. Each
 
 \subsection{Jet and Met}
 
-\begin{figure}[h]
+\begin{figure}[ht]
     \centering
     \includegraphics[width=0.6\textwidth]{chapters/2_experiment/figures/resJet.png}
     \caption{Caption}

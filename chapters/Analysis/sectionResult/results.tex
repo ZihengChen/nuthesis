@@ -1,0 +1,89 @@
+
+This sections presents the results of the estimates of the branching
+fractions using the two methods presented earlier, and a test of lepton
+universality based on the measured values of the leptonic branching
+fractions.
+
+\subsection{W branching fraction measurement}
+
+The measurement of the branching fractions is carried out using both the
+MLE and the semi-analytic method.  The specifics of both measurements
+are described in Section~\ref{sec:method}.  The datasets used are common
+to both categories, but the approach for how the branching fractions are
+determined are substantially different.  One important distinction
+between the two measurements is that the MLE method measures the
+branching fraction simultaneously in all channels while the
+semi-analytic approach measures the branching fractions separately in
+different trigger and b-tag categories.  The resulting values for the
+\PW branching fractions are shown in
+Table~\ref{tab:results}.
+
+\begin{table}[h]
+    \centering
+    \topcaption{Values of branching fractions determined in both
+        analysis approaches and the PDG values.  Errors combine
+        statisitcal and systematics uncertainties.
+    \label{tab:results}}
+    \begin{tabular}{l|c|c|c}
+                   & semi-analytic          & MLE                   & PDG                   \\
+    \hline                                                                 
+    $\beta_{e}$    & $ (10.80 \pm 0.22) \%$ & $(10.8 \pm 0.11) \%$ & $(10.71 \pm 0.16)$ \% \\
+    $\beta_{\mu}$  & $ (10.80 \pm 0.23) \%$ & $(10.8 \pm 0.08) \%$ & $(10.63 \pm 0.15)$ \% \\
+    $\beta_{\tau}$ & $ (10.80 \pm 0.68) \%$ & $(10.8 \pm 0.19) \%$ & $(11.38 \pm 0.21)$ \% \\
+    $\beta_{h}$    & $-- \pm --$            & $(67.4 \pm 0.26) \%$ & $(67.41 \pm 0.27)$ \% \\
+    \end{tabular}
+\end{table}
+
+\FloatBarrier
+\subsection{Test of lepton universality (\textbf{WIP})}
+
+Having established the method for estimating the branching fractions,
+hypothesis tests can be carried out.  To do this, the profile likelihood
+ratio is constructed assuming a null hypothesis of lepton universality
+and two scenarios of unequal branching fractions for the alternative
+hypothesis.  The two hypotheses that are tested are:
+
+\begin{enumerate}
+    \item $B_{e} = B_{\mu} \neq B_{\tau}$,
+    \item $B_{e} \neq B_{\mu} \neq B_{\tau}$.
+\end{enumerate}
+
+The first hypothesis is of primary interest, and would be the scenario
+more likely to be supported by the current measured values.  The
+likelihood ratio for the two cases is therefore,
+
+\begin{equation}
+    q_{alt. 1} = -2(\mathcal{L}\left(B_{e,\mu}, B_{\tau},
+        \boldsymbol{\theta}|\mathbf{x}\right) - \mathcal{L}\left(B_{e}, B_{\mu},
+    B_{\tau}, \boldsymbol{\theta}|\mathbf{x}\right)}.
+\end{equation}
+
+and, 
+
+\begin{equation}
+    q_{alt. 2} = -2(\mathcal{L}\left(B_{\ell},
+        \boldsymbol{\theta}|\mathbf{x}\right) - \mathcal{L}\left(B_{e}, B_{\mu},
+    B_{\tau}, \boldsymbol{\theta}|\mathbf{x}\right)).
+\end{equation}
+
+The test allows us to quantify p values that correspond to the values of
+$q$ determined from fitting the data.  In order to do this, the pdf of
+$q$ for both scenarios needs to be estimated.  Assuming regularity
+conditions~\cite{Wilks}, the distributions will be $chi^{2}$ with one
+d.o.f. for $q_{alt. 1}$ and two d.o.f. for $q_{alt. 2}$.  This has been
+tested on 100 toy datasets and it is found that the distribution for
+smaller excursions conform with Wilk's theorem (see
+figure~\ref{fig:lu_test}.  Based on this, the distribution of the
+likelihood ratio is well approximated by a $\chi^{2}_{k}$ distribution.
+
+\begin{figure}[h]
+    \begin{center}
+        \includegraphics[width=0.95\textwidth]{figures/lepton_universality_toys}
+        \caption{Distribution for the profile likelihood ratio for the two
+            hypothesis tests of interest based on toys data generated
+            from the Asimov dataset: \emph{left} the minimum NLL for
+            each evaluated toy dataset, and \emph{right} distribution for
+            $q_{alt. 1}$ and $q_{alt. 2}$.
+            \label{fig:lu_test}}
+    \end{center}
+\end{figure}

@@ -20,16 +20,21 @@
 \onehalfspacing
 
 \usepackage{graphicx}
+\usepackage{placeins}
 \usepackage{siunitx}
 \usepackage[acronym]{glossaries}
 \usepackage{cite}
+
 \usepackage{amsmath}
 \usepackage{xspace}
 \usepackage[italic,italicGreek]{heppennames2}
 \usepackage{ptdr-definitions}
 \usepackage{fullpage,rotating,booktabs,dcolumn}
 
+
 \input{frontmatter/glossary}
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % DATA OF AUTHOR AND DISSERTATION %
@@ -41,51 +46,29 @@
 \graduationmonth{December}       
 \graduationyear{2020}
 
-% \includeonly{chapters/4_selection/chapterMain}	
-
-
-
-
-
-
-
-
+% \includeonly{chapters/8_result/chapterMain}	
 
 
 \begin{document}
-
+    
     %%%%%%%%%%%%%%%%%%%%%%
     % Some initial stuff %
     %%%%%%%%%%%%%%%%%%%%%%
     \include{frontmatter/frontmatter}
 
-    
+
     %%%%%%%%%%%%%%%%%%%%%%%%%%%
     % Actual text starts here %
     %%%%%%%%%%%%%%%%%%%%%%%%%%%
     \mainmatter  
     
-    \part{CMS Analysis}
-    \include{chapters/1_introduction/chapterMain}
-    \include{chapters/2_experiment/chapterMain}
-    \include{chapters/3_dataAndSimulation/chapterMain}
-    \include{chapters/4_selection/chapterMain}
-    \include{chapters/5_backgroundEstimation/chapterMain}
-    \include{chapters/6_statisticalAnalysis/chapterMain}
-    \include{chapters/7_uncertainty/chapterMain}
-    \include{chapters/8_result/chapterMain}
-
-
-    \part{Extension}
-    \include{chapters/ext_shape/chapterMain}
-    \include{chapters/ext_run2/chapterMain}
-
-
-    \part{CMS Detector RD}
-    \include{chapters/rnd_hgcal/chapterMain}
-    \include{chapters/rnd_bcm1f/chapterMain}
-
-
+    \include{chapters/Introduction/chapterMain}
+    \include{chapters/RelatedWorks/chapterMain}
+    \include{chapters/CMSExperiment/chapterMain}
+    \include{chapters/Analysis/chapterMain}
+    \include{chapters/Extension/chapterMain}
+    \include{chapters/Upgrade/chapterMain}
+    
     
     
     %%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -103,15 +86,11 @@
     \end{singlespace}
 
     \appendix
-    \include{appendices/kinematicsPlots/chapterMain}
-    \include{appendices/ele27TriggerEff/chapterMain}
-    \include{appendices/jetToTauhReweighting/chapterMain}
-    \include{appendices/tauhBrReweighting/chapterMain}
-    \include{appendices/ttSystReweighting/chapterMain}
-    \include{appendices/qcdSF/chapterMain}
+    \input{chapters/Appendix/chapterMain.tex}
+
 
 
     \include{vita}
-
+    
 \end{document}
 

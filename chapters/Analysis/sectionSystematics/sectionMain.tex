@@ -1,0 +1,404 @@
+\section{systematics}
+\label{sec:analysis:systematics}
+
+\subsection{source of systematics}
+The various sources of uncertainty that have been considered are
+described in the following sections.  The treatment of systematics
+differs between the two analysis approaches: the shape analysis makes
+use of nuisance parameters (n.p.) as described in Section~\ref{sec:method};
+the counting analysis is carried out varying each systematic
+individually and assessing the variation on the estimates of the
+branching fractions.
+
+\subsubsection{Luminosity} 
+        
+The uncertainty on the CMS luminosity measurement is estimated to be
+2.5\% for the 2016 run~\cite{CMS-PAS-LUM-17-001}.  This uncertainty
+effects the overall scale of the data model, and is included as a
+normalization nuisance parameter that affects the overall normalization of all
+channels in a fully correlated manner.
+
+\subsubsection{Data-driven background estimates}
+
+The uncertainty is split into four normalization parameters: one for
+each of the final states $e\tau$, $\mu\tau$, $eh$, and $\mu h$.  The
+prior uncertainty for each is assumed to be 25\%.
+
+\subsubsection{Cross section for simulated processes}
+
+\begin{itemize}
+    \item \ttbar: 
+    \begin{itemize}
+        \item PDF
+        \item $\alpha_{s}$
+        \item $\mu_{R}/\mu_{F}$
+    \end{itemize}
+    \item tW: 10\%
+    \item WW: (unconstrained)
+    \item Z+jets: 10\%
+    \begin{itemize}
+        \item PDF
+        \item $\alpha_{s}$
+        \item $\mu_{R}/\mu_{F}$
+    \end{itemize}
+    \item W+jets: 10\%
+    \item diboson: 10\%
+\end{itemize}
+
+\subsubsection{WW \pt reweighting}
+
+The reweighting of the WW \pt is accounted for by including two n.p. for
+the resummation and factorization variations as described in
+section~\ref{sec:ww_pt}
+
+\subsubsection{top \pt reweighting}
+
+As described in section~\ref{sec:top_pt}, the uncertainty on the top \pt
+scale is included as a one-sided morphing templates generated based on
+previous top PAG studies.
+
+\subsubsection{Pileup}
+
+Each event is weighted with a scale factor to account for differences in
+the pileup spectrum between data and simulation.  The uncertainty on
+the event weights is mainly due to the uncertainty on the minimum bias
+cross section.  The nominal minimum bias cross section is $69.2 \pm
+3.18\,\text{mb}$. The effect of the uncertainty is propagated through the
+analysis by calculating the distribution of pileup in data while varying
+the cross section up and down by one standard deviation.  
+
+\subsubsection{Trigger efficiency}
+
+The uncertainty due to the trigger efficiency scale factors is
+accounted for by saving the uncertainty of each weight and including the
+uncertainty in the bin uncertainty of the template histograms.  The scale
+factors are then included as normalization nuisance parameters in the
+fit model.
+
+\begin{itemize}
+    \item \textit{single muon}: 0.5\% normalization uncertainy on all
+        categories where the triggering lepton is a muon.
+    \item \textit{single electron}: accounted for as a shape uncertainty
+        in events where the event is exclusively triggered by an
+        electron.  This accounts for uncertaint in the deterimination of
+        the scale factors including the statistical uncertainty in , the
+        variation due the triggering of the tag lepton, and variation
+        due to the probe electron.  A detailed description of the
+        electron trigger scale factors in included in
+        \ref{sec:electron_trigger}.
+\end{itemize}
+
+\subsubsection{Muon reconstruction}
+    \begin{itemize}
+    \item \textit{identification/isolation}: the uncertainties are
+        accounted for each muon and are based on values provided
+        by the POG.  These are incorporated as a shape uncertainty that
+        are $\pt$ dependent.  
+    \item \textit{energy scale}: to account for the muon energy scale,
+        the muon \pt is varied by $\pm 1 \sigma$ (0.2\%) and the effect of
+        the variation on the acceptance and change in kinematics is included
+        in the model through morphing templates.
+    %\textit{resolution}
+    \end{itemize}
+
+\subsubsection{Electron reconstruction}
+    \begin{itemize}
+        \item \textit{identification/isolation}: the uncertainties
+            provided per electron are taken from values provided by the
+            POG.  These are incorporated as a shape uncertainty that are
+            $\pt$ dependent.
+        \item \textit{reconstructions}: treated the same as the
+            identification uncertainty.  Scale factors and their
+            uncertainties are only $\eta$ dependent. 
+        \item \textit{energy scale}: The electron energy scale is
+            assumed to be know at the 0.5\% level, and is assigned a
+            nuisance parameter that modifies the change to the shape of
+            the relevant kinematic quantity.
+        %\item \textit{resolution}
+    \end{itemize}
+
+\subsubsection{Tau reconstruction}
+    \begin{itemize}
+        \item \textit{identification}: the $\tau$ POG recommends a 5\%
+            uncertainty on the scale factor applied to simulation.
+            Because a sideband is included to provide an \emph{in situ}
+            evaluation of the $\tau$ efficiency scale factor, the scale
+            factors are included as $\pt$-dependent n.p. in seven \pt
+            bins.
+        \item \textit{$jet\rightarrow\tau$}: scale factors and
+            uncertainties for jets faking taus were derived based on a
+            dilepton plus reconstructed tau control region.  A n.p. is
+            assigned to each $\pt$ bin used to measure the scale factor
+            and an overall normalization n.p. is assigned to account for
+            any difference in rate between light and heavy jets.
+        \item \textit{$e\rightarrow\tau$}: a single normalization n.p.
+            is included to templates where an electron is
+            misreconstructed as a hadronically decaying tau.
+        \item \textit{energy scale}: the tau energy scale is corrected in
+            correspondence with POG recommendations and an uncertainty
+            of 1.2\% per decy mode is assigned.  These are included as
+            three shape uncertainties depending on the reconstructed
+            decay mode of the hadronically decaying tau.
+    \end{itemize}
+
+\subsubsection{Jet reconstruction}
+
+    Jet systematics impact the analysis by modifying the acceptance of
+    events in the various jet multiplicity categories.  With that in
+    mind, the uncertainty is taken into account by varying the various
+    sources of jet uncertainties and assessing the resulting effect on
+    the jet and b-tag multiplicities.
+
+    \begin{itemize}
+        \item \textit{energy scale}: the jet energy scale is varied by
+            the various uncertainty sources on the jet energy
+            corrections provided by the JetMET POG.  These are included
+            as 18 shape n.p.'s (N.B. the lepton kinematic quantities
+            which are fit are generally not affected by variation of the
+            jet energy scale, but migration between different b tag
+            categories does happen)
+        \item \textit{resolution}: the jet energy is corrected in
+            simulation to account for the difference in resolution
+            between data and simulation.  The correction is applied per
+            jet and is dependent on the jet \pt.  Consequently, there is
+            an associated uncertainty.  The overall effect of this is
+            estimated by varying the scale factor up and down one
+            standard deviation and propagating the effect to the
+            morphing templates.
+    \end{itemize}
+
+\subsubsection{b-tagging}
+    
+The b tag modelling in simulation is corrected to better describe the
+data based on scale factors.  The uncertainty on the correction is
+assessed based on up and down variations of b tagging and mistagging
+scale factors supplied by the b tag POG.  The b tag uncertainties are
+factorized based on the various sources of uncertainty considered in the
+calculation of the scale factors.  The variation is propagated through
+the analysis through the inclusion of shape nuisance parameters for both
+b tagging and mistagging variation.
+
+\subsubsection{Theory/simulation modelling}
+
+In addition to the normalization uncertainties coming from PDF, QCD
+scale, and uncertainty on $\alpha_{s}$, several other theory
+uncertainties are accounted for.  These are only included for $\ttbar$
+processes and are applied as recommended by TOP PAG.
+
+\begin{itemize}
+    \item \textit{ISR/FSR}: variations to $\alpha_{S}$ affecting both
+        ISR and FSR are evaluated based on dedicated \ttbar MC samples.
+        This is done for ISR and FSR independently.  These variations are
+        propagated through the analysis through morphing templates.
+    \item \textit{ME-PS matching scale}: matrix element to parton shower
+        matching is regulated at the generator level by the \textit{hdamp}
+        parameter.  This parameter is varied from the nominal value of
+        $1.58^{+0.66}_{-0.59}$ in dedicated MC samples and propagated 
+        through morphing templates.
+    \item \textit{Underlying event}: modelling of the underlying event
+        is dependent on the Pythia tune that is used (in the case of this
+        analysis, CUETP8M2T4)~\cite{CMS-PAS-TOP-16-021}.  Dedicated samples
+        are generated varying the appropriate parameters and the variation
+        in efficiency is propagated through the analysis with morphing
+        templates.
+        %(\emph{Not included in this iteration})
+\end{itemize}
+
+There are two issues with these uncertainty sources that are worth
+considering.  The first is that the variations due to these sources of
+uncertainty are estimated from dedicated MC samples.  This leads to a
+fairly sizeable statistical uncertainty, and can lead to exagerated
+uncertainties and strange behavior in the morphing templates (e.g., both
+the up and down variation will predict yields below/above the nominal
+sample).  Also, the size of the uncertainty resulting from the FSR
+variation is very large (up to 20\%) in the $\ell\tau$ categories.  This
+level of variation would be corrected for in the scale factors
+accounting for the difference in ID/misID efficiency for identified
+$\tau$ candidates, and that uncertainty in general would be much
+smaller, $<5\%$.  In appendix~\ref{sec:tau_fsr}, a method for accounting
+for this is described.
+
+\subsubsection{MC statistics}
+
+This analysis relies heavily on simulated samples to estimate
+backgrounds and the signal processes.  The number of events generated in
+each MC sample is frequently limited so an additional uncertainty must
+be assessed to account for this.  For the most part, it is not an issue
+in the counting analysis, but it is still accounted for by varying the
+MC templates within their statistical uncertainties and carrying out the
+analysis.  For the shape analysis, the Barlow-Beeston
+method~\cite{Amsler:2008zzb} is adopted.  This method includes an
+intermediate step in the minimization of the NLL where the NLL is
+minimized with respect to nuisance parameters associated with the
+normalization of individual bins.  The nuisance parameters are allowed
+to vary within the combined MC statistical uncertainty associated with the
+bin.  The impact of this is particularly large where the normalization
+of the Drell-Yan sample is concerned since the size of the simulated
+sample is on the order of the number of events produced in data.
+
+
+
+
+\subsection{Counting analysis systematics}
+
+For the counting analysis, the systematics are assessed individually by
+varying the sources of systematic uncertainty listed in
+Section~\ref{sec:systematics}, and assessing their effect on the
+measured branching fractions.  The resulting variations on the branching
+fractions are combined in quadrature assuming that the various sources
+of uncertainty are individually uncorrelated, but fully correlated
+between the four different trigger and b-tag categories.  The result of
+evaluating the uncertainties for each of the four measurement channels
+and three branching fractions are shown in Table~\ref{tab:syst_alt}.
+
+\subsubsection{Method and Result of Analytic Combining}
+
+The counting analysis extracts leptonic branching fractions
+$\{\beta_e, \beta_\mu, \beta_\tau\}$ simultaneously from yields of mutually exclusive channels, 
+grouped in four trigger-bjet categories, $\mu-1b$,  $\mu-2b$,  $e-1b$ and $e-2b$.
+Its parameter extraction outputs totally 4 sets of $\{\beta_e, \beta_\mu, \beta_\tau\}$,
+one set in each category. We denote the output 4 sets of $\{\beta_e, \beta_\mu, \beta_\tau\}$
+as a vector $\beta$.
+
+\begin{equation}
+    \beta = \bigg [
+    \beta_e^{(1)}, \beta_\mu^{(1)}, \beta_\tau^{(1)}, \quad 
+    \beta_e^{(2)}, \beta_\mu^{(2)}, \beta_\tau^{(2)}, \quad 
+    \beta_e^{(3)}, \beta_\mu^{(3)}, \beta_\tau^{(3)}, \quad
+    \beta_e^{(4)}, \beta_\mu^{(4)}, \beta_\tau^{(4)}
+    \bigg ]
+\end{equation}
+
+$\beta$ variates with respect to the statistical fluctuation 
+of event yields, as well as the variation of systematical parameters,
+leading to its statistical and systematical uncertainties.
+
+
+The statistical variance of $\beta$ is calculated by propagating 
+the statistical uncertainty of yield in each channel, 
+then summing them in quadrature. As is given in Eqn \ref{eqn:statVar}.
+The summation in quadrature is based on the fact that the statistical 
+fluctuation in each channel is fully independent.
+
+\begin{equation}
+    \textbf{V}_{stat} = \sum_{i \in ch} 
+    \bigg( \frac{\partial \beta}{\partial n_i} \delta_{n_i} \bigg) \otimes 
+    \bigg( \frac{\partial \beta}{\partial n_i} \delta_{n_i} \bigg)
+    \label{eqn:statVar}
+\end{equation}
+
+The systematic uncertainty due to a given systematical parameter is
+evaluated by variating this systematical parameter by its 
+own uncertainty and then taking the changes of outcoming $\beta$. 
+The total systematic variance is obtained by summing all systematic 
+uncertainties in quadrature. As is given in Eqn \ref{eqn:systVar}.
+This summation of quadrature is based on the assumption made in counting analysis 
+that all systematical parameters in consideration are independent from each other.
+
+
+\begin{equation}
+    \textbf{V}_{syst} = \sum_{\theta \in syst}
+    \big( \Delta_{\theta}\beta \big) \otimes 
+    \big( \Delta_{\theta}\beta \big)
+    \label{eqn:systVar}
+\end{equation}
+
+The outer product of variations is based on the fact that all elements of
+$\beta$ is fully correlated when tuning up and down a systematical parameters.
+Table \ref{tbl:errors} shows the squared root of diagonal elements of 
+$\textbf{V}_{stat}$ and $\textbf{V}_{syst}$. The full matrix of $\textbf{V}_{stat}$ 
+and $\textbf{V}_{syst}$ are shown in Fig \ref{fig:varStatSyst}.
+The total variance of $\beta$ is summation of statistics and systematics variance.
+The variance matrix not only represents the sensitivity of the measurement 
+to each systematics, but also characterizes the correction among 
+$\{\beta_e, \beta_\mu, \beta_\tau\}$ within each category and across all four categories. 
+
+\begin{equation}
+    \textbf{V} = \textbf{V}_{stat} + \textbf{V}_{syst}
+\end{equation}
+
+To combine the branching fraction in four categories, we construct $\chi^2$ parametrized
+by average branching fractions, $\bar{\beta}_e,\bar{\beta}_\mu, \bar{\beta}_\tau$ 
+in Eqn \ref{eqn:DefineChisquared}. 
+
+\begin{equation}
+    \chi^2 (\bar{\beta}_e, \bar{\beta}_\mu, \bar{\beta}_\tau) = 
+    (\beta - \bar{\beta} )^T \textbf{V}^{-1} (\beta - \bar{\beta} )
+    \label{eqn:DefineChisquared}
+\end{equation}
+
+where $\bar{\beta}$ is linearly parametrized by $\bar{\beta}_e, \bar{\beta}_\mu, \bar{\beta}_\tau$ 
+via a $12 \times 3$ matrix A which consists of four $3\times 3$ identity matrices
+distributing parameters linearly to 4 categories.
+
+\begin{equation}
+    \bar{\beta} = A \bigg [ \bar{\beta}_e, \bar{\beta}_\mu, \bar{\beta}_\tau \bigg ]
+    =
+    \bigg [
+    \bar{\beta}_e, \bar{\beta}_\mu, \bar{\beta}_\tau, \quad 
+    \bar{\beta}_e, \bar{\beta}_\mu, \bar{\beta}_\tau, \quad 
+    \bar{\beta}_e, \bar{\beta}_\mu, \bar{\beta}_\tau, \quad 
+    \bar{\beta}_e, \bar{\beta}_\mu, \bar{\beta}_\tau
+    \bigg ]
+\end{equation}
+
+Thanks to this linearly parametrizing of $\bar{\beta}$, the first and second 
+derivatives of $\chi^2$ can be calculated analytically.
+
+\begin{align}
+    &\nabla \chi^2   = -2 (A^T V^{-1} \beta - A^T V^{-1} \bar{\beta} )
+    \\
+    &\nabla^2 \chi^2 = 2 A^T V^{-1} A 
+\end{align}
+
+The central value of average branching fraction comes from minimizing this $\chi ^2$, or
+$\nabla \chi ^2 = 0$
+The variance of average branching fraction comes from Fisher Information, 
+$I = \frac{1}{2} \nabla^2 \chi^2 $ evaluated at 
+point with the least chi-squared $\bar{\beta}^{LS}$.
+In other words, the covariance of average branching fractions,  
+$U [\bar{\beta}^{LS}]$,
+equals to the inverse of
+Fisher Information at $\bar{\beta} = \bar{\beta}^{LS}$.
+
+\begin{equation}
+    \boxed{ 
+    \bar{\beta}^{LS}
+    =   (A^T V^{-1} A)^{-1}(A^T V^{-1})  \cdot \beta
+    }
+    \label{eqn:combineMean}
+\end{equation}
+
+\begin{equation}
+    \boxed{
+    U \big[\bar{\beta}^{LS} \big] 
+    =   (A^T V^{-1} A)^{-1} 
+    }
+    \label{eqn:combineCovar}
+\end{equation}
+
+These analytic formula for LS estimator of linear parameters in 
+Eqn \ref{eqn:combineMean} and \ref{eqn:combineCovar} are derived as Eqn 7.10 and 7.11
+in Glen Cowan's Statistical Data Analysis.
+With this combining method, the values of average branching 
+fractions are shown in Eqn \ref{eqn:averagebf}. The correlation of 
+$\bar{\beta}_e,\bar{\beta}_\mu, \bar{\beta}_\tau$ is shown in Fig \ref{fig:corBetaBar}. 
+
+\begin{align}
+    \bar{\beta}_e^{LS}    &= 0.1080 \times \big[1 \pm 0.37\% \text{ (stat)} \pm 2.06\% \text{ (syst)} \big] \\
+    \bar{\beta}_\mu^{LS}  &= 0.1080 \times \big[1 \pm 0.33\% \text{ (stat)} \pm 2.15\% \text{ (syst)} \big] \\
+    \bar{\beta}_\tau^{LS} &= 0.1080 \times \big[1 \pm 0.81\% \text{ (stat)} \pm 6.35\% \text{ (syst)} \big]
+    \label{eqn:averagebf}
+\end{align}
+
+\begin{figure}[ht]
+    \centering
+    % \includegraphics[width=7cm]{section5/figures/covarMatrix_beta.png}
+    \caption{ The correlation of $\bar{\beta}_e,\bar{\beta}_\mu, \bar{\beta}_\tau$ }
+    \label{fig:corBetaBar}
+\end{figure}
+
+
+\input{chapters/Analysis/sectionSystematics/tables/syst_alt.tex}
+
+

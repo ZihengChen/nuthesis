@@ -6,6 +6,8 @@
 *.lof
 *.fls
 *.dvi
+# *.mtc*
+# *.mat
 
 # PDF output - usually a bad idea to keep this in Git
 #*.pdf

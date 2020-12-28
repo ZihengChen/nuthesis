@@ -1,64 +1,406 @@
 
-\section{Theories about LU}
-\label{sec:relatedworks:theories}
+\section{Experimental Test of Lepton Universality}
+\label{sec:relatedWorks:lu}
 
-
-\subsection{Standard Model}
-
-The minimum action principle leads to the Euler-Lagrange equation of motion:
+The SM lepton universality (LU) when interacting with W boson is encoded in the Lagrangian term $\bar{\chi}_L \gamma^\mu \big( i \partial_\mu -g \frac{\tau_a}{2} W^a_\mu -g'\frac{Y}{2} B_\mu \big) \chi_L $ in Equation~\ref{eqn:relatedWorks:qft:gws:lagragian}, where the coupling constant $g$ is the same for all three leptons. Namely,
 \begin{equation}
-    \frac{\partial}{\partial x_\mu} \frac{\partial L}{\partial(\partial \phi / \partial x_\mu)} - \frac{L}{\partial \phi} = 0
+	g_e^W = g_\mu^W = g_\tau^W \equiv g
 \end{equation}
-
-Given a lagrangian of a system, the dynamics of the system is fully dictated by the Euler-lagrangian Equation of Motion. Therefore the modeling of the physics of the fundamental particles is essentially the designing and interpreting the Lagrangian. For example, modeling a massive scaler field with $L=\frac{1}{2} \partial_\mu\phi \partial^\mu \phi - \frac{1}{2} m^2 \phi^2$ leads to Klein-Gordon equation
-
-\begin{equation}
-    \partial_\mu \partial^\mu \phi + m^2 \phi = 0
-\end{equation}
+Precision measurement of the couplings to the weak force of the three leptons provides an excellent test of the lepton universality and the SM. And deviation from the of lepton universality could indicate new physics beyond the standard model. Some of the BSMs allowing non-universality observations are discussed in Section~\ref{sec:relatedWorks:bsm}. So far, the precision test of LU in the weak sector has been performed in a wide variety of particle physics experiments, including but not limited to experiments at the $p\bar{p}, e^+ e^-, pp$ colliders, meson factories, and tau factories. The most related to this thesis are in the colliders using the decay of on-shell W bosons produced in the collision, including SPS, Tevatron, LEP, and LHC experiments. This section summarizes the tests with on-shell W bosons in the colliders, followed by a brief discussion about the LU test using the weak decay in the precision meson physics and tau physics. Among the tests, there are two most well-known anomalies, the LEP results and the semileptonic decay of B mesons, which are also discussed in this section. 
 
 
-
-it dictates the dynamics of a system which is modeled by the Lagrangian L. Standard Model is essentially such a Lagrangian for fundamental particles.
-
-
-
-What is the world made of? So far the ultimate answer to the question human device is the standard model (SM). We pursue the most concise fumula to discribe the underline Physics rules, trying to unviewing the most fundmental rules as much as possible. In the framework of lagrangian formulism, the design of the world is written as the lagrangian and then implemented by the equation of motion resulted from the minimal action princile. 
+\subsection{Test with on-shell W Decay}
+\label{sec:relatedWorks:lu:W}
 
 
-Group is a set of operations that are closed, has unity and inverse, and are associative. Lie group is a continuous and smooth group.  The topology of lie group can be completely expressed as a set of generator and corresponding real parameters. Any element in the lie group is equavilent to a consective infinitesmal operations.
+The on-shell W bosons can be produced on the  $p\bar{p}, e^+ e^-, pp$ colliders. The measurement of the leptonic decay of the on-shell W boson provides one of the most direct LU tests of $g^W_l$. Until 2020, the history of the LU test with on-shell W bosons can be divided into three stages:
 
-\begin{equation}
-    U(\theta) = e^{\theta J} = e^{\sum_i \theta_i J^i }  =  \Pi_i \lim_{n \to \infty} (1+\frac{\theta_i}{n})^n
-\end{equation}
+\begin{itemize}
+    \item CERN SPS (1981-1991) and Fermilab Tevatron (Run-I 1985-1995) using $p \bar{p} \to W + X$.
+    \item CERN LEP (Run-II 1995-2000) using $e^+e^- \to W^+  W^-$.
+    \item CERN LHC since 2011. W are produced via many processes, but the major processes for the published measurements include $pp \to W +X$ (Run-I) and $pp \to t \bar{t} \to Wb+Wb$ (Run-II)
+\end{itemize}
+
+The earliest test can be traced back to the SPS experiments at CERN in the 1980s. Then the measurement was improved by the Tevatron experiments at Fermilab during the Run-I 1985-1995. Both the collider produced W bosons from the $p\bar{p}$ collisions. The key feature of the result in the first stage was that the measured quantity was $\sigma_W \times B(W\to l\nu)$ instead of the three individual $B(W\to l\nu)$, because $W$ boson was just discovered, and its production cross-section $\sigma_W$ was not known well enough. The second era was marked by the LEP experiments, which gave the latest and most precise test before this thesis. One of the key features of the LEP result was that the three leptonic branching fractions were measured simultaneously, together with the corresponding 3x3 correlation matrix. The combined result of LEP experiments showed a 2.6 \sigma deviation from SM lepton universality. This observation is one of the major motivations of the tests in the LHC era, such as this analysis.
 
 
-where $J_i$ is the generator of the lie group and its mathmatical meaning is the tangent at unity. The lie algibra of the lie group is nothing but the commutation relation of the generators. Any groups with the same lie algibra is isotrophic, such as SO(3) and SU(2) both lie algribra is cross product. Standard model is U(1)xSU(2)xSU(3).
-
-The fundation of standard model is Yang-mills gauage field and higgs mechanism. Yang-mills theory provide a frame work for nonablilian gauge field, based on which electroweak and QCD are established. The higgs mechanism solves the mass of gauge boson in the gauge field via spontaneous symmetry breaking and also generate fermion mass via their interaction with higgs field. 
-
-The lagrangian of QED is 
-
-\begin{equation}
-    \mathit{L} = \bar{\psi} i\gamma^\mu \partial_\mu \psi - m \bar{\psi} \psi + e \bar{\psi} \gamma^\mu A_\mu \psi - \frac{1}{4}F_{\mu\nu}F^{\mu\nu} = \bar{\psi} (i\gamma^\mu D_\mu - m) \psi - \frac{1}{4}F_{\mu\nu}F^{\mu\nu}
-\end{equation}
-
-It is sysmetric under local gauge transformation $\psi(x) \to e^{i \alpha(x) } \psi(x) $
+\subsubsection{SPS and Tevatron Experiments}
 
 
 
+% SPS Tevatron result plot
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.5\textwidth]{chapters/RelatedWorks/sectionLU/figures/spsTevatron.png}
+    \caption{ $g^W_\tau / g^W_e$ measured in the SPS and Tevatron experiments \cite{Abbott:1999pk}. In all the four experiments, the lepton universality between electron and tau, concerning the weak coupling to W boson, is observed and is consistent with the SM prediction $g^W_\tau / g^W_e=1$ within one experimental uncertainty. The SPS+Tevatron combined result confirms the lepton universality with precision at 2.5\% relative uncertainty on $g^W_\tau / g^W_e$. }
+    \label{fig:relatedWorks:lu:W:spsTevatronCombinedRatio}
+\end{figure}
+
+The UA1, UA2 experiment at the CERN SPS and CDF, D0 experiment at the Fermilab Tevatron have measured the $p\bar{p} \to W + X$ production cross-section in the three leptonic channels, the ratios of which provides a test of lepton universality concerning the couplings to the on-shell W boson. Figure~\ref{sec:relatedWorks:lu:W:spsTevatron} shows the measurement of $\sigma_W \times B(W\to l \nu)$ in the SPS and Tevatron experiments.  Figure~\ref{fig:relatedWorks:lu:W:spsTevatronCombinedRatio} from \cite{Abbott:1999pk} summarizes the results of $g^W_\tau / g^W_e$ measurements in the SPS and Tevatron experiments. All four measurements confirm consistency with the SM lepton universality within one experimental uncertainty. The combined average is calculated by D0 in \cite{Abbott:1999pk}, the latest published result among the four. In the combining, the systematics in different experiments are assumed to be uncorrelated. The combined result is also consistent with the lepton universality with a precision level at 2.5\%, which can be translated into a precision level of about  5\% on the W branching ratio $B(W\to \tau) / B(W\to e)$.
+
+Both SPS and Tevatron collide protons and anti-protons. SPS operated at CERN from 1981 to 1991 at a center-of-mass energy of 0.546 TeV and 0. 630 TeV. The SM electroweak bosons, W and Z, were first discovered on the SPS in 1983. In 1985, Tevatron at Fermilab began operations at a higher center-of-mass energy at 1.8 TeV, which was later upgraded to 1.96 TeV in the second run since 2001. Tevatron was in service for more than 20 years until 2010 to give ways to the LHC. Based on the discovery and studies of weak bosons on the SPS, Tevatron experiments continued on more precise measurements of the properties of the W and Z bosons. Here lists the key results from the SPS and Tevatron experiments  related to the lepton universality test.
 
 
-elements can be parameterized by a set of parameters and
+
+% and had two major experiments UA1 and UA2, which discovered the electroweak bosons W and Z predicted by the GWS EW theory in 1983. The collision energy of SPS was later surpassed by Tevatron at Fermilab in 1986. Since then Tevatron operated more than 20 years until 2010 to give ways to LHC. The two major experiments at Tevatron are D0 and CDF which measured the properties of W and Z boson with improved precision. With respect to testing the lepton universality in the W sector, the SPS and Tevatron experiments share many similarities. They did not directly measured the three leptonic decay branching fractions of W, mainly because the W cross section was not measured precisely at their experimental period. Instead, they measured the cross section of W production in the three leptonic channel. Namely, the product of the W+X produciton cross section and three leptonic W decay branching fractions. 
+% UA1 and UA2 experiments in the SPS performed the early measurement of W production cross section in the three leptonic decay channels of W boson. 
+
+UA1 was a general-purpose particle detector at the CERN SPS, consisting of the inner tracker, ECAL HCAL, and a muon system, sequentially from the inside to the outside.  It took 0.546 TeV and 0.63 TeV data during 1982-1983 and 1984-1985, respectively. Its result of W boson studies was summarized in \cite{Albajar:1988ka}. $W \to e \nu$ events were selected based on single-electron plus met selection. The QCD and $W\to \tau_e \nu$ background were estimated with data-driven and MC approach, respectively. In total, 59 and 240 $W \to e \nu$ events were selected from the 0.546 TeV and 0.63 TeV collision, respectively.  $W \to \mu \nu$ events were selected based on single muon plus met selection. The background involving muons from tau and meson decays was estimated by proper simulations. In total, 10 and 57 $W\to \mu\nu$ events were selected from the 0.546 TeV and 0.63 TeV data.  $W\to \tau \nu$ were selected with a single hadronic tau plus met selection. The hadronic taus are identified by highly collimated narrow jets with low charged-track multiplicity.  A $\tau$-likelihood is calculated for jet candidates based on the their shape and charged tracks. In total, 32 events were selected from the combined 0.546 TeV and 0.63 TeV dataset. Based on the yields, UA1 reports the $\sigma_W \times Br(W\to l\nu) $ for the three leptons $l=e,\mu,\tau$ at 0.546 TeV and 0.63 TeV center-of-mass energy. Pair-wise ratios of  $\sigma_W \times Br(W\to l\nu) $ were calculated to test the lepton universality. Table~\ref{tab:relatedWorks:lu:W:sps} lists the $\sigma_W \times Br(W\to l\nu) $ and ratios from UA1.
 
 
-gauge invariance of 
-GWS
+
+UA2 was a particle detector at the CERN SPS, consisting of a tracking system surrounded by a calorimetry system with EM and hadronic compartments. Unlike UA1, UA2 is not a multipurpose detector; its focus was on the calorimeters and did not have a muon detector. Therefore, lepton universality test on UA2 mainly involved the $W \to e\nu$ and $W \to \tau \nu$. \cite{appel1986measurement} summarized the $\sigma_W \times Br(W\to e \nu) $ measurements on UA2 using 0.546 TeV and 0.63 TeV data collected during 1982-1983 and 1984-1985. The measurement is based on single-electron plus met trigger. This  $\sigma_W \times Br(W\to e \nu) $ result is shown in Table~\ref{tab:relatedWorks:lu:W:sps}. After the UA2 upgrade during 1985-1987,  the tau channel was added and a test of the lepton universality between $\tau$ and $e$ was performed \cite{Alitti:1991eh, Alitti:1992hv}, using the 0.63 TeV data collected during 1988-1990. The hadronic taus were reconstructed from jet candidates with selections on relative hadronic energy and the lateral energy profile. The data is triggered with the met trigger in 1988-1989 and hadronic tau trigger in 1990. \cite{Alitti:1991eh} analyzed the 1988-1989 data, while \cite{Alitti:1992hv} combined the 1988-1989 data with 1990 data. The result \cite{Alitti:1992hv} for the ratio between tauonic and electronic W decays is shown in the Table~\ref{tab:relatedWorks:lu:W:sps}. 
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.35\textwidth]{chapters/RelatedWorks/sectionLU/figures/SPS.png}
+    \includegraphics[width=0.6\textwidth]{chapters/RelatedWorks/sectionLU/figures/tevatron.png}
+    \caption{Measurement of $\sigma_W \times B(W\to l \nu)$ in the SPS \cite{Albajar:1988ka} and Tevatron experiments. [RIGHT plot needs reproduce] }
+    \label{sec:relatedWorks:lu:W:spsTevatron}
+\end{figure}
+
+% SPS result table
+\begin{table}[ht]
+    \setlength{\tabcolsep}{ 0.5 em}
+    \renewcommand{\arraystretch}{1.2}
+    \centering
+    \begin{tabular}{ |c|l l| } 
+         
+         % UA1 result
+         \hline
+         \multicolumn{3}{|c|}{UA1 \cite{Albajar:1988ka} }  \\
+         \hline
+         & $p\bar{p}$ at $\sqrt{s}=0.546$ TeV &  $p\bar{p}$ at $\sqrt{s}=0.630$ TeV \\
+         \hline
+         $\sigma_W \times Br(W\to e    \nu)$  [nb]  & 0.55 $\pm$ 0.08 (stat) $\pm$ 0.09 (syst) & 0.63 $\pm$ 0.06 (stat) $\pm$ 0.10 (syst) \\ 
+         $\sigma_W \times Br(W\to \mu  \nu)$  [nb]  & 0.56 $\pm$ 0.18 (stat) $\pm$ 0.12 (syst) & 0.63 $\pm$ 0.08 (stat) $\pm$ 0.11 (syst) \\ 
+         $\sigma_W \times Br(W\to \tau \nu)$  [nb]  & \multicolumn{2}{c|}{ 0.63 $\pm$ 0.13 (stat) $\pm$ 0.12 (syst) }  \\ 
+         \hline
+         $Br(W\to \mu  \nu)/ Br(W\to e \nu)$  & \multicolumn{2}{c|}{1.00  $\pm$ 0.14 (stat) $\pm$ 0.08 (syst) } \\
+         $Br(W\to \tau \nu)/ Br(W\to e \nu)$  & \multicolumn{2}{c|}{1.02  $\pm$ 0.20 (stat) $\pm$ 0.10 (syst) } \\
+         
+         \hline
+         \multicolumn{2}{c}{} \\
+         
+         % UA2 result
+         \hline
+         \multicolumn{3}{|c|}{UA2}  \\
+         \hline
+         & $p\bar{p}$ at $\sqrt{s}=0.546$ TeV &  $p\bar{p}$ at $\sqrt{s}=0.630$ TeV \\
+         \hline
+         $\sigma_W \times Br(W\to e    \nu)$  [nb] \cite{appel1986measurement} & 0.50 $\pm$ 0.09 (stat) $\pm$ 0.05 (syst) & 0.53 $\pm$ 0.06 (stat) $\pm$ 0.05 (syst) \\ 
+         % This is UA2 result reported in the UA1 summary
+        %  $\sigma_W \times Br(W\to e    \nu)$  [nb] \cite{Albajar:1988ka} & 0.61 $\pm$ 0.10 (stat) $\pm$ 0.07 (syst) & 0.57 $\pm$ 0.04 (stat) $\pm$ 0.07 (syst) \\ 
+         \hline
+         $Br(W\to \tau \nu)/ Br(W\to e \nu)$ \cite{Alitti:1992hv} & - & 1.04  $\pm$ 0.08 (stat) $\pm$ 0.08 (syst) \\
+         
+         \hline
+    \end{tabular}
+    
+    \caption{The measurement of $\sigma_W \times B(W\to l \nu)$ and the ratios between leptonic channels in the UA1 and UA2 experiment at the CERN SPS. }
+    \label{tab:relatedWorks:lu:W:sps}
+\end{table}
 
 
 
-Local gauge invariance
+
+% Tevatron result table
+\begin{table}[ht]
+    \setlength{\tabcolsep}{2em}
+    \renewcommand{\arraystretch}{1.2}
+    \centering
+    \begin{tabular}{ |c|l| } 
+         
+         % D0 result
+         \hline
+         \multicolumn{2}{|c|}{D0 with $p\bar{p}$ at $\sqrt{s}=1.8$ TeV} \\
+         \hline
+         $\sigma_W \times Br(W\to e    \nu)$  [nb] \cite{Abbott:1999tt} & 2.31 $\pm$ 0.01 (stat) $\pm$ 0.05 (syst) $\pm$ 0.10 (lum) \\ 
+         $\sigma_W \times Br(W\to \mu  \nu)$  [nb] \cite{Abachi:1995xc} & 2.09 $\pm$ 0.23 (stat) $\pm$ 0.11 (syst) \\ 
+         $\sigma_W \times Br(W\to \tau \nu)$  [nb] \cite{Abbott:1999pk} & 2.22 $\pm$ 0.09 (stat) $\pm$ 0.10 (syst) $\pm$ 0.10 (lum)  \\ 
+         \hline
+         $Br(W\to \mu  \nu)/ Br(W\to e \nu)$ \cite{Abachi:1995xc} & 0.89  $\pm$ 0.10 \\
+         $Br(W\to \tau \nu)/ Br(W\to e \nu)$ \cite{Abbott:1999pk} & 0.961 $\pm$ 0.061 \\
+         
+         \hline
+         \multicolumn{2}{c}{} \\
+         
+         
+         %  CDF result
+         \hline
+         \multicolumn{2}{|c|}{CDF with $p\bar{p}$ at $\sqrt{s}=1.8$ TeV} \\
+         \hline
+         $\sigma_W \times Br(W\to e    \nu)$  [nb] \cite{Abe:1990sd}    & 2.19 $\pm$ 0.04 (stat) $\pm$ 0.21 (syst) \\ 
+         $\sigma_W \times Br(W\to \mu  \nu)$  [nb] \cite{Abe:1992ys}    & 2.21 $\pm$ 0.07 (stat) $\pm$ 0.21 (syst) \\ 
+         $\sigma_W \times Br(W\to \tau \nu)$  [nb] \cite{Abe:1991fb}    & 2.05 $\pm$ 0.27 \\ 
+         \hline
+         $Br(W\to \mu  \nu)/ Br(W\to e \nu)$ \cite{Abe:1992ys} & 1.02  $\pm$ 0.08 \\
+         $Br(W\to \tau \nu)/ Br(W\to e \nu)$ \cite{Abe:1991fb} & 0.94  $\pm$ 0.14 \\
+
+         \hline
+    \end{tabular}
+    \caption{The measurement of $\sigma_W \times B(W\to l \nu)$ and the ratios between leptonic channels in the CDF and D0 experiment at the Fermilab Tevatron.}
+    \label{tab:relatedWorks:lu:W:tevatron}
+\end{table}
 
 
-spontaneous symmetry breaking
 
-higgs mechnism
+CDF is an azimuthally and forward-backward symmetric general-purpose detector at the Fermilab Tevatron. It is consists of several subdetector layers, including a silicon tracker, gas chamber as the central outer tracker, solenoid magnet, ECAL/HCAL, and muon detector. CDF began taking its first data in 1985 and started Run I after its first upgrade in 1989. For $W \to e  \nu$, \cite{Abe:1990sd} presents a measurement of $\sigma_W \times B(W\to e \nu)$ using the single-electron trigger with a selection of single isolated electron plus met. For $W \to \mu  \nu$, \cite{Abe:1992ys} presents a measurement of $\sigma_W \times B(W\to \mu \nu)$ and the ratio of muon and electron channel. This measurement used the single-muon trigger with a selection of single isolated muon plus met. Citing the previous CDF result on $\sigma_W \times B(W\to e \nu)$ in \cite{Abe:1990sd}, it obtained the ratio of the muonic and electronic weak coupling as $\frac{g^W_\mu}{g^W_e}=1.01\pm0.04$, consistent with the lepton universality. For $W \to \tau \nu$, \cite{Abe:1991fb} measured the $\sigma_W \times B(W\to \tau \nu)$ and its ratio to the electronic channel previous obtained in the \cite{Abe:1990sd}. The tau channel was based on two triggers, a met trigger and a single-tau trigger, which yielded 132 and 47 final events after selections. Comparing with the met trigger, the tau trigger required an additional tau jet cluster with a lower met threshold. The tau identification required 0-3 tracks with no tracks in the 10\degree - 30 \degree region separate from the seeding track. Combining the met triggered and tau triggered data, the ratio between tau channel and electron channel was reported as $g^W_\tau/g^W_e=0.97\pm0.07$  agreeing with the SM lepton universality, as shown in Figure~\ref{fig:relatedWorks:lu:W:spsTevatronCombinedRatio}. Table~\ref{tab:relatedWorks:lu:W:tevatron} lists the CDF's results about the three $\sigma_W \times B(W\to l \nu)$ and the pair-wise ratios.
+
+
+
+
+
+D0 was a general-purpose particle detector at the Fermilab Tevatron. Its structure was similar to CDF, consisting of a hybrid tracking system with silicon inner tracker and scintillator fiber outer tracker, superconducting solenoid, ECAL/HCAL, and the muon system. The detector was completed in 1991 and was placed in the Tevatron in February 1992. D0 collected its 1.8 TeV collision data during 1992-1995. With data collected in 1992-1993, D0 presented a measurement of $\sigma_W \times B(W\to e\nu)$, $\sigma_W \times B(W\to \mu \nu)$ and their ratio \cite{Abachi:1995xc}. Later, in the year 1994-1995, about 6 times more data was collected, and accordingly $\sigma_W \times B(W\to e\nu)$ was updated with better precision \cite{Abbott:1999tt}. It is worth noticing that this update \cite{Abbott:1999tt} also reported the branching fraction of W decay into electrons separately from the $\sigma_w$, as $B(W\to e\nu)=(10.66\pm0.15\pm0.21\pm0.11\pm0.11)\%$, where the uncertainties were for statistics, systematics, theory, and NLO. Also, with the 1994-1995 data, D0 measured $\sigma_W \times B(W\to \tau \nu)$ and test the lepton universality between tau and electron \cite{Abbott:1999pk}, shown in Figure ~\ref{fig:relatedWorks:lu:W:spsTevatronCombinedRatio}. For $W \to e \nu$ and $W \to \mu \nu$, the measurement selected events based on single-electron plus met and single-muon plus met. For $W \to \tau \nu$, D0 used a dedicated hadronic tau trigger, which included requirements on the met, the leading narrow jet pt, and no jet opposite to the leading narrow jet. The hadronic taus were reconstructed as boosted narrow jets with cuts on the $E_T$ and the jet width (energy weighted tower size in the jet). For each jet candidate, the energy in the leading two towers over the total energy was used to discriminate the tau jets over the background QCD jets. Table~\ref{tab:relatedWorks:lu:W:tevatron} lists the D0's results about the three $\sigma_W \times B(W\to l \nu)$ and the pair-wise ratios.
+
+
+
+
+
+
+
+
+
+% this result is indirect calculation using the LEP inputs
+% \cite{Abazov:2003sv} summaries the W mass and witdh measurement on Tevatron by D0 and CDF and reports a tevatron combined W to electron branching fraction as 
+% \begin{equation}
+%     B(W\to e\nu)=(10.61 \pm 0.28) \% \; \text{Tevatron}
+% \end{equation}
+
+
+\subsubsection{LEP Experiments}
+The Large Electron-positron collider (LEP) at CERN increased its collision center-of-mass energy from the Z pole (LEP-I 1989-1995) to a maximum of 209 GeV during its second running phase (LEP-II 1995-2000). In some periods in 1995 and 1997, the LEP was operated at center-of-mass energies below the WW resonance at 130.3, 136.3, and 140.2 GeV. The rest run of LEP-II scanned at 10 different energies above the WW resonance ranging in 161.3 - 209 GeV. During the full second run scanning the center-of-mass energy from 130 GeV to 209 GeV, the four LEP experiments ALEPH, DELPHI, L3, and OPAL, collected a total of 3 $fb^{-1}$ integrated luminosity data. 
+
+The four detectors at LEP were designed to explore the physics at the Z pole during the LEP-I and around WW mass up to 203 GeV during the LEP-II. ALEPH is a cylindrical symmetric detector. It had a tracking system  (drift chamber and TPC) and ECAL inside a supper conducting solenoid. Outside the solenoid were streamer tubes inserted in the iron return yokes for the hadron and muon detection. DELPHI is also a cylindrical general-purpose detector consisting of the vertex detector, TPC tracker, Ring-Imaging Cherenkov detector, ECAL, solenoid, HCAL, muon chamber. OPAL's subdetector layers were formed by vertex detector, tracker, magnetic solenoid, crystal ECAL/HCAL, and muon detector. Unlike the other 3 detectors, L3 had its magnetic solenoid as the outmost layer; inside were trackers (silicon strip micro vertex detector and time expansion chamber), ECAL, HCAL, and muon chamber. 
+
+The WW production in the LEP was mainly induced by the EW process in the t-channel exchanging $\nu_e$, and the triple gauge boson coupling process in the s-channel mediated by Z or photon. The measurement of WW production cross-section combining the four LEP experiments is shown in Figure. There is a clear turn on the WW production above 161.3 GeV. The combined experimental result was consistent with the theoretic prediction from YFSWW ad RACOONWW.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.49\textwidth]{chapters/RelatedWorks/sectionLU/figures/lep_ww.png}
+    \caption{The LEP measurement of WW production cross-section. The measurement was a combine of the four LEP experiments, with a total 3 $fb^{-1}$  data. The WW production at LEP is mainly induced by exchanging neutrinos in the t-channel and quark annihilation to $Z/\gamma$  in the s-channel. The measured cross-section agrees with the theoretical calculation.}
+    \label{fig:my_label}
+\end{figure}
+
+Each experiment determined the leptonic W branching fractions from the cross-sections of the individual WW decay channels, with and without the lepton universality assumption \cite{Schael:2013ita}. The hadronic branching fraction was determined from the leptonic ones based on the unity summation constraint. When combining the four experiments, the theoretical uncertainties on signal and background, as well as the theoretical uncertainties on the luminosity, were treated correlated; in contrast, the experimental uncertainties on the luminosity, detector effects, and MC statistics are treated uncorrelated. The details of the $B(W\to l \nu)$ results and the 3x3 correlation matrices, in all four experiments and after combined, are summarized in Table~\ref{tab:relatedWorks:lu:W:lep} and in Figure~\ref{fig:relatedWorks:lu:W:lep} . A clear excess of the lepton universality was observed in the result. While the branching fractions to electron and muon agree well with each other, the branching fraction to tau is more than $2 \sigma$ larger than the average of the branching fraction to electron and muon. Assuming only partial lepton universality, the ratio between the $B(W\to \tau \nu)$ and the average of $B(W\to e \nu)$ and $B(W\to \mu \nu)$ were reported as \cite{Schael:2013ita}
+
+
+
+\begin{equation*}
+    \frac{2\times Br(W\to \tau \nu)}{Br(W\to e \nu)+ Br(W\to \mu  \nu)} = 1.066 \pm 0.025,
+\end{equation*}
+
+\noindent showing a 2.6 standard deviation from the lepton universality.
+
+
+% LEP result plot
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.99\textwidth]{chapters/RelatedWorks/sectionLU/figures/lepResult.png}
+    \caption{Three $B(W\to l \nu)$  and hadronic branching fraction of the four LEP experiments and the combined result. In the LEP average, $B(W\to \tau \nu)$  is 2.6 $\sigma$ larger than the average of $B(W\to e \nu)$ and $B(W\to \mu \nu)$ \cite{Schael:2013ita}. }
+    \label{fig:relatedWorks:lu:W:lep}
+\end{figure}
+
+
+% LEP result table
+\begin{table}[ht]
+    \setlength{\tabcolsep}{.5 em}
+    \renewcommand{\arraystretch}{1.2}
+    \centering
+    \begin{tabular}{ |c| c  c | } 
+         %  LEP ALEPH
+         \hline
+         \multicolumn{3}{|c|}{ALEPH \cite{Heister:2004wr}} \\
+         \hline
+         $Br(W\to e    \nu)$    & 10.78 $\pm$ 0.27 (stat) $\pm$ 0.10 (syst) & 
+         \multirow{3}{*}{
+            \begin{footnotesize}
+            $\rho = \begin{bmatrix}
+                +1.000 &-0.009 &-0.332 \\ 
+                -0.009 &+1.000 &-0.268 \\
+                -0.332 &-0.268 &+1.000 
+            \end{bmatrix}$ 
+            \end{footnotesize} 
+         } \\
+         $Br(W\to \mu  \nu)$    & 10.87 $\pm$ 0.25 (stat) $\pm$ 0.08 (syst) & \\ 
+         $Br(W\to \tau \nu)$    & 11.25 $\pm$ 0.32 (stat) $\pm$ 0.20 (syst) & \\
+         \hline
+         \multicolumn{3}{c}{} \\
+         
+         
+         %  LEP DELPHI
+         \hline
+         \multicolumn{3}{|c|}{DELPHI \cite{Abdallah:2003zm}} \\
+         \hline
+         $Br(W\to e    \nu)$    & 10.55 $\pm$ 0.31 (stat) $\pm$ 0.14 (syst) & 
+         \multirow{3}{*}{
+            \begin{footnotesize}
+            $\rho = \begin{bmatrix}
+                +1.000 &+0.030 &-0.340 \\ 
+                +0.030 &+1.000 &-0.170 \\
+                -0.340 &-0.170 &+1.000 
+            \end{bmatrix}$ 
+            \end{footnotesize} 
+         } \\
+         $Br(W\to \mu  \nu)$    & 10.65 $\pm$ 0.26 (stat) $\pm$ 0.08 (syst) & \\ 
+         $Br(W\to \tau \nu)$    & 11.46 $\pm$ 0.39 (stat) $\pm$ 0.19 (syst) & \\
+         \hline
+         \multicolumn{3}{c}{} \\
+         
+         
+         %  LEP L3
+         \hline
+         \multicolumn{3}{|c|}{L3 \cite{Achard:2004zw}} \\
+         \hline
+         $Br(W\to e    \nu)$    & 10.78 $\pm$ 0.29 (stat) $\pm$ 0.13 (syst) & 
+         \multirow{3}{*}{
+            \begin{footnotesize}
+            $\rho = \begin{bmatrix}
+                +1.000 &+0.136 &-0.201 \\ 
+                +0.136 &+1.000 &-0.122 \\
+                -0.201 &-0.122 &+1.000 
+            \end{bmatrix}$ 
+            \end{footnotesize} 
+         } \\
+         $Br(W\to \mu  \nu)$    & 10.03 $\pm$ 0.29 (stat) $\pm$ 0.12 (syst) & \\ 
+         $Br(W\to \tau \nu)$    & 11.89 $\pm$ 0.40 (stat) $\pm$ 0.20 (syst) & \\
+         \hline
+         
+         \multicolumn{3}{c}{} \\
+         
+         %  LEP OPAL
+         \hline
+         \multicolumn{3}{|c|}{OPAL \cite{Abbiendi:2007rs}} \\
+         \hline
+         $Br(W\to e    \nu)$    & 10.71 $\pm$ 0.25 (stat) $\pm$ 0.11 (syst) & 
+         \multirow{3}{*}{
+            \begin{footnotesize}
+            $\rho = \begin{bmatrix}
+                +1.000 &+0.135 &-0.303 \\ 
+                +0.135 &+1.000 &-0.230 \\
+                -0.303 &-0.230 &+1.000 
+            \end{bmatrix}$ 
+            \end{footnotesize} 
+         } \\
+         $Br(W\to \mu  \nu)$    & 10.78 $\pm$ 0.24 (stat) $\pm$ 0.10 (syst) & \\ 
+         $Br(W\to \tau \nu)$    & 11.14 $\pm$ 0.31 (stat) $\pm$ 0.17 (syst) & \\
+         \hline
+         
+         \multicolumn{3}{c}{} \\
+         %  LEP Average
+         \hline
+         \multicolumn{3}{|c|}{LEP Average \cite{Schael:2013ita}} \\
+         \hline
+         $Br(W\to e    \nu)$    & 10.71 $\pm$ 0.14 (stat) $\pm$ 0.07 (syst) & 
+         \multirow{3}{*}{
+            \begin{footnotesize}
+            $\rho = \begin{bmatrix}
+                +1.000 &+0.136 &-0.201 \\ 
+                +0.136 &+1.000 &-0.122 \\
+                -0.201 &-0.122 &+1.000 
+            \end{bmatrix}$ 
+            \end{footnotesize} 
+         } \\
+         $Br(W\to \mu  \nu)$    & 10.63 $\pm$ 0.13 (stat) $\pm$ 0.07 (syst) & \\ 
+         $Br(W\to \tau \nu)$    & 11.38 $\pm$ 0.17 (stat) $\pm$ 0.11 (syst) & \\
+         \hline
+         $Br(W\to \mu  \nu)/ Br(W\to e \nu)$ & 0.993  $\pm$ 0.019 & 
+         \multirow{3}{*}{
+            \begin{footnotesize}
+            $\rho = \begin{bmatrix}
+                +1.000 &+0.440 &-0.314 \\ 
+                +0.440 &+1.000 &+0.714 \\
+                -0.314 &+0.714 &+1.000 
+            \end{bmatrix}$ 
+            \end{footnotesize} 
+         } \\
+         $Br(W\to \tau \nu)/ Br(W\to e \nu)$ & 1.063  $\pm$ 0.027 & \\
+         $Br(W\to \tau \nu)/ Br(W\to\mu\nu)$ & 1.070  $\pm$ 0.026 &  \\
+         
+         \hline
+    \end{tabular}
+    \caption{Three $B(W\to l \nu)$ and the 3x3 correlation matrix of the four LEP experiments and the combined result \cite{Schael:2013ita}}
+    \label{tab:relatedWorks:lu:W:lep}
+\end{table}
+
+
+\subsubsection{LHC Experiments}
+
+During the LHC Run-I at a center-of-mass energy of 7 TeV and 8 TeV, the lepton universality test in the EW sector was studied in the electron and muon channel, taking W+jets events as the signal. Two such measurements were published by the ATLAS and LHCb. ATLAS measured the $\sigma_W \times B(W \to e \nu)$ and $\sigma_W \times B(W \to \mu \nu)$ \cite{Aaboud:2016btc} with 7 TeV proton-proton collision data with 4.6/fb collected in 2011. The events in the electron and muon channel were triggered with the single-lepton trigger and selected with several lepton isolation and identification cut and met cut. The ratio between muon and electron was determined as $\frac{ B(W  \to \mu \nu) }{ B(W \to e \nu)} = 1.003\pm 0.010$. LHCb also measured the $\sigma_W \times B(W \to e \nu)$ \cite{Aaij:2016qqz} and $\sigma_W \times B(W \to \mu \nu)$ \cite{Aaij:2015zlq} in two analysis with 8 TeV LHC data corresponding to 2/fb integrated luminosity. The events were also triggered with the single-lepton, and the selections required on lepton quality and met. To test universality between the electron and muon channel, the second analysis \cite{Aaij:2016qqz} compared the electron channel with the muon channel published in the first analysis \cite{Aaij:2015zlq}, taking into account the experimental correlations. The comparison included both the total cross-section and the differential cross-section with respect to pseudorapidity. The differential cross-section agreed well in the electron and muon channel. The ratio of the two total cross-section led to $\frac{ B(W  \to \mu \nu) }{ B(W \to e \nu)}  = 0.980 \pm 0.018 $
+
+
+
+
+During the LHC Run-II at a unprecedentedly high center-of-mass energy of 13 TeV, for the first time since the SPS era in the 1980s, W bosons from the $t\bar{t}$ events are treated as the major signal in the LU test,  thanks to the high $t\bar{t}$ cross-section at 13 TeV. In addition, compared to the LHC Run-I, the improvement of the hadronic tau reconstruction also allows better precision tests involving the tau channel. This is the context of our analysis. Related to our analysis, ATLAS recently measured the ratio between W to tau and W to muon branching fraction $B(W  \to \tau \nu) / B(W \to \mu \nu) $ using the LHC Run-II data from 2016-2018 at 13 TeV corresponding to 139/fb. The analysis selects tt events with a single-muon trigger and applies additional requirements on muon quality, jet multiplicity, and bTag multiplicity for a tt-concentrated region. The two W bosons from tt decay are used for the analysis (need double check, make sure not one-tag one-prob). Tau is probed with tau's muonic decay, which is 17\% of the total tau decay width. The key technique of this ATLAS measurement is fitting to the vertex displacement of the selected muon to discriminate $W \to \mu$ and $W \to \tau \to \mu$. Probing tau with muonic decay and dividing by the $W \to \mu$ help cancel the systematical uncertainties related to the muon reconstruction. Also, the systematics concerning hadronic tau reconstruction is avoided. The limitation of this approach is that only the $B(W  \to \tau \nu) / B(W \to \mu \nu) $ ratio is measured but the three individual leptonic branching fractions are not. The reported result of the $\tau / \mu $ branching ratio is
+
+$$ \frac{ B(W  \to \tau \nu) }{ B(W \to \mu \nu)}  = 0.992 \pm 0.013 \text{ (ATLAS Run-II) }$$
+
+
+
+
+
+\subsection{Test with Meson Decay}
+\label{sec:relatedWorks:lu:meson}
+
+
+% meson decay table
+\begin{table}[ht]
+    \setlength{\tabcolsep}{.5 em}
+    \renewcommand{\arraystretch}{1.5}
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+         & SM Prediction & World Average & Included measurements \\
+        \hline
+        % pi
+        $R^\pi_{e/\mu} \; [10^{-4}]$ &  1.2352 $\pm$ 0.0001 \cite{Cirigliano:2007xi} & 1.2327 $\pm$ 0.0023  & 
+            \tiny{ TRIUMF \cite{Numao:1992ve, Britton:1992pg}, PiENu \cite{Aguilar-Arevalo:2015cdf}, BGO-OD \cite{Czapek:1993kc}} \\
+        % K
+        $R^K_{e/\mu} \; [10^{-5}]$ &  2.477  $\pm$ 0.001 \cite{Cirigliano:2007xi} & 2.488  $\pm$ 0.009 & 
+            \tiny{NA62 \cite{Lazzeroni:2012cx}, KLOE \cite{Ambrosino:2009aa} }\\
+        % D_s
+        $R^{D_s}_{\tau/\mu} $ &  9.76 $\pm$ 0.10 \cite{Dobrescu:2008er} & 9.95 $\pm$ 0.61  & 
+            \tiny{ HFLAV \cite{Amhis:2016xyh} ave of CLEO, BASIII, BELLE, BABAR} \\
+        
+        \hline
+        % B D
+        $R^{B}_{D, \tau/l} $ &  0.299  $\pm$ 0.003  \cite{Bifani:2018zmi} & 0.340  $\pm$ 0.030 & 
+            \tiny{BABAR \cite{Lees:2012xj, Lees:2013uzd}, Belle \cite{Huschle:2015rga} }\\
+            
+        % B D*
+        $R^{B}_{D*, \tau/l} $ &  0.258  $\pm$ 0.005 \cite{Bifani:2018zmi} & 0.295  $\pm$ 0.014 & 
+            \tiny{BABAR \cite{Lees:2012xj, Lees:2013uzd}, Belle \cite{Huschle:2015rga, Sato:2016svk, Hirose:2016wfn}, LHCb\cite{Aaij:2015yra,Aaij:2017uff, Aaij:2017deq} }\\
+            
+        \hline
+    \end{tabular}
+    \caption{SM prediction and the experimental measurements of the leptonic or semi-leptonic branching ratios of the pseudoscalar mesons. \cite{Bifani:2018zmi} }
+    \label{tab:relatedWorks:lu:meson:ratio}
+\end{table}
+
+The decay of pseudoscalar mesons provides some of the stringent tests of LU. The most stringent constraints come from the study of leptonic decay of the charged pions or kaons, which are helicity suppressed in the SM depending on the mass of the outcoming lepton. Pions and kaons can decay into electrons and muons, but not taus which are heavier than $\pi, K$. The ratio between the electronic and muonic branching fractions $R^\pi_{e/\mu},R^K_{e/\mu}$ are measured and compared with the SM prediction. For D meson, tauonic decay is possible, and the ratio between tauonic and muonic branching fraction $R^D_{\tau/\mu}$ is measured in the charm factories including CLEO, BASIII, Belle, and BaBar. Table~\ref{tab:relatedWorks:lu:meson:ratio} shows these experimental measurements and the comparison to the SM theoretical calculations. The experimental result of purely leptonic decay of light and charm pseudoscalar meson agree well with the theoretical prediction. Additionally, the tests of LU in FCCC can be performed by comparing semileptonic transitions, such as $K\to \pi l\nu$ and $D\to K l\nu$, with different lepton flavors. However, these tests require knowledge of the ratio of the form factors of the scalar and vector meson, f0/f+, with very high accuracy to be competitive with the leptonic decays, where the main hadronic input (meson decay constants) drops out of the LU ratios. 
+
+Anomaly is observed in the semileptonic decay of B meson. $R^{B}_{D^{(*)}, \tau/l}$ is measured in the Belle, BaBar and LHCb, where ratio is defined as the semileptonic branching fraction with tau over with electron and muon. $R^{B}_{D, \tau/l} = \frac{Br(B\to D+\tau \nu)}{Br(B\to D+l \nu)}$ and $R^{B}_{D^*, \tau/l} = \frac{Br(B\to D^*+\tau \nu)}{Br(B\to D^*+l \nu)}$ where $l=e,\mu$ . Figure~\ref{fig:relatedWorks:lu:meson:bMesonDecay} shows this well-known anomaly of lepton universality in the B meson semileptonic decay. The world average of  Belle, BaBar and LHCb is about 4 sigma deviated from the theoretical prediction with SM. The individual value of the ratios are shown in Table~\ref{tab:relatedWorks:lu:meson:ratio}.
+
+% B meson decay plot
+\begin{figure}[ht]
+    \centering
+    \includegraphics[ width = 0.7 \textwidth ]{chapters/RelatedWorks/sectionLU/figures/bmeson.png}
+    \caption{ Anomaly of lepton universality in the semi-leptonic decay of B meson. SM prediction and the world average of $R^{B}_{D, \tau/l}$  and $R^{B}_{D^*, \tau/l}$  shows a 4 sigma deviation.}
+    \label{fig:relatedWorks:lu:meson:bMesonDecay}
+\end{figure}
+
+
+
+
+\subsection{Test with Tau Decay}
+\label{sec:relatedWorks:lu:lepton}
+
+The LU of FCCC transitions can also be tested by the tau precision measurement \cite{Pich:2013lsa}. In the SM, the only expected difference between the $\tau^- \to e^- \bar{\nu}_e \nu_\tau$  and $\tau^- \to \mu^- \bar{\nu}_\mu \nu_\tau$  decay is due to decay kinematic phase space due to the mass difference in the outcoming leptons. $g_\mu  / g_e $ can be obtained by precision measurement of the tau decay in the electron and muon channels. Similarly,  $g_\tau  / g_\mu $ can be obtained by precision measurement of electronic tau decay  $\tau^- \to e^- \bar{\nu}_e \nu_\tau$ and electronic muon decay  $\mu^- \to e^- \bar{\nu}_e \nu_\mu$.  The ratio of the FCCC couplings to the third and first family can be obtained from the measurements of the $\tau^- \to \mu^- \bar{\nu}_\mu \nu_\tau$  and $\mu^- \to e^- \bar{\nu}_e \nu_\mu$  branching fraction and the $\tau,\mu$ lifetimes.  These represent the most stringent experimental tests available today for LU tests in the EW sector. From the tau precision measurement, the ratios of EW coupling constant among the three leptons are \cite{Pich:2013lsa}
+
+\begin{align}
+    g_\tau / g_\mu &= 1.0010 \pm 0.0014 \\
+    g_\tau / g_e   &= 1.0029 \pm 0.0014 \\
+    g_\mu  / g_e   &= 1.0018 \pm 0.0014 
+\end{align}
+
+

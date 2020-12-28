@@ -1,7 +1,7 @@
 % ---------------------------------------
 % section : Event Triggering
 % ---------------------------------------
-\subsection{Trigger}
+\section{Trigger System}
 \label{sec:cmsexperiment:trigger}
 
 % overview
@@ -9,18 +9,18 @@ CMS applies a two-tiered trigger system \cite{cms:trigger:Khachatryan:2016bia} t
 
 
 
-\subsubsection{Level-1 Trigger}
+\subsection{Level-1 Trigger}
 
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.8\textwidth]{chapters/CMSExperiment/sectionTrigger/figures/trigger.png}
     \caption{The logic structure of L1T.}
     %  Calorimeters and muon detectors raise local trigger primitives to compute a regional trigger signal. Then \acrfull{gmt} summarizes regional information from DT, SCS and PRC, while \acrfull{gct} concentrates the regional information from ECAL, HCAL and HF. Finally \acrfull{gt} makes the final decision based on the object orientated information from GMT and GCT and transport data in the sub-detectors to the HLT if L1T accept is made. 
-    \label{fig:cmsexperiment:trigger:trigger}
+    \label{fig:cmsexperiment:trigger:structure}
 \end{figure}
 
 % overview
-L1 Trigger is designed to cope with the high collision frequency in the LHC, reducing the event rate from 40 MHz to 100 kHz, keeping only potential events of physics interest. To achieve this, L1 trigger is designed with three component: local, regional and global. The logic structure is shown in Figure~\ref{fig:cmsexperiment:trigger:}. The Local Triggers, also called \acrfull{tpg}, are based on energy deposits in calorimeter trigger towers and track segments or hit patterns in muon chambers. Regional Triggers combine their information and use pattern logic to determine ranked and sorted trigger objects such as electron or muon candidates in limited spatial regions. The \acrfull{gct} and \acrfull{gmt} determine the highest-rank calorimeter and muon objects across the entire experiment and transfer them to the \acrfull{gt}, the top entity of the Level-1 hierarchy. GT takes the decision to reject an event or to accept it for further evaluation by the HLT. The Level-1 Accept decision is communicated to the sub-detectors through the \acrfull{ttc} system. Before decisions arrive to the front-end, the raw data are stored in a FIFO pipelined memories in the front end electronics. Limited by the memory size, only a latency of \SI{3.2}{\us} is allowed between a given bunch crossing and the distribution of the L1T decision to the detector front-end electronics. The L1T electronics is housed partly on the detectors, partly in the underground control room located at a distance of approximately 90 m from the experimental cavern. 
+L1 Trigger is designed to cope with the high collision frequency in the LHC, reducing the event rate from 40 MHz to 100 kHz, keeping only potential events of physics interest. To achieve this, L1 trigger is designed with three component: local, regional and global. The logic structure is shown in Figure~\ref{fig:cmsexperiment:trigger:structure}. The Local Triggers, also called \acrfull{tpg}, are based on energy deposits in calorimeter trigger towers and track segments or hit patterns in muon chambers. Regional Triggers combine their information and use pattern logic to determine ranked and sorted trigger objects such as electron or muon candidates in limited spatial regions. The \acrfull{gct} and \acrfull{gmt} determine the highest-rank calorimeter and muon objects across the entire experiment and transfer them to the \acrfull{gt}, the top entity of the Level-1 hierarchy. GT takes the decision to reject an event or to accept it for further evaluation by the HLT. The Level-1 Accept decision is communicated to the sub-detectors through the \acrfull{ttc} system. Before decisions arrive to the front-end, the raw data are stored in a FIFO pipelined memories in the front end electronics. Limited by the memory size, only a latency of \SI{3.2}{\us} is allowed between a given bunch crossing and the distribution of the L1T decision to the detector front-end electronics. The L1T electronics is housed partly on the detectors, partly in the underground control room located at a distance of approximately 90 m from the experimental cavern. 
 
 
 % calo
@@ -34,7 +34,7 @@ The GT takes the decision to accept or reject an event at L1 based on trigger ob
 
 
 
-\subsubsection{High Level Trigger}
+\subsection{High Level Trigger}
 
 The event selection at the HLT is performed in a similar way to that used in the offline processing. For each event, objects such as electrons, muons, and jets are reconstructed and identification criteria are applied in order to select only interested events.
 

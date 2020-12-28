@@ -17,7 +17,7 @@
 % The nuthesis class is based on % amsbook.cls.
 \documentclass[12pt]{nuthesis}
 
-\onehalfspacing
+% \onehalfspacing
 
 \usepackage{graphicx}
 \usepackage{placeins}
@@ -30,6 +30,13 @@
 \usepackage[italic,italicGreek]{heppennames2}
 \usepackage{ptdr-definitions}
 \usepackage{fullpage,rotating,booktabs,dcolumn}
+\usepackage{natbib}
+\usepackage[com pat = 1.1.0]{tikz-feynman}
+\usepackage{multirow}
+\usepackage{slashed}
+% \usepackage{gensymb} for \perthousand
+
+
 
 
 \input{frontmatter/glossary}
@@ -46,7 +53,7 @@
 \graduationmonth{December}       
 \graduationyear{2020}
 
-% \includeonly{chapters/8_result/chapterMain}	
+% \includeonly{chapters/Introduction/chapterMain}	
 
 
 \begin{document}
@@ -62,10 +69,10 @@
     %%%%%%%%%%%%%%%%%%%%%%%%%%%
     \mainmatter  
     
-    % \include{chapters/Introduction/chapterMain}
-    % \include{chapters/RelatedWorks/chapterMain}
+    \include{chapters/Introduction/chapterMain}
+    \include{chapters/RelatedWorks/chapterMain}
     % \include{chapters/CMSExperiment/chapterMain}
-    \include{chapters/Analysis/chapterMain}
+    % \include{chapters/Analysis/chapterMain}
     % \include{chapters/Extension/chapterMain}
     % \include{chapters/Upgrade/chapterMain}
     
@@ -78,10 +85,11 @@
     \begin{singlespace}
     \bibliographystyle{unsrt}
     \bibliography{
-        reference/reference_cms, 
-        reference/reference_thhep, 
-        reference/reference_exhep,
-        reference/reference_tech
+        chapters/RelatedWorks/chapterReference,
+        chapters/CMSExperiment/chapterReference
+        % reference/reference_thhep, 
+        % reference/reference_exhep,
+        % reference/reference_tech
         }
     \end{singlespace}
 

@@ -10,14 +10,15 @@ The CKM matrix originates from the Yukawa couplings in the SM Higgs sector. It r
     \centering
     \setlength{\tabcolsep}{1.5em}
     \renewcommand{\arraystretch}{1.5}
+    \caption{The current experimental world average of the 9 elements in the CKM matrix in the PDG \cite{pdg2020}.  }
+    \resizebox{\textwidth}{!}{
     \begin{tabular}{c|c|c }
         \hline
          $|V_{ud}|=0.97370 \pm 0.00014 $         & $|V_{us}|=0.2245 \pm 0.0008$       &  $|V_{ub}|=0.00382 \pm 0.00024$         \\ \hline
        $|V_{cd}|=0.221 \pm 0.004 $                    & $|V_{cs}|=0.987 \pm 0.011$       &  $|V_{cb}|=0.00410 \pm 0.0014$                    \\ \hline
        $|V_{td}|=0.0080 \pm 0.0003 $               & $|V_{ts}|=0.0388 \pm 0.0011$       &  $|V_{tb}|=1.013 \pm 0.030$                    \\
         \hline
-    \end{tabular}
-    \caption{The current experimental world average of the 9 elements in the CKM matrix in the PDG \cite{pdg2020}.  }
+    \end{tabular}}
     \label{tab:relatedWorks:vcs:ckm}
 \end{table}
 
@@ -46,7 +47,6 @@ In Figure~\ref{fig:relatedWorks:vcs:measurements}, the indirect measurement of $
 
 
 The coupling of W to lepton current is $g$ while to the quark current is $g|V_{ij}|$. 
-
 \begin{equation}
     \feynmandiagram [inline=(d.base), small, horizontal=d to b] {
         a[particle=\(\nu_e\)] -- [fermion] b [dot] -- [fermion] c[particle=\(e^-\)],
@@ -61,20 +61,17 @@ The coupling of W to lepton current is $g$ while to the quark current is $g|V_{i
 \end{equation}
 
 \noindent If we define the partial width of W to the lepton current $\Gamma_{W \to l \nu}$ as $\Gamma_l$, 
-
 \begin{equation}
-\Gamma_l \equiv \Gamma_{W \to l \nu} =  \frac{g^2 m_W}{48 \pi} .
+    \Gamma_l \equiv \Gamma_{W \to l \nu} =  \frac{g^2 m_W}{48 \pi} .
 \end{equation}
 
 
 \noindent  At tree-level, the W decay width to the quark current is
-
 \begin{equation}
-\Gamma_{W \to q_i q_j}^{LO} = 3 |V_{ij}|^2 \frac{g^2 m_W}{48 \pi}  = 3 |V_{ij}|^2 \Gamma_l ,
+    \Gamma_{W \to q_i q_j}^{LO} = 3 |V_{ij}|^2 \frac{g^2 m_W}{48 \pi}  = 3 |V_{ij}|^2 \Gamma_l ,
 \end{equation}
 
 \noindent  where the factor 3 accounts for the three colors.
-
 \begin{figure}
     \centering
     \includegraphics[width=0.8\textwidth]{chapters/RelatedWorks/sectionVcs/figures/realVirtual.png}
@@ -83,14 +80,12 @@ The coupling of W to lepton current is $g$ while to the quark current is $g|V_{i
 \end{figure}
 
 \noindent However, at the NLO, QCD correction related to the quark current has to considered. More specifically, the real and virtual diagram, shown in Figure~\ref{fig:relatedWorks:vcs:realVirtual}, add extra contributions to the leading order width $\Gamma_{W \to q_i q_j}^{LO} $. The real diagram corresponds to the gluon final state radiation from the outcoming quarks. The virtual diagram corresponds to the interference between the tree level non-QCD process and the virtual gluon bubbles in the quark current and at the vertex. The calculation of the real and virtual contribution is usually expressed as a $k$ factor times the tree level rate  $\Gamma_{W \to q_i q_j}^{LO} $.
- 
  \begin{align}
  	\Gamma^V_{W \to q_i q_j}  &= \Gamma_{W \to q_i q_j}^{LO} \times \frac{\alpha_s}{2\pi}\frac{4}{3} \bigg \{  -\ln^2\frac{m_g}{Q} -3 \ln\frac{m_g}{Q} + \frac{\pi^2}{3}-\frac{7}{2} \bigg\} \\
     \Gamma^R_{W \to q_i q_j}  &= \Gamma_{W \to q_i q_j}^{LO} \times \frac{\alpha_s}{2\pi}\frac{4}{3} \bigg \{  +\ln^2\frac{m_g}{Q} + 3 \ln\frac{m_g}{Q} - \frac{\pi^2}{3}+ 5 \bigg\}
- \end{align}
+\end{align}
  
 \noindent  where $Q$ is the energy of W boson and $m_g$ is the mass of the massless gluon, which makes both the real and virtual width diverge. But the divergences in the real and virtual rate when $\lim m_g \to 0$ exactly cancel each other, producing a fine total contributions to the tree level width. This QCD correction turns out to be a $k$ factor of $\frac{\alpha_s}{\pi}$ :
-
 \begin{equation}
 \begin{split}
     \Gamma_{W \to q_i q_j}^{NLO} =& \Gamma_{W \to q_i q_j}^{LO} + \Gamma^{V}_{W \to q_i q_j}  + \Gamma^{R}_{W \to q_i q_j}
@@ -101,13 +96,11 @@ The coupling of W to lepton current is $g$ while to the quark current is $g|V_{i
 \end{equation}
 
 \noindent The factor of QCD contributions has been calculated with higher order corrections upto 3NLO. The state-of-art result of this factor reads $k = 1+1.045 ( \frac{\alpha_s}{\pi} ) + 0.94  ( \frac{\alpha_s}{\pi} ) ^2 -15  ( \frac{\alpha_s}{\pi} ) ^3$. For calculation in this work, the NLO is good enough. By definition, the branching fraction of W satisfies the unitary constrain
-
 \begin{equation}
     \sum_{ i,j } B_{W \to q_i q_j}^{NLO} + 3 B_l = 1
 \end{equation}
 
 \noindent use  $B_{W \to q_i q_j}^{NLO} = 3 (1+\frac{\alpha_s}{\pi}) |V_{ij}|^2 B_l $ and substitute $B_{W \to q_i q_j}^{NLO}$  with $B_l$ , one gets
-
 \begin{equation}
     \sum_{ i,j } |V_{ij}|^2 = \frac{1}{ 1+ \alpha_s(M_W)/\pi } \, \frac{1-3B_l}{3B_l}
 \end{equation}

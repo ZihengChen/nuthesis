@@ -10,13 +10,12 @@ When protons collide in the hadron colliders, it is actually the quarks and gluo
 
 
 A proton is formed of partons, which include valence quarks, sea quarks, and gluons. It can be pictured as three valence quarks surrounded by a cloud of soft gluon and sea quarks. For a proton with a given momentum, the probability distribution of a certain type of parton is described by the Parton Distribution Function (PDF) $f_i(x)$, where $x$ denotes the fraction of the total proton momentum $p$ carried by the parton. When colliding protons, partons are actually participating in the high energy hard process. As a result, the collision cross-section is a convolution of the cross-section of the hard process with the two PDFs of the interacting partons:
-
 \begin{equation}
     \sigma_{pp\to X } = \sum_{ij}\int dx_1 dx_2 f_i(x_1, \mu^2) f_j(x_2, \mu^2) \hat{\sigma}_{ij\to X } (x_1 p_1, x_2 p_2,\mu^2) .
     \label{eqn:relatedWorks:qft:ppCollision:factorization}
 \end{equation}
-\noindent This \textbf{factorizes} the total cross-section into the hard collision and PDFs, where $\mu$ is the factorization scale. To make theoretical predictions to experimental data, the theoretical model needs external input about the PDF, which is primarily measured in the lepton-hadron deep inelastic scattering (DIS) experiments. The DIS cross-section yields the structure functions of the hadrons $F_2(x)$, which theoretically equals to the sum of PDF weighted by the quark momentum and charge squared: $F_2(x) = \sum_i x Q^2_i f_i(x)$. The PDFs of different quarks $f_i(x)$ are extracted from DIS with protons and neutron targets, using the quark symmetries of the proton and neutron. The PDFs of anti-quarks are extracted from DIS with neutrino and anti-neutrino beams because the intermediating $W^\pm$ boson is capable of probing specific charge conjugated states, either quarks or anti-quarks. However, the gluon distribution is not directly measured in the DIS experiment because both the intermediating photon and W boson in the DIS do not carry colors and do not probe the gluons inside the proton. Instead, gluon information is indirectly extracted from the PDF evolution in different energy scales based on the DGLAP equation:
 
+\noindent This \textbf{factorizes} the total cross-section into the hard collision and PDFs, where $\mu$ is the factorization scale. To make theoretical predictions to experimental data, the theoretical model needs external input about the PDF, which is primarily measured in the lepton-hadron deep inelastic scattering (DIS) experiments. The DIS cross-section yields the structure functions of the hadrons $F_2(x)$, which theoretically equals to the sum of PDF weighted by the quark momentum and charge squared: $F_2(x) = \sum_i x Q^2_i f_i(x)$. The PDFs of different quarks $f_i(x)$ are extracted from DIS with protons and neutron targets, using the quark symmetries of the proton and neutron. The PDFs of anti-quarks are extracted from DIS with neutrino and anti-neutrino beams because the intermediating $W^\pm$ boson is capable of probing specific charge conjugated states, either quarks or anti-quarks. However, the gluon distribution is not directly measured in the DIS experiment because both the intermediating photon and W boson in the DIS do not carry colors and do not probe the gluons inside the proton. Instead, gluon information is indirectly extracted from the PDF evolution in different energy scales based on the DGLAP equation:
 \begin{equation}
     \mu \frac{d}{d\mu} \begin{bmatrix} f_i(x,\mu) \\ f_g(x,\mu) \end{bmatrix} = 
     \sum_j \frac{\alpha_s}{\pi} \int_x^1 
@@ -26,7 +25,6 @@ A proton is formed of partons, which include valence quarks, sea quarks, and glu
 \end{equation}
 
 \noindent where $P_{ab}$ is the DGLAP splitting function, representing the probability of parton $a$ radiating another parton $b$ with the fraction momentum $z=\frac{p_b}{p_a}$. The splitting  functions $P_{ab}$ are calculated by considering the tree-level Feynman diagram and reads as
-
 \begin{equation}
 \begin{split}
 	P_{qq}(z) &= \frac{4}{3}\bigg[\frac{1+z^2}{1-z} \bigg]_+, P_{qg}(z)=\frac{1}{2} \bigg[z^2+(1-z)^2 \bigg], P_{gq}(z)=\frac{4}{3}\bigg[\frac{1+(1-z)^2}{z} \bigg]\\
@@ -36,7 +34,6 @@ A proton is formed of partons, which include valence quarks, sea quarks, and glu
 \end{equation}
 
 \noindent The DGLAP equation is a renormalization group equation for the scale-dependent PDF evolution, similar to the RGE for the running of coupling in Equation~\ref{eqn:relatedWorks:qft:qcd:rge}. The driven source for the PDF evolution is the splitting functions in Equation~\ref{eqn:relatedWorks:qft:ppCollision:splitting}, analogical to the role of beta function in the running of coupling.  An intuitive understanding of the PDF evolution is that as the probing energy increases, more and more ``soft cloud" of sea quarks and gluons are revealed. As a result, the PDFs of sea quarks and gluons increase in the low $x$ region. Since gluons dominate the soft cloud, the PDF evolution tells information about the gluon PDF, given that the quark PDFs are known from DIS. The DGLAP equation in Equation~\ref{eqn:relatedWorks:qft:ppCollision:dglap} is a set of two first-order linear differential equations, and the solution is
-
 \begin{equation}
     \begin{bmatrix} f_i(x,\mu^2) \\ f_g(x,\mu^2) \end{bmatrix} = \begin{bmatrix} f_i(x) \\ f_g(x) \end{bmatrix} + 
     \frac{\alpha_s}{2\pi} \log\bigg(\frac{\mu^2}{\mu_0^2}\bigg) 
@@ -126,7 +123,6 @@ The hard process of partons happens in a short-distance range and can be calcula
 \end{figure}
 
 \noindent In the hadron collider, top quark pairs are produced with the QCD interaction. The tree-level diagrams for the $t\bar{t}$ production is shown in Figure~\ref{fig:relatedWorks:collider:tt}. The quark-antiquark annihilation, shown as Figure~\ref{fig:relatedWorks:ppCollision:tt} left, was the dominant process in the Tevatron, where the quark and antiquark are the valence quark in the proton and anti-proton, respectively. But in the LHC, which collides proton-proton at higher center-of-mass energy, gluon-gluon fusion in the s channel and t channel, shown as  Figure~\ref{fig:relatedWorks:ppCollision:tt} middle and right, are the dominant diagrams. The top quark decays into a b quark and a W boson instantly after produced. The resulting pair of W bosons are used to measure $Br(W)$ in this thesis. Meanwhile, the outcoming b quarks are used to tag these signal events. The theoretical prediction of tt cross-section at 13 TeV LHC is
-
 \begin{equation}
     \sigma_{tt} = 831.76 ^{+19.77}_{-29.20} \text{ (scale) } \pm 35.06 \text{ (PDF, $\alpha_s$) pb } .
 \end{equation}
@@ -147,7 +143,6 @@ The hard process of partons happens in a short-distance range and can be calcula
 \end{figure}
 
 \noindent The tW production is induced via the weak interaction and thus has smaller cross-section comparing the top pair production. The tree-level tW production process is shown in Figure~\ref{fig:relatedWorks:ppCollision:tw}. One of the W boson is produced associated with top quark. The outcoming top quark decays into a b quark and another W boson. The two W bosons are used for  $Br(W)$ measurement, while the b quark is used to tag $tW$ events. The SM theoretical cross section for tW is 
-
 \begin{equation}
     \sigma_{tW} = 71.7 \pm 1.80 \text{ (scale) } \pm 3.40  \text{ (PDF, $\alpha_s$) pb }
 \end{equation}
@@ -172,7 +167,6 @@ The hard process of partons happens in a short-distance range and can be calcula
 \end{figure}
 
 \noindent The WW production by EW interactions. Figure~\ref{fig:relatedWorks:ppCollision:ww} shows two major tree-level processes for the WW production. In the first diagram, quark-antiquark annihilates into a virtual $Z/\gamma$, which then decays into WW pair via EW triple-gauge-coupling. In the second diagram, WW is produced in the t-channel of quark-quark scattering. The WW process contributes to the event selection without b-tags. But the contribution is small due to its small cross-section. The treatment of the WW process is different between the shape analysis and the counting analysis: the shape analysis utilizes W bosons in the WW process as a signal, while the counting analysis treats it as a background. The SM theoretical cross-section for WW is 
-
 \begin{equation}
     \sigma_{WW} = ?? \pm ??  \text{ (scale) }  \pm ??  \text{ (PDF, $\alpha_s$) pb }
 \end{equation}
@@ -182,7 +176,6 @@ The hard process of partons happens in a short-distance range and can be calcula
 \label{sec:relatedWorks:ppCollision:psJet} 
 
 Quarks and gluons from the hard process are colored, but only the colorless particles can finally reach the detector. A few processes of the outcoming partons take place between the hard process and the particle reaching the detectors. These processes mainly include the parton shower, hadronization, and decay. In an energy scale $Q>\Lambda_{QCD}$, the quarks emit gluons, and subsequently, gluons convert into quark-antiquark pairs. An initial parton ends up with a bunch of secondary partons. And the initial momentum is split among all the secondary partons. This process is called the parton shower. The differential phase space of the gluon emission is
-
 \begin{equation}
     dS = \frac{2\alpha_s C_F}{\pi} \frac{dE}{E}\frac{d\theta}{\sin \theta} \frac{d\phi}{2\pi}.
 \end{equation}

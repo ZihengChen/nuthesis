@@ -1,8 +1,12 @@
 \begin{table}[ht]
     \centering
-   	\setlength{\tabcolsep}{0.4em}
-    \renewcommand{\arraystretch}{1.5}
-    \small
+   	\setlength{\tabcolsep}{0.5 em}
+    \renewcommand{\arraystretch}{1.6}
+    \caption{ Coefficients of quadratic equations $c_{lk}$ in terms of E and X, where the index
+    $l\in \{ e,\mu,\tau \} $ corresponds to the three equations $F_e=0,F_\mu=0,F_\tau=0$ and the 
+    index $k\in\{ 0,1,2,\dots 9\}$. In the table, 
+    $ \Delta_{ij} \equiv E^{tl}_{ij} - X_l \times ( E^{te}_{ij} + E^{t\mu}_{ij} + E^{t\tau}_{ij} + E^{th}_{ij} )$ is 
+    a $6\times 6$ matrix, where the lower index $i,j$ are for the $6\times 6$ elements and the upper index denotes the channel. }
     
     \begin{tabular}{c|l}
 
@@ -56,14 +60,11 @@
                  + 2b^\tau_h   \Delta_{\tau_h   h} 
                  - 2 \Delta_{hh}$ \\
     \hline
-    \hline
-    where  & $ \Delta \equiv E^{tl} - X_l \times ( E^{te} + E^{t\mu} + E^{t\tau} + E^{th} )$ \\
-           & $l=e,\mu,\tau$ and $t=e(\mu)$ if using single-$e$ (signle-$\mu$) trigger\\
-    \hline
+
     
 	\end{tabular}
     
-\caption{ Coefficients of quadratic equations in terms of E and X. In the table, $l=e,\mu,\tau$ and $t=\mu,e$ for single-$\mu$ and single-$e$ trigger respectively.  }
-\label{quadcoeff}
+
+\label{tab:quadcoeff}
     
 \end{table}

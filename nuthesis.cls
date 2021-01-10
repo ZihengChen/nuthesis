@@ -151,8 +151,8 @@
 
 %\setlength{\textheight}{7.5in}
 \setlength{\textheight}{8.0in}
-\setlength{\topmargin}{0in}
-\setlength{\headsep}{0.5in}
+\setlength{\topmargin}{0in}%  original value is {0in}
+\setlength{\headsep}{0.5in} %change by Ziheng Chen, 12/28/2020, because page number overlap with contents, original value is {0.5in}
 \setlength{\footskip}{0.5in}
 \setlength{\headheight}{12pt}
 %\setlength{\textwidth}{5.8in}

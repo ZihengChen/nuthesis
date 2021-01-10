@@ -1,16 +1,14 @@
 \section{Dataset and Simulated Events}
 \label{sec:analysis:dataset}
 
-% ===========================
-% data
-% ===========================
+
 \subsection{Data}
 
 In this analysis, data is selected based on the presence of at least one muon or one electron. The single muon dataset requires that events contain at least one muon with $p_T > 25$ GeV and passing the loose track isolation criterion, $Iso_{track} < 0.1$. The single electron dataset requires that there be at least one electron satisfying the requirement that $p^T > 30$ GeV and that it passes the tight identification requirements as defined by the EGamma POG.  The specific dataset names and the associated integrated luminosities are listed in Table~\ref{tab:dat:data2016}.
+
 \input{chapters/Analysis/sectionDataset/tables/data_2016.tex}
 
-
-Run ranges where data quality is determined to be insufficient are filtered removed from the datset by applying a luminosity mask. The following file is provided in JSON format from the CMS PPD group: [CITE]
+Run ranges where data quality is determined to be insufficient are filtered removed from the datset by applying a luminosity mask. The following file is provided in JSON format from the CMS PPD group:
 
 \texttt{Cert\_271036-284044\_13TeV\_23Sep2016ReReco\_Collisions16\_JSON.txt}
 
@@ -18,51 +16,42 @@ The full dataset consists of 35.9 fb$^{-1}$ of integrated luminosity~\cite{cms:l
 
 
 
-% ===========================
-% MC
-% ===========================
-\subsection{Simulated datasets}
 
-Simulated \acrfull{mc} datasets are used for modelling the signal process and most of the background processes. It is observed that simulation is insufficient for modelling the background arising from multijet QCD. Consequently, that background $\ttbar$ is estimated using data-driven techniques. The details of the background estimation are presented in section~FIXME.
+\subsection{Simulated Datasets}
+Simulated Monte Carlo (MC) datasets are used for modelling the signal process and most of the background processes. It is observed that simulation is insufficient for modelling the background arising from multijet QCD. Consequently, that background $\ttbar$ is estimated using data-driven techniques. The details of the background estimation are presented in section~\ref{sec:analysis:background}.
 
 The simulated samples used in modelling the background and signal are shown in table~\ref{tab:dat:mc2016}  The production of the samples was carried during the Summer 16 campaingn and the production of the \acrfull{miniaod} datasets was done using CMSSW release 8.0.26.patch2. The same release was used for processing both the data and the simulated samples. Lepton universality is assumed for the simulated datasets, i.e., $ Br(W\to l) = 10.8\%$ using values consistent with the average values listed in the PDG \cite{exhep:pdg:Patrignani:2016xqp}. 
 
 \input{chapters/Analysis/sectionDataset/tables/mc_2016.tex}
-\FloatBarrier
 
 
 
 
-% ===========================
-% reweightings
-% ===========================
 \subsection{Reweightings}
 
 % tau decay
 \subsubsection{$Br(\tau)$ Reweighting}
 
-The tau decay modes diverge slightly from the values listed in the PDG as can be seen in Table~\ref{tab:dat:tauDecayBr}.  The impact of this on the branching fraction determination is estimated and included as a systematic uncertainty
+The tau decay modes diverge slightly from the values listed in the PDG as can be seen in Table~\ref{tab:dat:tauDecayBr}. The MC events have been reweighted according to their gen-level tau decay mode to correct the tau decay in the simulation to the PDG experimental value. The impact of this on the branching fraction determination is estimated and included as a systematic uncertainty
 \input{chapters/Analysis/sectionDataset/tables/tauBr.tex}
-\FloatBarrier
 
 
 
 % pu
-\subsubsection{\acrfull{pu} Reweighting}
-
+\subsubsection{Pile-up Reweighting}
 Differences between the pileup distribution used in simulation and data is corrected by reweighting the simulation according to the weights shown in figure~\ref{fig:analysis:dataset:pileup}. The weight is applied based on the number of pileup, including out-of-time pileup, per event.  This process can be validated by comparing the number of reconstructed primary vertices in data and simulation as shown in figure~\ref{fig:analysis:dataset:npv}. There is still a sizeable discrepancy between the distributions. This has been widely observed within CMS and no additional measures are taken to address this.
 
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.35\textwidth]{chapters/Analysis/sectionDataset/figures/pileup_systematics.pdf}
+    \includegraphics[width=0.5\textwidth]{chapters/Analysis/sectionDataset/figures/pileup_systematics.pdf}
     \caption{(\emph{top}) Pileup distribution in data and simulation including the $\pm\sigma$ variation of the data pileup distributions. (\emph{bottom}) The weights parameterized by number of simulated pileup resulting from taking the ratio of the pileup distribution in data and simulation.}
     \label{fig:analysis:dataset:pileup}
 \end{figure}
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.45\textwidth]{chapters/Analysis/sectionDataset/figures/n_pv}
+    \includegraphics[width=0.5\textwidth]{chapters/Analysis/sectionDataset/figures/n_pv}
     \caption{Comparison of primary vertex multiplicity between data and simulated datasets.}
     \label{fig:analysis:dataset:npv}
 \end{figure}
@@ -70,7 +59,7 @@ Differences between the pileup distribution used in simulation and data is corre
 
 
 %  top pt
-\subsubsection{\cPqt \pt Reweighting}
+\subsubsection{Top \pt Reweighting}
 
 Additional corrections can be applied to the \ttbar sample to account for generator level mismodeling of the top quark \pt spectrum~\cite{CMS-PAS-TOP-16-011, CMS-PAS-TOP-16-008}.  This is done by identifying the parton-level top quarks, and calculating a scale factor from the equation,
 
@@ -88,7 +77,7 @@ The overall event weight is that is applied is $w = \sqrt{SF_{t}SF_{\bar{t}}}$. 
     \caption{Comparison of the trailing lepton $\pt$ distribution in $e\mu$ events with at least two jets and at least one b tag with top $\pt$ weights applied and without the weights.}
     \label{fig:analysis:dataset:top_pt_weight}
 \end{figure}
-\FloatBarrier
+
 
 % ww pt
 \subsubsection{WW \pt Reweighting}
@@ -96,13 +85,12 @@ Estimation of the $WW$ process relies on the \POWHEG MC generator which is a NLO
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.45\textwidth]{chapters/Analysis/sectionDataset/figures/ww_pt_lepton_pt}
-    \includegraphics[width=0.45\textwidth]{chapters/Analysis/sectionDataset/figures/ww_pt_weight_variations}
+    \includegraphics[width=0.5\textwidth]{chapters/Analysis/sectionDataset/figures/ww_pt_weight_variations}
+    \includegraphics[width=0.38\textwidth]{chapters/Analysis/sectionDataset/figures/ww_pt_lepton_pt}
     \caption{\emph{left.} Weights for the $qq\rightarrow WW$ process as a function of the $WW\,\pt$ and the two componnents of systematic variation.  \emph{right.} Trailing lepton pt from the $qq\rightarrow WW\rightarrow e\mu\nu\nu$ simulated sample when there are no reconstructed jets.} 
     \label{fig:analysis:dataset:ww_weight}
 \end{figure}
 
-\FloatBarrier
 
 
 % z pt
@@ -115,6 +103,8 @@ Based on differences between the observed and predicted \PZ \pt spectrums, weigh
     \caption{\emph{top.} Comparison of weighted and unweighted dilepton \pt spectrum for dimuon events with two jets and no b tags. \emph{bottom.} Comparison between ration of distributions in the top distribution and the analytical function for generating weights.}
     \label{fig:analysis:dataset:ww_weight}
 \end{figure}
-\FloatBarrier
+
+
+% \FloatBarrier
 
 

@@ -1,15 +1,18 @@
-\section{systematics}
+\section{Systematics}
 \label{sec:analysis:systematics}
 
-\subsection{source of systematics}
+
 The various sources of uncertainty that have been considered are
-described in the following sections.  The treatment of systematics
+described in the following sections. As described in Section~\ref{sec:analysis:method}, 
+the treatment of systematics
 differs between the two analysis approaches: the shape analysis makes
-use of nuisance parameters (n.p.) as described in Section~\ref{sec:method};
+use of nuisance parameters (n.p.);
 the counting analysis is carried out varying each systematic
 individually and assessing the variation on the estimates of the
 branching fractions.
 
+
+\subsection{Source of Systematics}
 \subsubsection{Luminosity} 
         
 The uncertainty on the CMS luminosity measurement is estimated to be
@@ -17,6 +20,7 @@ The uncertainty on the CMS luminosity measurement is estimated to be
 effects the overall scale of the data model, and is included as a
 normalization nuisance parameter that affects the overall normalization of all
 channels in a fully correlated manner.
+
 
 \subsubsection{Data-driven background estimates}
 
@@ -27,20 +31,10 @@ prior uncertainty for each is assumed to be 25\%.
 \subsubsection{Cross section for simulated processes}
 
 \begin{itemize}
-    \item \ttbar: 
-    \begin{itemize}
-        \item PDF
-        \item $\alpha_{s}$
-        \item $\mu_{R}/\mu_{F}$
-    \end{itemize}
+    \item \ttbar: 10\%, PDF, $\alpha_{s}$, $\mu_{R}/\mu_{F}$
     \item tW: 10\%
-    \item WW: (unconstrained)
-    \item Z+jets: 10\%
-    \begin{itemize}
-        \item PDF
-        \item $\alpha_{s}$
-        \item $\mu_{R}/\mu_{F}$
-    \end{itemize}
+    \item WW: unconstrained
+    \item Z+jets: 10\%, PDF, $\alpha_{s}$, $\mu_{R}/\mu_{F}$
     \item W+jets: 10\%
     \item diboson: 10\%
 \end{itemize}
@@ -49,11 +43,11 @@ prior uncertainty for each is assumed to be 25\%.
 
 The reweighting of the WW \pt is accounted for by including two n.p. for
 the resummation and factorization variations as described in
-section~\ref{sec:ww_pt}
+section~\ref{sec:analysis:dataset}
 
 \subsubsection{top \pt reweighting}
 
-As described in section~\ref{sec:top_pt}, the uncertainty on the top \pt
+As described in section~\ref{sec:analysis:dataset}, the uncertainty on the top \pt
 scale is included as a one-sided morphing templates generated based on
 previous top PAG studies.
 
@@ -63,7 +57,7 @@ Each event is weighted with a scale factor to account for differences in
 the pileup spectrum between data and simulation.  The uncertainty on
 the event weights is mainly due to the uncertainty on the minimum bias
 cross section.  The nominal minimum bias cross section is $69.2 \pm
-3.18\,\text{mb}$. The effect of the uncertainty is propagated through the
+3.18~\text{mb}$. The effect of the uncertainty is propagated through the
 analysis by calculating the distribution of pileup in data while varying
 the cross section up and down by one standard deviation.  
 
@@ -76,12 +70,12 @@ factors are then included as normalization nuisance parameters in the
 fit model.
 
 \begin{itemize}
-    \item \textit{single muon}: 0.5\% normalization uncertainy on all
+    \item \textit{single muon}: 0.5\% normalization uncertainty on all
         categories where the triggering lepton is a muon.
     \item \textit{single electron}: accounted for as a shape uncertainty
         in events where the event is exclusively triggered by an
-        electron.  This accounts for uncertaint in the deterimination of
-        the scale factors including the statistical uncertainty in , the
+        electron.  This accounts for uncertainty in the determination of
+        the scale factors including the statistical uncertainty, the
         variation due the triggering of the tag lepton, and variation
         due to the probe electron.  A detailed description of the
         electron trigger scale factors in included in
@@ -218,185 +212,257 @@ $\tau$ candidates, and that uncertainty in general would be much
 smaller, $<5\%$.  In appendix~\ref{sec:tau_fsr}, a method for accounting
 for this is described.
 
-\subsubsection{MC statistics}
 
-This analysis relies heavily on simulated samples to estimate
-backgrounds and the signal processes.  The number of events generated in
-each MC sample is frequently limited so an additional uncertainty must
-be assessed to account for this.  For the most part, it is not an issue
-in the counting analysis, but it is still accounted for by varying the
-MC templates within their statistical uncertainties and carrying out the
-analysis.  For the shape analysis, the Barlow-Beeston
-method~\cite{Amsler:2008zzb} is adopted.  This method includes an
-intermediate step in the minimization of the NLL where the NLL is
-minimized with respect to nuisance parameters associated with the
-normalization of individual bins.  The nuisance parameters are allowed
-to vary within the combined MC statistical uncertainty associated with the
-bin.  The impact of this is particularly large where the normalization
-of the Drell-Yan sample is concerned since the size of the simulated
-sample is on the order of the number of events produced in data.
 
+
+\subsection{Shape analysis systematics}
+
+As described previously, each source of uncertainty is accounted for in
+the shape analysis by including one or more associated nuisance
+parameters.  After minimizing the likelihood, post-fit values for the
+nuisance parameters and their associated uncertainties are obtained.
+This is illustrated in figure~\ref{fig:pulls_all}.  In general, the
+pulls on the nuisance parameters do not exceed $2\sigma$ of their
+initial uncertainty, but many of the nuisance parameters do become
+constrained.  Additionally, the correlations for each parameter can be
+obtained and are displayed in figure~\ref{fig:corr_matrix}.  In order to
+isolate the effect of each nuisance parameter on the uncertainty of the 
+branching fractions, the minimization is repeated while individually fixing each
+nuisance parameter either to its post-fit value plus or minus the
+post-fit uncertainty.  The result of this process is shown in
+figure~\ref{fig:impacts_all}.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=1.2\textwidth, angle=-90]{chapters/Analysis/sectionSystematics/figures/asimov_pulls_summary.pdf}
+    \caption{Pulls and constrain of all non-MC statistic nuisance
+        parameters after minimizing the likelihood.}
+    \label{fig:pulls_all}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.99\textwidth]{chapters/Analysis/sectionSystematics/figures/correlation_matrix_unblinded.pdf}
+    \caption{Correlation matrix for branching fractions and nuisance
+        parameters.  This does not include the nuisance parameters
+        associated with bin-by-bin MC statistical uncertainty.}
+    \label{fig:corr_matrix}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=1.2\textwidth, angle=-90]{chapters/Analysis/sectionSystematics/figures/unblinded_impacts.pdf}
+    \caption{impacts}
+    \label{fig:impacts_all}
+\end{figure}
+
+\FloatBarrier
 
 
 
 \subsection{Counting analysis systematics}
 
 For the counting analysis, the systematics are assessed individually by
-varying the sources of systematic uncertainty listed in
-Section~\ref{sec:systematics}, and assessing their effect on the
-measured branching fractions.  The resulting variations on the branching
-fractions are combined in quadrature assuming that the various sources
-of uncertainty are individually uncorrelated, but fully correlated
-between the four different trigger and b-tag categories.  The result of
-evaluating the uncertainties for each of the four measurement channels
-and three branching fractions are shown in Table~\ref{tab:syst_alt}.
+varying up and down the sources of systematic uncertainty listed in
+Section~\ref{ec:analysis:systematics}. The same branching fraction 
+extraction is repeated with the variated systematic parameter.
+The change in the branching fractions 
+with respect to the nominal value is treated as the systematical uncertainty
+due to a given source of systematics.
 
-\subsubsection{Method and Result of Analytic Combining}
+Recall that channels are divided into 
+four groups based on the trigger types and b-tag multiplicities,
+($\mu1b$, $\mu2b$, $e1b$, $e2b$), each of which produces a $\beta$ measurement. 
+Table~\ref{tab:syst_alt} shows the 
+uncertainties of $\beta$ from these four groups due to each individual source of systematics.
+The combine of the four groups assumes
+\begin{itemize}
+    \item one source of systematics is fully correlated among the four groups.
+    \item different sources of systematics are mutually independent.
+\end{itemize}
 
-The counting analysis extracts leptonic branching fractions
-$\{\beta_e, \beta_\mu, \beta_\tau\}$ simultaneously from yields of mutually exclusive channels, 
-grouped in four trigger-bjet categories, $\mu-1b$,  $\mu-2b$,  $e-1b$ and $e-2b$.
-Its parameter extraction outputs totally 4 sets of $\{\beta_e, \beta_\mu, \beta_\tau\}$,
-one set in each category. We denote the output 4 sets of $\{\beta_e, \beta_\mu, \beta_\tau\}$
-as a vector $\beta$.
-
+\noindent Therefore, the chi-squared in the combine can be written as
 \begin{equation}
-    \beta = \bigg [
-    \beta_e^{(1)}, \beta_\mu^{(1)}, \beta_\tau^{(1)}, \quad 
-    \beta_e^{(2)}, \beta_\mu^{(2)}, \beta_\tau^{(2)}, \quad 
-    \beta_e^{(3)}, \beta_\mu^{(3)}, \beta_\tau^{(3)}, \quad
-    \beta_e^{(4)}, \beta_\mu^{(4)}, \beta_\tau^{(4)}
-    \bigg ]
+    \chi^2 (\beta) = (\beta_0 - \textbf{A} \beta )^T \textbf{V}^{-1} (\beta_0 - \textbf{A} \beta )
 \end{equation}
 
-$\beta$ variates with respect to the statistical fluctuation 
-of event yields, as well as the variation of systematical parameters,
-leading to its statistical and systematical uncertainties.
-
-
-The statistical variance of $\beta$ is calculated by propagating 
-the statistical uncertainty of yield in each channel, 
-then summing them in quadrature. As is given in Eqn \ref{eqn:statVar}.
-The summation in quadrature is based on the fact that the statistical 
-fluctuation in each channel is fully independent.
-
+\noindent where $\beta = [\beta_e, \beta_\mu, \beta_\tau]^T $ is the combined branching fraction, and
+$\beta_0$ is the nominal value of the four measurements in the $\mu1b$, $\mu2b$, $e1b$, $e2b$ group, defined as
+% 
 \begin{equation}
-    \textbf{V}_{stat} = \sum_{i \in ch} 
-    \bigg( \frac{\partial \beta}{\partial n_i} \delta_{n_i} \bigg) \otimes 
-    \bigg( \frac{\partial \beta}{\partial n_i} \delta_{n_i} \bigg)
-    \label{eqn:statVar}
+    \beta_0 = \bigg [
+    \beta_e^{\mu1b}, \beta_\mu^{\mu1b}, \beta_\tau^{\mu1b}, \quad 
+    \beta_e^{\mu2b}, \beta_\mu^{\mu2b}, \beta_\tau^{\mu2b}, \quad 
+    \beta_e^{e1b}, \beta_\mu^{e1b}, \beta_\tau^{e1b}, \quad
+    \beta_e^{e2b}, \beta_\mu^{e2b}, \beta_\tau^{e2b}
+    \bigg ]^T
 \end{equation}
 
-The systematic uncertainty due to a given systematical parameter is
-evaluated by variating this systematical parameter by its 
-own uncertainty and then taking the changes of outcoming $\beta$. 
-The total systematic variance is obtained by summing all systematic 
-uncertainties in quadrature. As is given in Eqn \ref{eqn:systVar}.
-This summation of quadrature is based on the assumption made in counting analysis 
-that all systematical parameters in consideration are independent from each other.
-
+\noindent And $\textbf{A}=[I_{3\times3}, I_{3\times3}, I_{3\times3}, I_{3\times3}]^T$ is a $12 \times 3$ 
+matrix consist of four $3\times 3$ identity matrices. $\textbf{V}$ is the variance matrix for the 12 
+elements in $\beta_0$, which sums the statistical and the systematical uncertainties,
 
 \begin{equation}
-    \textbf{V}_{syst} = \sum_{\theta \in syst}
-    \big( \Delta_{\theta}\beta \big) \otimes 
-    \big( \Delta_{\theta}\beta \big)
-    \label{eqn:systVar}
+    \textbf{V} =
+    \sum_{n \in \text{data,MC}} \big( \Delta_{n}\beta_0 \big) \otimes   \big( \Delta_{n}\beta_0 \big) +
+    \sum_{\theta \in \text{syst}} \big( \Delta_{\theta}\beta_0 \big) \otimes  \big( \Delta_{\theta}\beta_0 \big).
 \end{equation}
 
-The outer product of variations is based on the fact that all elements of
-$\beta$ is fully correlated when tuning up and down a systematical parameters.
-Table \ref{tbl:errors} shows the squared root of diagonal elements of 
-$\textbf{V}_{stat}$ and $\textbf{V}_{syst}$. The full matrix of $\textbf{V}_{stat}$ 
-and $\textbf{V}_{syst}$ are shown in Fig \ref{fig:varStatSyst}.
-The total variance of $\beta$ is summation of statistics and systematics variance.
-The variance matrix not only represents the sensitivity of the measurement 
-to each systematics, but also characterizes the correction among 
-$\{\beta_e, \beta_\mu, \beta_\tau\}$ within each category and across all four categories. 
-
+\noindent where $\Delta_{\theta}\beta_0$ are shown as rows in Table~\ref{tab:syst_alt} and the statistical and systematical part
+of the $\textbf{V}$ matrix is shown in Figure~\ref{fig:corBetaBar}. The combined result can 
+be analytically calculated 
 \begin{equation}
-    \textbf{V} = \textbf{V}_{stat} + \textbf{V}_{syst}
+    \beta =   (\textbf{A}^T \textbf{V}^{-1} \textbf{A})^{-1}(\textbf{A}^T \textbf{V}^{-1}) \beta_0 , \quad
+    \text{with } \textbf{Var}\big[\beta\big]  =   (\textbf{A}^T \textbf{V}^{-1} \textbf{A})^{-1}
 \end{equation}
-
-To combine the branching fraction in four categories, we construct $\chi^2$ parametrized
-by average branching fractions, $\bar{\beta}_e,\bar{\beta}_\mu, \bar{\beta}_\tau$ 
-in Eqn \ref{eqn:DefineChisquared}. 
-
-\begin{equation}
-    \chi^2 (\bar{\beta}_e, \bar{\beta}_\mu, \bar{\beta}_\tau) = 
-    (\beta - \bar{\beta} )^T \textbf{V}^{-1} (\beta - \bar{\beta} )
-    \label{eqn:DefineChisquared}
-\end{equation}
-
-where $\bar{\beta}$ is linearly parametrized by $\bar{\beta}_e, \bar{\beta}_\mu, \bar{\beta}_\tau$ 
-via a $12 \times 3$ matrix A which consists of four $3\times 3$ identity matrices
-distributing parameters linearly to 4 categories.
-
-\begin{equation}
-    \bar{\beta} = A \bigg [ \bar{\beta}_e, \bar{\beta}_\mu, \bar{\beta}_\tau \bigg ]
-    =
-    \bigg [
-    \bar{\beta}_e, \bar{\beta}_\mu, \bar{\beta}_\tau, \quad 
-    \bar{\beta}_e, \bar{\beta}_\mu, \bar{\beta}_\tau, \quad 
-    \bar{\beta}_e, \bar{\beta}_\mu, \bar{\beta}_\tau, \quad 
-    \bar{\beta}_e, \bar{\beta}_\mu, \bar{\beta}_\tau
-    \bigg ]
-\end{equation}
-
-Thanks to this linearly parametrizing of $\bar{\beta}$, the first and second 
-derivatives of $\chi^2$ can be calculated analytically.
-
-\begin{align}
-    &\nabla \chi^2   = -2 (A^T V^{-1} \beta - A^T V^{-1} \bar{\beta} )
-    \\
-    &\nabla^2 \chi^2 = 2 A^T V^{-1} A 
-\end{align}
-
-The central value of average branching fraction comes from minimizing this $\chi ^2$, or
-$\nabla \chi ^2 = 0$
-The variance of average branching fraction comes from Fisher Information, 
-$I = \frac{1}{2} \nabla^2 \chi^2 $ evaluated at 
-point with the least chi-squared $\bar{\beta}^{LS}$.
-In other words, the covariance of average branching fractions,  
-$U [\bar{\beta}^{LS}]$,
-equals to the inverse of
-Fisher Information at $\bar{\beta} = \bar{\beta}^{LS}$.
-
-\begin{equation}
-    \boxed{ 
-    \bar{\beta}^{LS}
-    =   (A^T V^{-1} A)^{-1}(A^T V^{-1})  \cdot \beta
-    }
-    \label{eqn:combineMean}
-\end{equation}
-
-\begin{equation}
-    \boxed{
-    U \big[\bar{\beta}^{LS} \big] 
-    =   (A^T V^{-1} A)^{-1} 
-    }
-    \label{eqn:combineCovar}
-\end{equation}
-
-These analytic formula for LS estimator of linear parameters in 
-Eqn \ref{eqn:combineMean} and \ref{eqn:combineCovar} are derived as Eqn 7.10 and 7.11
-in Glen Cowan's Statistical Data Analysis.
-With this combining method, the values of average branching 
-fractions are shown in Eqn \ref{eqn:averagebf}. The correlation of 
-$\bar{\beta}_e,\bar{\beta}_\mu, \bar{\beta}_\tau$ is shown in Fig \ref{fig:corBetaBar}. 
-
-\begin{align}
-    \bar{\beta}_e^{LS}    &= 0.1080 \times \big[1 \pm 0.37\% \text{ (stat)} \pm 2.06\% \text{ (syst)} \big] \\
-    \bar{\beta}_\mu^{LS}  &= 0.1080 \times \big[1 \pm 0.33\% \text{ (stat)} \pm 2.15\% \text{ (syst)} \big] \\
-    \bar{\beta}_\tau^{LS} &= 0.1080 \times \big[1 \pm 0.81\% \text{ (stat)} \pm 6.35\% \text{ (syst)} \big]
-    \label{eqn:averagebf}
-\end{align}
 
 \begin{figure}[ht]
     \centering
-    % \includegraphics[width=7cm]{section5/figures/covarMatrix_beta.png}
-    \caption{ The correlation of $\bar{\beta}_e,\bar{\beta}_\mu, \bar{\beta}_\tau$ }
+    \includegraphics[width=0.99\textwidth]{chapters/Analysis/sectionSystematics/figures/covarMatrix_total.png}
+    \caption{ the statistical and systematical part of the $\textbf{V}$ matrix. }
     \label{fig:corBetaBar}
 \end{figure}
+
+% \subsubsection{Method and Result of Analytic Combining}
+
+% The counting analysis extracts leptonic branching fractions
+% $\{\beta_e, \beta_\mu, \beta_\tau\}$ simultaneously from yields of mutually exclusive channels, 
+% grouped in four trigger-bjet categories, $\mu-1b$,  $\mu-2b$,  $e-1b$ and $e-2b$.
+% Its parameter extraction outputs totally 4 sets of $\{\beta_e, \beta_\mu, \beta_\tau\}$,
+% one set in each category. We denote the output 4 sets of $\{\beta_e, \beta_\mu, \beta_\tau\}$
+% as a vector $\beta$.
+
+% \begin{equation}
+%     \beta = \bigg [
+%     \beta_e^{\mu1b}, \beta_\mu^{\mu1b}, \beta_\tau^{\mu1b}, \quad 
+%     \beta_e^{\mu2b}, \beta_\mu^{\mu2b}, \beta_\tau^{\mu2b}, \quad 
+%     \beta_e^{e1b}, \beta_\mu^{e1b}, \beta_\tau^{e1b}, \quad
+%     \beta_e^{e2b}, \beta_\mu^{e2b}, \beta_\tau^{e2b}
+%     \bigg ]
+% \end{equation}
+
+% $\beta$ variates with respect to the statistical fluctuation 
+% of event yields, as well as the variation of systematical parameters,
+% leading to its statistical and systematical uncertainties.
+
+
+% The statistical variance of $\beta$ is calculated by propagating 
+% the statistical uncertainty of yield in each channel, 
+% then summing them in quadrature. As is given in Eqn \ref{eqn:statVar}.
+% The summation in quadrature is based on the fact that the statistical 
+% fluctuation in each channel is fully independent.
+
+% \begin{equation}
+%     \textbf{V}_{stat} = \sum_{i \in ch} 
+%     \bigg( \frac{\partial \beta}{\partial n_i} \delta_{n_i} \bigg) \otimes 
+%     \bigg( \frac{\partial \beta}{\partial n_i} \delta_{n_i} \bigg)
+%     \label{eqn:statVar}
+% \end{equation}
+
+% The systematic uncertainty due to a given systematical parameter is
+% evaluated by variating this systematical parameter by its 
+% own uncertainty and then taking the changes of outcoming $\beta$. 
+% The total systematic variance is obtained by summing all systematic 
+% uncertainties in quadrature. As is given in Eqn \ref{eqn:systVar}.
+% This summation of quadrature is based on the assumption made in counting analysis 
+% that all systematical parameters in consideration are independent from each other.
+
+
+% \begin{equation}
+%     \textbf{V}_{syst} = \sum_{\theta \in syst}
+%     \big( \Delta_{\theta}\beta \big) \otimes 
+%     \big( \Delta_{\theta}\beta \big)
+%     \label{eqn:systVar}
+% \end{equation}
+
+% The outer product of variations is based on the fact that all elements of
+% $\beta$ is fully correlated when tuning up and down a systematical parameters.
+% Table \ref{tbl:errors} shows the squared root of diagonal elements of 
+% $\textbf{V}_{stat}$ and $\textbf{V}_{syst}$. The full matrix of $\textbf{V}_{stat}$ 
+% and $\textbf{V}_{syst}$ are shown in Fig \ref{fig:varStatSyst}.
+% The total variance of $\beta$ is summation of statistics and systematics variance.
+% The variance matrix not only represents the sensitivity of the measurement 
+% to each systematics, but also characterizes the correction among 
+% $\{\beta_e, \beta_\mu, \beta_\tau\}$ within each category and across all four categories. 
+
+% \begin{equation}
+%     \textbf{V} = \textbf{V}_{stat} + \textbf{V}_{syst}
+% \end{equation}
+
+% To combine the branching fraction in four categories, we construct $\chi^2$ parametrized
+% by average branching fractions, $\bar{\beta}_e,\bar{\beta}_\mu, \bar{\beta}_\tau$ 
+% in Eqn \ref{eqn:DefineChisquared}. 
+
+% \begin{equation}
+%     \chi^2 (\bar{\beta}_e, \bar{\beta}_\mu, \bar{\beta}_\tau) = 
+%     (\beta - \bar{\beta} )^T \textbf{V}^{-1} (\beta - \bar{\beta} )
+%     \label{eqn:DefineChisquared}
+% \end{equation}
+
+% where $\bar{\beta}$ is linearly parametrized by $\bar{\beta}_e, \bar{\beta}_\mu, \bar{\beta}_\tau$ 
+% via a $12 \times 3$ matrix A which consists of four $3\times 3$ identity matrices
+% distributing parameters linearly to 4 categories.
+
+% \begin{equation}
+%     \bar{\beta} = A \bigg [ \bar{\beta}_e, \bar{\beta}_\mu, \bar{\beta}_\tau \bigg ]
+%     =
+%     \bigg [
+%     \bar{\beta}_e, \bar{\beta}_\mu, \bar{\beta}_\tau, \quad 
+%     \bar{\beta}_e, \bar{\beta}_\mu, \bar{\beta}_\tau, \quad 
+%     \bar{\beta}_e, \bar{\beta}_\mu, \bar{\beta}_\tau, \quad 
+%     \bar{\beta}_e, \bar{\beta}_\mu, \bar{\beta}_\tau
+%     \bigg ]
+% \end{equation}
+
+% Thanks to this linearly parametrizing of $\bar{\beta}$, the first and second 
+% derivatives of $\chi^2$ can be calculated analytically.
+
+% \begin{align}
+%     &\nabla \chi^2   = -2 (A^T V^{-1} \beta - A^T V^{-1} \bar{\beta} )
+%     \\
+%     &\nabla^2 \chi^2 = 2 A^T V^{-1} A 
+% \end{align}
+
+% The central value of average branching fraction comes from minimizing this $\chi ^2$, or
+% $\nabla \chi ^2 = 0$
+% The variance of average branching fraction comes from Fisher Information, 
+% $I = \frac{1}{2} \nabla^2 \chi^2 $ evaluated at 
+% point with the least chi-squared $\bar{\beta}^{LS}$.
+% In other words, the covariance of average branching fractions,  
+% $U [\bar{\beta}^{LS}]$,
+% equals to the inverse of
+% Fisher Information at $\bar{\beta} = \bar{\beta}^{LS}$.
+
+% \begin{equation}
+%     \bar{\beta}^{LS} =   (A^T V^{-1} A)^{-1}(A^T V^{-1})  \cdot \beta
+%     \label{eqn:combineMean}
+% \end{equation}
+
+% \begin{equation}
+%     U \big[\bar{\beta}^{LS} \big]  =   (A^T V^{-1} A)^{-1}
+%     \label{eqn:combineCovar}
+% \end{equation}
+
+% These analytic formula for LS estimator of linear parameters in 
+% Eqn \ref{eqn:combineMean} and \ref{eqn:combineCovar} are derived as Eqn 7.10 and 7.11
+% in Glen Cowan's Statistical Data Analysis.
+% With this combining method, the values of average branching 
+% fractions are shown in Eqn \ref{eqn:averagebf}. The correlation of 
+% $\bar{\beta}_e,\bar{\beta}_\mu, \bar{\beta}_\tau$ is shown in Fig \ref{fig:corBetaBar}. 
+
+% \begin{align}
+%     \bar{\beta}_e^{LS}    &= 0.1080 \times \big[1 \pm 0.37\% \text{ (stat)} \pm 2.06\% \text{ (syst)} \big] \\
+%     \bar{\beta}_\mu^{LS}  &= 0.1080 \times \big[1 \pm 0.33\% \text{ (stat)} \pm 2.15\% \text{ (syst)} \big] \\
+%     \bar{\beta}_\tau^{LS} &= 0.1080 \times \big[1 \pm 0.81\% \text{ (stat)} \pm 6.35\% \text{ (syst)} \big]
+%     \label{eqn:averagebf}
+% \end{align}
+
+% \begin{figure}[ht]
+%     \centering
+%     % \includegraphics[width=7cm]{section5/figures/covarMatrix_beta.png}
+%     \caption{ The correlation of $\bar{\beta}_e,\bar{\beta}_\mu, \bar{\beta}_\tau$ }
+%     \label{fig:corBetaBar}
+% \end{figure}
 
 
 \input{chapters/Analysis/sectionSystematics/tables/syst_alt.tex}

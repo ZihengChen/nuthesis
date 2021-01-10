@@ -13,12 +13,12 @@
 % his/her final work.
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+\RequirePackage{rotating}
 % The nuthesis class is based on % amsbook.cls.
-\documentclass[12pt]{nuthesis}
+\documentclass[12pt,reqno]{nuthesis}
 
 % \onehalfspacing
-
+\usepackage{rotating}
 \usepackage{graphicx}
 \usepackage{placeins}
 \usepackage{siunitx}
@@ -34,9 +34,11 @@
 \usepackage[com pat = 1.1.0]{tikz-feynman}
 \usepackage{multirow}
 \usepackage{slashed}
-% \usepackage{gensymb} for \perthousand
 
-
+\usepackage{geometry}
+\geometry{letterpaper, margin=1in, tmargin=1.3in, headsep=24 pt}
+% Page numbers should conform to margin requirements and be placed at least 1” from the top and 
+% right sides of the page, as appears in this document. A tutorial for page number placement appears later in this document
 
 
 \input{frontmatter/glossary}
@@ -47,7 +49,7 @@
 % DATA OF AUTHOR AND DISSERTATION %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \author{Ziheng Chen}
-\title{Measurement of $Br(W\to l \nu)$ based on p-p collision at $\sqrt{s}=13$ TeV}
+\title{Measurement of $Br(W\to l \nu)$ and Test of Lepton Universality with pp collision at $\sqrt{s}=13$ TeV}
 \degree{DOCTOR OF PHILOSOPHY}  
 \field{Physics}
 \graduationmonth{December}       
@@ -69,18 +71,23 @@
     %%%%%%%%%%%%%%%%%%%%%%%%%%%
     \mainmatter  
     
-    \include{chapters/Introduction/chapterMain}
-    \include{chapters/RelatedWorks/chapterMain}
-    \include{chapters/CMSExperiment/chapterMain}
-    \include{chapters/Analysis/chapterMain}
-    % \include{chapters/Extension/chapterMain}
-    % \include{chapters/Upgrade/chapterMain}
-    
+    % \include{chapters/Introduction/chapterMain}
+    % \include{chapters/RelatedWorks/chapterMain}
+    % \include{chapters/CMSExperiment/chapterMain}
+    % \include{chapters/Analysis/chapterMain}
+    % \include{chapters/HGCAL/chapterMain}
+    \include{chapters/Conclusion/chapterMain}
     
     
     %%%%%%%%%%%%%%%%%%%%%%%%%%%
     % some ending stuff       %
     %%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+    \appendix
+    \input{chapters/Appendix/chapterMain.tex}
+
+
 
     \begin{singlespace}
     \bibliographystyle{unsrt}
@@ -88,17 +95,9 @@
         chapters/RelatedWorks/chapterReference,
         chapters/CMSExperiment/chapterReference,
         chapters/Analysis/chapterReference
-        % reference/reference_thhep, 
-        % reference/reference_exhep,
-        % reference/reference_tech
         }
     \end{singlespace}
-
-    \appendix
-    \input{chapters/Appendix/chapterMain.tex}
-
-
-
+    
     \include{vita}
     
 \end{document}

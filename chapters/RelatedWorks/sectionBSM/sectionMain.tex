@@ -51,8 +51,7 @@ The BSMs, which can cause LUV in the top decay and affect our LU test, are shown
 \end{figure}
 
 Figure~\ref{fig:relatedWorks:bsm:topdecaySM} shows the tree-level diagram of the SM top decay. The incoming top quark is denoted as a u-type spinnor $u_a(p_a)$ with four-momentum $p_a$; the outcoming anti-tau is denoted as a v-type spinnor $v_1(k_1)$ with four-momentum $k_1$; the outcoming  $\nu_\tau$ and $b$. are represented with the $\bar{u}$-type spinnors $\bar{u}_2(k_2)$ and $\bar{u}_3(k_3)$ with four-momentum $k_2$ and $k_3$, respectively. Note that correspondence between  $\{\nu_\tau,b\}$ and $\{ \bar{u}_2(k_2), \bar{u}_3(k_3)\}$ are the same when W' or $H^+$ mediates the top decay, but for the leptoquark, we just need to swap the correspondence. The four-momentum exchanged between the fermion currents is denoted as $q=k-1+k_2 = p_a - k_3$. Using the spinnor representation in Figure~\ref{fig:relatedWorks:bsm:topdecaySM}, the pair-wised inner products of the four-momentums in the center-of-mass frame can be calculated based on the energy-momentum conservation:
- 
- \begin{equation}
+\begin{equation}
 \begin{split}
 	q^2 &=  m_t^2 + m_3^2  -2 m_t E_3  \\
     p_a \cdot k_1 &= m_t E_1 \\
@@ -64,8 +63,8 @@ Figure~\ref{fig:relatedWorks:bsm:topdecaySM} shows the tree-level diagram of the
 \end{split}
 \label{eqn:relatedWorks:bsm:innerProduct}
 \end{equation}
-\noindent where all terms related to $m_2$ are neglected because neutrino is massless, and all the inner products are represented in terms of $ ( E_1,E_3 )$ with mass constants. It is equivalent to use $ ( E_2,E_3 )$ or $ ( E_1,E_2 )$ as variables. The top total width is proportional to the integral of matrix element $\overline{ |\mathcal{M}|^2 } $ over the three-body decay phase space $PS_3$
 
+\noindent where all terms related to $m_2$ are neglected because neutrino is massless, and all the inner products are represented in terms of $ ( E_1,E_3 )$ with mass constants. It is equivalent to use $ ( E_2,E_3 )$ or $ ( E_1,E_2 )$ as variables. The top total width is proportional to the integral of matrix element $\overline{ |\mathcal{M}|^2 } $ over the three-body decay phase space $PS_3$
 \begin{equation}
 	\Gamma = \frac{1}{2 m_t} \int \overline{ |\mathcal{M}|^2 } \; dPS_3 = \frac{1}{64 \pi^3 m_t} \int_{0}^{m_t/2} dE_3 \int_{m_t/2-E_3}^{m_t/2} dE_1 \overline{ |\mathcal{M}|^2 } ,
     \label{eqn:relatedWorks:bsm:decayWidth}
@@ -82,21 +81,20 @@ Figure~\ref{fig:relatedWorks:bsm:topdecaySM} shows the tree-level diagram of the
 \label{sec:relatedWorks:bsm:smTopDecay}
 
 In the SM, the total decay width of top quark in Figure~\ref{fig:relatedWorks:bsm:topdecaySM} can be calculated in two ways: the narrow width approximation and the $\overline{ |\mathcal{M}|^2 } $ integral shown in Equation~\ref{eqn:relatedWorks:bsm:decayWidth}. With narrow width approximation, the top width approximately equals to the product top decay width to W, $\Gamma_{t\to b W}$ and the branching fraction of W to tau and tau neutrino $B_{W\to \tau \nu_\tau} = 10.8\%$
-
 \begin{equation}
 \begin{split}
     \Gamma^{NWA} &= \Gamma_{t\to b W} \times B_{W\to \tau \nu_\tau} = \frac{g^2 m_t }{64\pi} \cdot \frac{m_t^2}{m_W^2} \bigg[ 1+2 \frac{m_W^2}{m_t^2}\bigg] \bigg[1-\frac{m_W^2}{m_t^2} \bigg]^2 \times 10.8\%  = 0.157 \text{ GeV}
 \end{split}
 \label{eqn:relatedWorks:bsm:nwa}
 \end{equation}
-\noindent the NWA provides a good approximation to the SM top width because the width of W is indeed relatively small. But for the BSM and the interference between SM and BSM, the propagator's narrow width condition  does not necessarily hold. Thus, it is useful to calculate tree-level diagram with the $\overline{ |\mathcal{M}|^2 } $ integral in the SM case and repeat it for BSM later, where the matrix element is spelt with the Feynman Rule.  In the $\overline{ |\mathcal{M}|^2 } $ integral approach, the finite non-zero width of W is taken into account. On the tree-level, the W width is
 
+\noindent the NWA provides a good approximation to the SM top width because the width of W is indeed relatively small. But for the BSM and the interference between SM and BSM, the propagator's narrow width condition  does not necessarily hold. Thus, it is useful to calculate tree-level diagram with the $\overline{ |\mathcal{M}|^2 } $ integral in the SM case and repeat it for BSM later, where the matrix element is spelt with the Feynman Rule.  In the $\overline{ |\mathcal{M}|^2 } $ integral approach, the finite non-zero width of W is taken into account. On the tree-level, the W width is
 \begin{equation}
 	\Gamma_W = 9 \times \frac{g^2 m_W}{48 \pi} = 2.07 \text{ GeV},
     \label{eqn:relatedWorks:bsm:wWidth}
 \end{equation}
-\noindent where the factor $9=3+2\times 3$ is the multiplicity of the three lepton generations plus two possible quark generations with three colors. The next leading order width $\Gamma_W ^{NLO}$ due to QCD corrections is discussed in the next section. Here the leading order width is good enough for our study. In the Feynman Rule, the propagator of massive gauge vector boson has a gauge parameter $\xi$. Under the unitary gauge, $\xi$ is set to infinity $\xi\to \infty$ and the Feynman Rule for the massive vector propagator is $\frac{g^{\mu \nu} - q^\mu q^\nu/M^2}{q^2-M^2 }$. It has a pole on the real axis at the boson mass $M$. When the massive vector is not stable and thus has a total decay width of $\Gamma$, self-energy of the massive vector propagator induces a finite non-zero imaginary part of the pole which is proportional to the propagator's mass $M$ and the total width $\Gamma$. This leads to the Breit–Wigner propagator:
 
+\noindent where the factor $9=3+2\times 3$ is the multiplicity of the three lepton generations plus two possible quark generations with three colors. The next leading order width $\Gamma_W ^{NLO}$ due to QCD corrections is discussed in the next section. Here the leading order width is good enough for our study. In the Feynman Rule, the propagator of massive gauge vector boson has a gauge parameter $\xi$. Under the unitary gauge, $\xi$ is set to infinity $\xi\to \infty$ and the Feynman Rule for the massive vector propagator is $\frac{g^{\mu \nu} - q^\mu q^\nu/M^2}{q^2-M^2 }$. It has a pole on the real axis at the boson mass $M$. When the massive vector is not stable and thus has a total decay width of $\Gamma$, self-energy of the massive vector propagator induces a finite non-zero imaginary part of the pole which is proportional to the propagator's mass $M$ and the total width $\Gamma$. This leads to the Breit–Wigner propagator:
 \begin{equation}
     \feynmandiagram [inline=(d.base), horizontal=d to b] {
         d -- [boson, edge label=\(W^\pm\), momentum'=\(q\)] b ,
@@ -109,7 +107,6 @@ In the SM, the total decay width of top quark in Figure~\ref{fig:relatedWorks:bs
 
 
 \noindent Now we can build the full matrix element with the Feynman Rule. The amplitude takes the form of a Breit–Wigner propagator sandwiched by two fermion current and scaled by the coupling constant squared. The amplitude and its  complex conjugate read as
-
 \begin{equation}
 	\mathcal{M}  =  -i (\frac{g }{\sqrt{2}})^2 \cdot 
 	\big[ \bar{u}_3 \gamma_\mu P_L u_a \big] 
@@ -117,8 +114,6 @@ In the SM, the total decay width of top quark in Figure~\ref{fig:relatedWorks:bs
 	\big[ \bar{u}_2 \gamma_\nu P_L v_1 \big] 
     \label{eqn:relatedWorks:bsm:smTopDecay:smTopDecay:m}
 \end{equation}
-
-
 \begin{equation}
 	\mathcal{M}^*  =  i (\frac{g }{\sqrt{2}})^2 \cdot 
 	\big[ \bar{v}_1 P_R \gamma_\rho  u_2 \big] 
@@ -127,7 +122,6 @@ In the SM, the total decay width of top quark in Figure~\ref{fig:relatedWorks:bs
 \end{equation}
 
 \noindent The amplitude squared is the production $\mathcal{M}$  and $\mathcal{M^*} $ :
-
 \begin{equation}
 \begin{split}
 	|\mathcal{M}|^2  = &  \frac{g^4}{4} \frac{1}{ (q^2-m^2_{W})^2 +  m^2_W \Gamma^2_W } \cdot \big (g^{\mu \nu} - q^\mu q^\nu/M^2_{W} \big) \big(g^{\rho \sigma} - q^\rho q^\sigma / M^2_{W}\big)  \cdot  \\
@@ -139,7 +133,6 @@ In the SM, the total decay width of top quark in Figure~\ref{fig:relatedWorks:bs
 \end{equation}
 
 \noindent The top quarks produced in the LHC shown in Figure~\ref{fig:relatedWorks:ppCollision:tt} can be be treated as unpolarized. So for the average of $|\mathcal{M}|^2$, we average over initial state spin and sum over final state spin. This step uses some properties of the spinnors and the trace calculation of gamma matrices, including trace for swapping spinnors $\bar{u} u = Tr[ u \bar{u}] $ , the spin completeness relation for spin sum $\sum_s u(p,s) \bar{u}(p,s) = \slashed{p} + m $  and $\sum_s v(p,s) \bar{v}(p,s) = \slashed{p} - m$. The average amplitude squared reads as
-
 \begin{equation}
 \begin{split}
 	\overline{ |\mathcal{M}|^2 } = & \frac{1}{2} \sum_s \mathcal{M}^* \mathcal{M} =
@@ -164,6 +157,7 @@ In the SM, the total decay width of top quark in Figure~\ref{fig:relatedWorks:bs
 	&  + \frac{4}{m^4_W} [ (m_1^2 m_t^2 + m_1^2 m_3^2) (k_1 \cdot k_2) (k_3 \cdot p_a) - 2  m_1^2 m_3^2 m_t^2  (k_1 \cdot k_2) ]\bigg\} .
 \end{split}
 \end{equation}
+
 \noindent Since tau and b mess is much less than the top mass $m_1 \ll m_t $ and $m_3 \ll m_t$, the terms with $m_1$ and $m_3$ can be neglected. Eventually, the average amplitude squared becomes
 \begin{equation}
 	\overline{ |\mathcal{M}|^2 } =  g^4 \frac{2  (  k_2 \cdot k_3) (  k_1 \cdot p_a) }{ (  q^2-m^2_{W})^2 +  m^2_W \Gamma^2_W }  
@@ -171,7 +165,6 @@ In the SM, the total decay width of top quark in Figure~\ref{fig:relatedWorks:bs
 \end{equation}
 
 \noindent where the inner products $(  k_2 \cdot k_3)$ and $ (  k_1 \cdot p_a) $ can be represent in terms of $(E_1,E_3)$ using Equation~\ref{eqn:relatedWorks:bsm:innerProduct}, which essentially parametrizes $\overline{ |\mathcal{M}|^2 } $ as a function on the $(E_1,E_3)$ plane shown in Figure~\ref{fig:relatedWorks:bsm:smTopDecay:smM2}. The decay kinematic constraint corresponds to a triangle area on the  $(E_1,E_3)$ plane. The top total width is obtained from the $\overline{ |\mathcal{M}|^2 } $ integral within this triangle area
-
 \begin{equation}
     \begin{split}
          \Gamma = \frac{g^4}{64 \pi^3 m_t} \int_{0}^{m_t/2} d E_3 \int_{m_t/2-E_3}^{m_t/2} d E_1 \frac{m_t^3 E_1 - 2 m_t^2 E_1^2}{(-2 m_t E_3  + m_t^2  -m_W^2)^2 + m^2_W \Gamma^2_W},
@@ -194,7 +187,6 @@ In the SM, the total decay width of top quark in Figure~\ref{fig:relatedWorks:bs
 
 
 \noindent where can plug in $m_t= 173.1 \text{ GeV}, m_W= 80.6 \text{ GeV}, g=0.64 $  and $\Gamma_W = 2.07$ and evaluate the numerical value of the integral:
-
 \begin{equation}
          \Gamma = 0.154 \text{ GeV} .
 \end{equation} 
@@ -234,7 +226,6 @@ One of the most common ways to model the new physics is to extend the structure 
 
 
 Among the three types, the most relevant one to this thesis is the Nonuniversal G221 model, which is intended to violate the universality in the weak sector. Now, we focus on the nonuniversal G221 model or NUGIM and evaluate our analysis's sensitivity to this model. The interaction Lagrangian in the NUGIM originates from the covariant derivatives for light (gen=1,2) and heavy (gen=3) fermions. Denoting the coupling constants in the $SU(2)_1 , SU(2)_2, U(1)_X$ as $g_1, g_2, g'$, the covariant derivatives are
-
 \begin{equation}
 \begin{split}
 	D_\mu \psi_{gen=1,2} &= \big[ \partial_\mu -ig_1W^a_{1\mu} T^a P_L - ig'YB_\mu\big] \psi_{gen=1,2}  \\
@@ -244,18 +235,16 @@ Among the three types, the most relevant one to this thesis is the Nonuniversal 
 \end{equation}
 
 \noindent Given the mixing angle $\theta_E$ between the $SU(2)_1$ and $SU(2)_2$ group, the underline coupling constants $g_1, g_2$ are related to the SM weak coupling constant $g$;
-
 \begin{equation}
 	g_1=g/ \cos \theta_E, \quad g_2=g/ \sin \theta_E.
 \end{equation}
-\noindent And the SM $W^a$ triplet fields and new BSM triplet fields $W'^a$  are the mixing states of $W_1^a$ and $W_2^a$:
 
+\noindent And the SM $W^a$ triplet fields and new BSM triplet fields $W'^a$  are the mixing states of $W_1^a$ and $W_2^a$:
 \begin{equation}
 	W^a = \frac{g_1 W^a_1 + g_2 W_2^a}{\sqrt{g_1^2+g_2^2}} \quad W'^a = \frac{-g_1 W^a_1 + g_2 W_2^a}{\sqrt{g_1^2+g_2^2}}
 \end{equation}
 
 \noindent NUGIM employs two higgs doublets to generate mass for gauge bosons, including W and W'. Different from the standard 2HDM which is discussed in Section~\ref{sec:relatedWorks:bsm:chargedHiggs}, here the two higgs doublets are responsible for the first two generations and the third generation fermions. A large Higgs VEV ratio between the two doublets, $\tan \beta$,, can explain the relative smallness of masses in the first two generations compared to the top quark, whereas it does not explain the hierarchy $m_t > m_b$. This is in contrast to the 2HDM Type-II models where large $\tan \beta$ can explain the hierarchy $m_b\ll m_t$, but not $m_u, m_c  \ll m_t$. Given the covariant derivatives in Equation~\ref{eqn:relatedWorks:bsm:WPrime:derivative} and the mixing angle $\theta_E$, the Feynman rule for W'  \cite{Edelhauser:2014yra} couplings to the light and heavy fermion currents are 
-
 \begin{equation}
 \begin{split}
 	\bar{t} b W'^+ , \bar{\tau} \nu_\tau W+ \Longrightarrow -\frac{i g}{\sqrt{2}} \cot_E \gamma^\mu P_L \\
@@ -265,7 +254,6 @@ Among the three types, the most relevant one to this thesis is the Nonuniversal 
 \end{equation}
 
 \noindent and the Feynman rule for the propagator $w'$ takes a similar form to the SM W in Equation~\ref{eqn:relatedWorks:bsm:wPropagator}:
-
 \begin{equation}
     \feynmandiagram [inline=(d.base), horizontal=d to b] {
         d -- [boson, edge label=\(W`^{\pm}\), momentum'=\(q\)] b ,
@@ -283,10 +271,10 @@ In Equation~\ref{eqn:relatedWorks:bsm:WPrime:feynmanRule}, the larger is the par
 \end{equation}
 
 \noindent It is also allowed that W' decays into SM Higgs and W boson, $W' \to h +W$, width of which is $ \Gamma_{W'\to h W}  = \frac{1}{4} \Gamma_{W'\to \tau \nu} $  in the limit of large $\tan \beta$ corresponding to the SM fermion hierarchy \cite{KIM2012367}. Thus the total width of W' sums up the hadronic, leptonic and Higgs emitting width;
-
 \begin{equation}
 	\Gamma_{W'} = \frac{g^2 m_{W'}}{48 \pi} \big [ (3+1+\frac{1}{4}) \cot^2_E + (6+2)\tan_E^2 \big] .
 \end{equation}
+
 \noindent where the width is proportional to the $ \cot^2_E $ or $ 1/\cot^2_E$ when $\cot^2_E \gg 1$ or $1 \gg \cot^2_E > 0$.  So NUGIM has a inbuilt upper and lower boundaries for $\cot_E$, constrained by the width of W'. The parameter space beyond this boundaries predicts a W' with too wide width to be physical.  Take a conservatively large width as an example. If the width is smaller than $50\%$ of the W' mass, then 
 \begin{equation}
     0.21 < \cot_E < 6.48.
@@ -308,13 +296,11 @@ In Equation~\ref{eqn:relatedWorks:bsm:WPrime:feynmanRule}, the larger is the par
 \subsubsection{Tau Enhancement}
 
 The total $ \overline{ |\mathcal{M}|^2 }  $ in the NUGIM not only has the contributions from the SM W boson in Section~\ref{sec:relatedWorks:bsm:smTopDecay}, but also includes diagrams for W' $\overline{ |\mathcal{M}|^2 } _{W'} $  and the interference between the W and W' $\overline{ |\mathcal{M}|^2 } _{int} $ . Namely,
-
 \begin{equation}
 	\overline{ |\mathcal{M}|^2 }  = \overline{ |\mathcal{M}|^2 } _{W} +  \overline{ |\mathcal{M}|^2 } _{W'} +  \overline{ |\mathcal{M}|^2 } _{int} .
 \end{equation}
 
 \noindent where the SM part $\overline{ |\mathcal{M}|^2 } _{W} $  has been calculated in Equation~\ref{eqn:relatedWorks:bsm:smTopDecay:smTopDecay:m2}, while $\overline{ |\mathcal{M}|^2 } _{W'} +  \overline{ |\mathcal{M}|^2 } _{int}$ is the new BSM contribution we need to evaluate now. This BSM contribution enhances tau channels in the top decay. Eventually, the ratio of this BSM contribution over the SM contribution will be estimated and compared with our experimental precision. Now consider $\cot_E > 2$ where the BSM branching fraction to first and second generation of leptons are neglectable. With Feynman Rule, the matrix element of top tauonic decay mediated by W', similar to Equation~\ref{eqn:relatedWorks:bsm:smTopDecay:smTopDecay:m}, is spelt as the W' propagator sandwiched by two fermion currents and scaled by the coupling constant squared:
-
 \begin{equation}
 \begin{split}
 	i \mathcal{M}_{W'}  & =  (\frac{g \cot_E}{\sqrt{2}})^2 \cdot 
@@ -323,6 +309,7 @@ The total $ \overline{ |\mathcal{M}|^2 }  $ in the NUGIM not only has the contri
 	\big[ \bar{u}_2 \gamma_\nu P_L v_1 \big] .
 \end{split}
 \end{equation}
+
 \noindent The calculation of the average amplitude squared  $\overline{ |\mathcal{M}|^2 } _{W'} $ and $\overline{ |\mathcal{M}|^2 } _{int}$ has the same mathematical process as that in Section~\ref{sec:relatedWorks:bsm:smTopDecay}. First sum the spins; then evaluate the traces of gamma matrices. The result of such calculation reads as
 \begin{equation}
 	\overline{ |\mathcal{M}|^2 }_{W'} =  g^4 \cot_E^4 \frac{2  (  k_2 \cdot k_3) (  k_1 \cdot p_a) }{ (  q^2-m^2_{W'})^2 +  m^2_{W'} \Gamma^2_{W'} }  
@@ -365,10 +352,10 @@ Upon integrating  $\overline{ |\mathcal{M}|^2 } _{W'} +  \overline{ |\mathcal{M}
 
 
 \noindent Then the relative tau enhancement from the BSM with respect to SM can be obtained by $\Gamma^{BSM}/ \Gamma^{SM}$, where $\Gamma^{SM}=154$ MeV. For example, when $\cot_E=6$  and $m_{W'}=1$ TeV, $\overline{ |\mathcal{M}|^2 } _{W'} +  \overline{ |\mathcal{M}|^2 } _{int}$ integral yields $\Gamma^{BSM} = 0.86 $ MeV and tau enhancement is
-
 \begin{equation}
 	\frac{ \Gamma_{t\to b \tau \nu_\tau}^{BSM} }{ \Gamma_{t\to b \tau \nu_\tau}^{SM} } \sim 0.55 \%, \quad (\cot_E=6, m_{W'}=1 \text{ TeV}).
 \end{equation}
+
 \noindent In addition to this example $(\cot_E, m_{W'})$, the tau enhancement $ \Gamma_{t\to b \tau \nu_\tau}^{BSM} / \Gamma_{t\to b \tau \nu_\tau}^{SM} $ can be calculated in the  parameters space $(\cot_E, m_{W'})$ , shown as Figure~\ref{fig:relatedWorks:bsm:WPrime:tauEnhancement}. The relative tau enhancement decrease as $m_{W'}$ increases and $\cot_E$ approaches to 1. For $\cot_E=4,6,10$, the $\Gamma_{t\to b \tau \nu_\tau}^{BSM}/  \Gamma_{t\to b \tau \nu_\tau}^{SM} $ as a 1D function of W' mass, decomposed into $\overline{ |\mathcal{M}|^2 } _{W'} $ and $\overline{ |\mathcal{M}|^2 } _{int}$  parts, is shown in Figure~\ref{fig:relatedWorks:bsm:WPrime:tauEnhancement1d}. In Figure~\ref{fig:relatedWorks:bsm:WPrime:tauEnhancement}, the contours corresponds per-mil and percent level enhancement are shown as white dash line, the upper boundary of $\cot_E$ is shown as the black line. Our analysis confirms lepton universality and no tau enhancement with a $2\%$ relative uncertainty, which translate to exclusion of $ \Gamma_{t\to b \tau \nu_\tau}^{BSM} / \Gamma_{t\to b \tau \nu_\tau}^{SM} >  2\%$ with 0.68 confidence integral, shown as the left side of the green contour. $ \Gamma_{t\to b \tau \nu_\tau}^{BSM} / \Gamma_{t\to b \tau \nu_\tau}^{SM} >  4\%$ is shown as the left side of the blue contour. For $m_{W'}>600$ GeV, the excluding region of our analysis is beyond the the model's upper boundary of $\cot_E$ and not compatible with the direct search, shown in Figure~\ref{fig:relatedWorks:bsm:WPrime:directSearch}.
 
 
@@ -452,13 +439,12 @@ The direct searches for $H^+$ have been conducted in two parts of the phase spac
 
 
 In 2HDMs, there are two complex scalar doublets with eight fields:
-
 \begin{equation}
 	\Phi_1 = \begin{bmatrix} \phi_1^+ \\ \frac{\nu_1}{\sqrt{2}} + \frac{\rho_1+i\eta_1}{\sqrt{2}}  \end{bmatrix} , 
     \Phi_2 = \begin{bmatrix} \phi_2^+ \\ \frac{\nu_2}{\sqrt{2}} + \frac{\rho_2+i\eta_2}{\sqrt{2}}  \end{bmatrix}
 \end{equation}
-\noindent where the ratio of the VEV of the two doublets are
 
+\noindent where the ratio of the VEV of the two doublets are
 \begin{equation}
 \tan \beta = \frac{\nu_2}{\nu_1},
 \end{equation}
@@ -472,13 +458,12 @@ V=& m_{11}^2 \Phi_1^\dagger \Phi_1 + m_{22}^2 \Phi_2^\dagger \Phi_2 - m_{12}^2 (
 +\frac{\lambda_5}{2}[ (\Phi_1^\dagger \Phi_2)^2 + (\Phi_2^\dagger \Phi_1)^2 ]
 \end{split}
 \end{equation}
+
 \noindent which is minimized when we choose the vacuum expectation value $\Phi_1= [0,v_1/\sqrt{2}]^T$ and $\Phi_2= [0,v_2/\sqrt{2}]^T$.
 
 
 
 \noindent Out of the eight fields, three get ‘eaten’ to give mass to the W and Z gauge bosons; the remaining five are physical scalar fields. These are a charged scalar, two neutral scalars, and one pseudoscalar \cite{BRANCO20121}. The Lagrangian for the mass of the charged scalars is given by
-
-
 \begin{equation}
 	\mathcal{L}_{H^{\pm} mass} = \big( m_{12}^2 -(\lambda_4+\lambda_5) v_1 v_2 \big) 
     \begin{bmatrix} \phi_1^- & \phi_2^-  \end{bmatrix}
@@ -487,14 +472,12 @@ V=& m_{11}^2 \Phi_1^\dagger \Phi_1 + m_{22}^2 \Phi_2^\dagger \Phi_2 - m_{12}^2 (
 \end{equation}
 
 \noindent which implies $m_{H} = \sqrt{ [m_{12}^2 /(v_1 v_2) - \lambda_4 - \lambda_5] [v_1^2+v_2^2]} $ and the mass eigenstate of the charged Higgs is a linear mixing of $\phi^\pm_1$ and $\phi^\pm_2$:
-
 \begin{equation}
 H^\pm = \phi_2^\pm \cos \beta - \phi_1^\pm \sin \beta .
 \end{equation}
 
 
 There are several classes of 2HDMs. If impose flavor conservation, there are four possibilities (Type I–IV) for the two Higgs doublets to couple to the SM fermions. Each of the four types gives rise to rather different phenomenology. In these four types of 2HDM, the generic form of the charged Higgs coupling to the SM fermions can be expressed as a superposition of right- and left-chiral coupling components \cite{PhysRevD.41.3421}. The interaction Lagrangian in the top decay process is given by
-
 \begin{equation}
 	\mathcal{L}_{I} =  \frac{g}{\sqrt{2} m_W} H^\pm \bigg[  \bar{t} (A \, P_R + B \, P_L) b + \bar{\nu}  (C\, P_L)  l \bigg]
     \label{eqn:relatedWorks:bsm:chargedHiggs:intLagrangian}
@@ -504,8 +487,10 @@ There are several classes of 2HDMs. If impose flavor conservation, there are fou
 
 \begin{table}[ht]
     \centering
-    \setlength{\tabcolsep}{1.2em}
-    \renewcommand{\arraystretch}{1.2}
+    \setlength{\tabcolsep}{1em}
+    \renewcommand{\arraystretch}{1.5}
+    \caption{ There are four possibilities of 2HDM if imposing flavor conservation. The four types differ from each other by the specific way fermion mass to generate with $\Phi_1,\Phi_2$ .The second and third column show the fermion mass which $\Phi_1,\Phi_2$ is responsible for in the four types. The last three columns show the coupling constants A, B, C in the interaction Lagrangian in Equation~\ref{eqn:relatedWorks:bsm:chargedHiggs:intLagrangian}.}
+    \resizebox{\textwidth}{!}{
     \begin{tabular}{c|cc | ccc }
         \hline
         Type & $\Phi_1$ Doublet & $\Phi_2$ Doublet & A               & B                 & C                    \\
@@ -515,15 +500,13 @@ There are several classes of 2HDMs. If impose flavor conservation, there are fou
         III  & $e$              & $u$, $d$         & $m_t cot \beta$ & $m_b \tan \beta$  & $-m_\tau \cot \beta$ \\
         IV   & $u$              & $d$, $e$         & $m_t cot \beta$ & $-m_b \cot \beta$ & $m_\tau \tan \beta$  \\
         \hline
-    \end{tabular}
-    \caption{ There are four possibilities of 2HDM if imposing flavor conservation. The four types differ from each other by the specific way fermion mass to generate with $\Phi_1,\Phi_2$ .The second and third column show the fermion mass which $\Phi_1,\Phi_2$ is responsible for in the four types. The last three columns show the coupling constants A, B, C in the interaction Lagrangian in Equation~\ref{eqn:relatedWorks:bsm:chargedHiggs:intLagrangian}.}
+    \end{tabular}}
     \label{tab:relatedWorks:bsm:chargedHiggs:types}
 \end{table}
 
 
 
 In type-II 2HDM, given the interaction Lagrangian in Equation~\ref{eqn:relatedWorks:bsm:chargedHiggs:intLagrangian} and coupling constants in Table~\ref{tab:relatedWorks:bsm:chargedHiggs:types}, the total width of $H^+$ can be calculated as \cite{PhysRevD.99.095012}
-
 \begin{equation}
     \Gamma_{H^\pm} = \frac{g^2 m_{H^\pm}}{32 \pi} \frac{1}{m^2_W} \times
     \begin{cases}
@@ -534,8 +517,6 @@ In type-II 2HDM, given the interaction Lagrangian in Equation~\ref{eqn:relatedWo
 \end{equation}
 
 \noindent where $H \to s c, \tau \nu$ are considered when $m_{H^+} < m_t$ and $H \to t b, s c, \tau \nu$ are considered when $m_{H^+} > m_t$. The Feynman Rule for the $H^+$ propagator takes into account its mass and width:
-
-
 \begin{equation}
     \feynmandiagram [inline=(d.base), horizontal=d to b] {
         d -- [scalar, edge label=\(H^{\pm}\), momentum'=\(q\)] b ,
@@ -547,7 +528,6 @@ In type-II 2HDM, given the interaction Lagrangian in Equation~\ref{eqn:relatedWo
 
 \subsubsection{Tau Enhancement}
 Similar to NUGIM W' in the previous subsection, the relative tau enhancement with respect to SM, $\Gamma_{t\to b \tau \nu_\tau}^{BSM}/  \Gamma_{t\to b \tau \nu_\tau}^{SM} $, can be calculated in the context of type-II 2HDM. This is done be by evaluating the tree-level Feynman diagram for the $H^\pm$-mediated top decay in the tau channel. For $t \to b \tau \nu$, the total $ \overline{ |\mathcal{M}|^2 }  $ not only has the contributions from the SM W boson discussed in Section~\ref{sec:relatedWorks:bsm:smTopDecay}, but also includes $H^\pm$ part $\overline{ |\mathcal{M}|^2 } _{H} $  and the interference between the W and $H^\pm$  $\overline{ |\mathcal{M}|^2 } _{int} $ . Namely,
-
 \begin{equation}
 	\overline{ |\mathcal{M}|^2 }  = \overline{ |\mathcal{M}|^2 } _{W} +  \overline{ |\mathcal{M}|^2 } _{H} +  \overline{ |\mathcal{M}|^2 } _{int} .
 \end{equation}
@@ -557,6 +537,7 @@ Similar to NUGIM W' in the previous subsection, the relative tau enhancement wit
 	\mathcal{M}  =  (\frac{g }{\sqrt{2}})^2 \frac{1}{m^2_W}  \cdot
 	\frac{\big[ \bar{u}_2 ( C  \, P_R) v_1 \big] \big[ \bar{u}_3  (A \, P_R + B  \, P_L) u_a \big]  }{q^2-m^2_{H} + i m_{H} \Gamma_{H}} 
 \end{equation}
+
 \noindent and
 \begin{equation}
 	\mathcal{M}^*  =  (\frac{g }{\sqrt{2}})^2 \frac{1}{m^2_W}  \cdot 
@@ -571,7 +552,6 @@ Similar to NUGIM W' in the previous subsection, the relative tau enhancement wit
 
 
 \noindent and for the interference between the vector W and scalar $H^\pm$ 
-
 \begin{equation}
 \begin{split}
     \overline{ |\mathcal{M}|^2 } _{int} = &   2 \overline{ Re[\mathcal{M}^*_W \mathcal{M}_{H}] }  \\
@@ -603,7 +583,6 @@ Similar to NUGIM W' in the previous subsection, the relative tau enhancement wit
 
 
 Finally, using Equation~\ref{eqn:relatedWorks:bsm:decayWidth}, the extra top width due the BSM $H^+$ equals the integral of  $\overline{ |\mathcal{M}|^2 } _{H} +  \overline{ |\mathcal{M}|^2 } _{int}$
-
 \begin{equation}
 	\Gamma^{BSM} = \frac{1}{64 \pi^3 m_t} \int_{0}^{m_t/2} dE_3 \int_{m_t/2-E_3}^{m_t/2} dE_1  \bigg\{ \overline{ |\mathcal{M}|^2 } _{H} +  \overline{ |\mathcal{M}|^2}_{int}  \bigg \},
 \end{equation}

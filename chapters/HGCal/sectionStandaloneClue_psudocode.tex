@@ -1,0 +1,70 @@
+
+\section{Pseudocode}
+
+Pseudocode of CLUE in serialized implementation. Parallelization is discussed in Section~\ref{sec:implementation}.
+
+
+\begin{algorithm}[h]
+% \SetAlgoLined
+    \For{$i \in$ points}{
+        $\rho_{[i]} = 0$ \\
+        \For{$j \in \Omega_{d_c}(i)$ }{
+            \If{$ dist(i,j) < d_c$}{
+                $\rho_{[i]}$ += $w_{[j]}$
+            }
+        }
+    }
+\caption{calculate $\rho$}    
+\end{algorithm}
+
+
+
+
+\begin{algorithm}[h]
+% \SetAlgoLined
+    \For{$i \in$ points}{
+        $\delta_{[i]} = +\infty$ \\
+        $nh_{[i]} = -1$ \\
+        \For{$j \in \Omega_{d_m}(i)$ }{
+            \If{ $dist(i,j) < d_m$ \textbf{and} $\rho_{[j]} > \rho_{[i]}$}{
+                \If {$dist(i,j) < \delta_{[i]} $}{
+                    $nh_{[i]} = j$  \\
+                    $\delta_{[i]} = d_{ij}$ \\
+                }
+            }
+        }
+    }
+\caption{calculate $\delta$}    
+\end{algorithm}
+
+
+
+\begin{algorithm}[h]
+% \SetAlgoLined
+    k = 0\;
+    stack = [] \;
+    \For{i $\in$ points}{
+        $isSeed = \rho_{[i]} > \rho_c \textbf{ and } \delta_{[i]} > \delta_c$ \\
+        $isOutlier = \rho_{[i]} < \rho_c \textbf{ and } \delta_{[i]} > \delta_o$ \\
+        \eIf {$isSeed$}{
+            $clusterId_{[i]}$ = k \\
+            k++ \\
+            stack.pushback(i) \\
+        } { \If{not $isOutlier$ }{
+            $followers_{[nh_{[i]}]}.pushback(i)$
+            }
+        }
+    }
+    
+    \While{stack.size $>$ 0}{
+        i = stack.back \\
+        stack.popback \\
+        \For{$j \in followers_{[i]}$}{
+            $clusterId_{[j]} = clusterId_{[i]}$ \\
+            stack.pushback(j) \\
+        }
+    }
+    
+\caption{find seeds and outliers, assign clusters}
+\label{algo:algorithm:assignClusters}
+\end{algorithm}

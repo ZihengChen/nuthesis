@@ -34,6 +34,8 @@
 \usepackage[com pat = 1.1.0]{tikz-feynman}
 \usepackage{multirow}
 \usepackage{slashed}
+\usepackage{lscape}
+\usepackage[ruled,vlined]{algorithm2e}
 
 \usepackage{geometry}
 \geometry{letterpaper, margin=1in, tmargin=1.3in, headsep=24 pt}
@@ -60,6 +62,7 @@
 
 \begin{document}
     
+    
     %%%%%%%%%%%%%%%%%%%%%%
     % Some initial stuff %
     %%%%%%%%%%%%%%%%%%%%%%
@@ -71,22 +74,22 @@
     %%%%%%%%%%%%%%%%%%%%%%%%%%%
     \mainmatter  
     
-    % \include{chapters/Introduction/chapterMain}
-    % \include{chapters/RelatedWorks/chapterMain}
-    % \include{chapters/CMSExperiment/chapterMain}
-    % \include{chapters/Analysis/chapterMain}
-    % \include{chapters/HGCAL/chapterMain}
+    \include{chapters/Introduction/chapterMain}
+    
+    \include{chapters/RelatedWorks/chapterMain}
+    \include{chapters/CMSExperiment/chapterMain}
+    \include{chapters/Analysis/chapterMain}
+    \include{chapters/HGCal/chapterMain}
+    
     \include{chapters/Conclusion/chapterMain}
     
     
     %%%%%%%%%%%%%%%%%%%%%%%%%%%
     % some ending stuff       %
     %%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-    \appendix
+    \begin{appendix}
     \input{chapters/Appendix/chapterMain.tex}
-
+    \end{appendix}
 
 
     \begin{singlespace}
@@ -94,7 +97,8 @@
     \bibliography{
         chapters/RelatedWorks/chapterReference,
         chapters/CMSExperiment/chapterReference,
-        chapters/Analysis/chapterReference
+        chapters/Analysis/chapterReference,
+        chapters/HGCal/chapterReference
         }
     \end{singlespace}
     

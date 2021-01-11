@@ -1,9 +1,10 @@
 
 
 
-\section{CLUE Clustering Algorithm}
-\label{sec:algorithm}
+\section{CLUE Algorithm}
+\label{sec:clue}
 
+\subsection{Overview}
 Calorimeters with high lateral and longitudinal readout granularity, capable of providing a fine grained image of electromagnetic and hadronic showers, have been suggested for future high energy physics experiments \cite{calice2012calorimetry}. The  silicon sensor readout cells of the CMS endcap calorimeter (HGCAL) \cite{Collaboration:2293646} for HL-LHC \cite{Apollinari:2284929} have an area of about $1 \mathrm{cm}^2$.
 When a particle showers, the deposited energy is collected by the sensors on the layers which the shower traverses. 
 The purpose of the clustering algorithm when applied to shower reconstruction is to group together individual energy deposits (hits) originating from a particle shower. Due to the high lateral granularity, the number of hits per layer is large, and it is computationally advantageous to collect together hits in 2D clusters layer-by-layer \cite{Chen:2017btc} and then associate these 2D clusters, representing energy blobs, in different layers \cite{Collaboration:2293646}.
@@ -22,14 +23,15 @@ The input to the clustering algorithm is a set of $n$ hits, whose number varies 
 
 Most well-known algorithms do not simultaneously satisfy the requirements on linear scalability and easy parallelization for applications like clustering hits in high granularity calorimeters, which is characterized by low dimension and $n > k \gg m$. It is therefore important to investigate new, fast and parallelizable clustering algorithms, as well as their optimized accompanying spatial index that can be conveniently constructed and queried in parallel.
 
-In this paper, we describe a novel density-based clustering algorithm (CLUE: CLUsters of Energy) with linear scalability and easy parallelization. Its development was inspired by the work described in ref.~\cite{rodriguez2014clustering}. In Section~\ref{sec:algorithm}, we describe the CLUE algorithm and its accompanying spatial index. Then in Section~\ref{sec:implementation}, some details of GPU implementations are discussed. Finally, in Section~\ref{sec:performance} we present CLUE's ability on non-spherical cluster shapes and noise rejection, followed by its computational performance when executed on CPU and GPU with synthetic data, mimicking hits in high granularity calorimeters.
+% In this paper, we describe a novel density-based clustering algorithm (CLUE: CLUsters of Energy) with linear scalability and easy parallelization. Its development was inspired by the work described in ref.~\cite{rodriguez2014clustering}. In Section~\ref{sec:algorithm}, we describe the CLUE algorithm and its accompanying spatial index. Then in Section~\ref{sec:implementation}, some details of GPU implementations are discussed. Finally, in Section~\ref{sec:performance} we present CLUE's ability on non-spherical cluster shapes and noise rejection, followed by its computational performance when executed on CPU and GPU with synthetic data, mimicking hits in high granularity calorimeters.
 
 
 
 % ------------------------------------
 % ------------------------------------
 
-\subsection{algorithm}
+\subsection{Algorithm}
+\label{sec:algorithm}
 % review of current popular method
 Clustering data is one of the most challenging tasks in several scientific domains. The definition of cluster is itself not trivial, as it strongly depends on the context. Many clustering methods have been developed based on a variety of induction principles \cite{maimon2005data}. Currently popular clustering algorithms include (but are not limited to) partitioning, hierarchical and density-based approaches \cite{maimon2005data,han2011data}. Partitioning approaches, such as k-mean \cite{lloyd1982least}, compose clusters by optimizing a dissimilarity function based on distance. However, in the application to high granularity calorimeters, partitioning approaches are prohibitive because the number of clusters $k$ is not known a priori. Hierarchical methods make clusters by constructing a dendrogram with a recursion of splitting or merging. However, hierarchical methods do not scale well because each decision to merge or split needs to scan over many objects or clusters \cite{han2011data}. Therefore, they are not suitable for our application. Density-based methods, such as DBSCAN \cite{Ester:1996:DAD:3001460.3001507}, OPTICS \cite{Ankerst:1999:OOP:304182.304187} and Clustering by Fast Search and Find Density Peak (CFSFDP) \cite{rodriguez2014clustering}, group points by detecting continuous high-density regions. They are capable of discovering clusters of arbitrary shapes and are efficient for large spatial database. If a spatial index is used, their computational complexity is $O(n\log n)$ \cite{han2011data}. However, one of the potential weaknesses of the currently well-known density-based algorithms is that they intrinsically include serial processes which are hard to parallelize: DBSCAN has to iteratively visit all points within an enclosure of density-connectedness before working on the next cluster \cite{Ester:1996:DAD:3001460.3001507}; OPTICS needs to sequentially add points in an ordered list to obtain a dendrogram of reachability distance \cite{Ankerst:1999:OOP:304182.304187}; CFSFDP needs to sequentially assign points to clusters in order of decreasing density \cite{rodriguez2014clustering}. In the application to high granularity calorimeters, as discussed in Section~\ref{sec:introduction}, linear scalability and fully parallelization are essential to handle a huge dataset efficiently by means of heterogeneous computing.
 
@@ -113,7 +115,7 @@ After $\rho$ and $\delta$ are calculated, points with density $\rho>\rho_c$ and 
 \end{equation}
 \noindent The lists of followers are built by registering the points which are neither seeds nor outliers to the follower lists of their nearest-highers. The cluster indices, associating a follower with a particular seed, are passed down from seeds through their chains of followers iteratively. Outliers and their descendant followers are guaranteed not to receive any cluster indices from seeds, which grants a noise rejection as shown in Fig.~\ref{fig:performance:outlierCuts}. The calculation of $\rho, \delta$ and the decision of seeds and outliers both support $n$-way parallelization, while the expansion of clusters can be done with $k$-way parallelization.
 % theoretical complexity
-Pseudocode of CLUE is included in Appendix~\ref{app:pseudocode}.
+Pseudocode of CLUE is included in Appendix~\ref{sec:clue:pseudocode}.
 % For each of the $n$ points, CLUE computes $\rho$, $\delta$, list of followers and cluster index with a constant complexity granted by grid spatial index, resulting in $O(n)$ computational complexity. Besides, the space complexity is also $O(n)$ because CLUE only keeps a few algorithmic variables for each of $n$ points and does not rely on any $n\times n$ matrix. 
 
 
@@ -130,6 +132,7 @@ Pseudocode of CLUE is included in Appendix~\ref{app:pseudocode}.
 \begin{table}[t]
     \renewcommand{\arraystretch}{1.25}
     % \small
+    \caption{Kernels and Parallelism}
     \centering
     \begin{tabular}{l|l|c|c}
         \hline
@@ -142,7 +145,7 @@ Pseudocode of CLUE is included in Appendix~\ref{app:pseudocode}.
         expand clusters                          & 1 seed/thread  & k             & 1024 \\
         \hline
     \end{tabular} 
-    \caption{Kernels and Parallelism}
+    
     \label{tbl:implementation:parallelism}
 \end{table}
 

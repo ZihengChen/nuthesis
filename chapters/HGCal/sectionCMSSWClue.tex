@@ -1,7 +1,12 @@
-\section{CLUE in CMSSW}
-\label{sec:aglgorithm}
+\section{CLUE in the CMSSW}
+\label{sec:cmsswClue}
 
-\subsection{Implementation}
+
+The future High Luminosity LHC (HL-LHC) is expected to deliver about 5 times higher instantaneous luminosity than the present LHC, resulting in pile-up up to 200 interactions per bunch crossing (PU200). As part of the phase-II upgrade program, the CMS collaboration is developing a new end-cap calorimeter system, the High Granularity Calorimeter (HGCAL), featuring highly-segmented hexagonal silicon sensors and scintillators with more than 6 million channels. For each event, the HGCAL clustering algorithm needs to group more than $10^5$ hits into clusters. As consequence of both high pile-up and the high granularity, the HGCAL clustering algorithm is confronted with an unprecedented computing load. CLUE (CLUsters of Energy) is a fast fully-parallelizable density-based clustering algorithm, optimized for high pile-up scenarios in high granularity calorimeters. In this paper, we present both CPU and GPU implementations of CLUE in the application of HGCAL clustering in the CMS Software framework (CMSSW). Comparing with the previous HGCAL clustering algorithm, CLUE on CPU (GPU) in CMSSW is 30x (180x) faster in processing PU200 events while outputting almost the same clustering results.
+
+
+\subsection{Implementation in the CMSSW}
+
 
 
 % image algo
@@ -37,14 +42,13 @@ CLUsters of Energy (CLUE) \cite{cluepaper} is a recently-proposed parallelizable
     \label{fig:results}
 \end{figure}
 
-To validate the implementation of CLUE in CMSSW, results of CLUE-CPU and CLUE-GPU are compared with the previous clustering algorithm in CMSSW version 10.6, referred as CMSSW\_10\_6\_X in this paper. Based on the simulated $t\bar{t}$ events, CLUE-CPU and CLUE-GPU completely agree with each other, while both of them show some rare disagreements with the previous clustering algorithm implemented in CMSSW\_10\_6\_X. Such disagreements are caused by the different ordering of hits with exactly equal $\rho$ or equal $\delta$ when using different data structures, namely grid in CLUE and KD-Tree in CMSSW\_10\_6\_X. An example of clustering result is shown in Figure~\ref{fig:results}, where from left to right are results from CMSSW\_10\_6\_X, CLUE-CPU and CLUE-GPU. In this example, CLUE-CPU and CLUE-GPU provide almost the same result as the clusters in CMSSW\_10\_6\_X. However, a small notable difference is the blue cluster, which includes 4 hits in CMSSW\_10\_6\_X but 2 in CLUE. This is because the hit at about (x=60, y=106) cm is equally close to the two neighbouring hits in orange cluster and blue cluster, and its two different assignments, caused by different ordering of these two neighbors in spatial index, are equally correct. The topology of blue cluster in both cases are acceptable. Therefore, it is reasonable to conclude that CLUE in CMSSW gives almost the same clustering result as CMSSW\_10\_6\_X with neglectable differences.
+To validate the implementation of CLUE in CMSSW, results of CLUE-CPU and CLUE-GPU are compared with the previous clustering algorithm in CMSSW version 10.6, referred as CMSSW\_10\_6\_X. Based on the simulated $t\bar{t}$ events, CLUE-CPU and CLUE-GPU completely agree with each other, while both of them show some rare disagreements with the previous clustering algorithm implemented in CMSSW\_10\_6\_X. Such disagreements are caused by the different ordering of hits with exactly equal $\rho$ or equal $\delta$ when using different data structures, namely grid in CLUE and KD-Tree in CMSSW\_10\_6\_X. An example of clustering result is shown in Figure~\ref{fig:results}, where from left to right are results from CMSSW\_10\_6\_X, CLUE-CPU and CLUE-GPU. In this example, CLUE-CPU and CLUE-GPU provide almost the same result as the clusters in CMSSW\_10\_6\_X. However, a small notable difference is the blue cluster, which includes 4 hits in CMSSW\_10\_6\_X but 2 in CLUE. This is because the hit at about (x=60, y=106) cm is equally close to the two neighbouring hits in orange cluster and blue cluster, and its two different assignments, caused by different ordering of these two neighbors in spatial index, are equally correct. The topology of blue cluster in both cases are acceptable. Therefore, it is reasonable to conclude that CLUE in CMSSW gives almost the same clustering result as CMSSW\_10\_6\_X with neglectable differences.
 
 
 
 
 
-\subsection{Performance in CMSSW}
-\label{sec:performance}
+\subsection{Performance in the CMSSW}
 
 
 \begin{figure}[ht]

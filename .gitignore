@@ -34,3 +34,4 @@ nuthesis.pdf
 *.blg
 
 *.DS_Store
+*.synctex*

@@ -1,6 +1,6 @@
 
 
-\section{QFT Description of SM}
+\chapter{Note for Standard Model}
 \label{sec:relatedWorks:qft}
 
 
@@ -79,13 +79,13 @@ The values of these free SM parameters are determined from the experiments. In a
 
 
 
-\subsection{Gauge Symmetry}
+\section{Gauge Symmetry}
 \label{sec:relatedWorks:qft:gaugeSymmetry}
 
 Gauge theory is a type of quantum field theory, the Lagrangian of which is invariant under local phase transformations or gauge transformations. The term ``gauge" should be understood as the regularization of the redundant degrees of freedom in the Lagrangian. The transformations between different gauges form a Lie group, which characterizes this gauge theory. Yang-Mills gauge theory is the gauge theory for the non-abelian Lie groups. (``abelian" or ``non-abelian" tells whether two gauge transformations in the group are commutable or not.) The standard model is built based on the Yang-Mills gauge theory. But why does SM have to respect the gauge symmetry? The primordial reason is that by enhancing the global phase symmetry to local phase symmetry, we can introduce massless gauge bosons and consequently obtain the couplings between the fermions and the gauge boson. Another benefit anchors in the renormalization. A QFT is useful only if it is renormalizable to make finite meaningful predictions. And gauge theory is proven renormalizable. Besides obtaining force and renormalization, a relatively modern understanding of gauge symmetry is that it is not a symmetry in nature but an artificial consequence of the redundant degree of freedom in the theory. According to Noether's theorem, a nature symmetry corresponds to a conservation law. For example, the global gauge symmetry of QED gives rise to the conservation of electric charge. But the local symmetry in the QED, which is related to the redundant degree of freedom in the mathematical description of the photo polarization, does not lead to any corresponding conserved current. The thinking about the essence of the gauge symmetry is nicely presented in Schwartz's book, \textit{Quantum Field Theory and the Standard Model} \cite{schwartz2014quantum}. Here provide a description of the gauge symmetry of the abelian U(1) group and the non-abelian SU(2), SU(3) groups, which is crucial for SM electroweak and QCD, as well as beyond SM models for lepton non-universality in Section~\ref{sec:relatedWorks:bsm}.
 
 
-\subsubsection{U(1) Gauge Symmetry}
+\subsection{U(1) Gauge Symmetry}
 The Lagrangian of a U(1) gauge theory with spinnor field $\psi$ and the associated gauge vector field $B_\mu$ is
 % 
 \begin{equation}
@@ -110,7 +110,7 @@ The Lagrangian of a U(1) gauge theory with spinnor field $\psi$ and the associat
 \noindent The interaction between the U(1) charge current $j^\mu \equiv g' \bar{\psi}\gamma^\mu \psi$ and the gauge field $B_\mu$ is $-j^\mu A_\mu$ and is embedded in the covariant derivative $D_\mu$. The QED is a U(1) Gauge theory. So the QED Lagrangian takes the form of equation~\ref{eqn:relatedWorks:qft:u1Lagrangian}. If we choose $g'\frac{Y}{2} = -e$ and use the conventional notation $A_\mu$ for the QED gauge field, equation~\ref{eqn:relatedWorks:qft:u1Lagrangian} becomes the common form of QED Lagrangian.
 
 
-\subsubsection{SU(2) Gauge Symmetry}
+\subsection{SU(2) Gauge Symmetry}
 
 The three generators of SU(2) group $T_a$ with $a \in {1,2,3 }$ are usually represented by the half of Pauli Matrices $T_a = \frac{1}{2} \tau_a = \frac{1}{2} \sigma_a$, where the Pauli Matrices are 
 %
@@ -151,7 +151,7 @@ The three generators of SU(2) group $T_a$ with $a \in {1,2,3 }$ are usually repr
 
 
 
-\subsubsection{SU(3) Gauge Symmetry}
+\subsection{SU(3) Gauge Symmetry}
 The eight generators of SU(3) group $T_a$ with $a \in {1,2,\dots 8}$ are usually represented by the half of Gell-mann Matrices $T_a = \frac{1}{2} \lambda_a$, where the Gell-mann Matrices are 
 %
 \begin{equation}
@@ -209,7 +209,7 @@ The eight generators of SU(3) group $T_a$ with $a \in {1,2,\dots 8}$ are usually
 
 
 
-\subsection{The Higgs Mechanism}
+\section{The Higgs Mechanism}
 \label{sec:relatedWorks:qft:higgsMechanism}
 One might notice that the gauge fields discussed above in Section~\ref{sec:relatedWorks:qft:gaugeSymmetry} are all massless: the Lagrangians do not have any terms for the gauge fields' mass because directly adding such mass terms breaks the gauge symmetry. The massless gauge field does not cause problems in the QED and QCD, where photon and gluon are indeed massless. But for weak interaction, it is known that weak force is short-range, and thus the weak bosons must be massive. But if we naively add a mass term for the weak boson by hand, e.g. $m W_\mu W^\mu$, and give up the gauge symmetry, we will come across divergence in the loop integrals related to the propagator and end up with an un-renormalizable theory failing to make any meaningful predictions at high energy scale. The way to get around is the `` higgs mechanism" which generates mass for gauge bosons via spontaneous symmetry breaking while maintaining the gauge symmetry. It first introduces a scalar field $\phi$ with spontaneously-broken global symmetry. $\phi$ has gauge charge, and thus couples via the covariant derivative with the gauge filed that desires mass. Eventually, it is the gauge covariant derivatives of a spontaneously-broken $\phi$ that provides the mass for the gauge field. For this reason, the mass of the gauge particle is often intuitively interpreted as the ``resistance" when the gauge boson moves in the $\phi$ field and interacts with it. In this subsection, the higgs mechanism with $U(1)$ and $SU(2)$ spontaneously broken symmetry are illustrated.
 
@@ -222,7 +222,7 @@ One might notice that the gauge fields discussed above in Section~\ref{sec:relat
 
 
 
-\subsubsection{U(1) SSB}
+\subsection{U(1) SSB}
 
 Consider a $U(1)$ gauge theory with a scalar field $\phi$, which has a $U(1)$ global symmetric potential
 \begin{equation}
@@ -290,7 +290,7 @@ Consider a $U(1)$ gauge theory with a scalar field $\phi$, which has a $U(1)$ gl
 \noindent Now, the gauge boson acquires its mass! To summary, what is happening is the following: because of the non-trivial vev of the scalar field, SSB happens and produces the Higgs field and the Goldstone field; the Goldstone boson is eaten by the the gauge boson; the gauge boson then become massive and digest the degree of freedom of the Goldstone boson into the transverse polarization which is necessary for massive particles; the higgs field is revealed after the SSB, which predicts a new massive scalar higgs boson.
 
 
-\subsubsection{SU(2) SSB}
+\subsection{SU(2) SSB}
 The Higgs mechanism with SSB for $SU(2)$ symmetry is similar to $U(1)$ breaking but requires two scalar fields forming a scalar doublet. This is the same structure as the scalar field in the SM with $U(1)\times SU(2) \to U(1)$ SSB discussed in Section~\ref{sec:relatedWorks:qft:gws}. Therefore,  $SU(2)$ breaking in this section provides an illustration of SSB with the scalar doublet. More complex scalar structures, such as 2 higgs doublets (2HDM) considered in Section~\ref{sec:relatedWorks:bsm:chargedHiggs} or higgs triplet, break following the same principle. Here we illustrate the Higgs mechanism with $SU(2)$ SSB by considering a doublet of two complex scalar fields, $\phi = (\phi^+, \phi^0)^T$, which has a $SU(2)$  global symmetric potential as
 \begin{equation}
     V(\phi) = \frac{1}{2} \mu^2 \phi^\dagger\phi + \frac{1}{4} \lambda(\phi^\dagger\phi )^2.
@@ -345,7 +345,7 @@ The Higgs mechanism with SSB for $SU(2)$ symmetry is similar to $U(1)$ breaking 
 
 \noindent where $\mathcal{W}^a_\mu = W^a_\mu - \frac{1}{g} \partial_\mu \theta^a / \nu - f_{abc}\theta^b W^c_\mu$ are three massive gauge bosons after absorbing three Goldstone bosons.
 
-% \subsubsection{$U(1)\times SU(2) \to U(1)$ Breaking}
+% \subsection{$U(1)\times SU(2) \to U(1)$ Breaking}
 
 % \begin{equation}
 % \begin{split}
@@ -356,7 +356,7 @@ The Higgs mechanism with SSB for $SU(2)$ symmetry is similar to $U(1)$ breaking 
 % \end{equation}
 % \noindent where the covariant derivative is $D_\mu = \partial_\mu +i g' \frac{Y}{2} B_\mu +i g \frac{\tau_a}{2} W^a_\mu$ with hypercharge of the complex doublet chosen to be one, $Y=1$. The same process can be used in 
 
-\subsection{GWS Electroweak Model}
+\section{GWS Electroweak Model}
 \label{sec:relatedWorks:qft:gws}
 % Glashow-Weinberg-Salam 
 The $U(1) \times SU(2)$ gauge symmetric Lagrangian of GWS model for the SM electroweak unification reads 
@@ -393,7 +393,7 @@ The $U(1) \times SU(2)$ gauge symmetric Lagrangian of GWS model for the SM elect
 \noindent The Lagrangian in Equation~\ref{eqn:relatedWorks:qft:gws:lagragian} contains many crucial ideas to realize the unification of electromagnetic and weak interaction. Here list three of the most fundamental ideas. First, the electroweak mixing angle mixes the $U(1)$ and $SU(2)$ gauge bosons. Second, the Higgs mechanism with $U(1)\times SU(2)\to U(1)$ breaking generates mass for gauge bosons under the electroweak mixing angle. Third, the Yukawa couplings generate the fermion mass and result in the fixing between the fermions' flavor eigenstates and mass eigenstates.
 
 
-\subsubsection{Electroweak Mixing Angle}
+\subsection{Electroweak Mixing Angle}
 GWS model allows an electroweak mixing angle $\theta_W$  in the $\mathcal{L}_{U(1)\times SU(2)}$ such that 
 \begin{equation}
     g sin(\theta_W) = g' cos(\theta_W) = e.
@@ -465,16 +465,16 @@ Besides a mixing pattern in the fermion-gauge couplings in Equation~\ref{eqn:rel
     \centering
     % \includegraphics[width=0.6\textwidth]{gluon.png}
     % Using the layered layout
-    \feynmandiagram [small] {
+    \feynmandiagram [small, horizontal=i1 to f1] {
       {i1 [particle=\(\gamma\)],i2[particle=\(\gamma\)]} -- [photon] a [dot] -- [photon] {f1[particle=\(W^{-}\)],f2[particle=\(W^{+}\)]},
     };
-    \feynmandiagram [small] {
+    \feynmandiagram [small, horizontal=i1 to f1] {
       {i1 [particle=\(Z\)],i2[particle=\(\gamma\)]} -- [photon] a [dot] -- [photon] {f1[particle=\(W^{-}\)],f2[particle=\(W^{+}\)]},
     };
-    \feynmandiagram [small] {
+    \feynmandiagram [small, horizontal=i1 to f1] {
       {i1 [particle=\(Z\)],i2[particle=\(Z\)]} -- [photon] a [dot] -- [photon] {f1[particle=\(W^{-}\)],f2[particle=\(W^{+}\)]},
     };
-    \feynmandiagram [small] {
+    \feynmandiagram [small, horizontal=i1 to f1] {
       {i1 [particle=\(W^{-}\)],i2[particle=\(W^{+}\)]} -- [photon] a [dot] -- [photon] {f1[particle=\(W^{-}\)],f2[particle=\(W^{+}\)]},
     };
     \caption{Vertices of SM electroweak Quatic-Gauge-Couplings.}
@@ -484,7 +484,7 @@ Besides a mixing pattern in the fermion-gauge couplings in Equation~\ref{eqn:rel
 
 
 
-\subsubsection{Gauge Boson Mass}
+\subsection{Gauge Boson Mass}
 The weak gauge boson must be massive since the weak force is indicated short-ranged by the experiments. Nowadays, the masses of W, Z boson have been measured as $M_W =80.379\pm 0.012 $ Gev and $M_Z=91.1876\pm0.0021$ GeV, which in the GWS model is generated by the Higgs mechanism with $U(1)_Y \times SU(2)_L \to U(1)_{EM}$ spontaneous symmetry breaking. The breaking is implemented by a complex scalar doublet field $\phi = [\phi^+, \phi^0]$, the same structure as the Higgs mechanism with $SU(2)$ breaking. While the isospin of the scalar doublet is determined by the $SU(2)$ generators, the choice of the doublet's hypercharge determines the mass of $Z$ and A field after the breaking. To obtain massless photon, the hypercharge of $\phi$ is therefore chosen to be $Y_{\phi} = 1$. The derivation of the photon mass and weak boson mass with $Y_{\phi} = 1$ is as following 
 \begin{equation}
 \begin{split}
@@ -546,7 +546,7 @@ The weak gauge boson must be massive since the weak force is indicated short-ran
 \end{figure}
 
 
-\subsubsection{Fermion Mass and Fermion Mixing}
+\subsection{Fermion Mass and Fermion Mixing}
 
 In GWS model, the fermion mass is allowed by introducing Yukawa coupling between the fermion and the scalar doublet $\phi$ with the coupling constant $y_f$. After the spontaneous symmetry breaking $U(1)_Y \times SU(2)_L \to U(1)_{EM}$, $\phi$ is expended around its VEV as $\phi=(0, (\nu+h)/\sqrt{2})^T$. Accordingly, the Lagrangian of the Yukawa coupling between the fermion and the scalar doublet $\phi$ is transformed into the terms for fermion mass and terms for Higgs-fermion interaction. For example, considering only the first family of leptons and quarks, the Lagrangian in the Yukawa coupling sector reads as
 \begin{equation}
@@ -636,7 +636,7 @@ In GWS model, the fermion mass is allowed by introducing Yukawa coupling between
 \end{align}
 
 
-\subsection{Quantum Chromodynamics}
+\section{Quantum Chromodynamics}
 \label{sec:relatedWorks:qft:qcd}
 
 

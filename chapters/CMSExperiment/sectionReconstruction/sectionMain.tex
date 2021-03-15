@@ -106,7 +106,7 @@ The PF candidates in a jet may include the hadrons from the pile-up activities. 
 
 
 
-\subsection{B-Tagging}
+\subsection{b-Jet Tagging}
 
 To identify the jets originating from the b quarks, several tagging algorithms have been developed \cite{Chatrchyan:2012jua, Sirunyan:2017ezt, Bols:2020bkb}. 
 
@@ -127,14 +127,14 @@ The third tagger is the Combined MVA (cMVA). When electrons and muons present in
 
 
 
-\subsection{Tau-Tagging}
+\section{Hadronic Tau Identification}
 
 About $64.8\%$ of taus decay hadronically. The major decay modes of hadronic taus include $B(\tau^- \to h^- \nu_\tau)=11.5\% $, $B(\tau^- \to h^- \pi^0 \nu_\tau)=25.9\% $ (where the mass of $h^-\pi^0$ system is resonant at $\rho(770)$), $B(\tau^- \to h^- \pi^0 \pi^0 \nu_\tau)=9.5\% $ and $B(\tau^- \to h^- h^+ h^- \nu_\tau)=9.8\% $ (where mass of $h^- \pi^0 \pi^0$ and $h^- h^+ h^- $ system is resonant at $a_1(1260)$). The tau reconstruction at the CMS relies on these hadronic decay modes.
 
 For each reconstructed jet, the tau reconstruction first attempts to match the jet constituents to the patterns of the common hadronic decay modes. The matching, also known as mode finding, is performed with the hadrons-plus-strips (HPS) algorithm. If the jet structure is found compatible with a decay mode and the decay mode involves certain meson resonances like $\rho(770)$ and $a_1(1260)$, HPS further checks consistency between visible mass of the tau candidate and the expected meson resonance. After the mode finding, a $\tau_h$ score based on the structure and isolation of the candidate's constituents is computed to discriminate against fakes from the quark or gluon jets, which could otherwise be significant due to the complex QCD environment in the LHC. Besides, discriminators against the electron and muon are also developed.
 
 
-\subsubsection{The $\tau_h$ Mode Finding}
+\subsection{The $\tau_h$ Mode Finding}
 
 Starting from the constituents of the reconstructed jets, the hadrons-plus-strips (HPS) algorithm is used to match the jet structure to the expected $\tau_h$ pattern. 
 
@@ -153,7 +153,7 @@ Based on the reconstructed strips and qualified tracks in a jet, the HPS algorit
 
 \noindent If any charged particles or strip is located outside the signal cone, the $\tau_h$ candidate is rejected.
 
-\subsubsection{Discriminator against jets}
+\subsection{Discriminator against jets}
 
 To reduce the fakes from gluon or quark jets, discriminators are designed against $j\to \tau$ fakes for the $\tau_h$ candidates. Comparing with the quark and gluon jets, the $\tau_h$ tends to have a cleaner calorimeter environment in its near-by region. Base on this principle, an isolation quantity in a $\Delta R = 0.3$ cone is calculated. Two discriminators have been developed for 2016 analysis. They are isolation sum discriminator and MVA-based discriminator. For Run-2, the MVA classifier is improved by a more flexible classifier model, deep neural networks. 
 

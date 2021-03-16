@@ -4,7 +4,7 @@
 
 \subsection{Data}
 
-In this analysis, data is selected based on the presence of at least one muon or one electron. The single muon dataset requires that events contain at least one muon with $p_T > 25$ GeV and passing the loose track isolation criterion, $Iso_{track} < 0.1$. The single electron dataset requires that there be at least one electron satisfying the requirement that $p^T > 30$ GeV and that it passes the tight identification requirements as defined by the EGamma POG.  The specific dataset names and the associated integrated luminosities are listed in Table~\ref{tab:dat:data2016}.
+In this analysis, data is selected based on the presence of at least one muon or one electron. The single muon dataset requires that events contain at least one muon with $\pt > 25$ GeV and passing the loose track isolation criterion, $\rm Iso_{track} < 0.1$. The single electron dataset requires that there be at least one electron satisfying the requirement that $\pt > 30$ GeV and that it passes the tight identification requirements as defined by the EGamma POG.  The specific dataset names and the associated integrated luminosities are listed in Table~\ref{tab:dat:data2016}.
 
 \input{chapters/Analysis/sectionDataset/tables/data_2016.tex}
 
@@ -18,9 +18,10 @@ The full dataset consists of 35.9 fb$^{-1}$ of integrated luminosity~\cite{cms:l
 
 
 \subsection{Simulated Datasets}
-Simulated Monte Carlo (MC) datasets are used for modelling the signal process and most of the background processes. It is observed that simulation is insufficient for modelling the background arising from multijet QCD. Consequently, that background $\ttbar$ is estimated using data-driven techniques. The details of the background estimation are presented in section~\ref{sec:analysis:background}.
+Simulated Monte Carlo (MC) datasets are used for modelling the major SM processes, including SM diboson, $\PW/\PZ/\gamma$ plus jets, single-top and \ttbar. The background from multijet QCD is estimated by a data-driven approach discussed in section~\ref{sec:analysis:background}
+% It is observed that simulation is insufficient for modelling the background arising from multijet QCD. Consequently, that background $\ttbar$ is estimated using data-driven techniques. The details of the background estimation are presented.
 
-The simulated samples used in modelling the background and signal are shown in table~\ref{tab:dat:mc2016}  The production of the samples was carried during the Summer 16 campaingn and the production of the \acrfull{miniaod} datasets was done using CMSSW release 8.0.26.patch2. The same release was used for processing both the data and the simulated samples. Lepton universality is assumed for the simulated datasets, i.e., $ Br(W\to l) = 10.8\%$ using values consistent with the average values listed in the PDG \cite{exhep:pdg:Patrignani:2016xqp}. 
+The simulated samples used in modelling the background and signal are shown in table~\ref{tab:dat:mc2016}.  The production of the samples was carried during the Summer 16 campaingn and the production of the \acrfull{miniaod} datasets was done using CMSSW release \texttt{8.0.26.patch2}. The same release was used for processing both the data and the simulated samples. Lepton universality is assumed for the simulated datasets, i.e., $ Br(W\to l) = 10.8\%$ using values consistent with the average values listed in the PDG \cite{exhep:pdg:Patrignani:2016xqp}. 
 
 \input{chapters/Analysis/sectionDataset/tables/mc_2016.tex}
 
@@ -44,17 +45,18 @@ Differences between the pileup distribution used in simulation and data is corre
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.5\textwidth]{chapters/Analysis/sectionDataset/figures/pileup_systematics.pdf}
-    \caption{(\emph{top}) Pileup distribution in data and simulation including the $\pm\sigma$ variation of the data pileup distributions. (\emph{bottom}) The weights parameterized by number of simulated pileup resulting from taking the ratio of the pileup distribution in data and simulation.}
+    \includegraphics[height=0.42\textheight]{chapters/Analysis/sectionDataset/figures/pileup_systematics.pdf}
+    \includegraphics[height=0.42\textheight]{chapters/Analysis/sectionDataset/figures/n_pv}
+    \caption{(\emph{left top}) Pileup distribution in data and simulation including the $\pm\sigma$ variation of the data pileup distributions. (\emph{left bottom}) The weights parameterized by number of simulated pileup resulting from taking the ratio of the pileup distribution in data and simulation. (\emph{right}) Comparison of primary vertex multiplicity between data and simulated datasets. }
     \label{fig:analysis:dataset:pileup}
 \end{figure}
 
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=0.5\textwidth]{chapters/Analysis/sectionDataset/figures/n_pv}
-    \caption{Comparison of primary vertex multiplicity between data and simulated datasets.}
-    \label{fig:analysis:dataset:npv}
-\end{figure}
+% \begin{figure}[ht]
+%     \centering
+    
+%     \caption{Comparison of primary vertex multiplicity between data and simulated datasets.}
+%     \label{fig:analysis:dataset:npv}
+% \end{figure}
 \FloatBarrier
 
 
@@ -99,7 +101,7 @@ Based on differences between the observed and predicted \PZ \pt spectrums, weigh
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.45\textwidth]{chapters/Analysis/sectionDataset/figures/z_pt_weighting}
+    \includegraphics[width=0.55\textwidth]{chapters/Analysis/sectionDataset/figures/z_pt_weighting}
     \caption{\emph{top.} Comparison of weighted and unweighted dilepton \pt spectrum for dimuon events with two jets and no b tags. \emph{bottom.} Comparison between ration of distributions in the top distribution and the analytical function for generating weights.}
     \label{fig:analysis:dataset:ww_weight}
 \end{figure}

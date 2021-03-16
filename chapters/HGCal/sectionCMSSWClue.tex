@@ -1,8 +1,10 @@
-\section{CLUE in the CMSSW}
+\section{Heterogeneous Computing of CLUE in the CMS Software Framework}
 \label{sec:cmsswClue}
 
 
-The future High Luminosity LHC (HL-LHC) is expected to deliver about 5 times higher instantaneous luminosity than the present LHC, resulting in pile-up up to 200 interactions per bunch crossing (PU200). As part of the phase-II upgrade program, the CMS collaboration is developing a new end-cap calorimeter system, the High Granularity Calorimeter (HGCAL), featuring highly-segmented hexagonal silicon sensors and scintillators with more than 6 million channels. For each event, the HGCAL clustering algorithm needs to group more than $10^5$ hits into clusters. As consequence of both high pile-up and the high granularity, the HGCAL clustering algorithm is confronted with an unprecedented computing load. CLUE (CLUsters of Energy) is a fast fully-parallelizable density-based clustering algorithm, optimized for high pile-up scenarios in high granularity calorimeters. In this paper, we present both CPU and GPU implementations of CLUE in the application of HGCAL clustering in the CMS Software framework (CMSSW). Comparing with the previous HGCAL clustering algorithm, CLUE on CPU (GPU) in CMSSW is 30x (180x) faster in processing PU200 events while outputting almost the same clustering results.
+% The future High Luminosity LHC (HL-LHC) is expected to deliver about 5 times higher instantaneous luminosity than the present LHC, resulting in pile-up up to 200 interactions per bunch crossing (PU200). As part of the phase-II upgrade program, the CMS collaboration is developing a new end-cap calorimeter system, the High Granularity Calorimeter (HGCAL), featuring highly-segmented hexagonal silicon sensors and scintillators with more than 6 million channels. For each event, the HGCAL clustering algorithm needs to group more than $10^5$ hits into clusters. As consequence of both high pile-up and the high granularity, the HGCAL clustering algorithm is confronted with an unprecedented computing load. CLUE (CLUsters of Energy) is a fast fully-parallelizable density-based clustering algorithm, optimized for high pile-up scenarios in high granularity calorimeters. 
+
+In this section, we present both CPU and GPU implementations of CLUE in the application of HGCAL clustering in the CMS Software framework (CMSSW). Comparing with the previous HGCAL clustering algorithm, CLUE on CPU (GPU) in CMSSW is 30x (180x) faster in processing PU200 events while outputting almost the same clustering results.
 
 
 \subsection{Implementation in the CMSSW}

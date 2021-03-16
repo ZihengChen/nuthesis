@@ -2,8 +2,16 @@
 \label{sec:analysis:result}
 
 
-This sections presents results of the measurements of the branching
-fractions using the two methods described earlier.  The values of the
+This section presents results of the measurements of the branching
+fractions using the two methods described earlier. 
+The two approaches yield consistent result.
+Then, the ratios of branching
+fractions and the derived SM quantities are presented based on the branching
+fractions measured by the shape analysis, the more precise approach.
+
+
+\subsection{W branching fractions}
+The values of the
 branching fractions measured using the two approaches are shown in
 Table~\ref{tab:results} and Figure~\ref{fig:wbr_result_1D}.  These plots
 also show the current, best measured values of the W branching fractions
@@ -13,8 +21,6 @@ correlated because of the construction of the model and because of the
 constraint that the sum of branching fractions for leptonic and hadronic
 decay modes be equal to one.  To demonstrate this, two dimensional
 contours have been drawn and are shown in Figure~\ref{fig:contours_2D}.
-Additionally, the covariance matrix for the branching fractions is show
-in Figure~\ref{fig:correlation_matrix_POI}
 
 One important distinction between the two measurements is that the MLE
 method measures the branching fraction simultaneously in all final state
@@ -25,7 +31,7 @@ them using a $\chi^{2}$ fit.
 \begin{table}[htb!]
     \centering
     \setlength{\tabcolsep}{1.5em}
-    \renewcommand{\arraystretch}{1.}
+    \renewcommand{\arraystretch}{1.5}
     \caption{Values of branching fractions determined in both
         analysis approaches and the PDG values.  Errors combine
         statistical and systematics uncertainties.
@@ -68,23 +74,23 @@ them using a $\chi^{2}$ fit.
             
 \begin{figure}[htb!]
     \begin{center}
-    \includegraphics[width=0.95\textwidth]{chapters/Analysis/sectionResult/figures/unblinded_summary_plot.pdf}
+    \includegraphics[width=0.7\textwidth]{chapters/Analysis/sectionResult/figures/unblinded_summary_plot.pdf}
     \caption{Summary of measured values of leptonic branching fractions.}
     \label{fig:wbr_result_1D}
     \end{center}
 \end{figure}
 
+% \begin{figure}[htb!]
+%     \begin{center}
+%     \includegraphics[width=0.5\textwidth]{chapters/Analysis/sectionResult/figures/correlation_matrix_POI_unblinded.pdf}
+%     \caption{Correlation matrix between each branching fraction component.}
+%     \label{fig:correlation_matrix_POI}
+%     \end{center}
+% \end{figure}
+
 \begin{figure}[htb!]
     \begin{center}
-    \includegraphics[width=0.5\textwidth]{chapters/Analysis/sectionResult/figures/correlation_matrix_POI_unblinded.pdf}
-    \caption{Correlation matrix between each branching fraction component.}
-    \label{fig:correlation_matrix_POI}
-    \end{center}
-\end{figure}
-
-\begin{sidewaysfigure}[htb!]
-    \begin{center}
-    \includegraphics[width=0.95\textwidth]{chapters/Analysis/sectionResult/figures/result_contours_2d.pdf}
+    \includegraphics[width=0.99\textwidth]{chapters/Analysis/sectionResult/figures/result_contours_2d.pdf}
     \caption{Two dimensional comparisons of leptonic branching
     fractions.  For each pair shown in the panels, the branching
     fraction that is not shown has been marginalized over.  The dashed
@@ -92,7 +98,12 @@ them using a $\chi^{2}$ fit.
     dimensional Gaussian distribution.}
     \label{fig:contours_2D}
     \end{center}
-\end{sidewaysfigure}
+\end{figure}
+
+
+\FloatBarrier
+
+\subsection{Ratios of Branching Fractions and Derived Quantities}
 
 
 
@@ -111,13 +122,13 @@ $g(b_{\ell_{1}}, \ell_{2})$ is a bivariate normal distribution with parameters
 determined from the likelihood fit.  It is also possible to carry out the
 transformation above for the two dimensional case so that ratios of all
 elctrons and muons to taus can be compared as in Figure~\ref{fig:ratios_2D}.
-Table~\ref{tab:ratios} shows comparisons between the ratios constructed from
+Table~\ref{tab:analysis:result:ratios} shows comparisons between the ratios constructed from
 the measurements described above, and those measured by LEP and ATLAS as well
 as the SM expectation. 
 
 \begin{figure}[htb!]
     \begin{center}
-    \includegraphics[width=0.95\textwidth]{chapters/Analysis/sectionResult/figures/result_contours_2d_ratio.pdf}
+    \includegraphics[width=0.7\textwidth]{chapters/Analysis/sectionResult/figures/result_contours_2d_ratio.pdf}
     \caption{Two dimensional distributions of the ratios $B(W\rightarrow
     \tau\nu)/B(W\rightarrow e\nu)$ vs $B(W\rightarrow \tau\nu)/B(W\rightarrow \mu\nu)$ 
     with comparisons of the CMS result to LEP and ATLAS measurements.}
@@ -127,8 +138,8 @@ as the SM expectation.
 
 \begin{table}[htb!]
     \centering
-    \topcaption{Ratios of branching fractions.
-    \label{tab:ratios}}
+    \caption{Ratios of branching fractions.}
+    \label{tab:analysis:result:ratios}
     \begin{tabular}{l|ccc}
                                                                                                & CMS               & LEP               & ATLAS              \\
     \hline                                                                 
@@ -146,23 +157,74 @@ To do both of these calculations, the following relation between the
 leptonic branching fractions and CKM matrix elements is useful, 
 
 \begin{equation}
-    \frac{1}{\mathcal{B}(\mathrm{W} \rightarrow \ell\bar{\nu}_{\ell})} =
-    3\left\{1 + \left[1 + \frac{\alpha_{S}(M^{2}_{\mathrm{W}})}{\pi}\right]
+    R^W_{\rm h/l} = \frac{B_h}{1-B_h} = 
+    \left[1 + \frac{\alpha_{S}(M^{2}_{\mathrm{W}})}{\pi}\right]
     \sum_{\substack{i = (\mathrm{u,c}), \\ j=(\mathrm{d, s,
-    b})}}\left|\rm V_{ij}\right|^{2}\right\},
+    b})}}\left|\rm V_{ij}\right|^{2},
 \end{equation}
 
-where $\alpha_{S}(M^{2}_{\mathrm{W}})$ is the strong coupling constant
-at the $\PW$ pole and $V_{ij}$ are the CKM matrix elements.  Solving for
-$\sum_{ij}\left|V_{ij}\right|^{2}$ and using (these are the numbers used
-for the LEP combination) a value of $\alpha_{S}(M^{2}_{\mathrm{W}}) =
-0.119 \pm 0.002$ and sum over CKM matix elements squared excluding
-$V_{cs}$ and $V_{tb}$ equal to $1.0544 \pm 0.0051$, the above expression
-above can be used to calculate a value of $1.991 \pm 0.019$ is obtained.
-Further solving for $\left|V_{cs}\right|$ yields a value of $0.968 \pm
-0.010$.  The uncertainty on this quantity is almost entirely determined
-by the experimental uncertainty of the leptonic branching fraction
-measurment.
+\noindent where $\alpha_{S}(M^{2}_{\mathrm{W}})$ is the strong coupling constant
+at the $\PW$ pole and $V_{ij}$ are the CKM matrix elements. The CMS value for
+the ratio of total hadronic and total leptonic branching fraction is 
+\begin{equation}
+    R^W_{\rm h/l} = 2.060\pm0.021,
+\end{equation}
+\noindent which leads to the following derived value for $\alpha_s(m_W)$, $\sum_{\substack{uc\\dsb}} |V_{ij}|^2$ and $V_{cs}$.
+
+% Solving for
+% $\sum_{ij}\left|V_{ij}\right|^{2}$ and using (these are the numbers used
+% for the LEP combination) a value of $\alpha_{S}(M^{2}_{\mathrm{W}}) =
+% 0.1120 \pm 0.0010$ and sum over CKM matix elements squared excluding
+% $V_{cs}$ and $V_{tb}$ equal to $1.0544 \pm 0.0051$, the above expression
+% above can be used to calculate a value of $1.991 \pm 0.019$ is obtained.
+% Further solving for $\left|V_{cs}\right|$ yields a value of $0.968 \pm
+% 0.010$.  The uncertainty on this quantity is almost entirely determined
+% by the experimental uncertainty of the leptonic branching fraction
+% measurment.
+
+
+
+\begin{table}[!h]
+    \setlength{\tabcolsep}{0.5em}
+    \renewcommand{\arraystretch}{2}
+    \centering
+    \caption{SM quantities can be derived from the CMS measured $R^W_{\rm h/l}$. }
+    \resizebox{0.99\textwidth}{!}{
+    \begin{tabular}{ccc|ccc}
+        \hline
+        Assumption &  &  Quantity & CMS & LEP & CMS+LEP\\
+        \hline
+        && $R^W_{\rm h/l}$ & $2.060\pm0.021$ & $2.068\pm0.025$ & $2.063\pm0.016$ \\
+        \hline
+        CKM Unitarity: $\sum_{uc,dsb} |V_{ij}|^2 = 2$ & $\Longrightarrow$ & $\alpha_s(m_W) $ & $0.094\pm0.033$ & $0.108\pm0.040$ & $0.099\pm0.026$  \\%$
+        \hline
+        PDG~\cite{pdg2020}: $\alpha_s(m_W) = 1.1120\pm0.010$     & $\Longrightarrow$ & $\sum_{\substack{uc\\dsb}} |V_{ij}|^2 $&$ 1.985\pm0.021$ & $1.997\pm0.025$ & $1.992\pm0.016$ \\ %
+        \hline
+        $\begin{matrix} 
+            \text{PDG~\cite{pdg2020}: } \alpha_s(m_W) = 1.1120\pm0.010 \\ 
+            \text{PDG~\cite{pdg2020}: } \sum_{\substack{ud,us,ub\\cd,cb}} |V_{ij}|^2 =1.0490(18) \end{matrix} $ 
+        & $\Longrightarrow$ & $V_{cs}$ & $ 0.969\pm 0.011$ & $0.974\pm0.013$ & $0.971\pm0.008$ \\
+        % PDG: $\alpha_s(m_W) = 1.1120\pm0.010$~\cite{pdg2020}    & \multirow{2}{*}{$\Longrightarrow$} & \multirow{2}{*}{$V_{cs}$ &$ 0.968\pm 0.011$}  \\ %=
+        % PDG: $\sum_{\substack{ud,us,ub\\cd,cb}} |V_{ij}|^2 =1.0490(18)$~\cite{pdg2020} & & &\\
+        % PDG $\sum_{\substack{uc\\dsb}} |V_{}|^2 + |V_{us}|^2 +|V_{ub}|^2 +|V_{cd}|^2 +|V_{cb}|^2=1.0490(18)$~\cite{pdg2020} & &\\
+        \hline
+    \end{tabular}
+    }
+    \label{tab:introduction:derivedQuantity}
+\end{table}
+
+
+
+ \begin{figure}[!h]
+    \centering
+%     \includegraphics[width=0.45\textwidth]{vcs_meson_ds.png} \qquad
+    \includegraphics[width=0.7\textwidth]{chapters/RelatedWorks/sectionVcs/figures/vcs_world_average.png}
+    \caption{The $|V_{cs}|$ derived from the $W\to l\nu$ measurement by CMS, LEP and CMS+LEP, in comparison with the direct measurements~\cite{pdg2020}.}
+    \label{fig:relatedWorks:vcs:measurements}
+\end{figure}
+
+
+
 
 
 

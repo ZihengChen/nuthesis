@@ -3,7 +3,7 @@
 \label{sec:cmsexperiment:reconstruction}
 
 % overview
-The structure design of the CMS detector is ideal for the particle-flow reconstruction, which uses information from all subdetector systems to reconstruct each of the final state particles, including muons, electrons, photons, and hadrons. Based on the reconstructed particles, also known as the particle-flow candidates, jets are computed and then tagged by the b-jet tagger and hadronic tau tagger.
+The structure design of the CMS detector is ideal for the particle-flow reconstruction, which uses information from all subdetector systems to reconstruct each of the final state particles, including muons, electrons, photons, and hadrons. Based on the reconstructed particles, also known as the particle-flow candidates, jets are computed and then tagged by the \PQb jet tagger and hadronic tau tagger.
 
 \begin{figure}[ht]
     \centering
@@ -49,7 +49,7 @@ The global muon reconstruction involves extending the muon trajectories to inclu
     \centering
     \includegraphics[width=0.5\textwidth]{chapters/CMSExperiment/sectionReconstruction/figures/resEle.png}
     \includegraphics[width=0.42\textwidth]{chapters/CMSExperiment/sectionReconstruction/figures/resGamma.png}
-    \caption{The energy resolution of the electron (left) and photon (right) \cite{cms:tdr1:Bayatian:2006nff}.  }
+    \caption{The energy resolution of the electron \emph{(left)} and photon \emph{(right)} \cite{cms:tdr1:Bayatian:2006nff}.  }
     \label{fig:cmsexperiment:reconstruction:resEle}
 \end{figure}
 
@@ -86,7 +86,7 @@ Then the charged hadron reconstruction becomes the last step. Charge hadrons are
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.5\textwidth]{chapters/CMSExperiment/sectionReconstruction/figures/jetres_pf_chs}
-    \caption{ The jet energy resolution \cite{cms:particleflow:Sirunyan:2017ulk} with and without CHS in three pileup scenarios $\langle \mu\rangle =0,15,25$. The improvement from CHS is more prominent at higher pile-ups.  }
+    \caption{ The jet energy resolution \cite{cms:particleflow:Sirunyan:2017ulk} with and without Charged Hadron Subtraction (CHS) in three pileup scenarios $\langle \mu\rangle =0,15,25$. The improvement from CHS is more prominent at higher pile-ups.  }
     \label{fig:cmsexperiment:reconstruction:resJet}
 \end{figure}
 
@@ -100,26 +100,26 @@ With the PF candidates reconstructed, including muons, electrons, photons, charg
 \noindent where $R$ is a algorithm parameter related to the cone size of the jets and $p$ is the power of $k_t^2$. The $k_t$, anti-$k_t$ and Cambridge/Aachen algorithm adopt $p=1,-1,0$, respectively. The clustering algorithm used in the CMS is the anti-$k_t$ algorithm. The parameter $R$ is set to be 0.4 for slim jets and 0.8 for fat jets. During the anti-$k_t$ clustering process, the shortest distance is searched among all the $d_{ij}$ and $d_i$ in the collection of PF candidates. If the minimal distance is $d_{ij}$, the two object i and j are merged into a new object. Otherwise, the minimal distance is $d_{i}$ and the object i is output as a jet. This process is repeated until all objects are output. 
 
 % charge hadron subtraction
-The PF candidates in a jet may include the hadrons from the pile-up activities. The pile-up constituents in a jet become more relatively significant for the low $p_t$ in the barrel region \cite{cms:particleflow:Sirunyan:2017ulk}. Hence a pile-up subtraction is designed to clean up the PF candidates from the pile-up. It removes charged hadrons not associated with the primary vertex. This step is called Charged Hadron Subtraction (CHS). Figure~\ref{fig:cmsexperiment:reconstruction:resJet} shows the jet energy resolution with and without CHS for three pileup scenarios $\langle \mu\rangle =0,15,25$. As the pile-up increases, the improvement from the CHS becomes more significant.  
+The PF candidates in a jet may include the hadrons from the pile-up activities. The pile-up constituents in a jet become more relatively significant for the low \pt in the barrel region \cite{cms:particleflow:Sirunyan:2017ulk}. Hence a pile-up subtraction is designed to clean up the PF candidates from the pile-up. It removes charged hadrons not associated with the primary vertex. This step is called Charged Hadron Subtraction (CHS). Figure~\ref{fig:cmsexperiment:reconstruction:resJet} shows the jet energy resolution with and without CHS for three pileup scenarios $\langle \mu\rangle =0,15,25$. As the pile-up increases, the improvement from the CHS becomes more significant.  
 
 
 
 
 
-\subsection{b-Jet Tagging}
+\subsection{b Jet Tagging}
 
 To identify the jets originating from the b quarks, several tagging algorithms have been developed \cite{Chatrchyan:2012jua, Sirunyan:2017ezt, Bols:2020bkb}. 
 
 The first tagger is Jet Probability (JP) and Jet B Probability (JBP). JP computes the likelihood for each track to come from the primary vertex, given the track's impact parameter and the spatial resolution of the primary vertex. Such likelihoods for all tracks in the jet are combined to indicate the probability of the jet coming from a non-prompt particle. JBP is a variation of JP. JBP assigns larger weights to the four tracks with the largest impact parameter. 
 
-The second tagger is Combined Secondary Vertex (CSV). Compared with JP/JBP, which focuses on tracks' impact parameters, CSV also performs a searching and fitting for tracks' secondary vertices. Then, it computes several kinematic and topology variables about the secondary vertices, such as the number of SV, the distance of SV, the corrected SV mass, the relative SV energy ratio, and the number of tracks in the SV. The full list of the input variables of the CSV version-1 and version-2 used during the LHC run-1 and run-2 can be found in \cite{Sirunyan:2017ezt}. Finally, all the jet and jet's secondary vertex variables are fed into a multivariate model to obtain a single b-tag score. In the full run-2 dataset, with the same set of jet and jet's SV variables, the multivariate model is improved by a more flexible classifier, a fully-connected neural network (nn) with a few hidden layers. This nn-based tagger is called DeepCSV \cite{Bols:2020bkb}.
+The second tagger is Combined Secondary Vertex (CSV). Compared with JP/JBP, which focuses on tracks' impact parameters, CSV also performs a searching and fitting for tracks' secondary vertices. Then, it computes several kinematic and topology variables about the secondary vertices, such as the number of SV, the distance of SV, the corrected SV mass, the relative SV energy ratio, and the number of tracks in the SV. The full list of the input variables of the CSV version-1 and version-2 used during the LHC run-1 and run-2 can be found in \cite{Sirunyan:2017ezt}. Finally, all the jet and jet's secondary vertex variables are fed into a multivariate model to obtain a single \PQb tag score. In the full run-2 dataset, with the same set of jet and jet's SV variables, the multivariate model is improved by a more flexible classifier, a fully-connected neural network (nn) with a few hidden layers. This nn-based tagger is called DeepCSV \cite{Bols:2020bkb}.
 
-The third tagger is the Combined MVA (cMVA). When electrons and muons present in a jet, the information related to the charged lepton is used to construct a soft-electron (SE) tagger and a soft-muon (SM) tagger, which are both boosted decision trees (BDT) trained with 2D and 3D lepton impact parameters and a few kinematic variables about the lepton's angular separation and relative $k_t$. Then an MVA combines the JP, JBP, CSV, SE, SM taggers into a final comprehensive b-tag score. Figure~\ref{fig:cmsexperiment:reconstruction:cMVA} shows the distributions of the b-tag score from the cMVA b-tagger for the simulated light, c and b jets.
+The third tagger is the combined multivariate analysis (cMVA). When electrons and muons present in a jet, the information related to the charged lepton is used to construct a soft-electron (SE) tagger and a soft-muon (SM) tagger, which are both boosted decision trees (BDT) trained with 2D and 3D lepton impact parameters and a few kinematic variables about the lepton's angular separation and relative $k_t$. Then an MVA combines the JP, JBP, CSV, SE, SM taggers into a final comprehensive \PQb tag score. Figure~\ref{fig:cmsexperiment:reconstruction:cMVA} shows the distributions of the \PQb tag score from the cMVA \PQb tagger for the simulated light, c and b jets.
 
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.5\textwidth]{chapters/CMSExperiment/sectionReconstruction/figures/cMVA}
-    \caption{The distribution of the b-tag score from the cMVA b-tagger \cite{Sirunyan:2017ezt}. }
+    \caption{The distribution of the \PQb tag score from the combined multivariate analysis (cMVA) \PQb tagger \cite{Sirunyan:2017ezt}. }
     \label{fig:cmsexperiment:reconstruction:cMVA}
 \end{figure}
 
@@ -127,65 +127,65 @@ The third tagger is the Combined MVA (cMVA). When electrons and muons present in
 
 
 
-\section{Hadronic Tau Identification}
+\subsection{Hadronic Tau Identification}
 
-About $64.8\%$ of taus decay hadronically. The major decay modes of hadronic taus include $B(\tau^- \to h^- \nu_\tau)=11.5\% $, $B(\tau^- \to h^- \pi^0 \nu_\tau)=25.9\% $ (where the mass of $h^-\pi^0$ system is resonant at $\rho(770)$), $B(\tau^- \to h^- \pi^0 \pi^0 \nu_\tau)=9.5\% $ and $B(\tau^- \to h^- h^+ h^- \nu_\tau)=9.8\% $ (where mass of $h^- \pi^0 \pi^0$ and $h^- h^+ h^- $ system is resonant at $a_1(1260)$). The tau reconstruction at the CMS relies on these hadronic decay modes.
+About $64.8\%$ of taus decay hadronically. The major decay modes of hadronic taus include $B(\PGt^- \to h^- \PGnGt)=11.5\% $, $B(\PGt^- \to h^- \pi^0 \PGnGt)=25.9\% $ (where the mass of $h^-\pi^0$ system is resonant at $\rho(770)$), $B(\PGt^- \to h^- \pi^0 \pi^0 \PGnGt)=9.5\% $ and $B(\PGt^- \to h^- h^+ h^- \PGnGt)=9.8\% $ (where mass of $h^- \pi^0 \pi^0$ and $h^- h^+ h^- $ system is resonant at $a_1(1260)$). The tau reconstruction at the CMS relies on these hadronic decay modes.
 
-For each reconstructed jet, the tau reconstruction first attempts to match the jet constituents to the patterns of the common hadronic decay modes. The matching, also known as mode finding, is performed with the hadrons-plus-strips (HPS) algorithm. If the jet structure is found compatible with a decay mode and the decay mode involves certain meson resonances like $\rho(770)$ and $a_1(1260)$, HPS further checks consistency between visible mass of the tau candidate and the expected meson resonance. After the mode finding, a $\tau_h$ score based on the structure and isolation of the candidate's constituents is computed to discriminate against fakes from the quark or gluon jets, which could otherwise be significant due to the complex QCD environment in the LHC. Besides, discriminators against the electron and muon are also developed.
+For each reconstructed jet, the tau reconstruction first attempts to match the jet constituents to the patterns of the common hadronic decay modes. The matching, also known as mode finding, is performed with the hadrons-plus-strips (HPS) algorithm. If the jet structure is found compatible with a decay mode and the decay mode involves certain meson resonances like $\rho(770)$ and $a_1(1260)$, HPS further checks consistency between visible mass of the tau candidate and the expected meson resonance. After the mode finding, a $\PGth$ score based on the structure and isolation of the candidate's constituents is computed to discriminate against fakes from the quark or gluon jets, which could otherwise be significant due to the complex QCD environment in the LHC. Besides, discriminators against the electron and muon are also developed.
 
 
-\subsection{The $\tau_h$ Mode Finding}
+\subsubsection{The $\PGth$ Mode Finding}
 
-Starting from the constituents of the reconstructed jets, the hadrons-plus-strips (HPS) algorithm is used to match the jet structure to the expected $\tau_h$ pattern. 
+Starting from the constituents of the reconstructed jets, the hadrons-plus-strips (HPS) algorithm is used to match the jet structure to the expected $\PGth$ pattern. 
 
 % strip clustering: seeding-merging
-The $\pi^0$ mesons from the $\tau_h$ decay promptly decay into pairs of photons, which are highly likely to convert into $e^+e^-$ pairs as they traverse the tracker material. The CMS magnetic field bends the $e^+e^-$ and leads to a spatial separation of the e+e− pairs on the $\eta-\phi$ plane. The electron and photon candidates within a certain region of $\Delta\eta \times \Delta \phi$  are clustered together to reconstruct the neutral pions. The resulting cluster is referred to as a “strip”. The strip's four-momentum is defined as the sum of all its constituent four-momenta. The clustering process defines a $\Delta\eta \times \Delta \phi = 0.20p_T^{-0.66} \times 0.35 p_T^{-0.71}$ window for each of the strips, electrons, photons. The steps of the strip clustering process work as follows: the leading $e/\gamma$ in the jet not yet included in any strips is used to seed a new strip; then, in order of deceasing \pt, the nearby $e/\gamma$ whose window touches the strip window is merged with the strip, and the strip's position and four-momentum are updated accordingly. These two steps of seeding and merging are repeated until all qualified $e/\gamma$ are processed. Comparing with a fixed window size employed during the run-1, the window size of this strip clustering algorithm depends dynamically on the object's $p_T$ and better accounts for the different bending effects of different \pt.
+The $\pi^0$ mesons from the $\PGth$ decay promptly decay into pairs of photons, which are highly likely to convert into $e^+e^-$ pairs as they traverse the tracker material. The CMS magnetic field bends the $e^+e^-$ and leads to a spatial separation of the e+e− pairs on the $\eta-\phi$ plane. The electron and photon candidates within a certain region of $\Delta\eta \times \Delta \phi$  are clustered together to reconstruct the neutral pions. The resulting cluster is referred to as a “strip”. The strip's four-momentum is defined as the sum of all its constituent four-momenta. The clustering process defines a $\Delta\eta \times \Delta \phi = 0.20\pt^{-0.66} \times 0.35 \pt^{-0.71}$ window for each of the strips, electrons, photons. The steps of the strip clustering process work as follows: the leading $e/\gamma$ in the jet not yet included in any strips is used to seed a new strip; then, in order of deceasing \pt, the nearby $e/\gamma$ whose window touches the strip window is merged with the strip, and the strip's position and four-momentum are updated accordingly. These two steps of seeding and merging are repeated until all qualified $e/\gamma$ are processed. Comparing with a fixed window size employed during the run-1, the window size of this strip clustering algorithm depends dynamically on the object's \pt and better accounts for the different bending effects of different \pt.
 
 % prong
-Charged particles, often called prong, used in the reconstruction of $\tau_h$ candidates are required to have $\pt>0.5$ GeV and must be compatible with the primary vertex. Due to the tau lifetime, when imposing primary vertex association, the transverse impact parameter is relaxed to $d_{xy}<0.1$~cm. The requirement of $\pt > 0.5~\GeV$ on the charged particles ensures that the corresponding tracks have sufficient quality.
+Charged particles, often called prong, used in the reconstruction of $\PGth$ candidates are required to have $\pt>0.5$ GeV and must be compatible with the primary vertex. Due to the tau lifetime, when imposing primary vertex association, the transverse impact parameter is relaxed to $d_{xy}<0.1$~cm. The requirement of $\pt > 0.5~\GeV$ on the charged particles ensures that the corresponding tracks have sufficient quality.
 
 % mode finding and mass constrain
-Based on the reconstructed strips and qualified tracks in a jet, the HPS algorithm generates all possible combinations of hadrons for the following decay modes: $h^\pm$, $h^\pm \pi^0$, $h^\pm \pi^0 \pi^0$, $h^\pm h^\mp h^\pm$. For $h^\pm \pi^0$ decay mode, the total hadronic elements should be from $\rho(770)$ resonance. For $h^\pm \pi^0 \pi^0$ and $h^\pm h^\mp h^\pm$, the total hadronic elements should be from $a_1(1260)$ resonance. So if $h^\pm \pi^0$ or $h^\pm \pi^0 \pi^0$ or $h^\pm h^\mp h^\pm$ mode is found, the total visible mass of the tau candidate is checked to be compatible with corresponding resonance. Last but not least, for each $\tau_h$ candidate, a signal cone is defined as
+Based on the reconstructed strips and qualified tracks in a jet, the HPS algorithm generates all possible combinations of hadrons for the following decay modes: $h^\pm$, $h^\pm \pi^0$, $h^\pm \pi^0 \pi^0$, $h^\pm h^\mp h^\pm$. For $h^\pm \pi^0$ decay mode, the total hadronic elements should be from $\rho(770)$ resonance. For $h^\pm \pi^0 \pi^0$ and $h^\pm h^\mp h^\pm$, the total hadronic elements should be from $a_1(1260)$ resonance. So if $h^\pm \pi^0$ or $h^\pm \pi^0 \pi^0$ or $h^\pm h^\mp h^\pm$ mode is found, the total visible mass of the tau candidate is checked to be compatible with corresponding resonance. Last but not least, for each $\PGth$ candidate, a signal cone is defined as
 \begin{equation}
-	\Delta R_{sig} = \frac{3.0 \text{ GeV } } { p_T (\text{ hadronic system})  }, \quad \text{with } 0.05 \leq \Delta R_{sig} \leq 0.1.
+	\Delta R_{sig} = \frac{3.0 \text{ GeV } } { \pt (\text{ hadronic system})  }, \quad \text{with } 0.05 \leq \Delta R_{sig} \leq 0.1.
 	\label{eqn:cmsexperiment:reconstruction:tauSigRegion}
 \end{equation}
 
-\noindent If any charged particles or strip is located outside the signal cone, the $\tau_h$ candidate is rejected.
+\noindent If any charged particles or strip is located outside the signal cone, the $\PGth$ candidate is rejected.
 
-\subsection{Discriminator against jets}
+\subsubsection{Discriminator against jets}
 
-To reduce the fakes from gluon or quark jets, discriminators are designed against $j\to \tau$ fakes for the $\tau_h$ candidates. Comparing with the quark and gluon jets, the $\tau_h$ tends to have a cleaner calorimeter environment in its near-by region. Base on this principle, an isolation quantity in a $\Delta R = 0.3$ cone is calculated. Two discriminators have been developed for 2016 analysis. They are isolation sum discriminator and MVA-based discriminator. For Run-2, the MVA classifier is improved by a more flexible classifier model, deep neural networks. 
+To reduce the fakes from gluon or quark jets, discriminators are designed against $j\to \PGt$ fakes for the $\PGth$ candidates. Comparing with the quark and gluon jets, the $\PGth$ tends to have a cleaner calorimeter environment in its near-by region. Base on this principle, an isolation quantity in a $\Delta R = 0.3$ cone is calculated. Two discriminators have been developed for 2016 analysis. They are isolation sum discriminator and MVA-based discriminator. For Run-2, the MVA classifier is improved by a more flexible classifier model, deep neural networks. 
 
 % iso based
-The isolation of $\tau_h$ candidate is computed by summing the $p_T$ of charged particles and photons in a $\Delta R = 0.3$ cone around the $\tau_h$ candidate. The summing does not include the charged particle and photons of the $\tau_h$ candidate in the $tau_h$ signal cone defined in Equation~\ref{eqn:cmsexperiment:reconstruction:tauSigRegion}. The $\tau_h$ isolation is defined as
+The isolation of $\PGth$ candidate is computed by summing the \pt of charged particles and photons in a $\Delta R = 0.3$ cone around the $\PGth$ candidate. The summing does not include the charged particle and photons of the $\PGth$ candidate in the $tau_h$ signal cone defined in Equation~\ref{eqn:cmsexperiment:reconstruction:tauSigRegion}. The $\PGth$ isolation is defined as
 \begin{equation}
-	I_{\tau_h} = \sum p_T^{\text{charged}} (d_z<0.2 \text{cm}) + \max \bigg( 0, \sum p_T^ \gamma - \Delta \beta \sum p_T^{\text{charged}} (d_z>0.2 \text{cm})  \bigg )
+	I_{\PGth} = \sum \pt^{\text{charged}} (d_z<0.2 \text{cm}) + \max \bigg( 0, \sum \pt^ \gamma - \Delta \beta \sum \pt^{\text{charged}} (d_z>0.2 \text{cm})  \bigg )
     \label{eqn:cmsexperiment:reconstruction:tauIso}
 \end{equation}
 
-\noindent where $d_z<0.2$~cm requirement reduces the PU contributions in the $\sum p_T^{\text{charged}}$. Meanwhile, PU contributions in the $\sum p_T^ \gamma $ is subtracted by the term $\Delta \beta \sum p_T^{\text{charged}} (d_z>0.2~\text{cm}) $, where the parameter $\Delta \beta =0.2$ scales the PU charged component to estimate the PU neutral component. The isolation sum discriminator requires $I_{\tau_h} $ to be less than some working point. In addition to $I_{\tau_h}$ cut, the $p_T$ of the partial strip located outside the $\tau_h$ signal cone, denoted as $p_T^{\text{strip, outer}} $, is calculated and requirement
+\noindent where $d_z<0.2$~cm requirement reduces the PU contributions in the $\sum \pt^{\text{charged}}$. Meanwhile, PU contributions in the $\sum \pt^ \gamma $ is subtracted by the term $\Delta \beta \sum \pt^{\text{charged}} (d_z>0.2~\text{cm}) $, where the parameter $\Delta \beta =0.2$ scales the PU charged component to estimate the PU neutral component. The isolation sum discriminator requires $I_{\PGth} $ to be less than some working point. In addition to $I_{\PGth}$ cut, the \pt of the partial strip located outside the $\PGth$ signal cone, denoted as $\pt^{\text{strip, outer}} $, is calculated and requirement
 \begin{equation}
-    p_T^{\text{strip, outer}} < 0.1 p_T^{\tau_h}
+    \pt^{\text{strip, outer}} < 0.1 \pt^{\PGth}
     \label{eqn:cmsexperiment:reconstruction:ptStripOuter}
 \end{equation}
 
-\noindent is imposed to further reduce $j \to \tau_h$ fakes given that the strip window in the strip clustering is dynamically $p_T$ dependent. This additional cut on $p_T^{\text{strip, outer}}$ approximately reduces $j \to \tau_h$ fakes by another $20\%$ without impacting the $\tau_h$ efficiency.
+\noindent is imposed to further reduce $j \to \PGth$ fakes given that the strip window in the strip clustering is dynamically \pt dependent. This additional cut on $\pt^{\text{strip, outer}}$ approximately reduces $j \to \PGth$ fakes by another $20\%$ without impacting the $\PGth$ efficiency.
 
 
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.9\textwidth]{chapters/CMSExperiment/sectionReconstruction/figures/tauMVA}
-    \caption{ The $\tau_h$ identification efficiency and $j\to \tau_h$ misidentification probability in the QCD multijets events \cite{Sirunyan:2018pgf}. Different MVA working points are shown in different colors. }
+    \caption{ The $\PGth$ identification efficiency and $j\to \PGth$ misidentification probability in the QCD multijets events \cite{Sirunyan:2018pgf}. Different working points are shown in different colors. }
     \label{fig:cmsexperiment:reconstruction:tauMVA}
 \end{figure}
 
 % mva based
 
 
-MVA-based $\tau_h$ discriminator combines the isolation and other topology variables sensitive to the $\tau$ lifetime \cite{Sirunyan:2018pgf} to provide the best possible discrimination between $\tau_h$ and quark or gluon jets. The MVA classifier is a boosted decision tree (BDT). The input variables to the MVA includes $I_{\tau_h}$ in Equantion~\ref{eqn:cmsexperiment:reconstruction:tauIso}, $ p_T^{\text{strip, outer}}$ in Equation~\ref{eqn:cmsexperiment:reconstruction:ptStripOuter}, spatial separations among $e/\gamma$ in the strips, significance of the 3D impact parameter (SIP3D) of the leading tracks, tau flight length for 3 prong $\tau_h \to h^\pm h^\mp h^\pm$ calculated by the secondary vertices. The full list of the input variables can be found in \cite{Chatrchyan:2012zz, Khachatryan:2015dfa}. Based on the MVA result, the isolation variable provides the most discriminating power. The next important variables are SIP3D and tau flight length. The MVA combines all sensitive variables and outputs a single number for the $\tau_h$ identification score, which can be cut at different working points. Using different MVA working points, the $\tau_h$ identification efficiency and $j\to \tau_h$ misidentification probability in the QCD multijets events are shown in Figure~\ref{fig:cmsexperiment:reconstruction:tauMVA}. The $\tau_h$ identification is relatively constant with respective to $p_T$. In contrast, the misidentification probability drops significantly with the increase of $p_T$. 
+MVA-based $\PGth$ discriminator combines the isolation and other topology variables sensitive to the $\PGt$ lifetime \cite{Sirunyan:2018pgf} to provide the best possible discrimination between $\PGth$ and quark or gluon jets. The MVA classifier is a boosted decision tree (BDT). The input variables to the MVA includes $I_{\PGth}$ in Equantion~\ref{eqn:cmsexperiment:reconstruction:tauIso}, $ \pt^{\text{strip, outer}}$ in Equation~\ref{eqn:cmsexperiment:reconstruction:ptStripOuter}, spatial separations among $e/\gamma$ in the strips, significance of the 3D impact parameter (SIP3D) of the leading tracks, tau flight length for 3 prong $\PGth \to h^\pm h^\mp h^\pm$ calculated by the secondary vertices. The full list of the input variables can be found in \cite{Chatrchyan:2012zz, Khachatryan:2015dfa}. Based on the MVA result, the isolation variable provides the most discriminating power. The next important variables are SIP3D and tau flight length. The MVA combines all sensitive variables and outputs a single number for the $\PGth$ identification score, which can be cut at different working points. Using different MVA working points, the $\PGth$ identification efficiency and $j\to \PGth$ misidentification probability in the QCD multijets events are shown in Figure~\ref{fig:cmsexperiment:reconstruction:tauMVA}. The $\PGth$ identification is relatively constant with respective to \pt. In contrast, the misidentification probability drops significantly with the increase of \pt. 
 
-In addition to the isolation discriminator and MVA-based discriminator, Deep Tau Identification is also developed for the Run-2 analysis. The deep tau ID is similar to the MVA-based ID in the sense of combining a set of sensitive variables to a single $\tau_h$ score with a non-linear classification model. The difference is that the deep tau ID uses deep neural networks instead of BDTs for a more flexible classification. 
+In addition to the isolation discriminator and MVA-based discriminator, Deep Tau Identification is also developed for the Run-2 analysis. The deep tau ID is similar to the MVA-based ID in the sense of combining a set of sensitive variables to a single $\PGth$ score with a non-linear classification model. The difference is that the deep tau ID uses deep neural networks instead of BDTs for a more flexible classification. 
 
 
 

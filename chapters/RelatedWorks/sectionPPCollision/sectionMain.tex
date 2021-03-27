@@ -3,19 +3,19 @@
 \section{Physics in the Hadron Collider}
 \label{sec:relatedWorks:ppCollision} 
 
-When protons collide in the hadron colliders, it is actually the quarks and gluons inside the protons, called partons, that collide at the high center-of-mass energy. This high energy collision between partons is called the hard process and can be calculated perturbatively with the quantum field theory. However, the experimental observables from the proton-proton collision not only involves the physics in the hard process, but also includes many low-energy QCD processes happening before and after the hard process that cannot be treated with perturbative QCD (pQCD). Therefore, to properly make predictions to experiments, efforts are made to understand how partons distribute in the collided protons before the hard process, and how outcoming particles evolve in the long-distance range after the hard process. These studies yield the topics of the parton distribution function (PDF) and jet physics. In this section, a brief description of the PDF, hard process, and jet physics are presented. This description provides a basic picture to understand the Monte Carlo simulations with modern event generators described in Section~\ref{sec:cmsexperiment:simulation}. Also, it helps understand the source of the some theoretical systematical uncertainties in the \PW branching fraction analysis.
+When protons collide in the hadron colliders, it is actually the quarks and gluons inside the protons, called partons, that collide at the high center-of-mass energies. This high energy collision between partons is called the hard process and can be calculated perturbatively with the quantum field theory. However, the experimental observables from the proton-proton collision not only involves the physics in the hard process, but also includes many low-energy QCD processes happening before and after the hard process that cannot be treated with perturbative QCD (pQCD). Therefore, to properly make predictions to experiments, efforts are made to understand how partons distribute in the collided protons before the hard process, and how outcoming particles evolve in the long-distance range after the hard process. These studies yield the topics of the parton distribution function (PDF) and jet physics. In this section, brief descriptions of the PDF, hard process, and jet physics are presented. This provides a basic picture to understand event generators described in Section~\ref{sec:cmsexperiment:simulation}. Also, it helps understand the sources of some theoretical uncertainties in the \PW branching fraction analysis.
 
-\subsection{Parton Distribution Function}
+\subsection{Parton Distribution Functions}
 \label{sec:relatedWorks:ppCollision:pdf} 
 
 
-A proton can be pictured as three valence quarks surrounded by a cloud of soft gluon and sea quarks. For a proton with a given momentum, the probability distribution of finding a certain type of parton is described by the Parton Distribution Functions $f_i(x)$, where $x$ denotes the fraction of the total proton momentum $p$ carried by the parton. When colliding protons, partons are actually participating in the high energy collision. As a result, the cross-section of the collision is a convolution of the cross-section of the hard process and the PDFs of the two collided partons:
+A proton can be pictured as three valence quarks surrounded by a cloud of soft gluon and sea quarks. For a proton with a given momentum, the probability distribution of finding a certain type of parton is described by the parton distribution functions $f_i(x)$, where $x$ denotes the fraction of the total proton momentum $p$ carried by the parton. When colliding protons, partons are actually participating in the high energy collision. As a result, the cross-section of the collision is a convolution of the cross-section of the hard process and the PDFs of the two collided partons:
 \begin{equation}
-    \sigma_{pp\to X } = \sum_{ij}\int dx_1 dx_2 f_i(x_1, \mu^2) f_j(x_2, \mu^2) \hat{\sigma}_{ij\to X } (x_1 p_1, x_2 p_2,\mu^2) .
+    \sigma_{pp\to X } = \sum_{ij}\int dx_1 dx_2 ~ f_i(x_1, \mu^2) ~ f_j(x_2, \mu^2) ~ \hat{\sigma}_{ij\to X } (x_1 p_1, x_2 p_2,\mu^2) .
     \label{eqn:relatedWorks:qft:ppCollision:factorization}
 \end{equation}
 
-\noindent This factorizes the total cross-section into the hard collision and PDFs, where $\mu$ is the factorization scale. To make theoretical predictions in the LHC, the PDFs are one of the necessary inputs. The measurements of PDFs are primarily done in the lepton-hadron deep inelastic scattering (DIS) experiments. The DIS cross-section yields the structure functions of the hadrons $F_2(x)$, which theoretically equals to the sum of PDFs weighted by the quark momentum and charge squared: $F_2(x) = \sum_i x Q^2_i f_i(x)$. The PDFs of different quarks $f_i(x)$ are extracted from th electron DIS with protons and neutron targets, using the quark symmetries between the proton and neutron. The PDFs of anti-quarks are extracted from the DIS experiments with the neutrino and anti-neutrino beams, since the intermediating $W^\pm$ boson is capable of probing specific charge conjugated states. However, the gluon distribution is not directly measured in the DIS experiments because both the mediating photon and W boson in the DIS do not carry colors and thus do not probe the gluons inside the proton. Instead, the information about the gluon distribution is indirectly extracted from the quark PDF evolution in different energy scales based on the DGLAP equation:
+\noindent This factorizes the total cross-section into the hard collision and PDFs, where $\mu$ is the factorization scale. To make theoretical predictions in the LHC, the PDFs are one of the necessary inputs. The measurements of PDFs are primarily accomplished by the lepton-hadron deep inelastic scattering (DIS) experiments. The DIS cross-section yields the structure functions of the hadrons $F_2(x)$, which theoretically equals to the sum of PDFs weighted by the quark momentum and charge squared: $F_2(x) = \sum_i x Q^2_i f_i(x)$. The PDFs of different quarks $f_i(x)$ are extracted from the electron DIS off protons and neutron targets, using the quark symmetries between the proton and neutron. The PDFs of anti-quarks are extracted from the DIS experiments with the neutrino and anti-neutrino beams, since the intermediating $W^\pm$ bosons are capable of probing specific charge conjugated states. However, the gluon distribution is not directly measured in the DIS experiments because both the mediating photon and \PW bosons in the DIS process do not carry colors and thus do not probe the gluons. Instead, the information about the gluon distribution is indirectly extracted from the evolution of quark PDFs in different energy scales based on the DGLAP equation:
 \begin{equation}
     \mu \frac{d}{d\mu} \begin{bmatrix} f_i(x,\mu^2) \\ f_g(x,\mu^2) \end{bmatrix} = 
     \sum_j \frac{\alpha_s}{\pi} \int_x^1 
@@ -33,7 +33,7 @@ A proton can be pictured as three valence quarks surrounded by a cloud of soft g
 \label{eqn:relatedWorks:qft:ppCollision:splitting}
 \end{equation}
 
-\noindent The DGLAP equation is a renormalization group equation (RGE) for the scale-dependent PDF evolution, similar to the RGE for the running of coupling in Equation~\ref{eqn:relatedWorks:qft:qcd:rge}. The driven source for the PDF evolution is the splitting functions in Equation~\ref{eqn:relatedWorks:qft:ppCollision:splitting}, analogical to the role of beta function in the running of coupling.  An intuitive understanding of the PDF evolution is that as the probing energy increases, more and more ``soft cloud" of sea quarks and gluons are revealed. As a result, the PDFs of sea quarks and gluons increase in the low $x$ region. The DGLAP equation in Equation~\ref{eqn:relatedWorks:qft:ppCollision:dglap} is a set of two first-order linear differential equations, and the solution is
+\noindent The DGLAP equation is a renormalization group equation (RGE) for the scale-dependent evolution of PDFs, similar to the RGE for the running of couplings in Equation~\ref{eqn:relatedWorks:qft:qcd:rge}. The driving for the PDF evolution is the splitting functions in Equation~\ref{eqn:relatedWorks:qft:ppCollision:splitting}, analogical to the role of beta function in the running of coupling.  An intuitive understanding of the PDF evolution is that as the probing energy increases, more and more ``soft cloud" of sea quarks and gluons are revealed. As a result, the PDFs of sea quarks and gluons increase in the low $x$ region. The DGLAP equation in Equation~\ref{eqn:relatedWorks:qft:ppCollision:dglap} is a set of two first-order linear differential equations, and the solution is
 \begin{equation}
     \begin{bmatrix} f_i(x,\mu^2) \\ f_g(x,\mu^2) \end{bmatrix} = \begin{bmatrix} f_i(x,\mu_0^2) \\ f_g(x,\mu_0^2) \end{bmatrix} + 
     \frac{\alpha_s}{2\pi} \log\bigg(\frac{\mu^2}{\mu_0^2}\bigg) 
@@ -49,23 +49,23 @@ A proton can be pictured as three valence quarks surrounded by a cloud of soft g
 \begin{figure}[ht]
     \centering
     \includegraphics[width = 0.7 \textwidth]{chapters/RelatedWorks/sectionPPCollision/figures/pdf.png}
-    \caption{PDF of valence quark, sea quark and gluon at $\mu^2=10 \text{ GeV}^2$ and $\mu^2=10^4 \text{ GeV}^2$ \cite{pdg2020}. The valence quarks dominate the high-x region and in total only account for about 38\% of the proton momentum. The low-x region is dominated by the sea quarks and gluons, forming a ``soft cloud'' around the valence quarks. Gluons are the major components of the ``soft cloud'', and in total carry over 40\% of the proton momentum. Comparing PDF in a) and b), the increasing of the energy scale dramatically populates the soft gluons and soft sea quarks.  Intuitively speaking, more and more ``soft cloud" of sea quarks and gluons are revealed as the probing energy increases.}
+    \caption{PDF of valence quark, sea quark and gluon at $\mu^2=10 \GeV^2$ and $\mu^2=10^4 \GeV^2$ \cite{pdg2020}. The valence quarks dominate the high-x region and in total only account for about 38\% of the proton momentum. The low-x region is dominated by the sea quarks and gluons, forming a ``soft cloud'' around the valence quarks. Gluons are the major components of the ``soft cloud'', and in total carry over 40\% of the proton momentum. Comparing PDF in \emph{(left)} and \emph{(right)}, the increasing of the energy scale dramatically populates the soft gluons and soft sea quarks.  Intuitively speaking, more and more ``soft cloud" of sea quarks and gluons are revealed as the probing energy increases.}
     \label{fig:relatedWorks:ppCollision:pdf}
 \end{figure}
 
 
 
-\subsection{Hard Process}
+\subsection{Hard Processes}
 \label{sec:relatedWorks:ppCollision:hardProcess} 
 
 
-The hard process between partons happens in a short-distance range and can be calculated with perturbative quantum field theories. In the LHC, the hard processes allowed by the SM include the EW, QCD, and Higgs interactions. Figure~\ref{fig:relatedWorks:ppCollision:hardxs} shows a summary of the total cross-section of the SM processes in the LHC measured by the experiments and predicted by the SM theory. For this thesis, the signal processes produce a pair of W bosons and include $\ttbar$, $tW$, and $WW$ productions.
+The hard processes between partons happen in the short-distance range and can be calculated perturbatively with quantum field theories. In the LHC, the hard processes allowed by the SM include the electroweak, QCD, and Higgs interactions. Figure~\ref{fig:relatedWorks:ppCollision:hardxs} shows a summary of the total cross-section of the SM processes in the LHC measured by the experiments and predicted by the SM. For this thesis, the signal processes producing a pair of \PW bosons include \ttbar, \tW and \PW\PW.
 
 
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.99\textwidth]{chapters/RelatedWorks/sectionPPCollision/figures/SigmaNew_v0.pdf}
-    \caption{Summary of the cross-sections of the SM process in the LHC. The grey bar shows the theoretical prediction. The red, blue and green shows the CMS measurement or the excluded limit at 7, 8, 13 TeV.}
+    \caption{Summary of the cross-sections of the SM processes in the LHC. The grey bar shows the theoretical predictions. The red, blue and green shows the CMS measurements or the exclusion limits at 7, 8, 13\TeV.}
     \label{fig:relatedWorks:ppCollision:hardxs}
 \end{figure}
 
@@ -79,36 +79,36 @@ The hard process between partons happens in a short-distance range and can be ca
 \begin{figure}[ht]
     \centering
     \feynmandiagram[small,horizontal=a to b]{
-        i1 [particle=\(q\)] -- [fermion] a -- [fermion] i2 [particle=\(q\)],
-        a -- [gluon, edge label=\(g\)] b,
-        f1 [particle=\(t\)] -- [fermion] b -- [fermion] f2 [particle=\(t\)],
+        i1 [particle=\PQq] -- [fermion] a -- [fermion] i2 [particle=\PQq],
+        a -- [gluon, edge label=\Pg] b,
+        f1 [particle=\PQt] -- [fermion] b -- [fermion] f2 [particle=\PQt],
         % top decay
-        f1b[particle=\(b\)] -- [fermion] f1 -- [photon] f1W [particle=\(W\), red],
-        f2b[particle=\(b\)] -- [anti fermion] f2 -- [photon] f2W [particle=\(W\), red],
+        f1b[particle=\PQb] -- [fermion] f1 -- [photon] f1W [particle=\PW, red],
+        f2b[particle=\PQb] -- [anti fermion] f2 -- [photon] f2W [particle=\PW, red],
         f1 -- [opacity=0.0] f2,
         f1W -- [opacity=0.0] f2W,
         f1b -- [opacity=0.0] f1W,
         f2b -- [opacity=0.0] f2W,
     }; \qquad
     \feynmandiagram[small,horizontal=a to b]{
-        i1 [particle=\(g\)] -- [gluon] a -- [gluon] i2 [particle=\(g\)],
-        a -- [gluon, edge label=\(g\)] b,
-        f1 [particle=\(t\)] -- [fermion] b -- [fermion] f2 [particle=\(t\)],
+        i1 [particle=\Pg] -- [gluon] a -- [gluon] i2 [particle=\Pg],
+        a -- [gluon, edge label=\Pg] b,
+        f1 [particle=\PQt] -- [fermion] b -- [fermion] f2 [particle=\PQt],
         % top decay
-        f1b[particle=\(b\)] -- [fermion] f1 -- [photon] f1W [particle=\(W\), red],
-        f2b[particle=\(b\)] -- [anti fermion] f2 -- [photon] f2W [particle=\(W\), red],
+        f1b[particle=\PQb] -- [fermion] f1 -- [photon] f1W [particle=\PW, red],
+        f2b[particle=\PQb] -- [anti fermion] f2 -- [photon] f2W [particle=\PW, red],
         f1 -- [opacity=0.0] f2,
         f1W -- [opacity=0.0] f2W,
         f1b -- [opacity=0.0] f1W,
         f2b -- [opacity=0.0] f2W,
     }; \qquad
     \feynmandiagram[small, vertical=a to b, horizontal=a to f1]{
-        i1 [particle=\(g\)] -- [gluon] a -- [anti fermion] f1 [particle=\(t\)],
-        a -- [fermion, edge label=\(t\)] b,
-        i2 [particle=\(g\)] -- [gluon] b -- [fermion] f2 [particle=\(t\)],
+        i1 [particle=\Pg] -- [gluon] a -- [anti fermion] f1 [particle=\PQt],
+        a -- [fermion, edge label=\PQt] b,
+        i2 [particle=\Pg] -- [gluon] b -- [fermion] f2 [particle=\PQt],
         % top decay
-        f1b[particle=\(b\)] -- [fermion] f1 -- [photon] f1W [particle=\(W\), red],
-        f2b[particle=\(b\)] -- [anti fermion] f2 -- [photon] f2W [particle=\(W\), red],
+        f1b[particle=\PQb] -- [fermion] f1 -- [photon] f1W [particle=\PW, red],
+        f2b[particle=\PQb] -- [anti fermion] f2 -- [photon] f2W [particle=\PW, red],
         f1 -- [opacity=0.0] f2,
         f1W -- [opacity=0.0] f2W,
         f1b -- [opacity=0.0] f1W,
@@ -116,13 +116,13 @@ The hard process between partons happens in a short-distance range and can be ca
         % i1 -- [opacity=0.0] i2,
         % f1 -- [opacity=0.0] f2,
     };
-    \caption{The tree-level processes of $t\bar{t}$ production in the LHC. In all three diagrams, \ttbar is produced with the QCD interaction. In the LHC, the dominant production processes are the two diagrams on the right, with two incoming gluons colliding in the s-channel and t-channel, respectively. The top quark decays into one W boson and one b quark immediately after the production.}
+    \caption{The tree-level processes of \ttbar production in the LHC. In all three diagrams, \ttbar is produced with the QCD interaction. In the LHC, the dominant production processes are the two diagrams on the right, with two incoming gluons colliding in the s-channel and t-channel, respectively. The top quark decays into one \PW boson and one \PQb quark immediately after the production.}
     \label{fig:relatedWorks:ppCollision:tt}
 \end{figure}
 
-\noindent For \ttbar, the top quark pairs are produced with the QCD interaction. The tree-level diagrams for the $t\bar{t}$ production is shown in Figure~\ref{fig:relatedWorks:collider:tt}. The quark-antiquark annihilation, shown as Figure~\ref{fig:relatedWorks:ppCollision:tt} left, was the dominant process in the Tevatron, where the quark and antiquark are the valence quark in the proton and anti-proton. But in the LHC, which collides proton-proton at a higher center-of-mass energy, gluon-gluon fusion in the s channel and t channel, shown as  Figure~\ref{fig:relatedWorks:ppCollision:tt} middle and right, are the dominant diagrams. The top quark decays into one b quark and one W boson instantly after being produced. The resulting pair of W bosons are used to measure $Br(W)$ in our analysis. Meanwhile, the outcoming b quarks are used to tag the \ttbar events. The theoretical prediction of \ttbar cross-section at 13 TeV LHC is
+\noindent For \ttbar, the top quark pairs are produced with the QCD interaction. The tree-level diagrams for the \ttbar production is shown in Figure~\ref{fig:relatedWorks:collider:tt}. The quark-antiquark annihilation, shown as Figure~\ref{fig:relatedWorks:ppCollision:tt} left, was the dominant process in the Tevatron, where the quark and antiquark are the valence quark in the proton and anti-proton. But in the LHC, which collides proton-proton at a higher center-of-mass energy, gluon-gluon fusion in the s channel and t channel, shown as  Figure~\ref{fig:relatedWorks:ppCollision:tt} middle and right, are the dominant diagrams. The top quark decays into one \PQb quark and one \PW boson instantly after being produced. The resulting pair of \PW bosons are used to measure \PW branching fractions in this thesis. Meanwhile, the outcoming \PQb quarks are used to tag the \ttbar events. The theoretical prediction of \ttbar cross-section at LHC 13\TeV is
 \begin{equation}
-    \sigma_{tt} = 831.76 ^{+19.77}_{-29.20}\text{~(scale)}\pm35.06 \text{~(PDF, $\alpha_s$)~pb} .
+    \sigma_{tt} = 831.76 ^{+19.77}_{-29.20}\text{~(scale)}\pm35.06 \text{~(PDF, \alpS)~pb} .
 \end{equation}
 
 
@@ -130,60 +130,60 @@ The hard process between partons happens in a short-distance range and can be ca
 \begin{figure}[ht]
     \centering
     \feynmandiagram[small,horizontal=a to b]{
-        i1 [particle=\(b\)] -- [fermion] a -- [gluon] i2 [particle=\(g\)],
-        a -- [fermion, edge label=\(b\)] b,
-        f1 [particle=\(W\) , red] -- [photon] b -- [fermion] f2 [particle=\(t\)],
-        f2b[particle=\(b\)] -- [anti fermion] f2 -- [photon] f2W [particle=\(W\), red],
+        i1 [particle=\PQb] -- [fermion] a -- [gluon] i2 [particle=\Pg],
+        a -- [fermion, edge label=\PQb] b,
+        f1 [particle=\PW , red] -- [photon] b -- [fermion] f2 [particle=\PQt],
+        f2b[particle=\PQb] -- [anti fermion] f2 -- [photon] f2W [particle=\PW, red],
         f1 -- [opacity=0.0] f2W,
     }; \qquad
-    \caption{The tree-level processes of $tW$ production. The incoming b quark scatters off a gluon with QCD interaction and gets excited into a top quark via the EW interaction.}
+    \caption{The tree-level processes of \tW production. The incoming \PQb quark scatters off a gluon with QCD interaction and gets excited into a top quark via the electroweak interaction.}
     \label{fig:relatedWorks:ppCollision:tw}
 \end{figure}
 
-\noindent The $tW$ production is induced via the weak interaction and thus has smaller cross-section compared the \ttbar production. The tree-level $tW$ process is shown in Figure~\ref{fig:relatedWorks:ppCollision:tw}. One of the W boson is produced associated with top quark. The outcoming top quark decays into one b quark and another W boson. The two W bosons are used for our $Br(W)$ measurement, while the b quark is used to tag $tW$ events. The SM theoretical cross section for $tW$ is 
+\noindent The \tW production is induced via weak interactions and has smaller cross-section compared to \ttbar production. The tree-level \tW processes are shown in Figure~\ref{fig:relatedWorks:ppCollision:tw}. One \PW boson is produced associated with top quark. The outcoming top quark decays into one \PQb quark and another \PW boson. The two \PW bosons are used for \PW measurements, while the \PQb quarks is used to tag the \tW event. The SM theoretical cross section for \tW is 
 \begin{equation}
-    \sigma_{tW} = 71.7 \pm 1.80 \text{~(scale)} \pm 3.40 \text{~(PDF, $\alpha_s$)~pb }
+    \sigma_{tW} = 71.7 \pm 1.80 \text{~(scale)} \pm 3.40 \text{~(PDF, \alpS)~pb }
 \end{equation}
 
 
 \begin{figure}[ht]
     \centering
     \feynmandiagram[small,horizontal=a to b]{
-        i1 [particle=\(q\)] -- [fermion] a -- [fermion] i2 [particle=\(q\)],
-        a -- [photon, edge label=\(Z\)] b,
-        f1 [particle=\(W\), red] -- [photon] b -- [photon] f2 [particle=\(W\), red],
+        i1 [particle=\PQq] -- [fermion] a -- [fermion] i2 [particle=\PQq],
+        a -- [photon, edge label=\PZ] b,
+        f1 [particle=\PW, red] -- [photon] b -- [photon] f2 [particle=\PW, red],
     }; \qquad
-    \feynmandiagram[small, vertical=a to b, horizontal= i1 to a]{
-        i1 [particle=\(q\)] -- [fermion] a -- [photon] f1 [particle=\(W\), red],
-        a -- [fermion, edge label=\(q''\)] b,
-        i2 [particle=\(q'\)] -- [anti fermion] b -- [photon] f2 [particle=\(W\), red],
+    \feynmandiagram[small, vertical=a to b]{
+        i1 [particle=\PQq] -- [fermion] a -- [photon] f1 [particle=\PW, red],
+        a -- [fermion, edge label=\(\PQq^{\prime\prime}\)] b,
+        i2 [particle=\(\PQq^{\prime}\)] -- [anti fermion] b -- [photon] f2 [particle=\PW, red],
         i1 -- [opacity=0.0] i2,
         f1 -- [opacity=0.0] f2,
     };
-    \caption{The Tree-level process of $WW$ production. These two diagrams are both induced by the EW interaction. }
+    \caption{The Tree-level process of \PW\PW production. These two diagrams are both induced by electroweak interactions. }
     \label{fig:relatedWorks:ppCollision:ww}
 \end{figure}
 
-\noindent The $WW$ events are produced by EW interactions. Figure~\ref{fig:relatedWorks:ppCollision:ww} shows two major tree-level processes of the $WW$ production. In the first diagram, quark-antiquark annihilate into a virtual $Z/\gamma$, which then decays into $WW$ via the EW triple-gauge-coupling (TGC). In the second diagram, $WW$ is produced in the t-channel of quark-quark scattering. The WW process contributes to the event selection with $n_b=0$. But the contribution is small due to its small cross-section. The treatment of the $WW$ process is different between the shape analysis and the counting analysis: the shape analysis treat it as a signal process, while the counting analysis which does not have any $n_b=0$ category treats it as a background. The SM theoretical cross-section for WW is 
+\noindent The \PW\PW events are produced by electroweak interactions. Figure~\ref{fig:relatedWorks:ppCollision:ww} shows two major tree-level processes of the \PW\PW production. In the first diagram, quark and antiquark annihilate into a virtual $Z/\gamma$, which then decays into \PW\PW via the electroweak triple-gauge-coupling (TGC). In the second diagram, \PW\PW is produced in the t-channel of quark-quark scattering. The \PW\PW processes contribute at small cross-sections to the event selection with $n_b=0$. The treatment of the \PW\PW process is different between the shape analysis and the counting analysis: the shape analysis treat it as a signal process, while the counting analysis which does not have any $n_b=0$ category treats it as a background. The SM theoretical cross-section for \PW\PW is 
 \begin{equation}
-    \sigma_{WW} = 00 \pm 00  \text{~(scale)}  \pm 00  \text{~(PDF, $\alpha_s$)~pb }
+    \sigma_{\PW\PW} = 00 \pm 00  \text{~(scale)}  \pm 00  \text{~(PDF, \alpS)~pb }
 \end{equation}
 
 
-\subsection{Jet Forming}
+\subsection{Jet Forming Processes}
 \label{sec:relatedWorks:ppCollision:psJet} 
 
 % Quarks and gluons produced by the hard process have colors, but only the colorless particles can finally reach the detector.
-A few processes take place between the hard process and the particle reaching the detectors. These processes mainly include the parton shower, hadronization, and decay. Besides, the final state radiation (FSR) of photons is also possible for any charged particles.
+A few processes take place between the hard process and the particle reaching the detectors. These processes mainly include the parton shower, hadronization, and meson/baryon decay. In addition, final state radiations (FSR) of isolated photons and gluons are also possible.
 
 In an energy scale larger than $\Lambda_{QCD}$, quarks emit gluons, and subsequently, gluons convert into quark-antiquark pairs. Therefore, an initial parton ends up to be a bunch of secondary partons. And the initial momentum is split among all the secondary partons. This process is called the parton shower. The differential phase space of the gluon emission is
 \begin{equation}
     dS = \frac{2\alpha_s C_F}{\pi} \frac{dE}{E}\frac{d\theta}{\sin \theta} \frac{d\phi}{2\pi}.
 \end{equation}
 
-\noindent The gluon emission diverges at a small $\theta$ or a small energy $E$, often referred to as ``inferred colinear" divergence. Therefore the parton shower tends to soft and colinear within a narrow cone of the initial parton. 
+\noindent The gluon emission cross-section diverges at a small $\theta$ and a small energy $E$, often referred to as ``inferred colinear" divergence. Therefore the parton shower tends to soft and colinear within a narrow cone of the initial parton. 
 % But these divergences are canceled by the contributions from virtual diagrams, discussed in Section~\ref{sec:relatedWorks:vcs}, resulting in a finite total cross-section of the gluon emission. 
-When the energy scale of the parton shower drops below $\Lambda_{QCD}$, the partons start to group together and form mesons and baryons. This process is called hadronization or fragmentation. There are two popular models for the hadronization, the cluster approach and the string approach, both of which contain a few algorithm parameters usually tuned with the experimental data. For example, \PYTHIA uses the string model for hadronization tuned with the LEP and LHC Run1 data. After the hadronization, unstable mesons and baryons decay into stable particles like $\pi, K, \gamma, e, \mu$ based on the corresponding life-times and certain decaying matrix elements, such as EW decaying matrix element. The decay process can be also handle by \PYTHIA. More details about the simulation of the parton shower, hadronization, and decay in the CMS Monte Carlo events are discussed in Section~\ref{sec:cmsexperiment:simulation}.
+When the energy scale drops below $\Lambda_{QCD}$, the partons start to group together and form mesons and baryons. This process is called hadronization or fragmentation. There are two popular models for hadronization, the cluster approach and the string approach, both of which contain a few algorithm parameters derived from the experimental data. For example, \PYTHIA uses the string model for hadronization \cite{ANDERSSON198331}. After hadronization, unstable mesons and baryons decay into stable particles like \PGp, \PK, \PGg, \Pe, \PGm based on the corresponding life-times and certain decaying matrix elements, such as electroweak decaying. The decay processes can be also handle by \PYTHIA. More details about the simulation of these processes in the CMS simulated events are discussed in Section~\ref{sec:cmsexperiment:simulation}.
 
-After parton shower, hadronization, decay, as well as possible photon FSR, a parton from the hard process finally ends up to be a narrow cone of stable particles, including charge hadrons, neutral hadrons, photons, and leptons. This cone of particles can be clustered together to represent the initial seeding parton. This cluster of colinear particles is called a jet. A jet is defined by a clustering algorithm (e.g. anti-kt) and scale parameter (e.g. $\delta R=0.4$). To reliably represent the seeding parton, a jet algorithm has to be insensitive to the soft-colinear parton showering, so-called ``inferred colinear safe''. The jet algorithm in the CMS reconstruction is discussed in Section~\ref{sec:cmsexperiment:reconstruction}.
+After parton shower, hadronization, meson/baryon decay, as well as possible FSR, a parton from the hard process finally ends up to be a narrow cone of stable particles, including charge hadrons, neutral hadrons, photons, and leptons. This cone of particles can be clustered together to represent the initial seeding parton. This cluster of colinear particles is called a jet. A jet is defined by a clustering algorithm (e.g. anti-kt) and scale parameter (e.g. $\delta R=0.4$). To reliably represent the seeding parton, a jet algorithm has to be insensitive to the soft-colinear parton showering, so-called ``inferred colinear safe''. The jet algorithm in the CMS reconstruction is discussed in Section~\ref{sec:cmsexperiment:reconstruction}.
 

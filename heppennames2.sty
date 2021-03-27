@@ -37,18 +37,18 @@
 %%    - introduce set of corrections by George Alverson
 %%      \PGQpP{x} \PGFP{x} \PGhpr \PGhP{x} \PGhprP{x}.
 %%  1.6 (04/03/2012)  MG
-%%    - introduce set of corrections proposed by Mosè Giordano
+%%    - introduce set of corrections proposed by Mosï¿½ Giordano
 %%      \PGDpp, \PGDp, \PGDz, \PGDm (sign missing)
 %%  1.7 (13/07/2012)  MG
 %%    - modifications introduced
 %%      \PAGn, \PAp, \PAn, \PNp, \PNz, \PSGm (consistency in definitions,
-%%                                            proposed by Mosè Giordano)
+%%                                            proposed by Mosï¿½ Giordano)
 %%      \PGDpp, \PGDp, \PGDz, \PGDm (further consistency in definitions)
-%%      \PGtpr, \PGtprm,\PGtprp (added prime, correction by Mosè Giordano)
-%%      \PGSpm occurred twice --> second instance deleted (correction by Mosè Giordano)
-%%      \PGhpr eliminate empty group (correction by Mosè Giordano)
-%%      \PSHpmpm added missing \pm in definition d (correction by Mosè Giordano)
-%%      \PSHpp and \ PSHmm commands added (suggested by Mosè Giordano)
+%%      \PGtpr, \PGtprm,\PGtprp (added prime, correction by Mosï¿½ Giordano)
+%%      \PGSpm occurred twice --> second instance deleted (correction by Mosï¿½ Giordano)
+%%      \PGhpr eliminate empty group (correction by Mosï¿½ Giordano)
+%%      \PSHpmpm added missing \pm in definition d (correction by Mosï¿½ Giordano)
+%%      \PSHpp and \ PSHmm commands added (suggested by Mosï¿½ Giordano)
 %%
 %%  1.7-CMS (03/01/2019) GA
 %%    - added \PBst, \PKst, \PAGt
@@ -256,10 +256,13 @@
 %% -------------------------------------------------------------
 %% The particles...
 %% -------------------------------------------------------------
+\DeclareRobustCommand{\PLQ}{{\HepParticle{LQ}{}{}}\Xspace} % leptoquark boson
+
 
 % ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 %             Standard model bosons and Higgs                    +
 % ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 
 %% W and Z bosons
 \DeclareRobustCommand{\Pg}{{\HepParticle{g}{}{}}\Xspace} % gluon
@@ -330,6 +333,7 @@
 \DeclareRobustCommand{\PGmp}{{\HepParticle{\PGm}{}{+}}\Xspace} % anti-muon
 
 \DeclareRobustCommand{\PGt}{{\HepParticle{\uptau}{}{}}\Xspace} % tau
+\DeclareRobustCommand{\PGth}{{\HepParticle{\uptau}{\rm h}{}}\Xspace} % tau_h
 \DeclareRobustCommand{\PGtpm}{{\HepParticle{\PGt}{}{\pm}}\Xspace} % tau plus/minus
 \DeclareRobustCommand{\PGtm}{{\HepParticle{\PGt}{}{-}}\Xspace} % tau lepton
 \DeclareRobustCommand{\PGtp}{{\HepParticle{\PGt}{}{+}}\Xspace} % anti-tau

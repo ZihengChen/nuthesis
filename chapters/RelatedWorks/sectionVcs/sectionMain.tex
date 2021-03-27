@@ -1,106 +1,106 @@
 
-\section{Derivation of $V_{cs}$ from W leptonic branching fraction}
+\section{Derivation of $\mathrm{V}_{cs}$ from $\mathrm{W}$ leptonic branching fraction}
 \label{sec:relatedWorks:vcs}
 
 
-The coupling strength between \PW boson and the fermion current is $g$. However, due to the quark mixing, the vertex between  \PW boson and quark current is further scaled by a CMK element $|V_{ij}|$. Namely,
+The coupling strength between \PW boson and the fermion current is $g$. However, due to the quark mixing, the vertex between  \PW boson and quark current is further scaled by a CMK element $|\mathrm{V}_{ij}|$. Namely,
 \begin{equation}
     \feynmandiagram [inline=(d.base), small, horizontal=d to b] {
-        a[particle=\(\nu_e\)] -- [fermion] b [dot] -- [fermion] c[particle=\(e^-\)],
-        b -- [boson] d [particle=\(W^-\)],
+        a[particle=\PGn] -- [fermion] b [dot] -- [fermion] c[particle=\Pe],
+        b -- [boson] d [particle=\PW],
     };
     = i g \gamma^{\mu} , \qquad
     \feynmandiagram [inline=(d.base), small, horizontal=d to b] {
-        a[particle=\(q_j\)] -- [fermion] b [dot] -- [fermion] c[particle=\(q_i\)],
-        b -- [boson] d [particle=\(W^-\)],
+        a[particle=\(\PQq_j\)] -- [fermion] b [dot] -- [fermion] c[particle=\(\PQq_i\)],
+        b -- [boson] d [particle=\PW],
     };
-    = i g |V_{ij}|.
+    = i g |\mathrm{V}_{ij}|.
 \end{equation}
 
-\noindent Denoting the partial width of W decaying into one generation of lepton current $\Gamma_{W \to l \nu}$ as $\Gamma_l$, the tree-level calculation gives
+\noindent Denoting the partial width of\PW decaying into one generation of lepton current as $\Gamma_\ell$, the tree-level calculation gives
 \begin{equation}
-    \Gamma_l \equiv \Gamma_{W \to l \nu} =  \frac{g^2 m_W}{48 \pi} .
+    \Gamma_\ell \equiv \Gamma_{\PW \to \ell \PGn} =  \frac{g^2 m_W}{48 \pi} .
 \end{equation}
 
 
-\noindent The NLO EW correction of $\Gamma_l$ is at $10^{-5}$ relatively level~\cite{dEnterria:2020cpv}, small enough to neglect. The hadronic W width decaying into $q_i,q_j$ at the leading order of QCD can be expressed in terms of  $\Gamma_l$
+\noindent The NLO electroweak correction of $\Gamma_\ell$ is at $10^{-5}$ relatively level~\cite{dEnterria:2020cpv}, small enough to neglect. The hadronic\PW width decaying into $q_i,q_j$ at the leading order of QCD can be expressed in terms of  $\Gamma_\ell$
 \begin{equation}
-    \Gamma_{W \to q_i q_j}^{LO} = 3 |V_{ij}|^2 \frac{g^2 m_W}{48 \pi}  = 3 |V_{ij}|^2 \Gamma_l ,
+    \Gamma_{\PW \to \PQq_i \PQq_j}^{\rm LO} = 3 |\mathrm{V}_{ij}|^2 \frac{g^2 m_W}{48 \pi}  = 3 |\mathrm{V}_{ij}|^2 \Gamma_\ell ,
 \end{equation}
 
 
-\noindent  where the factor 3 accounts for the three colors. The ratio between the total hadronic and the total leptonic W width, at the leading order of $\alpha_s$, then equals to the square sum of the CKM elements in the first two rows:
+\noindent  where the factor 3 accounts for the three colors. The ratio between the total hadronic and the total leptonic\PW width, at the leading order of \alpS, then equals to the square sum of the CKM elements in the first two rows:
 \begin{equation}
-    \frac{\Gamma_{\rm had}^{LO}}{\Gamma_{\rm lep}} = \frac{\sum_{ij=(uc)(dsb)} \Gamma_{W \to q_i q_j}^{LO} }{ \sum_{e,\mu,\tau} \Gamma_l } = \sum_{ij=(uc)(dsb)} |V_{ij}|^2.
+    \frac{\Gamma_{\rm had}^{\rm LO}}{\Gamma_{\rm lep}} = \frac{\sum_{ij=(uc)(dsb)} \Gamma_{\PW \to \PQq_i \PQq_j}^{\rm LO} }{ \sum_{\Pe,\mu,\tau} \Gamma_\ell } = \sumCKM.
 \end{equation}
 
 
 
 
-% \subsection{Next-to-leading Order of $\alpha_s$}
+% \subsection{Next-to-leading Order of \alpS}
 
 \begin{figure}
     \centering
     \includegraphics[width=0.8\textwidth]{chapters/RelatedWorks/sectionVcs/figures/realVirtual.png}
-    \caption{ The real and virtual diagram of W decay at the NLO of $\alpha_s$. }
+    \caption{ The real and virtual diagram of\PW decay at the next-to-leading order of \alpS. }
     \label{fig:relatedWorks:vcs:realVirtual}
 \end{figure}
 
 
-\noindent At the next-to-leading order (NLO) of $\alpha_s$, QCD correction related to the quark current are taken into account. More specifically, the real and virtual diagram shown in Figure~\ref{fig:relatedWorks:vcs:realVirtual} add extra contributions to the leading order width $\Gamma_{W \to q_i q_j}^{LO} $. The real diagram corresponds to the gluon final state radiation from the outcoming quarks. The virtual diagram corresponds to the interference between the tree level diagram and the virtual gluon bubbles in the quark current and at the vertex. The calculation of the real and virtual contribution is expressed as a factor multiplied on the tree level width  $\Gamma_{W \to q_i q_j}^{LO} $.
+\noindent At the next-to-leading order (NLO) of \alpS, QCD correction related to the quark current are taken into account. More specifically, the real and virtual diagram shown in Figure~\ref{fig:relatedWorks:vcs:realVirtual} add extra contributions to the leading order width $\Gamma_{\PW \to \PQq_i \PQq_j}^{\rm LO} $. The real diagram corresponds to the gluon final state radiation from the outcoming quarks. The virtual diagram corresponds to the interference between the tree level diagram and the virtual gluon bubbles in the quark current and at the vertex. The calculations of the real and virtual contribution can be expressed as a factor multiplied on the tree-level width  $\Gamma_{\PW \to \PQq_i \PQq_j}^{\rm LO} $.
  \begin{align}
- 	\Gamma^V_{W \to q_i q_j}  &= \Gamma_{W \to q_i q_j}^{LO} \times \frac{\alpha_s}{2\pi}\frac{4}{3} \bigg \{  -\ln^2\frac{m_g}{Q} -3 \ln\frac{m_g}{Q} + \frac{\pi^2}{3}-\frac{7}{2} \bigg\} \\
-    \Gamma^R_{W \to q_i q_j}  &= \Gamma_{W \to q_i q_j}^{LO} \times \frac{\alpha_s}{2\pi}\frac{4}{3} \bigg \{  +\ln^2\frac{m_g}{Q} + 3 \ln\frac{m_g}{Q} - \frac{\pi^2}{3}+ 5 \bigg\}
+ 	\Gamma^{\rm V}_{\PW \to \PQq_i \PQq_j}  &= \Gamma_{\PW \to \PQq_i \PQq_j}^{\rm LO} \times \frac{\alpS}{2\pi}\frac{4}{3} \bigg \{  -\ln^2\frac{m_g}{Q} -3 \ln\frac{m_g}{Q} + \frac{\pi^2}{3}-\frac{7}{2} \bigg\} \\
+    \Gamma^{\rm R}_{\PW \to \PQq_i \PQq_j}  &= \Gamma_{\PW \to \PQq_i \PQq_j}^{\rm LO} \times \frac{\alpS}{2\pi}\frac{4}{3} \bigg \{  +\ln^2\frac{m_g}{Q} + 3 \ln\frac{m_g}{Q} - \frac{\pi^2}{3}+ 5 \bigg\}
 \end{align}
  
-\noindent  where $Q$ is the energy of the W boson and $m_g=0$ is the mass of the gluon, which makes both the real and virtual width diverge. But the divergences in the real and virtual width exactly cancel each other, leading to a finite total contributions. This QCD correction turns out to be a factor of $k=(1+\frac{\alpha_s}{\pi})$ :
+\noindent  where $Q$ is the energy of the\PW boson and $m_g=0$ is the mass of the gluon, which makes both the real and virtual width diverge. But the divergences in the real and virtual width exactly cancel each other, leading to a finite total contributions. This QCD correction turns out to be a factor of $k=(1+\frac{\alpS}{\pi})$ :
 \begin{equation}
 \begin{split}
-    \Gamma_{W \to q_i q_j}^{\rm NLO} =& \Gamma_{W \to q_i q_j}^{LO} + \Gamma^{V}_{W \to q_i q_j}  + \Gamma^{R}_{W \to q_i q_j}
-            =   \Gamma_{W \to q_i q_j}^{LO} \big( 1+ \frac{\alpha_s(M_W)}{\pi}\big)
-%             =&  \Gamma_l \bigg[ 1+ \frac{\alpha_s(M_W)}{\pi} \bigg]  \sum_{color} \sum_{ i,j } |V_{ij}|^2  \\
-%             =&  \Gamma_l \bigg[ 1+ \frac{ \alpha_s(\mu_R) - \alpha^2_s(\mu_R) \frac{ \beta_0}{2\pi} \ln \frac{M_W}{\mu_R}}{\pi} \bigg] \sum_{color} \sum_{ i,j } |V_{ij}|^2  
+    \Gamma_{\PW \to \PQq_i \PQq_j}^{\rm NLO} =& \Gamma_{\PW \to \PQq_i \PQq_j}^{\rm LO} + \Gamma^{\rm V}_{\PW \to \PQq_i \PQq_j}  + \Gamma^{\rm R}_{\PW \to \PQq_i \PQq_j}
+            =   \Gamma_{\PW \to \PQq_i \PQq_j}^{\rm LO} \big( 1+ \frac{\alpS(M_W)}{\pi}\big)
+%             =&  \Gamma_\ell \bigg[ 1+ \frac{\alpS(M_W)}{\pi} \bigg]  \sum_{color} \sum_{ i,j } |\mathrm{V}_{ij}|^2  \\
+%             =&  \Gamma_\ell \bigg[ 1+ \frac{ \alpS(\mu_R) - \alpha^2_s(\mu_R) \frac{ \beta_0}{2\pi} \ln \frac{M_W}{\mu_R}}{\pi} \bigg] \sum_{color} \sum_{ i,j } |\mathrm{V}_{ij}|^2  
 \end{split} .
 \end{equation}
 
-\noindent Therefore at the NLO of $\alpha_s$, the ratio between the hadronic and leptonic \PW width also includes the $k=(1+\frac{\alpha_s}{\pi})$ factor:
+\noindent Therefore at the NLO of \alpS, the ratio between the hadronic and leptonic \PW widths also includes the $k=(1+\frac{\alpS}{\pi})$ factor:
 \begin{equation}
-    \frac{\Gamma_{\rm had}^{\rm NLO}}{\Gamma_{\rm lep}} =  \underbrace{(1+\frac{\alpha_s}{\pi})}_{k} \sum_{ij=(uc)(dsb)} |V_{ij}|^2.
+    \frac{\Gamma_{\rm had}^{\rm NLO}}{\Gamma_{\rm lep}} =  \underbrace{(1+\frac{\alpS}{\pi})}_{k} \sumCKM. %\sum_{ij=(uc)(dsb)} |\mathrm{V}_{ij}|^2.
 \end{equation}
 
 
-\noindent For higher order $\alpha_s$ corrections of the hadronic W width, the state-of-art factor has been calculated by considering additional QCD loops. At $\rm N^3LO$, the ratio between the hadronic and leptonic W width reads as 
+\noindent For higher order \alpS corrections of the hadronic\PW width, the state-of-art factor has been calculated by considering additional QCD loops. At $\rm N^3LO$, the ratio between the hadronic and leptonic\PW width reads as 
 \begin{equation}
-    \frac{\Gamma_{\rm had}^{\rm N^3LO}}{\Gamma_{\rm lep}} =   \underbrace{ \bigg [ 1+1.045 ( \frac{\alpha_s}{\pi} ) + 0.94  ( \frac{\alpha_s}{\pi} ) ^2 -15  ( \frac{\alpha_s}{\pi} ) ^3 \bigg ]}_{k} \sum_{ij=(uc)(dsb)} |V_{ij}|^2.
+    \frac{\Gamma_{\rm had}^{\rm N^3LO}}{\Gamma_{\rm lep}} =   \underbrace{ \bigg [ 1+1.045 ( \frac{\alpS}{\pi} ) + 0.94  ( \frac{\alpS}{\pi} ) ^2 -15  ( \frac{\alpS}{\pi} ) ^3 \bigg ]}_{k} \sumCKM.
 \end{equation}
 
-\noindent Finally, the sum square of the CKM elements in first two rows can be calculated by the experimental measurement of $B(W \to h)$
+\noindent Finally, the sum square of the CKM elements in the first two rows can be calculated by the experimental measurement of \BWh
 \begin{equation}
-    \sum_{ij=(uc)(dsb)} |V_{ij}|^2 = \frac{1}{k}\times \frac{B_{W \to h} }{1- B_{W \to h}}
-\end{equation}
-
-
-
-\noindent where $\alpha_s$ at the \PW pole can be calculated with $\alpha_s(\mu_R = m_Z)=0.1178\pm0.0010$~\cite{pdg2020} and the QCD renormalization: $\alpha_s(m_W) = \alpha_s(\mu_R) - \alpha^2_s(\mu_R) \frac{ \beta_0}{2\pi} \ln \frac{m_W}{\mu_R} = 0.1199 \pm 0.0010$. The square sum of the five more precisely measured CKM elements $V_{ud},V_{us},V_{ub},V_{cd},V_{cb}$ can be calculated from the latest experimental results \cite{pdg2020} shown in Table~\ref{tab:relatedWorks:vcs:ckm}. $\rm{SS_5} = |V_{ud}|^2 + |V_{us}|^2 + |V_{ub}|^2 + |V_{cd}|^2 + |V_{cb}|^2 = 1.0490 \pm 0.0018$, which leads to the expression for $V_{cs}$:
-\begin{equation}
-V_{cs} = \sqrt{ \frac{1}{k}\times \frac{B_{W \to h} }{1- B_{W \to h}} - \rm{SS_5} } .
+    \sum_{ij=(uc)(dsb)} |\mathrm{V}_{ij}|^2 = \frac{1}{k}\times \frac{\BWh }{1- \BWh}
 \end{equation}
 
 
-% and the renormalization scale is conventionally chosen as Z mass $\mu_R=M_Z$. The running couplings derived from the higher order of QCD renormalization group equation is discussed in the Section~\ref{sec:relatedWorks:qft:qcd}. The latest PDG value of $\alpha_s(m_Z)=0.1178\pm0.0010$. Using the leading order running of coupling, the $\alpha_s$ at W pole is
+
+\noindent where \alpS at the \PW pole can be calculated with $\alpS(\mu_R = m_Z)=0.1178\pm0.0010$~\cite{pdg2020} and the QCD renormalization: $\alpS(m_W) = \alpS(\mu_R) - \alpha^2_s(\mu_R) \frac{ \beta_0}{2\pi} \ln \frac{m_W}{\mu_R} = 0.1199 \pm 0.0010$. The square sum of the five more precisely measured CKM elements can be calculated from the latest experimental results \cite{pdg2020} shown in Table~\ref{tab:relatedWorks:vcs:ckm}. $\mathrm{SS_5} = \sumCKMfive = 1.0490 \pm 0.0018$, which leads to the expression for \absVcs:
+\begin{equation}
+\absVcs = \sqrt{ \frac{1}{k}\times \frac{\BWh }{1- \BWh} - \mathrm{SS_5} } .
+\end{equation}
+
+
+% and the renormalization scale is conventionally chosen as Z mass $\mu_R=M_Z$. The running couplings derived from the higher order of QCD renormalization group equation is discussed in the Section~\ref{sec:relatedWorks:qft:qcd}. The latest PDG value of $\alpS(m_Z)=0.1178\pm0.0010$. Using the leading order running of coupling, the \alpS at\PW pole is
 % \begin{equation}
-% 	\alpha_s(M_W) = 0.1199 \pm 0.0010
+% 	\alpS(M_W) = 0.1199 \pm 0.0010
 % \end{equation}
-% By definition, the branching fraction of W satisfies the unitary constrain
+% By definition, the branching fraction of\PW satisfies the unitary constrain
 % \begin{equation}
-%     \sum_{ i,j } B_{W \to q_i q_j} + 3 B_l = 1
-% \end{equation}
-
-% \noindent using  $B_{W \to q_i q_j} = 3 k |V_{ij}|^2 B_l $ to substitute $B_{W \to q_i q_j}$  with $B_l$, one gets
-% \begin{equation}
-%     \sum_{ i,j } |V_{ij}|^2 = \frac{1}{ 3k} \, \frac{1-3B_l}{B_l}
+%     \sum_{ i,j } B_{\PW \to \PQq_i \PQq_j} + 3 B_\ell = 1
 % \end{equation}
 
+% \noindent using  $B_{\PW \to \PQq_i \PQq_j} = 3 k |\mathrm{V}_{ij}|^2 B_\ell $ to substitute $B_{\PW \to \PQq_i \PQq_j}$  with $B_\ell$, one gets
+% \begin{equation}
+%     \sum_{ i,j } |\mathrm{V}_{ij}|^2 = \frac{1}{ 3k} \, \frac{1-3B_\ell}{B_\ell}
+% \end{equation}
 
 
-% \noindent  With $\sum_{ i,j } |V_{ij}|^2$ and the experimental value of other 5 better measured CKM elements \cite{pdg2020} in Table~\ref{tab:relatedWorks:vcs:ckm}, we can calculate the $V_{cs}$.
+
+% \noindent  With $\sum_{ i,j } |\mathrm{V}_{ij}|^2$ and the experimental value of other 5 better measured CKM elements \cite{pdg2020} in Table~\ref{tab:relatedWorks:vcs:ckm}, we can calculate the \absVcs.

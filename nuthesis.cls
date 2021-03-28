@@ -38,6 +38,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
+
+
+
+
 % contributed by Tomasz Strzalecki - 7/27/2008
 % there should be a page number on the page which displays the part name
 \def\part{\cleardoublepage %

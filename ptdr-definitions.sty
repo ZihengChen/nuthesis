@@ -217,7 +217,7 @@
 
 
 
-% \ifthenelse{\boolean{cms@italic}}{\newcommand{\cmsSymbolFace}[1]{#1}}{\newcommand{\cmsSymbolFace}[1]{\mathrm{#1}}}
+% \ifthenelse{\boolean{cms@italic}}{\newcommand{\cmsSymbolFace}[1]{#1}}{\newcommand{\cmsSymbolFace}[1]{\mathrm{#1}}} # commented by Ziheng
 
 % Particle names which track the italic/non-italic face convention
 \newcommand{\zp}{{\PZpr}\xspace} % plain Z'
@@ -260,7 +260,7 @@
 \providecommand{\PGmpm}{\ensuremath{\PGm^\pm}\xspace}
 \providecommand{\PGmmp}{\ensuremath{\PGm^\mp}\xspace} % not available in pennames2, AFAIK
 \providecommand{\PGUPnS}{\PGUP[nS]\xspace}% maps to \PGUP[nS]
-% for APS style tables
+% for APS style tables commented by Ziheng
 % \ifthenelse{\boolean{cms@external}}{%
 % \newenvironment{scotch}[1]{\protect\centering\ruledtabular\tabular{#1}}{\endtabular\endruledtabular}
 % }{

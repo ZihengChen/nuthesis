@@ -27,9 +27,17 @@
 \usepackage{textcomp}
 \usepackage{amsmath}
 \usepackage{xspace}
-\usepackage[italic, italicGreek]{heppennames2}
-% \usepackage{heppennames2}
+
+
+%%% ====================================================================
+% from cms-tdr.cls 
+% PENNAMES
+\usepackage[low-sup]{subdepth}  % corrects normal super/sub after subdepth: https://tex.stackexchange.com/questions/352936/wrong-superscript-placement-with-hepparticles
+% \usepackage[italic,italicGreek]{heppennames2}
+\usepackage[pazoGreek]{heppennames2}
 \usepackage{ptdr-definitions}
+%%% ====================================================================
+
 
 \usepackage{fullpage,rotating,booktabs,dcolumn}
 \usepackage{natbib}
@@ -45,9 +53,11 @@
 
 % Page numbers should conform to margin requirements and be placed at least 1” from the top and 
 % right sides of the page, as appears in this document. A tutorial for page number placement appears later in this document
-
-
 \hypersetup{hidelinks}
+
+
+
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -125,11 +135,11 @@
     %%%%%%%%%%%%%%%%%%%%%%%%%%%
     \mainmatter  
     
-    % \include{chapters/Introduction/chapterMain}
+    \include{chapters/Introduction/chapterMain}
     
     % \include{chapters/Physics/chapterMain}
     % \include{chapters/CMSExperiment/chapterMain}
-    \include{chapters/Analysis/chapterMain}
+    % \include{chapters/Analysis/chapterMain}
     % \include{chapters/HGCal/chapterMain}
     
     % \include{chapters/Conclusion/chapterMain}

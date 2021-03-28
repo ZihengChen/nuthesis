@@ -33,15 +33,15 @@ prior uncertainty for each is assumed to be 25\%.
 \begin{itemize}
     \item \ttbar: 10\%, PDF, $\alpha_{s}$, $\mu_{R}/\mu_{F}$
     \item tW: 10\%
-    \item WW: unconstrained
+    \item \WW: unconstrained
     \item Z+jets: 10\%, PDF, $\alpha_{s}$, $\mu_{R}/\mu_{F}$
     \item W+jets: 10\%
     \item diboson: 10\%
 \end{itemize}
 
-\subsubsection{WW \pt reweighting}
+\subsubsection{\WW \pt reweighting}
 
-The reweighting of the WW \pt is accounted for by including two n.p. for
+The reweighting of the \WW \pt is accounted for by including two n.p. for
 the resummation and factorization variations as described in
 section~\ref{sec:analysis:dataset}
 
@@ -87,7 +87,7 @@ fit model.
     \item \textit{identification/isolation}: the uncertainties are
         accounted for each muon and are based on values provided
         by the POG.  These are incorporated as a shape uncertainty that
-        are $\pt$ dependent.  
+        are \pt dependent.  
     \item \textit{energy scale}: to account for the muon energy scale,
         the muon \pt is varied by $\pm 1 \sigma$ (0.2\%) and the effect of
         the variation on the acceptance and change in kinematics is included
@@ -100,7 +100,7 @@ fit model.
         \item \textit{identification/isolation}: the uncertainties
             provided per electron are taken from values provided by the
             POG.  These are incorporated as a shape uncertainty that are
-            $\pt$ dependent.
+            \pt dependent.
         \item \textit{reconstructions}: treated the same as the
             identification uncertainty.  Scale factors and their
             uncertainties are only $\eta$ dependent. 
@@ -117,12 +117,12 @@ fit model.
             uncertainty on the scale factor applied to simulation.
             Because a sideband is included to provide an \emph{in situ}
             evaluation of the $\tau$ efficiency scale factor, the scale
-            factors are included as $\pt$-dependent n.p. in seven \pt
+            factors are included as \pt-dependent n.p. in seven \pt
             bins.
         \item \textit{$jet\rightarrow\tau$}: scale factors and
             uncertainties for jets faking taus were derived based on a
             dilepton plus reconstructed tau control region.  A n.p. is
-            assigned to each $\pt$ bin used to measure the scale factor
+            assigned to each \pt bin used to measure the scale factor
             and an overall normalization n.p. is assigned to account for
             any difference in rate between light and heavy jets.
         \item \textit{$e\rightarrow\tau$}: a single normalization n.p.
@@ -141,7 +141,7 @@ fit model.
     events in the various jet multiplicity categories.  With that in
     mind, the uncertainty is taken into account by varying the various
     sources of jet uncertainties and assessing the resulting effect on
-    the jet and b-tag multiplicities.
+    the jet and \PQb tag multiplicities.
 
     \begin{itemize}
         \item \textit{energy scale}: the jet energy scale is varied by
@@ -149,7 +149,7 @@ fit model.
             corrections provided by the JetMET POG.  These are included
             as 18 shape n.p.'s (N.B. the lepton kinematic quantities
             which are fit are generally not affected by variation of the
-            jet energy scale, but migration between different b tag
+            jet energy scale, but migration between different \PQb tag
             categories does happen)
         \item \textit{resolution}: the jet energy is corrected in
             simulation to account for the difference in resolution
@@ -163,10 +163,10 @@ fit model.
 
 \subsubsection{b-tagging}
     
-The b tag modelling in simulation is corrected to better describe the
+The \PQb tag modelling in simulation is corrected to better describe the
 data based on scale factors.  The uncertainty on the correction is
-assessed based on up and down variations of b tagging and mistagging
-scale factors supplied by the b tag POG.  The b tag uncertainties are
+assessed based on up and down variations of \PQb tagging and mistagging
+scale factors supplied by the \PQb tag POG.  The \PQb tag uncertainties are
 factorized based on the various sources of uncertainty considered in the
 calculation of the scale factors.  The variation is propagated through
 the analysis through the inclusion of shape nuisance parameters for both
@@ -211,6 +211,129 @@ accounting for the difference in ID/misID efficiency for identified
 $\tau$ candidates, and that uncertainty in general would be much
 smaller, $<5\%$.  In appendix~\ref{sec:tau_fsr}, a method for accounting
 for this is described.
+
+
+
+
+Four dedicated MC samples are used for the \ttbar theoretical uncertainties,
+including FSR, ISR, matrix element parton shower (MEPS), and underline events (UE).
+Based on the four dedicated and the nominal \ttbar samples,
+the shape analysis obtains four types of the template morphine,
+while the counting analysis propagates the four deviations of signal efficiency.
+
+However, it is noticed that variations of theoretical parameters in these
+four dedicated MC samples could have a large influence on the $\tau_h$ identification efficiency
+and the $j\to \tau$ misidentification rate. 
+Since the uncertainty of the $\tau_h$ identification efficiency and the $j\to \tau$ misidentification rate
+are accounted for separately, the changes related to the tau identification 
+in the dedicated \ttbar samples should be removed to avoid double counting.
+Thus a correction is needed for these dedicated samples.
+Such that, the tau identification and misidentification in the dedicated samples 
+are kept the same as the nominal \ttbar sample.
+
+To derive the correction for these dedicated MC samples, we calculate the
+probabilities of reconstructing taus in the nominal and dedicated \ttbar events.
+The origins of the reconstructed taus are tagged based on the matching to the
+gen-level particles. Both Tight and VTight WP of tau identification are
+considered. The changes in the tau id and misid due to the FSR up and down 
+variation are shown in Figure~\ref{fig:appendix:reweighttt:sf_fsr}. The changes
+due to the ISR, MEPS, UE up and down variations are shown in Figure~\ref{fig:appendix:reweighttt:sf_isr_MEPS_UE}.
+It is clear that the FSR has a considerable impact on the tau id and misid that 
+needs removal, while the effect from the ISR, MEPS and UE are neglectable.
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.49\textwidth]{chapters/Analysis/sectionSystematics/figures/ttTheoretical/2020_MCRatio_fsr_tauGenFlavor_tauTight.png}
+    \includegraphics[width=0.49\textwidth]{chapters/Analysis/sectionSystematics/figures/ttTheoretical/2020_MCRatio_fsr_tauGenFlavor_tauVTight.png}
+    \caption{FSR effect on the $\tau_h$ identification and $j \to \tau_h$ misidentification obtained from the dedicated and the nominal \ttbar samples. 
+    The Tight and VTight WP are shown on the left and right, respectively.
+    }
+    \label{fig:appendix:reweighttt:sf_fsr}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.49\textwidth]{chapters/Analysis/sectionSystematics/figures/ttTheoretical/2020_MCRatio_isr_tauGenFlavor_tauTight.png}
+    \includegraphics[width=0.49\textwidth]{chapters/Analysis/sectionSystematics/figures/ttTheoretical/2020_MCRatio_isr_tauGenFlavor_tauVTight.png}
+    \includegraphics[width=0.49\textwidth]{chapters/Analysis/sectionSystematics/figures/ttTheoretical/2020_MCRatio_meps_tauGenFlavor_tauTight.png}
+    \includegraphics[width=0.49\textwidth]{chapters/Analysis/sectionSystematics/figures/ttTheoretical/2020_MCRatio_meps_tauGenFlavor_tauVTight.png}
+    \includegraphics[width=0.49\textwidth]{chapters/Analysis/sectionSystematics/figures/ttTheoretical/2020_MCRatio_ue_tauGenFlavor_tauTight.png}
+    \includegraphics[width=0.49\textwidth]{chapters/Analysis/sectionSystematics/figures/ttTheoretical/2020_MCRatio_ue_tauGenFlavor_tauVTight.png}
+    \caption{ISR, MEPS, UE effect on the $\tau_h$ identification and $j \to \tau_h$ misidentification obtained from the dedicated and the nominal \ttbar samples.
+    The Tight and VTight WP are shown on the left and right, respectively.
+    }
+    \label{fig:appendix:reweighttt:sf_isr_MEPS_UE}
+\end{figure}
+
+
+
+
+\begin{table}[h]
+    \centering
+    \caption{Comparison between nominal uncertainty (in a snapshot of
+        the analysis) and the uncertainty after applying the corrections
+        to the FSR variation.}
+        
+    \begin{tabular}{l|cccc}
+                                  & $W\rightarrow e$ & $W\rightarrow \mu$ & $W\rightarrow \tau$ & $W\rightarrow h$ \\
+        \hline
+        nominal                   & 1.02             & 0.71               & 2.04                & 0.40             \\
+        w/ $\tau$ FSR corrections & 1.01             & 0.69               & 1.69                & 0.36             \\
+    \end{tabular}
+    \label{fig:fsr_correction}
+\end{table}
+
+
+Table~\label{fig:fsr_correction} shows total uncertainties of $Br(W)$ due 
+to FSR before and after the tau id and misid correction of the dedicated FSR sample.
+Before the correction, the dedicated FSR sample leads to an artificially large
+uncertainties which double counts the tau id and misid systematics.
+
+
+
+
+The FSR dedicated \ttbar samples are corrected using the SF in Figure~\ref{fig:appendix:reweighttt:sf_fsr}.
+The up and down variation given by the dedicated MC samples lead to envelops on the \ttbar event efficiencies.
+As discussed in section~\ref{sec:analysis:method}, there are 21 \ttbar event efficiencies with 21 different
+$\WW$ decay scenarios. For VTight WP, the 21 envelops on efficiencies due to FSR, ISR, MEPS, and UE are shown in 
+Figure~\ref{fig:appendix:reweighttt:effAfterCorrFSR}-\ref{fig:appendix:reweighttt:effAfterCorrUE}. 
+Due to the finite statistics of the dedicated MC samples, the envelops edges are smear by the MC statistics, 
+which are also shown in the Figure~\ref{fig:appendix:reweighttt:effAfterCorrFSR}-\ref{fig:appendix:reweighttt:effAfterCorrUE}.
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.99\textwidth]{chapters/Analysis/sectionSystematics/figures/ttTheoretical/fsr.png}    
+    \caption{FSR envelops on 21 efficiencies. VTight WP is shown.}
+    \label{fig:appendix:reweighttt:effAfterCorrFSR}
+\end{figure}
+
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.99\textwidth]{chapters/Analysis/sectionSystematics/figures/ttTheoretical/isr.png}
+    \caption{ISR envelops on 21 efficiencies. VTight WP is shown.}
+    \label{fig:appendix:reweighttt:effAfterCorrISR}
+\end{figure}
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.99\textwidth]{chapters/Analysis/sectionSystematics/figures/ttTheoretical/meps.png}
+    \caption{MEPS envelops on 21 efficiencies. VTight WP is shown.}
+    \label{fig:appendix:reweighttt:effAfterCorrMEPS}
+\end{figure}
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.99\textwidth]{chapters/Analysis/sectionSystematics/figures/ttTheoretical/ue.png}
+    \caption{UE envelops on 21 efficiencies. VTight WP is shown.}
+    \label{fig:appendix:reweighttt:effAfterCorrUE}
+\end{figure}
+
 
 
 
@@ -271,7 +394,7 @@ with respect to the nominal value is treated as the systematical uncertainty
 due to a given source of systematics.
 
 Recall that channels are divided into 
-four groups based on the trigger types and b-tag multiplicities,
+four groups based on the trigger types and \PQb tag multiplicities,
 ($\mu1b$, $\mu2b$, $e1b$, $e2b$), each of which produces a $\beta$ measurement. 
 Table~\ref{tab:syst_alt} shows the 
 uncertainties of $\beta$ from these four groups due to each individual source of systematics.
@@ -322,6 +445,12 @@ be analytically calculated
     \caption{ the statistical and systematical part of the $\textbf{V}$ matrix. }
     \label{fig:corBetaBar}
 \end{figure}
+
+\input{chapters/Analysis/sectionSystematics/tables/syst_alt.tex}
+
+\FloatBarrier
+
+
 
 % \subsubsection{Method and Result of Analytic Combining}
 
@@ -465,8 +594,5 @@ be analytically calculated
 % \end{figure}
 
 
-\input{chapters/Analysis/sectionSystematics/tables/syst_alt.tex}
-
-\FloatBarrier
 
 

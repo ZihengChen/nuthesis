@@ -22,15 +22,15 @@
 \usepackage{graphicx}
 \usepackage{placeins}
 \usepackage{siunitx}
-\usepackage[acronym]{glossaries}
 \usepackage{cite}
 
 \usepackage{textcomp}
 \usepackage{amsmath}
 \usepackage{xspace}
-% \usepackage[italic,italicGreek]{heppennames2}
-\usepackage{heppennames2}
+\usepackage[italic, italicGreek]{heppennames2}
+% \usepackage{heppennames2}
 \usepackage{ptdr-definitions}
+
 \usepackage{fullpage,rotating,booktabs,dcolumn}
 \usepackage{natbib}
 \usepackage[com pat = 1.1.0]{tikz-feynman}
@@ -42,11 +42,10 @@
 
 \usepackage{geometry}
 \geometry{letterpaper, margin=1in, tmargin=1.3in, headsep=24 pt}
+
 % Page numbers should conform to margin requirements and be placed at least 1” from the top and 
 % right sides of the page, as appears in this document. A tutorial for page number placement appears later in this document
 
-
-\input{frontmatter/glossary}
 
 \hypersetup{hidelinks}
 
@@ -55,7 +54,7 @@
 % DATA OF AUTHOR AND DISSERTATION %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \author{Ziheng Chen}
-\title{A Precision Measurement of the W Boson Branching Fractions in \Pp-\Pp collisions at $\sqrt{s} = 13~\TeV$ with the CMS Experiment}
+\title{Measurements of the W Boson Branching Fractions in Proton-Proton collisions at 13\TeV Center-of-mass Energy with the CMS Experiment}
 \degree{DOCTOR OF PHILOSOPHY}  
 \field{Physics}
 \graduationmonth{April}
@@ -70,7 +69,55 @@
     %%%%%%%%%%%%%%%%%%%%%%
     % Some initial stuff %
     %%%%%%%%%%%%%%%%%%%%%%
-    \include{frontmatter}
+
+
+    % Preliminary pages start here.
+    \frontmatter
+
+    % Produces the title page.
+    \maketitle
+
+    % Creates the copyright page.
+    \copyrightpage
+
+    % Abstract page.
+    \abstract
+
+    The leptonic and inclusive hadronic decay branching fractions of the W boson are studied using 35.9\fbinv of proton-proton collision data collected at $\sqrt{s}=13\TeV$ during the 2016 run of the CMS experiment. Events characterized by the production of two W boson pairs, or of a W boson accompanied by jets, are selected. Multiple event categories sensitive to the signal processes are defined based on the presence of energetic isolated charged leptons, the number of hadronic jets, and the number of b tagged jets.  A maximum likelihood estimate of the W branching fractions is carried out by fitting to the data in each event category simultaneously. The branching fractions of the W boson decaying into electron, muon, and tau lepton final states amount to $(10.83  \pm 0.10)\%$, $(10.94  \pm 0.08)\%$, and $(10.77 \pm 0.21)\%$, respectively, supporting the hypothesis of lepton universality for the weak interaction. Under the assumption of lepton universality, the inclusive leptonic and hadronic decay branching fractions are found to be $(10.89 \pm 0.08)\%$ and $(67.32 \pm 0.23)\%$, respectively. From these results, three standard model quantities are subsequently derived: the sum square of elements in the first two rows of the Cabibbo--Kobayashi--Maskawa (CKM) matrix  $\sum{\abs{\mathrm{V_{ij}}}^{2}} = 1.991 \pm 0.019$, the CKM element $\abs{\mathrm{V_{cs}}} = 0.969 \pm 0.011$, and the strong coupling constant at the W mass scale, $\alpS(m_\mathrm{W}) = 0.094 \pm 0.033$.
+
+
+    % Acknowledgements page.
+    \acknowledgements
+
+    First and foremost, I would like to express my deepest and most sincere gratitude to my supervisor \textbf{Mayda Velasco}, Professor in the Physics Department, Northwestern University, who provides me with excellent guidance and training to explore and research the wonderful world of particle physics. 
+
+    Next, I would like to thank \textbf{Nathaniel Odell}, a postdoc fellow in the Physics Department, Northwestern University, and the colleague I collaborate the most closely with on this thesis, for providing me enormous support and advice during the studies in this thesis. Without him, this thesis would not be completed. 
+
+    Also, many people within the CMS have given me beneficial guidance. I could not appreciate more the ARC committee members and the SMP colleagues for sharing their constructive suggestions and insights about our analysis work. Besides, I also want to acknowledge my HGCAL DPG colleagues and BRIL BCM1F colleagues for providing me with marvelous opportunities and experiences on the detector research and developing.
+
+    Finally, I would like to thank my family members, including my wife \textbf{Shuyuan Hu}, who is currently studying for her Ph.D. in Heidelberg, Germany, as well as my parents in China. Despite the long distance, the love, joy, happiness, and support they brought to me during my doctoral journey is one of the most invaluable and beautiful things that ever happen to me.
+
+
+
+    % needed for the hyperlinks to work correctly
+    \clearpage\phantomsection 
+    % Table of Contents
+    \setcounter{tocdepth}{2}
+    \begin{spacing}{1.2}
+        \tableofcontents	
+    \end{spacing}
+
+    % needed for the hyperlinks to work correctly
+    \clearpage\phantomsection 
+    % List of Tables 
+    \listoftables
+
+
+    % needed for the hyperlinks to work correctly
+    \clearpage\phantomsection 
+    % List of Figures
+    \listoffigures
+
 
 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -78,11 +125,11 @@
     %%%%%%%%%%%%%%%%%%%%%%%%%%%
     \mainmatter  
     
-    \include{chapters/Introduction/chapterMain}
+    % \include{chapters/Introduction/chapterMain}
     
-    % \include{chapters/RelatedWorks/chapterMain}
+    % \include{chapters/Physics/chapterMain}
     % \include{chapters/CMSExperiment/chapterMain}
-    % \include{chapters/Analysis/chapterMain}
+    \include{chapters/Analysis/chapterMain}
     % \include{chapters/HGCal/chapterMain}
     
     % \include{chapters/Conclusion/chapterMain}
@@ -100,15 +147,14 @@
     \bibliographystyle{unsrt}
     \bibliography{
         chapters/Introduction/chapterReference,
-        chapters/RelatedWorks/chapterReference,
+        chapters/Physics/chapterReference,
         chapters/CMSExperiment/chapterReference,
         chapters/Analysis/chapterReference,
         chapters/HGCal/chapterReference
         }
     \end{singlespace}
     
-    % vita is optional
-    % \include{vita}
+
     
 \end{document}
 

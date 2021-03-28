@@ -14,7 +14,7 @@ fractions measured by the shape analysis, the more precise approach.
 The values of the
 branching fractions measured using the two approaches are shown in
 Table~\ref{tab:results} and Figure~\ref{fig:wbr_result_1D}.  These plots
-also show the current, best measured values of the W branching fractions
+also show the current, best measured values of the \PW branching fractions
 based on a combination of the measurements done by each of the LEP
 experiments~\cite{Schael:2013ita}.  The measured values are strongly
 correlated because of the construction of the model and because of the
@@ -25,7 +25,7 @@ contours have been drawn and are shown in Figure~\ref{fig:contours_2D}.
 One important distinction between the two measurements is that the MLE
 method measures the branching fraction simultaneously in all final state
 categories while the semi-analytic approach measures the branching fractions
-separately in different trigger and b-tag categories and then combines
+separately in different trigger and \PQb tag categories and then combines
 them using a $\chi^{2}$ fit.  
 
 \begin{table}[htb!]
@@ -41,15 +41,15 @@ them using a $\chi^{2}$ fit.
     \hline                                                                 
     w/o LU &&& \\
     \hline
-    $W\rightarrow e\nu$    & $(11.15 \pm 0.27) \%$ & $(10.77 \pm 0.1) \%$  & $(10.71 \pm 0.16)$ \% \\
-    $W\rightarrow \mu\nu$  & $(11.13 \pm 0.22) \%$ & $(10.91 \pm 0.08) \%$ & $(10.63 \pm 0.15)$ \% \\
-    $W\rightarrow \tau\nu$ & $(10.63 \pm 0.65) \%$ & $(10.89 \pm 0.21) \%$ & $(11.38 \pm 0.21)$ \% \\
-    $W\rightarrow h$       & $(67.08 \pm 0.72) \%$ & $(67.42 \pm 0.28) \%$ & $(-- \pm --)$ \% \\
+    $\BWe$      & $(11.15 \pm 0.27) \%$ & $(10.77 \pm 0.1) \%$  & $(10.71 \pm 0.16)$ \% \\
+    $\BWm$      & $(11.13 \pm 0.22) \%$ & $(10.91 \pm 0.08) \%$ & $(10.63 \pm 0.15)$ \% \\
+    $\BWt$      & $(10.63 \pm 0.65) \%$ & $(10.89 \pm 0.21) \%$ & $(11.38 \pm 0.21)$ \% \\
+    $\BWh$      & $(67.08 \pm 0.72) \%$ & $(67.42 \pm 0.28) \%$ & $(-- \pm --)$ \% \\
     \hline
     w/ LU &&& \\
     \hline
-    $W\rightarrow \ell\nu$ & $(-- \pm --)\%$       & $(10.87 \pm 0.07)\%$  & $(10.86 \pm 0.09)\%$  \\
-    $W\rightarrow h$       & $(-- \pm --)\%$       & $(67.38 \pm 0.22)\%$  & $(67.41 \pm 0.27)\%$  \\
+    $\BWl$      & $(-- \pm --)\%$       & $(10.87 \pm 0.07)\%$  & $(10.86 \pm 0.09)\%$  \\
+    $\BWh$      & $(-- \pm --)\%$       & $(67.38 \pm 0.22)\%$  & $(67.41 \pm 0.27)\%$  \\
     \end{tabular}
 \end{table}
 
@@ -106,7 +106,6 @@ them using a $\chi^{2}$ fit.
 \subsection{Ratios of Branching Fractions and Derived Quantities}
 
 
-
 Having measured the branching fractions, it is of interest to calculate the
 ratios between branching fractions and their pdfs to compare to values obtained
 at other experiments where only ratios are measured.  To transform the
@@ -126,11 +125,13 @@ Table~\ref{tab:analysis:result:ratios} shows comparisons between the ratios cons
 the measurements described above, and those measured by LEP and ATLAS as well
 as the SM expectation. 
 
+\input{chapters/Analysis/sectionResult/ratiosFomula.tex}
+
+
 \begin{figure}[htb!]
     \begin{center}
     \includegraphics[width=0.7\textwidth]{chapters/Analysis/sectionResult/figures/result_contours_2d_ratio.pdf}
-    \caption{Two dimensional distributions of the ratios $B(W\rightarrow
-    \tau\nu)/B(W\rightarrow e\nu)$ vs $B(W\rightarrow \tau\nu)/B(W\rightarrow \mu\nu)$ 
+    \caption{Two dimensional distributions of the ratios $\BWt/\BWe$ vs $\BWt/\BWm$ 
     with comparisons of the CMS result to LEP and ATLAS measurements.}
     \label{fig:ratios_2D}
     \end{center}
@@ -141,12 +142,12 @@ as the SM expectation.
     \caption{Ratios of branching fractions.}
     \label{tab:analysis:result:ratios}
     \begin{tabular}{l|ccc}
-                                                                                               & CMS               & LEP               & ATLAS              \\
+                            & CMS               & LEP               & ATLAS              \\
     \hline                                                                 
-    $W\rightarrow \mu\nu / W\rightarrow e\nu$                                                  & $1.013 \pm 0.009$ & $0.993 \pm 0.019$ & --                 \\
-    $W\rightarrow \tau\nu / W\rightarrow e\nu$                                                 & $1.011 \pm 0.020$ & $1.063 \pm 0.027$ & --                 \\
-    $W\rightarrow \tau\nu / W\rightarrow \mu\nu$                                               & $0.998 \pm 0.019$ & $1.070 \pm 0.026$ & $0.992 \pm 0.013$  \\
-    $2 W \rightarrow \tau\nu /(W\rightarrow e\nu + W\rightarrow \mu\nu)$                       & $1.002 \pm 0.019$ & $1.066 \pm 0.025$ & --                 \\
+    $\BWm / \BWe$           & $1.013 \pm 0.009$ & $0.993 \pm 0.019$ & --                 \\
+    $\BWt / \BWe$           & $1.011 \pm 0.020$ & $1.063 \pm 0.027$ & --                 \\
+    $\BWt / \BWm$           & $0.998 \pm 0.019$ & $1.070 \pm 0.026$ & $0.992 \pm 0.013$  \\
+    $2 \BWt /(\BWe + \BWm)$ & $1.002 \pm 0.019$ & $1.066 \pm 0.025$ & --                 \\
     \end{tabular}
 \end{table}
 
@@ -204,9 +205,6 @@ the ratio of total hadronic and total leptonic branching fraction is
             \text{PDG~\cite{pdg2020}: } \alpha_s(m_W) = 1.1120\pm0.010 \\ 
             \text{PDG~\cite{pdg2020}: } \sum_{\substack{ud,us,ub\\cd,cb}} |V_{ij}|^2 =1.0490(18) \end{matrix} $ 
         & $\Longrightarrow$ & $V_{cs}$ & $ 0.969\pm 0.011$ & $0.974\pm0.013$ & $0.971\pm0.008$ \\
-        % PDG: $\alpha_s(m_W) = 1.1120\pm0.010$~\cite{pdg2020}    & \multirow{2}{*}{$\Longrightarrow$} & \multirow{2}{*}{$V_{cs}$ &$ 0.968\pm 0.011$}  \\ %=
-        % PDG: $\sum_{\substack{ud,us,ub\\cd,cb}} |V_{ij}|^2 =1.0490(18)$~\cite{pdg2020} & & &\\
-        % PDG $\sum_{\substack{uc\\dsb}} |V_{}|^2 + |V_{us}|^2 +|V_{ub}|^2 +|V_{cd}|^2 +|V_{cb}|^2=1.0490(18)$~\cite{pdg2020} & &\\
         \hline
     \end{tabular}
     }
@@ -217,8 +215,7 @@ the ratio of total hadronic and total leptonic branching fraction is
 
  \begin{figure}[!h]
     \centering
-%     \includegraphics[width=0.45\textwidth]{vcs_meson_ds.png} \qquad
-    \includegraphics[width=0.7\textwidth]{chapters/RelatedWorks/sectionVcs/figures/vcs_world_average.png}
+    \includegraphics[width=0.7\textwidth]{chapters/Introduction/sectionRelatedWorks/figures/vcs.png}
     \caption{The $|V_{cs}|$ derived from the $W\to l\nu$ measurement by CMS, LEP and CMS+LEP, in comparison with the direct measurements~\cite{pdg2020}.}
     \label{fig:relatedWorks:vcs:measurements}
 \end{figure}
@@ -271,7 +268,7 @@ the ratio of total hadronic and total leptonic branching fraction is
 % is canceled out to the first order, thus the precision of r is not limited systematically.
 
 % The evolved dilepton channels are $\mu\mu$, $ee$ and $e\mu$ with $n_j \geq 2$ and $n_b = 1,2$,
-% where $\mu\mu$, $ee$ also include $n_b = 0$ bin for Z background normalization purpose.
+% where $\mu\mu$, $ee$ also include $n_b = 0$ bin for \PZ background normalization purpose.
 % r is obtained by simultaneous fit to the pT spectrum of the trailing lepton in $\mu\mu$,
 % $ee$ and $e\mu$ channels. The methodology of this template fit is described in Section 5.3.
 % The result is in Eqn \ref{eqn:fitr}.

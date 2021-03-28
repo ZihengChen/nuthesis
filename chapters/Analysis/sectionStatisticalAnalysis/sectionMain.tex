@@ -4,7 +4,7 @@
 
 
 Having carried out the event selection as described in
-section~\ref{sec:analysis:selection}, the estimation of the W branching fraction
+section~\ref{sec:analysis:selection}, the estimation of the \PW branching fraction
 is carried out using two different approaches.  Before describing the
 two approaches, it will be useful to describe the formalism that is
 common to both.
@@ -17,13 +17,13 @@ common to both.
 \subsection{The Efficiency Matrix}
 
 
-The quantities of interest are the four W branching fractions,
+The quantities of interest are the four \PW branching fractions,
 \begin{equation}
     \boldsymbol{\beta} = \{\beta_{e}, \beta_{\mu}, \beta_{\tau}, \beta_{h}\},
 \end{equation}
 
 \noindent
-where the subscript indicates the decay mode of the W boson (hadronic
+where the subscript indicates the decay mode of the \PW boson (hadronic
 decay modes, $h$, are grouped together).  Because the $\tau$ can also
 decay to the other modes, the above vector can be extended to include
 this,
@@ -34,7 +34,7 @@ this,
 
 
 \noindent
-Because this analysis is interested in final states with two W bosons,
+Because this analysis is interested in final states with two \PW bosons,
 it is necessary to consider all possible decay combinations.  This can
 be represented succinctly in matrix representation by taking the
 outer product of $\boldsymbol{\beta'}$ with itself,
@@ -126,12 +126,12 @@ sections.
 
 In this approach, a maximum likelihood estimation of the branching
 fractions is carried out.  The data is divided into categories based on
-the multipliplicity and flavor of leptons, jet multiplicity, and b tag
+the multipliplicity and flavor of leptons, jet multiplicity, and \PQb tag
 multiplicities as described in section~\ref{sec:analysis:event}.  Additional
 discriminating information is included by further binning the data
 according to a single kinematic observable in each category category.
 The observable is selected to enhance the discrimination between decay
-products that come directly from the W boson decay and decay products
+products that come directly from the \PW boson decay and decay products
 where a tau lepton is an intermediate product.  The variables that are
 selected by each lepton flavor category are as follows:
 
@@ -234,7 +234,7 @@ simulated events.
 
 Effectively, this parameterizes the efficiency matrix in
 equation~\ref{eq:eff_matrix} by the observables listed above, the number
-of jets, and the number of b tags.  Having constructed the data model,
+of jets, and the number of \PQb tags.  Having constructed the data model,
 the negative log likelihood can be constructed,
 \begin{equation}
 \label{eq:nll}
@@ -252,7 +252,7 @@ templates,
 
 The signal term, $s_{i}$ is as written in eq.~\ref{eq:data_model}, i.e.,
 a mixture of the 21 possible decay modes and the amplitudes for each
-term are products of the branching fractions function of the W branching
+term are products of the branching fractions function of the \PW branching
 fractions, $\boldsymbol{\beta}$.  
 
 
@@ -356,7 +356,7 @@ $\theta$).
 
 The branching fraction estimates are determined by minimizing
 equation~\ref{eq:nll_full} with respect to all parameters.  This is done
-for all final state channels and b tag bins simultaneously which
+for all final state channels and \PQb tag bins simultaneously which
 accounts for correlations between common nuisance parameters and the W
 branching fractions.
 
@@ -453,7 +453,7 @@ comparison is shown in figure~\ref{fig:pulls_comparison}.
     \centering
     \includegraphics[width=0.9\textheight, angle=-90]{chapters/Analysis/sectionStatisticalAnalysis/figures/new_pulls}
     \caption{Pulls for nuisance parameters based on toy data while
-        scanning the W boson leptonic branching fractions.  The black
+        scanning the \PW boson leptonic branching fractions.  The black
         dots indicate the values for individual trials, the blue bars
         show the standard error estimated from those trials, and the
         orange bar are the values estimated from the Hessian of the NLL.}
@@ -533,13 +533,13 @@ contribution to the sensitivity to the parameter under consideration.
     \centering
     \includegraphics[width=0.99\textwidth]{chapters/Analysis/sectionStatisticalAnalysis/figures/counting.png}
     \caption{ Channels are organized into four groups based on trigger type and 
-    b-tag multiplicity. Counting analysis extracts W branching fraction from the yields
+    \PQb tag multiplicity. Counting analysis extracts \PW branching fraction from the yields
     of grouped channels.}
     \label{fig:groupsofchannel}
 \end{figure}
 
-In this approach, channels are divided into four mutually-exclusive groups based on the trigger types and the b-tag multiplicities. 
-The trigger types include the single-muon and the single-electron trigger. The b-tag multiplicity could be either $n_b=1$ or $n_b \geq 2$.
+In this approach, channels are divided into four mutually-exclusive groups based on the trigger types and the \PQb tag multiplicities. 
+The trigger types include the single-muon and the single-electron trigger. The \PQb tag multiplicity could be either $n_b=1$ or $n_b \geq 2$.
 The configuration of four channel groups is shown in figure~\ref{fig:groupsofchannel}. Namely,
 
 \begin{itemize}
@@ -582,7 +582,7 @@ tables \ref{tab:sigacc} and figure~\ref{fig:efficencyMatrix}.
     \includegraphics[width=\textwidth]{chapters/Analysis/sectionStatisticalAnalysis/figures/acc_e2b.png}
     
     %--------------------------
-    \caption{ Efficiency matrices \textbf{E} of four groups based on trigger types and the b-tag multiplicities. }
+    \caption{ Efficiency matrices \textbf{E} of four groups based on trigger types and the \PQb tag multiplicities. }
     \label{fig:efficencyMatrix}
 \end{figure}
 
@@ -730,7 +730,7 @@ The total systematical uncertainty of $\beta_l$ combines the contributions from 
 A test of parameter extraction is performed using toy datasets.
 In each toy dataset, the yield $N$ equals to the expected yield based MC with 
 a statistical uncertainty of $\delta N = \sqrt{N}$. Then $\beta_l$ are 
-extracted. In total, 2000 toys are generated. The W to lepton branching 
+extracted. In total, 2000 toys are generated. The \PW to lepton branching 
 fractions in the MC are $10.8\%$, to which the extracted parameters are compared.
 The distribution of $\{\beta_{e},\beta_{\mu},\beta_{\tau}\}$ extracted from the toys are shown in
 figure~\ref{fig:test_toy}. The centers of distributions are consistent with
@@ -765,7 +765,7 @@ consistent with the data statistical uncertainty calculated by error propagation
 % In counting analysis, branching fractions are extracted by solving a set of
 % three quadratic equations, obtained by setting the expected normalized
 % yields equal to the measured ones. The four measurements are performed independently 
-% in four mutually exclusive regions based on the number of b tags (1 or more than 2) 
+% in four mutually exclusive regions based on the number of \PQb tags (1 or more than 2) 
 % and trigger type (single electron or muon). Then these four measurements are combined based 
 % on a $\chi^{2}$ minimization to obtain the final result.
 
@@ -999,5 +999,5 @@ consistent with the data statistical uncertainty calculated by error propagation
 %     \sigma^2_{\beta_i} = \frac{1}{\sum_{cat} 1 / \sigma^2_{\beta_i^{cat}} }
 % \end{equation}
 
-% where $i = e,\mu,\tau$ and categories are single electron or muon trigger with 1 or 2 b-jets, $cat \in \{\mu \text{-} 1b,\mu \text{-} 2b,e \text{-} 1b,e \text{-} 2b \}$
+% where $i = e,\mu,\tau$ and categories are single electron or muon trigger with 1 or 2 \PQb jets, $cat \in \{\mu \text{-} 1b,\mu \text{-} 2b,e \text{-} 1b,e \text{-} 2b \}$
 

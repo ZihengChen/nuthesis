@@ -4,7 +4,7 @@
 
 \subsection{Data}
 
-In this analysis, data is selected based on the presence of at least one muon or one electron. The single muon dataset requires that events contain at least one muon with $\pt > 25$ GeV and passing the loose track isolation criterion, $\rm Iso_{track} < 0.1$. The single electron dataset requires that there be at least one electron satisfying the requirement that $\pt > 30$ GeV and that it passes the tight identification requirements as defined by the EGamma POG.  The specific dataset names and the associated integrated luminosities are listed in Table~\ref{tab:dat:data2016}.
+In this analysis, data is selected based on the presence of at least one muon or one electron. The single muon dataset requires that events contain at least one muon with $\pt > 25\GeV$ and passing the loose track isolation criterion, $\rm Iso_{track} < 0.1$. The single electron dataset requires that there be at least one electron satisfying the requirement that $\pt > 30\GeV$ and that it passes the tight identification requirements as defined by the EGamma POG.  The specific dataset names and the associated integrated luminosities are listed in Table~\ref{tab:dat:data2016}.
 
 \input{chapters/Analysis/sectionDataset/tables/data_2016.tex}
 
@@ -12,16 +12,16 @@ Run ranges where data quality is determined to be insufficient are filtered remo
 
 \texttt{Cert\_271036-284044\_13TeV\_23Sep2016ReReco\_Collisions16\_JSON.txt}
 
-The full dataset consists of 35.9 fb$^{-1}$ of integrated luminosity~\cite{cms:lumi2016:CMS-PAS-LUM-17-001}
+The full dataset consists of 35.9\fbinv of integrated luminosity~\cite{cms:lumi2016:CMS-PAS-LUM-17-001}
 
 
 
 
-\subsection{Simulated Datasets}
-Simulated Monte Carlo (MC) datasets are used for modelling the major SM processes, including SM diboson, $\PW/\PZ/\gamma$ plus jets, single-top and \ttbar. The background from multijet QCD is estimated by a data-driven approach discussed in section~\ref{sec:analysis:background}
+\subsection{Simulated Dataset}
+Simulated Monte Carlo (MC) datasets are used for modelling the major SM processes, including SM diboson, $\PW/\PZ/\PGg$ associated with jets, single-top and \ttbar. The background from multijet QCD is estimated by a data-driven approach discussed in section~\ref{sec:analysis:background}
 % It is observed that simulation is insufficient for modelling the background arising from multijet QCD. Consequently, that background $\ttbar$ is estimated using data-driven techniques. The details of the background estimation are presented.
 
-The simulated samples used in modelling the background and signal are shown in table~\ref{tab:dat:mc2016}.  The production of the samples was carried during the Summer 16 campaingn and the production of the \acrfull{miniaod} datasets was done using CMSSW release \texttt{8.0.26.patch2}. The same release was used for processing both the data and the simulated samples. Lepton universality is assumed for the simulated datasets, i.e., $ Br(W\to l) = 10.8\%$ using values consistent with the average values listed in the PDG \cite{exhep:pdg:Patrignani:2016xqp}. 
+The simulated samples used in modelling the background and signal are shown in table~\ref{tab:dat:mc2016}.  The production of the samples was carried during the Summer 16 campaingn and the production of the miniAOD datasets was done using CMSSW release \texttt{8.0.26.patch2}. The same release was used for processing both the data and the simulated samples. Lepton universality is assumed for the simulated datasets, i.e., $ \BWl = 10.8\%$ using values consistent with the average values listed in the PDG \cite{exhep:pdg:Patrignani:2016xqp}. 
 
 \input{chapters/Analysis/sectionDataset/tables/mc_2016.tex}
 
@@ -76,33 +76,33 @@ The overall event weight is that is applied is $w = \sqrt{SF_{t}SF_{\bar{t}}}$. 
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.55\textwidth]{chapters/Analysis/sectionDataset/figures/top_pt_weight}
-    \caption{Comparison of the trailing lepton $\pt$ distribution in $e\mu$ events with at least two jets and at least one b tag with top $\pt$ weights applied and without the weights.}
+    \caption{Comparison of the trailing lepton \pt distribution in $\cem$ events with at least two jets and at least one \PQb tag with top \pt weights applied and without the weights.}
     \label{fig:analysis:dataset:top_pt_weight}
 \end{figure}
 
 
 % ww pt
-\subsubsection{WW \pt Reweighting}
-Estimation of the $WW$ process relies on the \POWHEG MC generator which is a NLO fixed order generator. Higher order corrections are therefore not directly included, but have been calculated separately~\cite{Meade:2014fca, Jaiswal:2014yba, Grazzini:2015wpa}.  The estimation of uncertainty is based on the description in section 6 of AN-2017-273. As mentioned there, the theoretical uncertainty associated with the corrections have not been provided so they are estimated by varying the renormalization, factorization, and the matching scale of the \pt resummation technique. The weights and their systematic variations, as well as the effect on the lepton \pt spectrum in the WW MC sample is shown in figure~\ref{fig:analysis:dataset:ww_weight}.
+\subsubsection{\WW \pt Reweighting}
+Estimation of the $\WW$ process relies on the \POWHEG MC generator which is a NLO fixed order generator. Higher order corrections are therefore not directly included, but have been calculated separately~\cite{Meade:2014fca, Jaiswal:2014yba, Grazzini:2015wpa}.  The estimation of uncertainty is based on the description in section 6 of AN-2017-273. As mentioned there, the theoretical uncertainty associated with the corrections have not been provided so they are estimated by varying the renormalization, factorization, and the matching scale of the \pt resummation technique. The weights and their systematic variations, as well as the effect on the lepton \pt spectrum in the \WW MC sample is shown in figure~\ref{fig:analysis:dataset:ww_weight}.
 
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.5\textwidth]{chapters/Analysis/sectionDataset/figures/ww_pt_weight_variations}
     \includegraphics[width=0.38\textwidth]{chapters/Analysis/sectionDataset/figures/ww_pt_lepton_pt}
-    \caption{\emph{left.} Weights for the $qq\rightarrow WW$ process as a function of the $WW\,\pt$ and the two componnents of systematic variation.  \emph{right.} Trailing lepton pt from the $qq\rightarrow WW\rightarrow e\mu\nu\nu$ simulated sample when there are no reconstructed jets.} 
+    \caption{\emph{left.} Weights for the $\PQq \PQq \rightarrow \WW$ process as a function of the $\WW\,\pt$ and the two componnents of systematic variation.  \emph{right.} Trailing lepton pt from the $\PQq \PQq\rightarrow \WW\rightarrow \cem\PGn\PGn$ simulated sample when there are no reconstructed jets.} 
     \label{fig:analysis:dataset:ww_weight}
 \end{figure}
 
 
 
 % z pt
-\subsubsection{\cPZ \pt Reweighting}
-Based on differences between the observed and predicted \PZ \pt spectrums, weights are derived to correct the \pt spectrum in simulation.The derivation of the weights was done in the context of the $H\rightarrow WW$ analysis and is described in AN-2017-082. This correction does not have an associated uncertainty included in the fit.
+\subsubsection{\PZ \pt Reweighting}
+Based on differences between the observed and predicted \PZ \pt spectrums, weights are derived to correct the \pt spectrum in simulation.The derivation of the weights was done in the context of the $\PH \rightarrow \WW $ analysis and is described in AN-2017-082. This correction does not have an associated uncertainty included in the fit.
 
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.55\textwidth]{chapters/Analysis/sectionDataset/figures/z_pt_weighting}
-    \caption{\emph{top.} Comparison of weighted and unweighted dilepton \pt spectrum for dimuon events with two jets and no b tags. \emph{bottom.} Comparison between ration of distributions in the top distribution and the analytical function for generating weights.}
+    \caption{\emph{top.} Comparison of weighted and unweighted dilepton \pt spectrum for dimuon events with two jets and no \PQb tags. \emph{bottom.} Comparison between ration of distributions in the top distribution and the analytical function for generating weights.}
     \label{fig:analysis:dataset:ww_weight}
 \end{figure}
 

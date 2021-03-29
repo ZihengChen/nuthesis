@@ -2,36 +2,36 @@
     \centering
     \setlength{\tabcolsep}{2em}
     \renewcommand{\arraystretch}{1.1}
-    \caption{Simulated MC samples.} \label{tab:dat:mc2016}
+    \caption{Simulated MC samples.} \label{tab:analysis:dataset:mc2016}
     % \small
-    \begin{tabular}{l l c}
+    \begin{tabular}{l c c}
         \hline
-        Process                                           & Generator         & $\sigma \times \text{BR} (pb)$ \\
+        Process                                             & Generator          & $\sigma \times \text{BR} \unit{(pb)}$ \\
         \hline
-        $t\bar{t}$                                        & \POWHEG+\PYTHIA     & 831.76                        \\
-        $t\bar{t}$  (leptonic)                            & \POWHEG+\PYTHIA     & 87.32                          \\
-        $t\bar{t}$  (semi-leptonic)                       & \POWHEG+\PYTHIA     & 364.35                         \\
-        $tW/\bar{t}W$                                     & \POWHEG+\PYTHIA     & 35.6                           \\
+        \ttbar                                              & \POWHEG+\PYTHIA    & 831.76   \\
+        \ttbar  (leptonic)                                  & \POWHEG+\PYTHIA    & 87.32    \\
+        \ttbar  (semi-leptonic)                             & \POWHEG+\PYTHIA    & 364.35   \\
+        \tW                                                 & \POWHEG+\PYTHIA    & 35.6     \\
         \hline
-        Z+jets                                            &                  &                                \\
-        \hspace*{1em} $10 < m_{\ell\ell} < 50$ GeV        & \MCATNLO+\PYTHIA   & 18610                          \\
-        \hspace*{1em} $m_{\ell\ell} > 50 $GeV             & \MCATNLO+\PYTHIA   & 5765                           \\
-        \hspace*{1em} $m_{\ell\ell} > 50, N_{j} = 0 $GeV  & \MCATNLO+\PYTHIA   & 4757                           \\
-        \hspace*{1em} $m_{\ell\ell} > 50, N_{j} = 1 $GeV  & \MCATNLO+\PYTHIA   & 884.4                          \\
-        \hspace*{1em} $m_{\ell\ell} > 50, N_{j} = 2 $GeV  & \MCATNLO+\PYTHIA   & 338.9                          \\
+        \zjets                                              &                    &          \\
+        \hspace*{1em} $10 < m_{\ell\ell} < 50\GeV$          & \MCATNLO+\PYTHIA   & 18610    \\
+        \hspace*{1em} $m_{\ell\ell} > 50\GeV$               & \MCATNLO+\PYTHIA   & 5765     \\
+        \hspace*{1em} $m_{\ell\ell} > 50\GeV, N_{j} = 0 $   & \MCATNLO+\PYTHIA   & 4757     \\
+        \hspace*{1em} $m_{\ell\ell} > 50\GeV, N_{j} = 1 $   & \MCATNLO+\PYTHIA   & 884.4    \\
+        \hspace*{1em} $m_{\ell\ell} > 50\GeV, N_{j} = 2 $   & \MCATNLO+\PYTHIA   & 338.9    \\
         \hline
-        W + 1 jet                                         & \MADGRAPH+\PYTHIA  & 11486.5                        \\
-        W + 2 jet                                         & \MADGRAPH+\PYTHIA  & 3775.2                         \\
-        W + 3 jet                                         & \MADGRAPH+\PYTHIA  & 1139.8                         \\
-        W + 4 jet                                         & \MADGRAPH+\PYTHIA  & 655.82                         \\
+        \PW + 1 jet                                         & \MADGRAPH+\PYTHIA  & 11486.5  \\
+        \PW + 2 jet                                         & \MADGRAPH+\PYTHIA  & 3775.2   \\
+        \PW + 3 jet                                         & \MADGRAPH+\PYTHIA  & 1139.8   \\
+        \PW + 4 jet                                         & \MADGRAPH+\PYTHIA  & 655.82   \\
         \hline
-        $qq\rightarrow WW \rightarrow 2\ell 2\nu$         & \POWHEG           & 12.13                          \\
-        $gg\rightarrow WW \rightarrow 2\ell 2\nu$         & \POWHEG           & 0.588                          \\
-        WZ $\rightarrow 3\ell \nu$                        & \POWHEG+\PYTHIA    & 5.29                           \\
-        WZ $\rightarrow 2\ell 2q$                         & \MCATNLO+\PYTHIA   & 5.595                          \\
-        ZZ $\rightarrow 2\ell 2\nu$                       & \POWHEG+\PYTHIA    & 0.564                          \\
-        ZZ $\rightarrow 2\ell 2q$                         & \MCATNLO+\PYTHIA   & 3.22                           \\
-        ZZ $\rightarrow 4\ell$                            & \MCATNLO+\PYTHIA   & 1.21                           \\
+        $\PQq\PQq\rightarrow \PW\PW \rightarrow 2\ell 2\PGn$& \POWHEG            & 12.13    \\
+        $\Pg\Pg\rightarrow \PW\PW \rightarrow 2\ell 2\PGn$  & \POWHEG            & 0.588    \\
+        \PW\PZ $\rightarrow 3\ell \PGn$                     & \POWHEG+\PYTHIA    & 5.29     \\
+        \PW\PZ $\rightarrow 2\ell 2q$                       & \MCATNLO+\PYTHIA   & 5.595    \\
+        \PZ\PZ $\rightarrow 2\ell 2\PGn$                    & \POWHEG+\PYTHIA    & 0.564    \\
+        \PZ\PZ $\rightarrow 2\ell 2\PQq$                    & \MCATNLO+\PYTHIA   & 3.22     \\
+        \PZ\PZ $\rightarrow 4\ell$                          & \MCATNLO+\PYTHIA   & 1.21     \\
         \hline
     \end{tabular}
 

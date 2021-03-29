@@ -3,60 +3,57 @@
 
 
 \subsection{Data}
+\label{sec:analysis:dataset:data}
 
-In this analysis, data is selected based on the presence of at least one muon or one electron. The single muon dataset requires that events contain at least one muon with $\pt > 25\GeV$ and passing the loose track isolation criterion, $\rm Iso_{track} < 0.1$. The single electron dataset requires that there be at least one electron satisfying the requirement that $\pt > 30\GeV$ and that it passes the tight identification requirements as defined by the EGamma POG.  The specific dataset names and the associated integrated luminosities are listed in Table~\ref{tab:dat:data2016}.
+In this analysis, data is selected based on the presence of at least one muon or one electron. The single muon dataset requires that events contain at least one muon with $\pt > 25\GeV$ and passing the loose track isolation criterion, $\rm Iso_{track} < 0.1$. The single electron dataset requires that there be at least one electron satisfying the requirement that $\pt > 30\GeV$ and that it passes the tight identification requirements as defined by the EGamma POG.  The specific dataset names and the associated integrated luminosities are listed in Table~\ref{tab:analysis:dataset:data2016}.
 
 \input{chapters/Analysis/sectionDataset/tables/data_2016.tex}
 
-Run ranges where data quality is determined to be insufficient are filtered removed from the datset by applying a luminosity mask. The following file is provided in JSON format from the CMS PPD group:
+\noindent Run ranges where data quality is determined to be insufficient are filtered removed from the datset by applying a luminosity mask. The following file is provided in JSON format from the CMS PPD group:
 
 \texttt{Cert\_271036-284044\_13TeV\_23Sep2016ReReco\_Collisions16\_JSON.txt}
 
-The full dataset consists of 35.9\fbinv of integrated luminosity~\cite{cms:lumi2016:CMS-PAS-LUM-17-001}
+\noindent The full dataset consists of 35.9\fbinv of integrated luminosity~\cite{cms:lumi2016:CMS-PAS-LUM-17-001}
 
 
 
 
 \subsection{Simulated Dataset}
-Simulated Monte Carlo (MC) datasets are used for modelling the major SM processes, including SM diboson, $\PW/\PZ/\PGg$ associated with jets, single-top and \ttbar. The background from multijet QCD is estimated by a data-driven approach discussed in section~\ref{sec:analysis:background}
-% It is observed that simulation is insufficient for modelling the background arising from multijet QCD. Consequently, that background $\ttbar$ is estimated using data-driven techniques. The details of the background estimation are presented.
+\label{sec:analysis:dataset:simulation}
 
-The simulated samples used in modelling the background and signal are shown in table~\ref{tab:dat:mc2016}.  The production of the samples was carried during the Summer 16 campaingn and the production of the miniAOD datasets was done using CMSSW release \texttt{8.0.26.patch2}. The same release was used for processing both the data and the simulated samples. Lepton universality is assumed for the simulated datasets, i.e., $ \BWl = 10.8\%$ using values consistent with the average values listed in the PDG \cite{exhep:pdg:Patrignani:2016xqp}. 
+Simulated datasets are used for modelling the major SM processes, including SM diboson, $\PW/\PZ/\PGg$ associated with jets, single-top and \ttbar. The background from multijet QCD is estimated by a data-driven approach discussed in section~\ref{sec:analysis:background} The simulated samples used in modelling the background and signal are shown in table~\ref{tab:analysis:dataset:mc2016}.  The production of the samples was carried during the Summer 2016 campaingn and the production of the mini Analysis Oriented Data format (miniAOD) was done using CMSSW release \texttt{8\_0\_26\_patch2}. The same release was used for processing both the data and the simulated samples. Lepton universality is assumed for the simulated datasets, namely $ \BWl = 10.8\%$. To account for the deviation from the data, some reweightings of the simulated dataset are applied, commonly including reweightings for pile-up, top \pt, \WW \pt and \PZ \pt.
 
 \input{chapters/Analysis/sectionDataset/tables/mc_2016.tex}
 
 
 
 
-\subsection{Reweightings}
 
-% tau decay
-\subsubsection{$Br(\tau)$ Reweighting}
 
-The tau decay modes diverge slightly from the values listed in the PDG as can be seen in Table~\ref{tab:dat:tauDecayBr}. The MC events have been reweighted according to their gen-level tau decay mode to correct the tau decay in the simulation to the PDG experimental value. The impact of this on the branching fraction determination is estimated and included as a systematic uncertainty
-\input{chapters/Analysis/sectionDataset/tables/tauBr.tex}
+% \subsection{Standard Reweightings}
+
+% % tau decay
+% \subsubsection{$Br(\tau)$ Reweighting}
+
+% The tau decay modes diverge slightly from the values listed in the PDG as can be seen in Table~\ref{tab:dat:tauDecayBr}. The MC events have been reweighted according to their gen-level tau decay mode to correct the tau decay in the simulation to the PDG experimental value. The impact of this on the branching fraction determination is estimated and included as a systematic uncertainty
+% \input{chapters/Analysis/sectionDataset/tables/tauBr.tex}
 
 
 
 % pu
 \subsubsection{Pile-up Reweighting}
-Differences between the pileup distribution used in simulation and data is corrected by reweighting the simulation according to the weights shown in figure~\ref{fig:analysis:dataset:pileup}. The weight is applied based on the number of pileup, including out-of-time pileup, per event.  This process can be validated by comparing the number of reconstructed primary vertices in data and simulation as shown in figure~\ref{fig:analysis:dataset:npv}. There is still a sizeable discrepancy between the distributions. This has been widely observed within CMS and no additional measures are taken to address this.
+Differences between the pileup distribution used in simulation and data is corrected by reweighting the simulation according to the weights shown in figure~\ref{fig:analysis:dataset:pileup}. The weight is applied based on the number of pileup, including out-of-time pileup, per event.  This process can be validated by comparing the number of reconstructed primary vertices in data and simulation as shown in figure~\ref{fig:analysis:dataset:pileup} right. There is still a sizeable discrepancy between the distributions. This has been widely observed within CMS and no additional measures are taken to address this.
 
 
 \begin{figure}[ht]
     \centering
     \includegraphics[height=0.42\textheight]{chapters/Analysis/sectionDataset/figures/pileup_systematics.pdf}
     \includegraphics[height=0.42\textheight]{chapters/Analysis/sectionDataset/figures/n_pv}
-    \caption{(\emph{left top}) Pileup distribution in data and simulation including the $\pm\sigma$ variation of the data pileup distributions. (\emph{left bottom}) The weights parameterized by number of simulated pileup resulting from taking the ratio of the pileup distribution in data and simulation. (\emph{right}) Comparison of primary vertex multiplicity between data and simulated datasets. }
+    \caption{\emph{(left top)} Pileup distribution in data and simulation including the $\pm\sigma$ variation of the data pileup distributions. \emph{(left bottom)} The weights parameterized by number of simulated pileup resulting from taking the ratio of the pileup distribution in data and simulation. \emph{(right)} Comparison of primary vertex multiplicity between data and simulated datasets. }
     \label{fig:analysis:dataset:pileup}
 \end{figure}
 
-% \begin{figure}[ht]
-%     \centering
-    
-%     \caption{Comparison of primary vertex multiplicity between data and simulated datasets.}
-%     \label{fig:analysis:dataset:npv}
-% \end{figure}
+
 \FloatBarrier
 
 
@@ -65,13 +62,12 @@ Differences between the pileup distribution used in simulation and data is corre
 
 Additional corrections can be applied to the \ttbar sample to account for generator level mismodeling of the top quark \pt spectrum~\cite{CMS-PAS-TOP-16-011, CMS-PAS-TOP-16-008}.  This is done by identifying the parton-level top quarks, and calculating a scale factor from the equation,
 
-\begin{equation}
-    \nonumber
-    SF_{t}(\pt) = SF_{\bar{t}}(\pt) = e^{0.0615-0.0005 \pt}.
-\end{equation}
+\begin{equation*}
+    SF_{\PQt}(\pt) = SF_{\PAQt}(\pt) = e^{0.0615-0.0005 \pt}.
+\end{equation*}
 
 
-The overall event weight is that is applied is $w = \sqrt{SF_{t}SF_{\bar{t}}}$.  For this analysis, we do not apply the weight, but instead include the affect of applying the weight to generate a one-sided morphing template used in the branching fraction determination.  In this case, the nominal value corresponds to the central value of a one-sided Gaussian constraint and the weighted value corresponds to the one-sigma variation up.
+\noindent The overall event weight is that is applied is $w = \sqrt{SF_{\PQt}SF_{\PAQt}}$.  For this analysis, we do not apply the weight, but instead use it as the systematical uncertainties associated with the top \pt correction.
 
 \begin{figure}[ht]
     \centering
@@ -83,13 +79,13 @@ The overall event weight is that is applied is $w = \sqrt{SF_{t}SF_{\bar{t}}}$. 
 
 % ww pt
 \subsubsection{\WW \pt Reweighting}
-Estimation of the $\WW$ process relies on the \POWHEG MC generator which is a NLO fixed order generator. Higher order corrections are therefore not directly included, but have been calculated separately~\cite{Meade:2014fca, Jaiswal:2014yba, Grazzini:2015wpa}.  The estimation of uncertainty is based on the description in section 6 of AN-2017-273. As mentioned there, the theoretical uncertainty associated with the corrections have not been provided so they are estimated by varying the renormalization, factorization, and the matching scale of the \pt resummation technique. The weights and their systematic variations, as well as the effect on the lepton \pt spectrum in the \WW MC sample is shown in figure~\ref{fig:analysis:dataset:ww_weight}.
+Estimation of the \WW process relies on the \POWHEG MC generator which is a NLO fixed order generator. Higher order corrections are therefore not directly included, but have been calculated separately~\cite{Meade:2014fca, Jaiswal:2014yba, Grazzini:2015wpa}.  The estimation of uncertainty is based on the description in AN-2017-273. As mentioned there, the theoretical uncertainty associated with the corrections have not been provided so they are estimated by varying the renormalization, factorization, and the matching scale of the \pt resummation technique. The weights and their systematic variations, as well as the effect on the lepton \pt spectrum in the \WW MC sample is shown in figure~\ref{fig:analysis:dataset:ww_weight}.
 
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.5\textwidth]{chapters/Analysis/sectionDataset/figures/ww_pt_weight_variations}
     \includegraphics[width=0.38\textwidth]{chapters/Analysis/sectionDataset/figures/ww_pt_lepton_pt}
-    \caption{\emph{left.} Weights for the $\PQq \PQq \rightarrow \WW$ process as a function of the $\WW\,\pt$ and the two componnents of systematic variation.  \emph{right.} Trailing lepton pt from the $\PQq \PQq\rightarrow \WW\rightarrow \cem\PGn\PGn$ simulated sample when there are no reconstructed jets.} 
+    \caption{\emph{(left)} Weights for the $\PQq \PQq \rightarrow \WW$ process as a function of the $\WW\,\pt$ and the two componnents of systematic variation.  \emph{(right)} Trailing lepton pt from the $\PQq \PQq\rightarrow \WW\rightarrow \cem\PGn\PGn$ simulated sample when there are no reconstructed jets.} 
     \label{fig:analysis:dataset:ww_weight}
 \end{figure}
 
@@ -97,13 +93,13 @@ Estimation of the $\WW$ process relies on the \POWHEG MC generator which is a NL
 
 % z pt
 \subsubsection{\PZ \pt Reweighting}
-Based on differences between the observed and predicted \PZ \pt spectrums, weights are derived to correct the \pt spectrum in simulation.The derivation of the weights was done in the context of the $\PH \rightarrow \WW $ analysis and is described in AN-2017-082. This correction does not have an associated uncertainty included in the fit.
+Based on differences between the observed and predicted \PZ \pt spectrums, weights are derived to correct the \pt spectrum in simulation. The derivation of the weights was done in the context of the $\PH \rightarrow \WW $ analysis and is described in AN-2017-082. This correction does not have an associated uncertainty.
 
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.55\textwidth]{chapters/Analysis/sectionDataset/figures/z_pt_weighting}
-    \caption{\emph{top.} Comparison of weighted and unweighted dilepton \pt spectrum for dimuon events with two jets and no \PQb tags. \emph{bottom.} Comparison between ration of distributions in the top distribution and the analytical function for generating weights.}
-    \label{fig:analysis:dataset:ww_weight}
+    \caption{\emph{(top)} Comparison of weighted and unweighted dilepton \pt spectrum for dimuon events with two jets and no \PQb tags. \emph{(bottom)} Comparison between ration of distributions in the top distribution and the analytical function for generating weights.}
+    \label{fig:analysis:dataset:z_weight}
 \end{figure}
 
 

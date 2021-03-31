@@ -10,17 +10,18 @@ fractions and the derived SM quantities are presented based on the branching
 fractions measured by the shape analysis, the more precise approach.
 
 
-\subsection{W branching fractions}
+\subsection{\PW branching fractions}
+\label{sec:analysis:result:BWl}
 The values of the
 branching fractions measured using the two approaches are shown in
-Table~\ref{tab:results} and Figure~\ref{fig:wbr_result_1D}.  These plots
+Table~\ref{tab:results} and Figure~\ref{fig:analysis:result:wbr_result_1D}.  These plots
 also show the current, best measured values of the \PW branching fractions
 based on a combination of the measurements done by each of the LEP
 experiments~\cite{Schael:2013ita}.  The measured values are strongly
 correlated because of the construction of the model and because of the
 constraint that the sum of branching fractions for leptonic and hadronic
 decay modes be equal to one.  To demonstrate this, two dimensional
-contours have been drawn and are shown in Figure~\ref{fig:contours_2D}.
+contours have been drawn and are shown in Figure~\ref{fig:analysis:result:contours_2D}.
 
 One important distinction between the two measurements is that the MLE
 method measures the branching fraction simultaneously in all final state
@@ -76,7 +77,7 @@ them using a $\chi^{2}$ fit.
     \begin{center}
     \includegraphics[width=0.7\textwidth]{chapters/Analysis/sectionResult/figures/unblinded_summary_plot.pdf}
     \caption{Summary of measured values of leptonic branching fractions.}
-    \label{fig:wbr_result_1D}
+    \label{fig:analysis:result:wbr_result_1D}
     \end{center}
 \end{figure}
 
@@ -84,7 +85,7 @@ them using a $\chi^{2}$ fit.
 %     \begin{center}
 %     \includegraphics[width=0.5\textwidth]{chapters/Analysis/sectionResult/figures/correlation_matrix_POI_unblinded.pdf}
 %     \caption{Correlation matrix between each branching fraction component.}
-%     \label{fig:correlation_matrix_POI}
+%     \label{fig:analysis:result:correlation_matrix_POI}
 %     \end{center}
 % \end{figure}
 
@@ -96,15 +97,25 @@ them using a $\chi^{2}$ fit.
     fraction that is not shown has been marginalized over.  The dashed
     lines correspond to 68\% and 95\% contour levels for the resulting two
     dimensional Gaussian distribution.}
-    \label{fig:contours_2D}
+    \label{fig:analysis:result:contours_2D}
     \end{center}
 \end{figure}
 
 
 \FloatBarrier
 
-\subsection{Ratios of Branching Fractions and Derived Quantities}
 
+
+
+
+
+
+
+
+
+
+\subsection{Ratios of Branching Fractions and Derived Quantities}
+\label{sec:analysis:result:derived}
 
 Having measured the branching fractions, it is of interest to calculate the
 ratios between branching fractions and their pdfs to compare to values obtained
@@ -112,20 +123,23 @@ at other experiments where only ratios are measured.  To transform the
 likelihood of the branching fractions to the likelihood for ratios, the following
 integral transformation is evaluated\cite{10.2307/2334671},
 
+% \begin{equation}
+%     f(r) = \int_{-\infty}^{\infty} \left|b_{\ell}\right| g(r b_{\ell}, b_{\ell}) \,db_{\ell},
+% \end{equation}
+
+
 \begin{equation}
-    f(r) = \int_{-\infty}^{\infty} \left|b_{\ell}\right| g(r b_{\ell}, b_{\ell}) \,db_{\ell},
+    f(r_{\PGt/\Pe}, r_{\PGt/\PGm}) = \int_{-\infty}^{\infty}
+    \left| \beta_{\PGt}\right|g(r_{\PGt/\Pe}\beta_{\PGt}, r_{\PGt/\PGm}\beta_{\PGt}, \beta_{\PGt})
+    d\beta_{\PGt}
 \end{equation}
 
-where $r = b_{\ell'}/b_{\ell}$ and the PDF of the branching fractions
-$g(b_{\ell_{1}}, \ell_{2})$ is a bivariate normal distribution with parameters
-determined from the likelihood fit.  It is also possible to carry out the
-transformation above for the two dimensional case so that ratios of all
-elctrons and muons to taus can be compared as in Figure~\ref{fig:ratios_2D}.
+where $r_{\PGt/\Pe} = \bwt/\bwe$ and $r_{\PGt/\PGm} = \bwt/\bwm$ and $g(\bwe,\bwm, bwt)$  is the PDF of the branching fractions which is normal distribution with parameters
+determined from the \BWl measurement.  The resulting ratios are shown in in Figure~\ref{fig:analysis:result:ratios_2D}.
 Table~\ref{tab:analysis:result:ratios} shows comparisons between the ratios constructed from
-the measurements described above, and those measured by LEP and ATLAS as well
-as the SM expectation. 
+the measurements described above, and those measured by LEP and ATLAS.
 
-\input{chapters/Analysis/sectionResult/ratiosFomula.tex}
+% \input{chapters/Analysis/sectionResult/ratiosFomula.tex}
 
 
 \begin{figure}[htb!]
@@ -133,15 +147,17 @@ as the SM expectation.
     \includegraphics[width=0.7\textwidth]{chapters/Analysis/sectionResult/figures/result_contours_2d_ratio.pdf}
     \caption{Two dimensional distributions of the ratios $\BWt/\BWe$ vs $\BWt/\BWm$ 
     with comparisons of the CMS result to LEP and ATLAS measurements.}
-    \label{fig:ratios_2D}
+    \label{fig:analysis:result:ratios_2D}
     \end{center}
 \end{figure}
 
 \begin{table}[htb!]
     \centering
+    % \setlength{\tabcolsep}{0.5em}
+    \renewcommand{\arraystretch}{2}
     \caption{Ratios of branching fractions.}
     \label{tab:analysis:result:ratios}
-    \begin{tabular}{l|ccc}
+    \begin{tabular}{c|ccc}
                             & CMS               & LEP               & ATLAS              \\
     \hline                                                                 
     $\BWm / \BWe$           & $1.013 \pm 0.009$ & $0.993 \pm 0.019$ & --                 \\
@@ -153,28 +169,25 @@ as the SM expectation.
 
 The values of the leptonic branching fractions can also be used as a
 check of the unitarity of the CKM matrix elements and calculating the
-least well measured of the matrix elements, $\left|\rm V_{cs}\right|$.
+least well measured of the matrix elements, \absVcs.
 To do both of these calculations, the following relation between the
 leptonic branching fractions and CKM matrix elements is useful, 
 
 \begin{equation}
-    R^W_{\rm h/l} = \frac{B_h}{1-B_h} = 
-    \left[1 + \frac{\alpha_{S}(M^{2}_{\mathrm{W}})}{\pi}\right]
-    \sum_{\substack{i = (\mathrm{u,c}), \\ j=(\mathrm{d, s,
-    b})}}\left|\rm V_{ij}\right|^{2},
+    R^\PW_{\mathrm{h}/\ell} = \frac{\BWh }{1- \BWh} = \bigg( 1 + \frac{\alpS(m_\PW)}{\pi}\bigg) \sumCKM,
 \end{equation}
 
-\noindent where $\alpha_{S}(M^{2}_{\mathrm{W}})$ is the strong coupling constant
-at the $\PW$ pole and $V_{ij}$ are the CKM matrix elements. The CMS value for
+\noindent where $\alpS(m_\PW)$ is the strong coupling constant
+at the $\PW$ pole. The CMS value for
 the ratio of total hadronic and total leptonic branching fraction is 
 \begin{equation}
-    R^W_{\rm h/l} = 2.060\pm0.021,
+    R^\PW_{\mathrm{h}/\ell} = 2.060\pm 0.021,
 \end{equation}
-\noindent which leads to the following derived value for $\alpha_s(m_W)$, $\sum_{\substack{uc\\dsb}} |V_{ij}|^2$ and $V_{cs}$.
+\noindent which leads to the following derived value for $\alpS(m_\PW)$, \sumCKM and \absVcs.
 
 % Solving for
 % $\sum_{ij}\left|V_{ij}\right|^{2}$ and using (these are the numbers used
-% for the LEP combination) a value of $\alpha_{S}(M^{2}_{\mathrm{W}}) =
+% for the LEP combination) a value of $\alphS(M^{2}_{\PW}) =
 % 0.1120 \pm 0.0010$ and sum over CKM matix elements squared excluding
 % $V_{cs}$ and $V_{tb}$ equal to $1.0544 \pm 0.0051$, the above expression
 % above can be used to calculate a value of $1.991 \pm 0.019$ is obtained.
@@ -186,38 +199,35 @@ the ratio of total hadronic and total leptonic branching fraction is
 
 
 \begin{table}[!h]
-    \setlength{\tabcolsep}{0.5em}
-    \renewcommand{\arraystretch}{2}
+    \setlength{\tabcolsep}{0.2em}
+    \renewcommand{\arraystretch}{2.5}
     \centering
     \caption{SM quantities can be derived from the CMS measured $R^W_{\rm h/l}$. }
     \resizebox{0.99\textwidth}{!}{
     \begin{tabular}{ccc|ccc}
-        \hline
         Assumption &  &  Quantity & CMS & LEP & CMS+LEP\\
         \hline
-        && $R^W_{\rm h/l}$ & $2.060\pm0.021$ & $2.068\pm0.025$ & $2.063\pm0.016$ \\
-        \hline
-        CKM Unitarity: $\sum_{uc,dsb} |V_{ij}|^2 = 2$ & $\Longrightarrow$ & $\alpha_s(m_W) $ & $0.094\pm0.033$ & $0.108\pm0.040$ & $0.099\pm0.026$  \\%$
-        \hline
-        PDG~\cite{pdg2020}: $\alpha_s(m_W) = 1.1120\pm0.010$     & $\Longrightarrow$ & $\sum_{\substack{uc\\dsb}} |V_{ij}|^2 $&$ 1.985\pm0.021$ & $1.997\pm0.025$ & $1.992\pm0.016$ \\ %
-        \hline
+                                                            &                   & $R^\PW_{\mathrm{h}/\ell}$ & $2.060\pm0.021$ & $2.068\pm0.025$ & $2.063\pm0.016$ \\ \hline
+        CKM Unitarity: $\sumCKM = 2$                        & $\Longrightarrow$ & $\alpS(m_\PW)$            & $0.094\pm0.033$ & $0.108\pm0.040$ & $0.099\pm0.026$ \\ \hline
+        PDG~\cite{pdg2020} $\alpS(m_\PW) = 1.1200\pm0.010$  & $\Longrightarrow$ & \sumCKM                   & $1.985\pm0.021$ & $1.997\pm0.025$ & $1.992\pm0.016$ \\ \hline
         $\begin{matrix} 
-            \text{PDG~\cite{pdg2020}: } \alpha_s(m_W) = 1.1120\pm0.010 \\ 
-            \text{PDG~\cite{pdg2020}: } \sum_{\substack{ud,us,ub\\cd,cb}} |V_{ij}|^2 =1.0490(18) \end{matrix} $ 
-        & $\Longrightarrow$ & $V_{cs}$ & $ 0.969\pm 0.011$ & $0.974\pm0.013$ & $0.971\pm0.008$ \\
-        \hline
+            \text{PDG~\cite{pdg2020}: } \alpS(m_\PW) = 1.1200\pm0.010 \\ 
+            \text{PDG~\cite{pdg2020}: } \sum_{\substack{ud,us,ub\\cd,cb}} |V_{ij}|^2 =1.0490(18) 
+        \end{matrix} $ 
+                                                            & $\Longrightarrow$ & \absVcs                   & $0.969\pm0.011$ & $0.974\pm0.013$ & $0.971\pm0.008$ \\ 
     \end{tabular}
     }
-    \label{tab:introduction:derivedQuantity}
+    \label{tab:analysis:result:derivedQuantity}
 \end{table}
 
 
+  
 
  \begin{figure}[!h]
     \centering
     \includegraphics[width=0.7\textwidth]{chapters/Introduction/sectionRelatedWorks/figures/vcs.png}
-    \caption{The $|V_{cs}|$ derived from the $W\to l\nu$ measurement by CMS, LEP and CMS+LEP, in comparison with the direct measurements~\cite{pdg2020}.}
-    \label{fig:relatedWorks:vcs:measurements}
+    \caption{The \absVcs derived from the \BWl measurement by CMS, LEP and CMS+LEP, in comparison with the direct measurements~\cite{pdg2020}.}
+    \label{fig:analysis:result:vcs}
 \end{figure}
 
 
@@ -240,22 +250,22 @@ the ratio of total hadronic and total leptonic branching fraction is
 
 % % \input{section6/tables/emutest.tex}
 
-% In contract with agreement on LFU for $e$ and $\mu$ in weak section, LPU 
-% regarding $\tau$ versus $e$ and $\mu$, as is discussed in Chapter 1, 
+% In contract with agreement on LFU for $e$ and $\PGm$ in weak section, LPU 
+% regarding $\PGt$ versus $e$ and $\PGm$, as is discussed in Chapter 1, 
 % is significantly challenged by 
 % measurements from ALEPH, DELPHI, OPAL and L3 with LEP e+e- collision, 
 % as well as Belle, Belle and LHCb with B meson decay.
 
 
-% Therefore, we are interesed in the ratio of $Br (W\to \tau \nu)$ with respect to electron
+% Therefore, we are interesed in the ratio of $Br (W\to \PGt \nu)$ with respect to electron
 % and muon channels,
 
 % \begin{equation}
-%     r = \frac{Br (W\to \tau \nu)}{Br (W\to l \nu)} , \text{ where } l=e,\mu
+%     r = \frac{Br (W\to \PGt \nu)}{Br (W\to l \nu)} , \text{ where } l=e,\PGm
 % \end{equation}
 
-% based on the assumption that $Br (W\to \mu \nu) = Br( W\to e \nu )$, which
-% is well justified by the previous precision test of LFU between $e$ and $\mu$ in weak section.
+% based on the assumption that $Br (W\to \PGm \nu) = Br( W\to e \nu )$, which
+% is well justified by the previous precision test of LFU between $e$ and $\PGm$ in weak section.
 % This assumption is the same in Belle and BaBar measurements.
 
 % The key to the success of Belle and BaBar measurements is that $tau$ are reconstructed
@@ -267,21 +277,21 @@ the ratio of total hadronic and total leptonic branching fraction is
 % By using leptonic taus, systematics regarding lepton reconstruction 
 % is canceled out to the first order, thus the precision of r is not limited systematically.
 
-% The evolved dilepton channels are $\mu\mu$, $ee$ and $e\mu$ with $n_j \geq 2$ and $n_b = 1,2$,
-% where $\mu\mu$, $ee$ also include $n_b = 0$ bin for \PZ background normalization purpose.
-% r is obtained by simultaneous fit to the pT spectrum of the trailing lepton in $\mu\mu$,
-% $ee$ and $e\mu$ channels. The methodology of this template fit is described in Section 5.3.
+% The evolved dilepton channels are $\PGm\PGm$, $ee$ and $e\PGm$ with $n_j \geq 2$ and $n_b = 1,2$,
+% where $\PGm\PGm$, $ee$ also include $n_b = 0$ bin for \PZ background normalization purpose.
+% r is obtained by simultaneous fit to the pT spectrum of the trailing lepton in $\PGm\PGm$,
+% $ee$ and $e\PGm$ channels. The methodology of this template fit is described in Section 5.3.
 % The result is in Eqn \ref{eqn:fitr}.
 
 % \begin{equation}
 %     \boxed{
-%     r = \frac{Br (W\to \tau \nu)}{Br (W\to l \nu)}
+%     r = \frac{Br (W\to \PGt \nu)}{Br (W\to l \nu)}
 %     = 1.000 \times \big[1 \pm 2.72\% \text{ (stat)} \pm 1.44\% \text{ (syst)} \big]
 %     }
 %     \label{eqn:fitr}
 % \end{equation}
 
-% The correlation matrix of the fit is shown in Fig \ref{fig:covr}.
+% The correlation matrix of the fit is shown in Fig \ref{fig:analysis:result:covr}.
 
 % The measurement of r using leptonic tau has small systematic uncertainty, thanks to the 
 % cancellation of reconstruction efficiency. The precision of r is statistically limited, 
@@ -289,15 +299,15 @@ the ratio of total hadronic and total leptonic branching fraction is
 
 
 % The improvement of r precision when including more channels is shown in
-% Fig \ref{fig:gain}. The gain of adding $e\mu$ and $\mu e$ channel is
-% significant, while adding $l \tau$ and $l4j$ channel is small.
+% Fig \ref{fig:analysis:result:gain}. The gain of adding $e\PGm$ and $\PGm e$ channel is
+% significant, while adding $l \PGt$ and $l4j$ channel is small.
 
 
 % \begin{figure}[p]
 %     \centering
 %     \includegraphics[width=14cm]{chapters/Analysis/sectionResult/figures/r2}
-%     \caption{Fitting the pT spectrum of trailing lepton in $ee$, $\mu\mu$ and $e\mu$ channel.
+%     \caption{Fitting the pT spectrum of trailing lepton in $ee$, $\PGm\PGm$ and $e\PGm$ channel.
 %     The correlation matrix among r and systematic parameters.
 %     }
-%     \label{fig:covr}
+%     \label{fig:analysis:result:covr}
 % \end{figure}

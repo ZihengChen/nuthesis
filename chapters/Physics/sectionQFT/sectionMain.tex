@@ -1,32 +1,32 @@
 
 
 \chapter{An Outline of the Quantum Field Theory of the Standard Model}
-\label{sec:relatedWorks:qft}
+\label{sec:physics:qft}
 
 
 Quantum Field Theory combines special relativity and quantum mechanics to describe the Lorentz invariant rules for fields representing particles and forces. The foundation of QFT is the principle of least action.
 \begin{equation}
     \delta s = \delta \int \mathcal{L}(\phi, \partial_\mu \phi) dx = 0,
-    \label{eqn:relatedWorks:qft:leastAction}
+    \label{eqn:physics:qft:leastAction}
 \end{equation}
 
 \noindent which leads to the Euler-Lagrange equation of motion for the fields:
 \begin{equation}
     \frac{\partial}{\partial x_\mu} \bigg( \frac{\partial \mathcal{L}}{\partial(\partial \phi / \partial x_\mu)}\bigg) - \frac{\partial \mathcal{L}}{ \partial \phi} = 0,
-    \label{eqn:relatedWorks:qft:lagrangeEoM}
+    \label{eqn:physics:qft:lagrangeEoM}
 \end{equation}
 
-\noindent where $\mathcal{L}(\phi, \partial_\mu \phi)$ is the Lagrangian of the quantum fields. In such a framework, the behaviors of the quantum fields are then fully dictated by their Lagrangian via the Euler-Lagrangian Equation of Motion in Equation~\ref{eqn:relatedWorks:qft:lagrangeEoM}. Therefore, this allows us to encode our understanding of the dynamics and interactions of field into the Lagrangian. For example, Klein-Gordon Equations and Dirac Equations, which are two versions of the generalization of Schrodinger Equation in the special relativity domain, can be derived from the Lagrangian of the massive scalar field $\phi$ and massive spinor filed $\psi$, as shown in Equation~\ref{eqn:relatedWorks:qft:kleinGorden} and \ref{eqn:relatedWorks:qft:dirac}. Another example is the electromagnetic field. Based on the Gauss's Law $\nabla \cdot \vec{E} = 0$ and $\nabla \cdot \vec{B} = 0$, Faraday's law of induction $\nabla \times \vec{E} = - \partial_t \vec{B}$ and Ampere's circuital law $\nabla \times \vec{B} = (1/c) \partial_t \vec{E}$, the Maxwell equations for electromagnetic field in the free space can be achieved by defining a Lagrangian of a massless vector field $A_\mu$, as shown in Equation~\ref{eqn:relatedWorks:qft:maxwell}.
+\noindent where $\mathcal{L}(\phi, \partial_\mu \phi)$ is the Lagrangian of the quantum fields. In such a framework, the behaviors of the quantum fields are then fully dictated by their Lagrangian via the Euler-Lagrangian Equation of Motion in Equation~\ref{eqn:physics:qft:lagrangeEoM}. Therefore, this allows us to encode our understanding of the dynamics and interactions of field into the Lagrangian. For example, Klein-Gordon Equations and Dirac Equations, which are two versions of the generalization of Schrodinger Equation in the special relativity domain, can be derived from the Lagrangian of the massive scalar field $\phi$ and massive spinor filed $\psi$, as shown in Equation~\ref{eqn:physics:qft:kleinGorden} and \ref{eqn:physics:qft:dirac}. Another example is the electromagnetic field. Based on the Gauss's Law $\nabla \cdot \vec{E} = 0$ and $\nabla \cdot \vec{B} = 0$, Faraday's law of induction $\nabla \times \vec{E} = - \partial_t \vec{B}$ and Ampere's circuital law $\nabla \times \vec{B} = (1/c) \partial_t \vec{E}$, the Maxwell equations for electromagnetic field in the free space can be achieved by defining a Lagrangian of a massless vector field $A_\mu$, as shown in Equation~\ref{eqn:physics:qft:maxwell}.
 \begin{align}
     \text{scalar:} \,
     \mathcal{L}_\phi &= \frac{1}{2} \partial_\mu\phi \partial^\mu \phi - \frac{1}{2} m^2 \phi^2 
-        &\Longrightarrow& \;  \text{ Klein-Gordon Equation:} \, \partial_\mu \partial^\mu \phi + m^2 \phi = 0 \label{eqn:relatedWorks:qft:kleinGorden}\\
+        &\Longrightarrow& \;  \text{ Klein-Gordon Equation:} \, \partial_\mu \partial^\mu \phi + m^2 \phi = 0 \label{eqn:physics:qft:kleinGorden}\\
     \text{spinor:} \,
     \mathcal{L}_\psi &= i \bar{\psi}\gamma^\mu \partial_\mu \psi - m \bar{\psi} \psi 
-        &\Longrightarrow& \; \text{ Dirac Equation:}  \, (i\gamma^\mu\partial_\mu - m) \psi = 0 \label{eqn:relatedWorks:qft:dirac} \\
+        &\Longrightarrow& \; \text{ Dirac Equation:}  \, (i\gamma^\mu\partial_\mu - m) \psi = 0 \label{eqn:physics:qft:dirac} \\
     \text{vector:} \,
     \mathcal{L}_A &= -\frac{1}{4}F_{\mu\nu} F^{\mu \nu} 
-        &\Longrightarrow& \; \text{ Maxwell Equations:} \, \partial_\mu \partial^\mu A_\mu = 0 \label{eqn:relatedWorks:qft:maxwell}
+        &\Longrightarrow& \; \text{ Maxwell Equations:} \, \partial_\mu \partial^\mu A_\mu = 0 \label{eqn:physics:qft:maxwell}
 \end{align}
 
 
@@ -53,7 +53,7 @@ This section gives a brief summery of SM skeleton in aspect of the Yang-Mills th
     & + \left\lvert  \big( i \partial_\mu -g \frac{\tau_a}{2} W^a_\mu -g'\frac{Y}{2} B_\mu \big)\phi \right\rvert ^2 - V(\phi) \\
     & -(y_1 \bar{\chi}_L \phi \psi_R + y_2 \bar{\chi}_L \phi_c \psi_R + \text{hermitian conjugate}),
 \end{split}
-\label{eqn:relatedWorks:qft:smLagrangian} 
+\label{eqn:physics:qft:smLagrangian} 
 \end{equation}
 
 \noindent where the first to the forth row represents the gauge sector, fermion sector, higgs sector and fermion mass sector respectively. This total SM Lagrangian functions as an indexing map of the discussion in this section. One of the beauty of SM is its minimality. We can count the number of free parameters in the SM Lagrangian. Thanks to the symmetries imposed in the SM, only 18 basic free parameters to begin with are needed in the model.
@@ -80,9 +80,9 @@ The values of these free SM parameters are determined from the experiments. In a
 
 
 \section{Gauge Symmetry}
-\label{sec:relatedWorks:qft:gaugeSymmetry}
+\label{sec:physics:qft:gaugeSymmetry}
 
-Gauge theory is a type of quantum field theory, the Lagrangian of which is invariant under local phase transformations or gauge transformations. The term ``gauge" should be understood as the regularization of the redundant degrees of freedom in the Lagrangian. The transformations between different gauges form a Lie group, which characterizes this gauge theory. Yang-Mills gauge theory is the gauge theory for the non-abelian Lie groups. (``abelian" or ``non-abelian" tells whether two gauge transformations in the group are commutable or not.) The standard model is built based on the Yang-Mills gauge theory. But why does SM have to respect the gauge symmetry? The primordial reason is that by enhancing the global phase symmetry to local phase symmetry, we can introduce massless gauge bosons and consequently obtain the couplings between the fermions and the gauge boson. Another benefit anchors in the renormalization. A QFT is useful only if it is renormalizable to make finite meaningful predictions. And gauge theory is proven renormalizable. Besides obtaining force and renormalization, a relatively modern understanding of gauge symmetry is that it is not a symmetry in nature but an artificial consequence of the redundant degree of freedom in the theory. According to Noether's theorem, a nature symmetry corresponds to a conservation law. For example, the global gauge symmetry of QED gives rise to the conservation of electric charge. But the local symmetry in the QED, which is related to the redundant degree of freedom in the mathematical description of the photo polarization, does not lead to any corresponding conserved current. The thinking about the essence of the gauge symmetry is nicely presented in Schwartz's book, \textit{Quantum Field Theory and the Standard Model} \cite{schwartz2014quantum}. Here provide a description of the gauge symmetry of the abelian U(1) group and the non-abelian SU(2), SU(3) groups, which is crucial for SM electroweak and QCD, as well as beyond SM models for lepton non-universality in Section~\ref{sec:relatedWorks:bsm}.
+Gauge theory is a type of quantum field theory, the Lagrangian of which is invariant under local phase transformations or gauge transformations. The term ``gauge" should be understood as the regularization of the redundant degrees of freedom in the Lagrangian. The transformations between different gauges form a Lie group, which characterizes this gauge theory. Yang-Mills gauge theory is the gauge theory for the non-abelian Lie groups. (``abelian" or ``non-abelian" tells whether two gauge transformations in the group are commutable or not.) The standard model is built based on the Yang-Mills gauge theory. But why does SM have to respect the gauge symmetry? The primordial reason is that by enhancing the global phase symmetry to local phase symmetry, we can introduce massless gauge bosons and consequently obtain the couplings between the fermions and the gauge boson. Another benefit anchors in the renormalization. A QFT is useful only if it is renormalizable to make finite meaningful predictions. And gauge theory is proven renormalizable. Besides obtaining force and renormalization, a relatively modern understanding of gauge symmetry is that it is not a symmetry in nature but an artificial consequence of the redundant degree of freedom in the theory. According to Noether's theorem, a nature symmetry corresponds to a conservation law. For example, the global gauge symmetry of QED gives rise to the conservation of electric charge. But the local symmetry in the QED, which is related to the redundant degree of freedom in the mathematical description of the photo polarization, does not lead to any corresponding conserved current. The thinking about the essence of the gauge symmetry is nicely presented in Schwartz's book, \textit{Quantum Field Theory and the Standard Model} \cite{schwartz2014quantum}. Here provide a description of the gauge symmetry of the abelian U(1) group and the non-abelian SU(2), SU(3) groups, which is crucial for SM electroweak and QCD, as well as beyond SM models for lepton non-universality in Section~\ref{sec:physics:bsm}.
 
 
 \subsection{U(1) Gauge Symmetry}
@@ -90,7 +90,7 @@ The Lagrangian of a U(1) gauge theory with spinnor field $\psi$ and the associat
 % 
 \begin{equation}
     \mathcal{L}_{U(1)} = i\bar{\psi}\gamma^\mu D_\mu \psi  - m\bar{\psi} \psi  - \frac{1}{4}B_{\mu\nu}B^{\mu\nu},
-    \label{eqn:relatedWorks:qft:u1Lagrangian}
+    \label{eqn:physics:qft:u1Lagrangian}
 \end{equation}
 
 \noindent where the covariant derivative $D_\mu$ and covariant field strength tensor $B_{\mu\nu}$ defined as
@@ -107,7 +107,7 @@ The Lagrangian of a U(1) gauge theory with spinnor field $\psi$ and the associat
 	B_\mu  \longmapsto  B_\mu - \frac{1}{g'\frac{Y}{2}}\partial_\mu \alpha(x_\mu).
 \end{equation}
 
-\noindent The interaction between the U(1) charge current $j^\mu \equiv g' \bar{\psi}\gamma^\mu \psi$ and the gauge field $B_\mu$ is $-j^\mu A_\mu$ and is embedded in the covariant derivative $D_\mu$. The QED is a U(1) Gauge theory. So the QED Lagrangian takes the form of equation~\ref{eqn:relatedWorks:qft:u1Lagrangian}. If we choose $g'\frac{Y}{2} = -e$ and use the conventional notation $A_\mu$ for the QED gauge field, equation~\ref{eqn:relatedWorks:qft:u1Lagrangian} becomes the common form of QED Lagrangian.
+\noindent The interaction between the U(1) charge current $j^\mu \equiv g' \bar{\psi}\gamma^\mu \psi$ and the gauge field $B_\mu$ is $-j^\mu A_\mu$ and is embedded in the covariant derivative $D_\mu$. The QED is a U(1) Gauge theory. So the QED Lagrangian takes the form of equation~\ref{eqn:physics:qft:u1Lagrangian}. If we choose $g'\frac{Y}{2} = -e$ and use the conventional notation $A_\mu$ for the QED gauge field, equation~\ref{eqn:physics:qft:u1Lagrangian} becomes the common form of QED Lagrangian.
 
 
 \subsection{SU(2) Gauge Symmetry}
@@ -129,7 +129,7 @@ The three generators of SU(2) group $T_a$ with $a \in {1,2,3 }$ are usually repr
     \mathcal{L}_{SU(2)}  &= (i\bar{\psi}_1\gamma^\mu D_\mu \psi_1  - m_1\bar{\psi_1} \psi_1) + (i\bar{\psi}_2\gamma^\mu D_\mu \psi_2  - m_2\bar{\psi_2} \psi_2)  - \frac{1}{4}W^a_{\mu\nu}W^{\mu\nu}_a \\
     &= i\bar{\chi}\gamma^\mu D_\mu \chi  - m\bar{\chi} \chi  - \frac{1}{4}W^a_{\mu\nu}W^{\mu\nu}_a,
 \end{split}
-\label{eqn:relatedWorks:qft:su2Lagrangian}
+\label{eqn:physics:qft:su2Lagrangian}
 \end{equation}
 
 \noindent where the covariant derivative $D_\mu$ and covariant field strength tensor $W^a_{\mu\nu}$ defined as
@@ -146,7 +146,7 @@ The three generators of SU(2) group $T_a$ with $a \in {1,2,3 }$ are usually repr
     W^a_\mu \longmapsto  W^a_\mu - \frac{1}{g}\partial_\mu \alpha^a(x_\mu) - f_{abc}\alpha^b(x_\mu) W^c_\mu 
 \end{equation}
 
-\noindent Because SU(2) group is non-abelian, the nontrivial group structure $f_{abc}$ has its contribution to the covariant field strength tensor $W^a_{\mu\nu}$. This leads to the fact that the term $\frac{1}{4}W^a_{\mu\nu}W^{\mu\nu}_a$ in the equation~\ref{eqn:relatedWorks:qft:su2Lagrangian} not only involves the kinetic energy of the gauge field but also includes $WWW$ and $WWWW$ terms representing three points and four-point self-interaction of the gauge field. The gauge boson can self interact when gauge symmetry is imposed on a non-abelian group, a unique feature of the non-abelian gauge theories. As we will see in the GWS theory in Section~\ref{sec:relatedWorks:qft:gws}, this leads to the Triple-Gauge-Coupling (TGC) and Quatic-gauge-coupling (QGC) in the SM.
+\noindent Because SU(2) group is non-abelian, the nontrivial group structure $f_{abc}$ has its contribution to the covariant field strength tensor $W^a_{\mu\nu}$. This leads to the fact that the term $\frac{1}{4}W^a_{\mu\nu}W^{\mu\nu}_a$ in the equation~\ref{eqn:physics:qft:su2Lagrangian} not only involves the kinetic energy of the gauge field but also includes $WWW$ and $WWWW$ terms representing three points and four-point self-interaction of the gauge field. The gauge boson can self interact when gauge symmetry is imposed on a non-abelian group, a unique feature of the non-abelian gauge theories. As we will see in the GWS theory in Section~\ref{sec:physics:qft:gws}, this leads to the Triple-Gauge-Coupling (TGC) and Quatic-gauge-coupling (QGC) in the SM.
 
 
 
@@ -185,14 +185,14 @@ The eight generators of SU(3) group $T_a$ with $a \in {1,2,\dots 8}$ are usually
     \mathcal{L}_{SU(3)}  &= \sum_{k \in \{r,g,b\}} \big( i\bar{\psi_k}\gamma^\mu D_\mu \psi_k  - m\bar{\psi_k} \psi_k \big) - \frac{1}{4}G^a_{\mu\nu}G^{\mu\nu}_a \\
     &= i\bar{q}\gamma^\mu D_\mu q  - m\bar{q} q - \frac{1}{4}G^a_{\mu\nu}G^{\mu\nu}_a
 \end{split}
-\label{eqn:relatedWorks:qft:su3Lagrangian}
+\label{eqn:physics:qft:su3Lagrangian}
 \end{equation}
 
 \noindent where the covariant derivative $D_\mu$ and covariant field strength tensor $G^a_{\mu\nu}$ defined as
 \begin{equation}
     D_\mu \equiv \partial_\mu +i g T_a G^a_\mu , \;\;\; 
     G^a_{\mu\nu} \equiv \partial_\mu G^a_\nu - \partial_\nu G^a_\mu - g_s f_{abc} G^b_\mu G^c_\nu
-    \label{eqn:relatedWorks:qft:su3Covariant}
+    \label{eqn:physics:qft:su3Covariant}
 \end{equation}
 
 \noindent $\mathcal{L}_{SU(3)}$ is invariant under SU(3) local transformation 
@@ -203,21 +203,21 @@ The eight generators of SU(3) group $T_a$ with $a \in {1,2,\dots 8}$ are usually
 
 
 
-\noindent The same as the $SU(2)$  scenario, the covariant field strength tensor $G^a_{\mu\nu}$ in Equation~\ref{eqn:relatedWorks:qft:su3Covariant}  has contributions from the non-trivial group structure $f_{abc}$ of $SU(3)$ group, so the kinematic term of gauge field $\frac{1}{4}G^a_{\mu\nu}G^{\mu\nu}_a$ in the Lagrangian in Equation~\ref{eqn:relatedWorks:qft:su3Lagrangian} not only involves the kinematic energy of the gauge field but also include $GGG$ and $GGGG$ terms representing the three-point and four-point self-interaction of the gauge field. For QCD in SM, gluon's self-interaction leads to many unique phenomenologies in the strong interactions, such as quark confinement, evolution of the parton distribution functions and final state ration, which will be discussed in Section~\ref{sec:relatedWorks:qft:qcd} and \ref{sec:relatedWorks:ppCollision}.
+\noindent The same as the $SU(2)$  scenario, the covariant field strength tensor $G^a_{\mu\nu}$ in Equation~\ref{eqn:physics:qft:su3Covariant}  has contributions from the non-trivial group structure $f_{abc}$ of $SU(3)$ group, so the kinematic term of gauge field $\frac{1}{4}G^a_{\mu\nu}G^{\mu\nu}_a$ in the Lagrangian in Equation~\ref{eqn:physics:qft:su3Lagrangian} not only involves the kinematic energy of the gauge field but also include $GGG$ and $GGGG$ terms representing the three-point and four-point self-interaction of the gauge field. For QCD in SM, gluon's self-interaction leads to many unique phenomenologies in the strong interactions, such as quark confinement, evolution of the parton distribution functions and final state ration, which will be discussed in Section~\ref{sec:physics:qft:qcd}.
 
 
 
 
 
 \section{The Higgs Mechanism}
-\label{sec:relatedWorks:qft:higgsMechanism}
-One might notice that the gauge fields discussed above in Section~\ref{sec:relatedWorks:qft:gaugeSymmetry} are all massless: the Lagrangians do not have any terms for the gauge fields' mass because directly adding such mass terms breaks the gauge symmetry. The massless gauge field does not cause problems in the QED and QCD, where photon and gluon are indeed massless. But for weak interaction, it is known that weak force is short-range, and thus the weak bosons must be massive. But if we naively add a mass term for the weak boson by hand, e.g. $m W_\mu W^\mu$, and give up the gauge symmetry, we will come across divergence in the loop integrals related to the propagator and end up with an un-renormalizable theory failing to make any meaningful predictions at high energy scale. The way to get around is the `` higgs mechanism" which generates mass for gauge bosons via spontaneous symmetry breaking while maintaining the gauge symmetry. It first introduces a scalar field $\phi$ with spontaneously-broken global symmetry. $\phi$ has gauge charge, and thus couples via the covariant derivative with the gauge filed that desires mass. Eventually, it is the gauge covariant derivatives of a spontaneously-broken $\phi$ that provides the mass for the gauge field. For this reason, the mass of the gauge particle is often intuitively interpreted as the ``resistance" when the gauge boson moves in the $\phi$ field and interacts with it. In this subsection, the higgs mechanism with $U(1)$ and $SU(2)$ spontaneously broken symmetry are illustrated.
+\label{sec:physics:qft:higgsMechanism}
+One might notice that the gauge fields discussed above in Section~\ref{sec:physics:qft:gaugeSymmetry} are all massless: the Lagrangians do not have any terms for the gauge fields' mass because directly adding such mass terms breaks the gauge symmetry. The massless gauge field does not cause problems in the QED and QCD, where photon and gluon are indeed massless. But for weak interaction, it is known that weak force is short-range, and thus the weak bosons must be massive. But if we naively add a mass term for the weak boson by hand, e.g. $m W_\mu W^\mu$, and give up the gauge symmetry, we will come across divergence in the loop integrals related to the propagator and end up with an un-renormalizable theory failing to make any meaningful predictions at high energy scale. The way to get around is the ``higgs mechanism" which generates mass for gauge bosons via spontaneous symmetry breaking while maintaining the gauge symmetry. It first introduces a scalar field $\phi$ with spontaneously-broken global symmetry. $\phi$ has gauge charge, and thus couples via the covariant derivative with the gauge filed that desires mass. Eventually, it is the gauge covariant derivatives of a spontaneously-broken $\phi$ that provides the mass for the gauge field. For this reason, the mass of the gauge particle is often intuitively interpreted as the ``resistance" when the gauge boson moves in the $\phi$ field and interacts with it. In this subsection, the higgs mechanism with $U(1)$ and $SU(2)$ spontaneously broken symmetry are illustrated.
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.5\textwidth]{chapters/RelatedWorks/sectionQFT/figures/Higgs.png}
+    \includegraphics[width=0.5\textwidth]{chapters/Physics/sectionQFT/figures/Higgs.png}
     \caption{Spontaneous symmetry breaking of the scalar field $\phi$  with a $U(1)$  global symmetric potential. The shape of potential on the complex plane looks like a Mexican hat. The scalar field's minimum potential shifts from the origin by the amount of Higgs vacuum expectation value, forming a ring of positions with minimal potential. The scalar field has to choose one of the positions on the ring to settle down. Such a choice is so-called spontaneous symmetry breaking. The radial and lateral perturbation mode around this minimal position gives rise to the Higgs field and the Goldstone field. }
-    \label{fig:relatedWorks:qft:higgsPotential}
+    \label{fig:physics:qft:higgsPotential}
 \end{figure}
 
 
@@ -236,7 +236,7 @@ Consider a $U(1)$ gauge theory with a scalar field $\phi$, which has a $U(1)$ gl
 	\mathcal{L} & = D^\mu\phi^* D_\mu\phi-V(\phi)   - \frac{1}{4}B_{\mu\nu}B^{\mu\nu} \\
 	& = D^\mu\phi^* D_\mu\phi- \big(\frac{1}{2} \mu^2 \phi^*\phi + \frac{1}{4} \lambda(\phi^*\phi )^2 \big)   - \frac{1}{4}B_{\mu\nu}B^{\mu\nu},
 \end{split}
-\label{eqn:relatedWorks:qft:u1Higgs}
+\label{eqn:physics:qft:u1Higgs}
 \end{equation}
 
 \noindent where the covariant derivative $D_\mu$ and covariant field strength tensor $B_{\mu\nu}$ defined as
@@ -249,11 +249,11 @@ Consider a $U(1)$ gauge theory with a scalar field $\phi$, which has a $U(1)$ gl
 \begin{equation}
 	\phi \longmapsto e^{i\alpha(x_\mu)} \phi ,\;\;\; 
 	B_\mu  \longmapsto  B_\mu - \frac{1}{g'\frac{Y}{2}}\partial_\mu \alpha(x_\mu).
-    \label{eqn:relatedWorks:qft:u1HiggsGaugeTransform}
+    \label{eqn:physics:qft:u1HiggsGaugeTransform}
 \end{equation}
 
 
-\noindent The Lagrangian in Equation~\label{eqn:relatedWorks:qft:u1Higgs} is invariant under $U(1)$ gauge transformation in Equation~\label{eqn:relatedWorks:qft:u1HiggsGaugeTransform}. At this moment, $B_\mu$ is massless. The spontaneous symmetry breaking is concerning the scalar's potential $V(\phi)$. When $\mu^2<0$ , the scalar field's potential $V(\phi)$ on the complex plane looks like a Mexican hat, shown in Figure~\ref{fig:relatedWorks:qft:higgsPotential}. It has an infinite number of positions with minimal potential on a ring with $|\phi|^2 = -\frac{\mu^2}{\lambda} = \nu^2$, where $\nu$ is the vacuum expectation value or VEV of the scalar $\phi$. Because of nontrivial vev, nature has to choose one of these ground states for $\phi$ instead of the complete vacuum $\phi=0$. This choice is the so-called spontaneous symmetry break. The term "symmetry break" implies that choosing one specific VEV breaks the $U(1)$ global symmetry of the scalar potential; the term "spontaneous" suggests that the symmetry breaking is induced completely by the scalar itself when $\mu^2<0$. During the SSB, it turns out that it does not matter which one of the VEV's is chosen because the complex phase of $\phi$ will eventually be absorbed by the gauge field $B_\mu$. For convenience, we could choose a VEV $\phi_0 = \nu e^{i 0/\nu}$. The scalar field $\phi$ can be treated as the vibration around $\phi_0$:
+\noindent The Lagrangian in Equation~\label{eqn:physics:qft:u1Higgs} is invariant under $U(1)$ gauge transformation in Equation~\label{eqn:physics:qft:u1HiggsGaugeTransform}. At this moment, $B_\mu$ is massless. The spontaneous symmetry breaking is concerning the scalar's potential $V(\phi)$. When $\mu^2<0$ , the scalar field's potential $V(\phi)$ on the complex plane looks like a Mexican hat, shown in Figure~\ref{fig:physics:qft:higgsPotential}. It has an infinite number of positions with minimal potential on a ring with $|\phi|^2 = -\frac{\mu^2}{\lambda} = \nu^2$, where $\nu$ is the vacuum expectation value or VEV of the scalar $\phi$. Because of nontrivial vev, nature has to choose one of these ground states for $\phi$ instead of the complete vacuum $\phi=0$. This choice is the so-called spontaneous symmetry break. The term "symmetry break" implies that choosing one specific VEV breaks the $U(1)$ global symmetry of the scalar potential; the term "spontaneous" suggests that the symmetry breaking is induced completely by the scalar itself when $\mu^2<0$. During the SSB, it turns out that it does not matter which one of the VEV's is chosen because the complex phase of $\phi$ will eventually be absorbed by the gauge field $B_\mu$. For convenience, we could choose a VEV $\phi_0 = \nu e^{i 0/\nu}$. The scalar field $\phi$ can be treated as the vibration around $\phi_0$:
 \begin{equation}
     \phi = \frac{\nu + h}{\sqrt{2}}e^{i\theta/\nu}, 
 \end{equation}
@@ -264,7 +264,7 @@ Consider a $U(1)$ gauge theory with a scalar field $\phi$, which has a $U(1)$ gl
     \theta  \longmapsto  \theta + \alpha(x_\mu).
 \end{equation}
 
-\noindent Rewrite Lagrangian in the Equation~\ref{eqn:relatedWorks:qft:u1higgs} in terms of the Higgs field $h$ and Goldstone field $\theta$, one gets
+\noindent Rewrite Lagrangian in the Equation~\ref{eqn:physics:qft:u1higgs} in terms of the Higgs field $h$ and Goldstone field $\theta$, one gets
 \begin{equation}
 \begin{split}
     \mathcal{L} =&  D^\mu\phi^* D_\mu\phi- \big(\frac{1}{2} \mu^2 \phi^*\phi + \frac{1}{4} \lambda(\phi^*\phi )^2 \big)   - \frac{1}{4}B_{\mu\nu}B^{\mu\nu} \\
@@ -281,7 +281,7 @@ Consider a $U(1)$ gauge theory with a scalar field $\phi$, which has a $U(1)$ gl
     \mathcal{B}_\mu = B_\mu - \frac{1}{g'\frac{Y}{2}} \partial_\mu \theta/\nu
 \end{equation}
 
-\noindent is the gauge field after absorbing the Goldstone field. Intuitively, it means the gauge boson eats the Goldstone boson. Comparing with Equation~\ref{eqn:relatedWorks:qft:u1higgs}, this Lagrangian also invariant under $U(1)$ gauge transformation, but the gauge field become massive. It is straight-forward to identify the mass term of the gauge field in the Lagrangian and the mass of the gauge boson and higgs boson turn out to be
+\noindent is the gauge field after absorbing the Goldstone field. Intuitively, it means the gauge boson eats the Goldstone boson. Comparing with Equation~\ref{eqn:physics:qft:u1higgs}, this Lagrangian also invariant under $U(1)$ gauge transformation, but the gauge field become massive. It is straight-forward to identify the mass term of the gauge field in the Lagrangian and the mass of the gauge boson and higgs boson turn out to be
 \begin{equation}
     m_B = g'\frac{Y}{2} \nu ,\;\;\; 
     m_h = \sqrt{2\lambda\nu^2}
@@ -291,7 +291,7 @@ Consider a $U(1)$ gauge theory with a scalar field $\phi$, which has a $U(1)$ gl
 
 
 \subsection{SU(2) SSB}
-The Higgs mechanism with SSB for $SU(2)$ symmetry is similar to $U(1)$ breaking but requires two scalar fields forming a scalar doublet. This is the same structure as the scalar field in the SM with $U(1)\times SU(2) \to U(1)$ SSB discussed in Section~\ref{sec:relatedWorks:qft:gws}. Therefore,  $SU(2)$ breaking in this section provides an illustration of SSB with the scalar doublet. More complex scalar structures, such as 2 higgs doublets (2HDM) considered in Section~\ref{sec:relatedWorks:bsm:chargedHiggs} or higgs triplet, break following the same principle. Here we illustrate the Higgs mechanism with $SU(2)$ SSB by considering a doublet of two complex scalar fields, $\phi = (\phi^+, \phi^0)^T$, which has a $SU(2)$  global symmetric potential as
+The Higgs mechanism with SSB for $SU(2)$ symmetry is similar to $U(1)$ breaking but requires two scalar fields forming a scalar doublet. This is the same structure as the scalar field in the SM with $U(1)\times SU(2) \to U(1)$ SSB discussed in Section~\ref{sec:physics:qft:gws}. Therefore,  $SU(2)$ breaking in this section provides an illustration of SSB with the scalar doublet. More complex scalar structures, such as 2 higgs doublets (2HDM) considered in Section~\ref{sec:physics:bsm:chargedHiggs} or higgs triplet, break following the same principle. Here we illustrate the Higgs mechanism with $SU(2)$ SSB by considering a doublet of two complex scalar fields, $\phi = (\phi^+, \phi^0)^T$, which has a $SU(2)$  global symmetric potential as
 \begin{equation}
     V(\phi) = \frac{1}{2} \mu^2 \phi^\dagger\phi + \frac{1}{4} \lambda(\phi^\dagger\phi )^2.
 \end{equation}
@@ -301,7 +301,7 @@ The Higgs mechanism with SSB for $SU(2)$ symmetry is similar to $U(1)$ breaking 
     \phi = \begin{bmatrix} \phi^+ \\ \phi_0 \end{bmatrix} =
     \begin{bmatrix} 0 \\ (\nu + h)/\sqrt{2} \end{bmatrix} e^{i \frac{\tau_a}{2} \theta^a  /\nu}
     \simeq \begin{bmatrix} \theta_2/2 + i\theta_1/2 \\ \nu + h - i\theta_3/2 \end{bmatrix} /\sqrt{2},
-    \label{eqn:relatedWorks:qft:su2Higgs}
+    \label{eqn:physics:qft:su2Higgs}
 \end{equation}
 
 \noindent where the Higgs field $h$ corresponds to the radial oscillation around the VEV, while three Goldstone field $\theta_1,\theta_2,\theta_3$ corresponds to the three oscillation components in the three rotational direction around $\frac{\tau_a}{2}$ generator axes. The Higgs field and three Goldstone fields transformes under the gauge transformation as 
@@ -331,7 +331,7 @@ The Higgs mechanism with SSB for $SU(2)$ symmetry is similar to $U(1)$ breaking 
 
 
 
-\noindent Then we can write the SU(2) Lagrangian for the scalar doublet $\phi$ in terms of Higgs field using the expansion of $\phi$ around VEV in Equation~\label{eqn:relatedWorks:qft:u1Higgs}
+\noindent Then we can write the SU(2) Lagrangian for the scalar doublet $\phi$ in terms of Higgs field using the expansion of $\phi$ around VEV in Equation~\label{eqn:physics:qft:u1Higgs}
 \begin{equation}
 \begin{split}
     \mathcal{L} =& (D^\mu \phi)^\dagger D_\mu \phi - \big(\frac{1}{2} \mu^2 \phi^\dagger\phi + \frac{1}{4} \lambda(\phi^\dagger\phi )^2 \big) - \frac{1}{4} W^a_{\mu\nu}W^{\mu\nu}_a \\
@@ -357,7 +357,7 @@ The Higgs mechanism with SSB for $SU(2)$ symmetry is similar to $U(1)$ breaking 
 % \noindent where the covariant derivative is $D_\mu = \partial_\mu +i g' \frac{Y}{2} B_\mu +i g \frac{\tau_a}{2} W^a_\mu$ with hypercharge of the complex doublet chosen to be one, $Y=1$. The same process can be used in 
 
 \section{GWS Electroweak Model}
-\label{sec:relatedWorks:qft:gws}
+\label{sec:physics:qft:gws}
 % Glashow-Weinberg-Salam 
 The $U(1) \times SU(2)$ gauge symmetric Lagrangian of GWS model for the SM electroweak unification reads 
 \begin{equation}
@@ -368,7 +368,7 @@ The $U(1) \times SU(2)$ gauge symmetric Lagrangian of GWS model for the SM elect
     & + \left\lvert  \big( i \partial_\mu -g \frac{\tau_a}{2} W^a_\mu -g'\frac{Y}{2} B_\mu \big)\phi \right\rvert ^2 - V(\phi) \\
     & -(G_1 \bar{\chi}_L \phi \psi_R + G_2 \bar{\chi}_L \phi_c \psi_R + \text{hermitian conjugate}) ,
 \end{split}
-\label{eqn:relatedWorks:qft:gws:lagragian}
+\label{eqn:physics:qft:gws:lagragian}
 \end{equation}
 
 \noindent where the left-handed leptons and quarks in the same family form isospin doublets $\chi_L$  with isospin $\frac{1}{2}$, while all right-handed fermions are isospin singlet $\psi_R$ with isospin 0
@@ -390,7 +390,7 @@ The $U(1) \times SU(2)$ gauge symmetric Lagrangian of GWS model for the SM elect
 \end{split}
 \end{equation}
 
-\noindent The Lagrangian in Equation~\ref{eqn:relatedWorks:qft:gws:lagragian} contains many crucial ideas to realize the unification of electromagnetic and weak interaction. Here list three of the most fundamental ideas. First, the electroweak mixing angle mixes the $U(1)$ and $SU(2)$ gauge bosons. Second, the Higgs mechanism with $U(1)\times SU(2)\to U(1)$ breaking generates mass for gauge bosons under the electroweak mixing angle. Third, the Yukawa couplings generate the fermion mass and result in the fixing between the fermions' flavor eigenstates and mass eigenstates.
+\noindent The Lagrangian in Equation~\ref{eqn:physics:qft:gws:lagragian} contains many crucial ideas to realize the unification of electromagnetic and weak interaction. Here list three of the most fundamental ideas. First, the electroweak mixing angle mixes the $U(1)$ and $SU(2)$ gauge bosons. Second, the Higgs mechanism with $U(1)\times SU(2)\to U(1)$ breaking generates mass for gauge bosons under the electroweak mixing angle. Third, the Yukawa couplings generate the fermion mass and result in the fixing between the fermions' flavor eigenstates and mass eigenstates.
 
 
 \subsection{Electroweak Mixing Angle}
@@ -429,19 +429,19 @@ GWS model allows an electroweak mixing angle $\theta_W$  in the $\mathcal{L}_{U(
     & -i \big( g\,sin\theta_W \,  \bar{\chi}_L \gamma^\mu   \frac{\tau_3}{2} \chi_L + g'\,cos\theta_W \,  \bar{\psi} \gamma^\mu   \frac{Y}{2} \psi \big)  \, A_\mu  \;\;\; \text{(EM Current Gauge coupling)}\\
     = &-ig J^\mu_\pm W_\mu^\pm - \frac{ig}{cos\theta_W} J^\mu_{NC} Z_\mu - ie J^{\mu}_{EM} A_\mu
 \end{split}
-\label{eqn:relatedWorks:qft:gws:gaugeIntLagragian}
+\label{eqn:physics:qft:gws:gaugeIntLagragian}
 \end{equation}
 
-\noindent The QED electric charge can be composed by the hypercharge and the third isospin value as $Q = T_3  +\frac{Y}{2}$. In Equation~\ref{eqn:relatedWorks:qft:gws:gaugeIntLagragian}, on one hand, the electromagnetic current $J_{EM}$ couples with photon field $A$ with a coupling strength constant $e$, which is exactly the component corresponding to the QED gauge interaction. On the other hand, the weak neutral current $J_{NC}$ couples with $Z$ boson with a coupling constant $g/cos\theta_W$ and the weak charged current couples with $W^\pm$ with coupling constant $g$, which corresponds to the weak gauge interaction. Therefore, in this way, the electroweak interaction is comprised of the QED and weak components.
+\noindent The QED electric charge can be composed by the hypercharge and the third isospin value as $Q = T_3  +\frac{Y}{2}$. In Equation~\ref{eqn:physics:qft:gws:gaugeIntLagragian}, on one hand, the electromagnetic current $J_{EM}$ couples with photon field $A$ with a coupling strength constant $e$, which is exactly the component corresponding to the QED gauge interaction. On the other hand, the weak neutral current $J_{NC}$ couples with $Z$ boson with a coupling constant $g/cos\theta_W$ and the weak charged current couples with $W^\pm$ with coupling constant $g$, which corresponds to the weak gauge interaction. Therefore, in this way, the electroweak interaction is comprised of the QED and weak components.
 
-Besides a mixing pattern in the fermion-gauge couplings in Equation~\ref{eqn:relatedWorks:qft:gws:gaugeIntLagragian}, the electroweak mixing angle also leads to a mixing in the gauge self-couplings.  As discussed in the Section~\ref{sec:relatedWorks:qft:gaugeSymmetry}, the non-abelian group has non-trivial structure constant $f_{abc}$ built into the gauge fields, which results in the gauge self-couplings among $W^{a=1,2,3}$ in the gauge kinematic energy term. Due to electroweak mixing $\theta_W$, the self-gauge coupling in the $W^{a=1,2,3}$ basis can be transformed into $W^\pm \Pz \gamma$ basis and takes a slightly more complex form, which includes 2 vertices of triple-gauge-coupling shown in Figure~\ref{fig:relatedWorks:qft:ewGaugeCoupling} and 4 vertices of four-quatic-gauge couplings shown in Figure~\ref{fig:relatedWorks:qft:ewQuadGaugeCoupling}
+Besides a mixing pattern in the fermion-gauge couplings in Equation~\ref{eqn:physics:qft:gws:gaugeIntLagragian}, the electroweak mixing angle also leads to a mixing in the gauge self-couplings.  As discussed in the Section~\ref{sec:physics:qft:gaugeSymmetry}, the non-abelian group has non-trivial structure constant $f_{abc}$ built into the gauge fields, which results in the gauge self-couplings among $W^{a=1,2,3}$ in the gauge kinematic energy term. Due to electroweak mixing $\theta_W$, the self-gauge coupling in the $W^{a=1,2,3}$ basis can be transformed into $W^\pm Z \gamma$ basis and takes a slightly more complex form, which includes 2 vertices of triple-gauge-coupling shown in Figure~\ref{fig:physics:qft:ewGaugeCoupling} and 4 vertices of four-quatic-gauge couplings shown in Figure~\ref{fig:physics:qft:ewQuadGaugeCoupling}
 
 % \begin{figure}
 %     \centering
 %     \includegraphics[width=0.4\textwidth]{tgc.png}
 %     \includegraphics[width=0.9\textwidth]{qgc.png}
 %     \caption{Electroweak Gauge Coupling is a result of gauging the non-abelian U(1)xSU(2) group and electroweak mixing.}
-%     \label{fig:relatedWorks:qft:ewGaugeCoupling}
+%     \label{fig:physics:qft:ewGaugeCoupling}
 % \end{figure}
 
 \begin{figure}[ht]
@@ -456,8 +456,8 @@ Besides a mixing pattern in the fermion-gauge couplings in Equation~\ref{eqn:rel
       a [particle=\(Z\)] -- [photon] b,
       f1 [particle=\(W^{-}\)] -- [photon] b  -- [photon] f2 [particle=\(W^{+}\)], 
     }; \qquad 
-    \caption{Vertices of SM electroweak Triple-Gauge-Couplings. $WW$ pairs couple to $Z/\gamma$ because of the electroweak mixing $\theta_W$. The Triple-Gauge-Couplings is one of the major process of  WW pair production in the electron-positron collider $e^- e^+ \to Z/\gamma \to W^+ W^-$  such as LEP2 which is discussed in Section~\ref{sec:relatedWorks:lu:W}.  }
-    \label{fig:relatedWorks:qft:ewTripleGaugeCouplingripleGaugeCoupling}
+    \caption{Vertices of SM electroweak Triple-Gauge-Couplings. $WW$ pairs couple to $Z/\gamma$ because of the electroweak mixing $\theta_W$. The Triple-Gauge-Couplings is one of the major process of  WW pair production in the electron-positron collider $e^- e^+ \to Z/\gamma \to W^+ W^-$  such as LEP2 which is discussed in Section~\ref{sec:physics:lu:W}.  }
+    \label{fig:physics:qft:ewTripleGaugeCouplingripleGaugeCoupling}
 \end{figure}
 
 
@@ -478,14 +478,14 @@ Besides a mixing pattern in the fermion-gauge couplings in Equation~\ref{eqn:rel
       {i1 [particle=\(W^{-}\)],i2[particle=\(W^{+}\)]} -- [photon] a [dot] -- [photon] {f1[particle=\(W^{-}\)],f2[particle=\(W^{+}\)]},
     };
     \caption{Vertices of SM electroweak Quatic-Gauge-Couplings.}
-    \label{fig:relatedWorks:qft:ewQuadGaugeCoupling}
+    \label{fig:physics:qft:ewQuadGaugeCoupling}
 \end{figure}
 
 
 
 
 \subsection{Gauge Boson Mass}
-The weak gauge boson must be massive since the weak force is indicated short-ranged by the experiments. Nowadays, the masses of W, \Pz boson have been measured as $M_W =80.379\pm 0.012 $ Gev and $M_Z=91.1876\pm0.0021$ GeV, which in the GWS model is generated by the Higgs mechanism with $U(1)_Y \times SU(2)_L \to U(1)_{EM}$ spontaneous symmetry breaking. The breaking is implemented by a complex scalar doublet field $\phi = [\phi^+, \phi^0]$, the same structure as the Higgs mechanism with $SU(2)$ breaking. While the isospin of the scalar doublet is determined by the $SU(2)$ generators, the choice of the doublet's hypercharge determines the mass of $Z$ and A field after the breaking. To obtain massless photon, the hypercharge of $\phi$ is therefore chosen to be $Y_{\phi} = 1$. The derivation of the photon mass and weak boson mass with $Y_{\phi} = 1$ is as following 
+The weak gauge boson must be massive since the weak force is indicated short-ranged by the experiments. Nowadays, the masses of W, Z boson have been measured as $M_W =80.379\pm 0.012 $ Gev and $M_Z=91.1876\pm0.0021$ GeV, which in the GWS model is generated by the Higgs mechanism with $U(1)_Y \times SU(2)_L \to U(1)_{EM}$ spontaneous symmetry breaking. The breaking is implemented by a complex scalar doublet field $\phi = [\phi^+, \phi^0]$, the same structure as the Higgs mechanism with $SU(2)$ breaking. While the isospin of the scalar doublet is determined by the $SU(2)$ generators, the choice of the doublet's hypercharge determines the mass of $Z$ and A field after the breaking. To obtain massless photon, the hypercharge of $\phi$ is therefore chosen to be $Y_{\phi} = 1$. The derivation of the photon mass and weak boson mass with $Y_{\phi} = 1$ is as following 
 \begin{equation}
 \begin{split}
     \mathcal{L}_{U(1)\times SU(2)}^{\text{gauge mass}} 
@@ -499,7 +499,7 @@ The weak gauge boson must be massive since the weak force is indicated short-ran
     = & \frac{1}{8}\nu^2g^2 (W^1_\mu W^\mu_1 +W^2_\mu W^\mu_2) + \frac{1}{8}\nu^2(g'B_\mu-gW^3_\nu)(g'B^\mu-gW^{3\nu}) \\
     = &  (\frac{1}{2}\nu g)^2 W^+_\mu W^{-\mu} +  \frac{1}{2} (\frac{1}{2}\nu \sqrt{g'^2+g^2})^2 Z_\mu Z^\mu + 0 A_\mu A^\mu ,
 \end{split}
-\label{eqn:relatedWorks:qft:gws:gaugeMassLagragian}
+\label{eqn:physics:qft:gws:gaugeMassLagragian}
 \end{equation}
 
 \noindent where shown is the Lagrangian terms about the gauge boson mass, the term with gauge field squares coming from the squared covariant derivative of the scalar doublet $|D_\mu \phi|^2$ in the Higgs sector. The VEV $ (0, \nu/\sqrt{2})^T$ is used for the scalar doublet and the underline gauge fields $W^a, B$  are replaced with the physical gauge field $W^\pm, Z, A$ with final mass of
@@ -507,12 +507,12 @@ The weak gauge boson must be massive since the weak force is indicated short-ran
     M_W = \frac{1}{2}\nu g, \; M_Z = \frac{1}{2}\nu \sqrt{g'^2+g^2}= \frac{1}{2}\nu \frac{g}{cos\theta_W}, \;  M_A= 0 . \; 
 \end{equation}
 
-\noindent One of the immediate consequences of the choice of $Y_{\phi}=1$ for massless photon is that the ratio between \PW and \Pz boson is related to the electroweak mixing angle $\theta_W$:
+\noindent One of the immediate consequences of the choice of $Y_{\phi}=1$ for massless photon is that the ratio between \PW and \PZ boson is related to the electroweak mixing angle $\theta_W$:
 \begin{equation}
 \frac{M_W}{M_Z} = cos\theta_W
 \end{equation}
 
-\noindent While Equation~\ref{eqn:relatedWorks:qft:gws:gaugeMassLagragian} shows a part of the Lagrangian in the Higgs sector that only have gauge field, the full Lagrangian in the Higgs sector with $\phi = (0, (\nu+h) /\sqrt{2} )^T $  and  $Y_{\phi} = 1$ reads as
+\noindent While Equation~\ref{eqn:physics:qft:gws:gaugeMassLagragian} shows a part of the Lagrangian in the Higgs sector that only have gauge field, the full Lagrangian in the Higgs sector with $\phi = (0, (\nu+h) /\sqrt{2} )^T $  and  $Y_{\phi} = 1$ reads as
 \begin{equation}
 \begin{split}
     \mathcal{L}_{U(1)\times SU(2)}^{\text{higgs}} 
@@ -523,7 +523,7 @@ The weak gauge boson must be massive since the weak force is indicated short-ran
 \end{split}
 \end{equation}
 
-\noindent where the first row corresponds to the gauge boson mass; the second row is responsible for the couplings between gauge bosons; the third row describes the kinematic energy, mass, and self-coupling of Higgs boson. The mass of Higgs boson can be identified as $M_h=\sqrt{2\lambda \nu^2}$. The coupling strength between the gauge boson and the Higgs boson exactly equals the gauge boson mass. Since the photon is massless, it does not couple to the Higgs. As will be discussed in the following paragraph, the coupling strength between the fermion and the Higgs boson is proportional to the fermion mass. Therefore, this property of the Higgs boson is often described as ``higgs couples to mass", which is essentially an experimental observable of the theory that `` particle mass originates from interacting with higgs''. The SM vertices for the Higgs coupling to gauge boson and fermions are shown in Figure~\ref{fig:relatedWorks:qft:ewHiggsGaugeCoupling}.
+\noindent where the first row corresponds to the gauge boson mass; the second row is responsible for the couplings between gauge bosons; the third row describes the kinematic energy, mass, and self-coupling of Higgs boson. The mass of Higgs boson can be identified as $M_h=\sqrt{2\lambda \nu^2}$. The coupling strength between the gauge boson and the Higgs boson exactly equals the gauge boson mass. Since the photon is massless, it does not couple to the Higgs. As will be discussed in the following paragraph, the coupling strength between the fermion and the Higgs boson is proportional to the fermion mass. Therefore, this property of the Higgs boson is often described as ``higgs couples to mass", which is essentially an experimental observable of the theory that `` particle mass originates from interacting with higgs''. The SM vertices for the Higgs coupling to gauge boson and fermions are shown in Figure~\ref{fig:physics:qft:ewHiggsGaugeCoupling}.
 
 \begin{figure}[ht]
     \centering
@@ -542,7 +542,7 @@ The weak gauge boson must be massive since the weak force is indicated short-ran
       f1 [particle=\(f\)] -- [fermion] b  -- [fermion] f2 [particle=\(f\)], 
     }; \qquad 
     \caption{Vertices of SM Higgs-gauge couplings and Higgs-fermion coupling. The coupling strength is proportional to the mass of the coupled gauge boson or fermion. }
-    \label{fig:relatedWorks:qft:ewHiggsGaugeCoupling}
+    \label{fig:physics:qft:ewHiggsGaugeCoupling}
 \end{figure}
 
 
@@ -557,7 +557,7 @@ In GWS model, the fermion mass is allowed by introducing Yukawa coupling between
      = & -\frac{y_e\nu}{\sqrt{2}}\bar{e} e   -\frac{y_u\nu}{\sqrt{2}}\bar{u}u -\frac{y_d\nu}{\sqrt{2}} \bar{d} d \;\;\; \text{(fermion mass)} \\
      & -\frac{y_e}{\sqrt{2}}h\bar{e} e   -\frac{y_u}{\sqrt{2}}h\bar{u}u -\frac{y_d}{\sqrt{2}} h \bar{d} d \;\;\; \text{(Higgs-fermion coupling)},
 \end{split}
-\label{eqn:relatedWorks:qft:gws:yukawaLagragian}
+\label{eqn:physics:qft:gws:yukawaLagragian}
 \end{equation}
 
 
@@ -571,7 +571,7 @@ In GWS model, the fermion mass is allowed by introducing Yukawa coupling between
 \end{equation}
 
 
-\noindent From Equation~\ref{eqn:relatedWorks:qft:gws:yukawaLagragian}, the coupling strength between fermion and Higgs boson  is proportional to the fermion mass $\frac{y_f}{\sqrt{2}} = \frac{M_f}{\nu}$. Here $\chi_L$ and $\psi$  denote the mass eigenstates of the fermions. It turns out that for quarks, the flavor eigenstates participating in the weak interaction is a linear mixing of mass eigenstates. Such mixing allows the quark transition between two different generations in the flavor changing charged current (FCCC) weak process, confirmed in many experiments. The quark mixing is mathematically expressed as a 3x3 unitary matrix known as the CKM matrix. For down-type quarks, the CKM matrix composes their weak flavor eigenstates $(d',s',b')$ by linear combining their mass eigenstate $(d,s,b)$. For up-type quarks (up, charm, top), their flavor eigenstates are set equal to their mass eigenstates. By rotating $(d,s,b)$ with CKM matrix, the weak coupling strengths between $d,s,b$ quark and $u,c,t$ quark are scaled by the nine elements in the CKM matrix. The CKM rotation from mass eigenstates $(d,s,b)$ to flavor eigenstates $(d',s',b')$ can be expressed as
+\noindent From Equation~\ref{eqn:physics:qft:gws:yukawaLagragian}, the coupling strength between fermion and Higgs boson  is proportional to the fermion mass $\frac{y_f}{\sqrt{2}} = \frac{M_f}{\nu}$. Here $\chi_L$ and $\psi$  denote the mass eigenstates of the fermions. It turns out that for quarks, the flavor eigenstates participating in the weak interaction is a linear mixing of mass eigenstates. Such mixing allows the quark transition between two different generations in the flavor changing charged current (FCCC) weak process, confirmed in many experiments. The quark mixing is mathematically expressed as a 3x3 unitary matrix known as the CKM matrix. For down-type quarks, the CKM matrix composes their weak flavor eigenstates $(d',s',b')$ by linear combining their mass eigenstate $(d,s,b)$. For up-type quarks (up, charm, top), their flavor eigenstates are set equal to their mass eigenstates. By rotating $(d,s,b)$ with CKM matrix, the weak coupling strengths between $d,s,b$ quark and $u,c,t$ quark are scaled by the nine elements in the CKM matrix. The CKM rotation from mass eigenstates $(d,s,b)$ to flavor eigenstates $(d',s',b')$ can be expressed as
 \begin{equation}
     \begin{bmatrix}
         d' \\ s' \\ b' 
@@ -637,7 +637,7 @@ In GWS model, the fermion mass is allowed by introducing Yukawa coupling between
 
 
 \section{Quantum Chromodynamics}
-\label{sec:relatedWorks:qft:qcd}
+\label{sec:physics:qft:qcd}
 
 
 
@@ -667,7 +667,7 @@ QCD assumes three color charges with three anti-colors, analogical to the QED's 
 \end{align}
 
 
-\noindent where  the $\frac{1}{r}$ term dominates in the short-distance range, and $\lambda r$ term dominates in the long-distance range. In the short-distance range, if the two interacting colors form a color singlet state, the strong force between them is attractive; but repulsive if the two form a color octet state. For example, the two quarks in a meson form a color singlet state, and thus the strong force between them is attractive. In contrast, in the quark-quark scattering process where gluons are exchanged, the two quarks form a color octet state with a repulsive strong force. In the long-distance range, when two colors split far from each other, the strong force potential increases linearly with the separation, creating cylindrical ``color tubes" in the space in between. When the separation become large, the potential energy in the ``color tube'' will be enough to create new quark-antiquark pairs from the vacuum, guaranteeing that quarks cannot be separated and no quarks exist alone. This is an intuitive approach to understand quark confinement. A formal derivation of the QCD quark confinement is through the running of couplings presented in the next paragraph in Equation~\ref{eqn:relatedWorks:qft:qcd:lagragian}. Though color charge and gluon in the QCD can be analogical to electric charge and photons in the QED  in many ways, QCD has many unique phenomena, such as asymptotic freedom, quark confinement, color anti-screening. Theoretically speaking, these unique figures is essentially originated from two facts:
+\noindent where  the $\frac{1}{r}$ term dominates in the short-distance range, and $\lambda r$ term dominates in the long-distance range. In the short-distance range, if the two interacting colors form a color singlet state, the strong force between them is attractive; but repulsive if the two form a color octet state. For example, the two quarks in a meson form a color singlet state, and thus the strong force between them is attractive. In contrast, in the quark-quark scattering process where gluons are exchanged, the two quarks form a color octet state with a repulsive strong force. In the long-distance range, when two colors split far from each other, the strong force potential increases linearly with the separation, creating cylindrical ``color tubes" in the space in between. When the separation become large, the potential energy in the ``color tube'' will be enough to create new quark-antiquark pairs from the vacuum, guaranteeing that quarks cannot be separated and no quarks exist alone. This is an intuitive approach to understand quark confinement. A formal derivation of the QCD quark confinement is through the running of couplings presented in the next paragraph in Equation~\ref{eqn:physics:qft:qcd:lagragian}. Though color charge and gluon in the QCD can be analogical to electric charge and photons in the QED  in many ways, QCD has many unique phenomena, such as asymptotic freedom, quark confinement, color anti-screening. Theoretically speaking, these unique figures is essentially originated from two facts:
 \begin{itemize}
 \item The SU(3) group is non-abelian.
 \item the number of quarks is $n_f=6$ 
@@ -676,13 +676,13 @@ QCD assumes three color charges with three anti-colors, analogical to the QED's 
 \noindent Non-trivial $f_{abc}$ of SU(3) group leads to the gluon self-coupling, which together with $n_f=6$ further determines the unique running of the QCD coupling: the QCD coupling increases when the energy scale goes low; meanwhile, it decreases in the high-energy region.  This can be demonstrated by the calculation of the beta function in the QCD renormalization group equation.  The SU(3) gauge symmetric Lagrangian for QCD is
 \begin{equation}
     \mathcal{L}^{QCD}_{SU(3)} = i\bar{q}\gamma^\mu D_\mu q  - m\bar{q} q - \frac{1}{4}G^a_{\mu\nu}G^{\mu\nu}_a, 
-    \label{eqn:relatedWorks:qft:qcd:lagragian}
+    \label{eqn:physics:qft:qcd:lagragian}
 \end{equation}
 
 \noindent where the first term expresses the quark kinematic energy and interaction with gluons, the third term $\frac{1}{4}G^a_{\mu\nu}G^{\mu\nu}_a$  gives gluon kinematic energy and self-interaction. The gluon self-coupling plays a core role in the QCD running couplings: the running coupling is driven by the vacuum polarization; the QCD vacuum polarization of the gluon propagator includes not only the quark bubbles but also has a large contribution from the gluon bubbles. The general form of renormalization group equation (RGE) is
 \begin{equation}
 	\mu \frac{\partial}{\partial \mu} \alpha(\mu) \equiv \beta(\alpha) = -2\alpha\big [  (\frac{\alpha}{4\pi}) \beta_0 +  (\frac{\alpha}{4\pi}) ^2 \beta_1  +  (\frac{\alpha}{4\pi}) ^3 \beta_2  + \dots \big], 
-    \label{eqn:relatedWorks:qft:qcd:rge}
+    \label{eqn:physics:qft:qcd:rge}
 \end{equation}
 
 \noindent where the running of coupling with respect to the energy scale $\mu \frac{\partial}{\partial \mu} \alpha(\mu) $ is represented as ``beta function" $\beta(\alpha)$ which can be expanded as a power series of the coupling $\alpha$. The coefficiencies of the power series $\beta_0, \beta_1 ,\beta_2  ,\beta_3 \dots $ are calculated from the considering 1-loop, 2-loop , 3-loop $\dots$ vacuum polarization of the gluon. If only considering the leading order beta function by taking into account only the 1-loop contribution, the renormalization group equation reduces to a simple first-order linear differential equation $\mu \frac{\partial \alpha(\mu) }{\partial \mu} = \frac{\beta_0}{2\pi} \alpha^2$ , which is easily solved by
@@ -690,7 +690,7 @@ QCD assumes three color charges with three anti-colors, analogical to the QED's 
 
 \begin{equation}
 	\alpha(\mu) = \frac{\alpha(\mu_0) }{1+\alpha(\mu_0) \frac{\beta_0}{2\pi}  ln(\frac{\mu}{\mu_0})}=\frac{1}{\frac{\beta_0}{4\pi}  ln(\frac{\mu^2}{\Lambda^2})},
-    \label{eqn:relatedWorks:qft:qcd:zeroOrderRunning}
+    \label{eqn:physics:qft:qcd:zeroOrderRunning}
 \end{equation}
 \noindent where $\mu$ is the running scale, $\mu_0$ is a reference scale and $\Lambda$  is the energy scale which diverges coupling $\alpha(\Lambda) \gg 1$ and the condition for power expansion of beta function breaks. The energy scale $\Lambda$  is called ``Landau Pole'' and is a constant fixed by the boundary condition of the RGE. The $\beta_0$ is obtained by evaluating and summing 1-loop diagrams contributing to the vacuum polarization. 
 
@@ -706,10 +706,10 @@ For QCD, the gluon's vacuum polarization includes both the fermion bubble and th
 \noindent where $n_f=6$ is the number of quarks. The sign of $\beta_0$  in QCD is positive, opposite to $\beta_0$ in the QED. Therefore the QCD coupling $\alpha_s$  increases when approaching to lower energy scale. When energy is low, $\alpha_S$ is large, and quarks are confined; when energy is high, $\alpha_s$ is small, and quarks get asymptotic freedom. The screening effect in the QCD is opposite to that in the QED. When going away from a bare color charge, one feels a larger effective color charge. In other words, the gluon's vacuum polarization creates a color ``anti-screening" effect on the bare color. In fact, the effect is anti-screening as long as the number of quarks is less than $n_f<17$. The QCD's Landau pole $\Lambda_{QCD}$ thereby sets a lower limit for the energy scale, which is approximated by experiments to be around $200$ GeV. For energy scale below $\Lambda_{QCD}$ , perturbative approach no longer works and Lattice QCD is invented to solve the related problems at the low energy scale.
 
 
-Beyond the 1-loop diagram, the running of coupling can be determined by solving higher order RGE and evaluating $\beta_1,\beta_2,\beta_3$ with the higher-order loops diagrams. The higher-order up to $O(\alpha^3)$ solution to the RGE in Equation~\ref{eqn:relatedWorks:qft:qcd:rge} reads as \cite{schwartz2014quantum}
+Beyond the 1-loop diagram, the running of coupling can be determined by solving higher order RGE and evaluating $\beta_1,\beta_2,\beta_3$ with the higher-order loops diagrams. The higher-order up to $O(\alpha^3)$ solution to the RGE in Equation~\ref{eqn:physics:qft:qcd:rge} reads as \cite{schwartz2014quantum}
 \begin{equation}
     \alpha_s(\mu) = \alpha_s(\mu_R) - \frac{\alpha^2_s(\mu_R)}{2\pi}\beta_0 \ln \frac{\mu}{\mu_R} + \frac{\alpha^3_s(\mu_R)}{8\pi^2} \bigg[ -\beta_1 \ln \frac{\mu}{\mu_R}  + 2 \beta_0 ^2 \ln^2 \frac{\mu}{\mu_R} \bigg ] + O(\alpha^4_s(\mu_R)), 
-    \label{eqn:relatedWorks:qft:qcd:higherOrderRunning}
+    \label{eqn:physics:qft:qcd:higherOrderRunning}
     % Schwartz eq	 26.102
 \end{equation}
 

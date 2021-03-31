@@ -4,36 +4,37 @@
 
 
 \subsection{Object Selection}
-The event topologies of interest will require reconstructing electrons, muons, hadronically decaying tau leptons, hadronic jets, and missing tansverse energy (MET).  In this section, the reconstruction and selection of these physics objects is described.
+\label{sec:analysis:selection:object}
+
+The event topologies of interest will require reconstructing electrons, muons, hadronically decaying tau leptons, hadronic jets, \PQb tagged jets, and missing tansverse energy (\MET or MET).  In this section, the reconstruction and selection of these physics objects is described.
 
 
 
 \subsubsection{Primary vertex}
 Primary vertices (PV) are reconstructed based on information from the tracking subsystem, mainly through the inner pixel detector. Quality cuts are applied to reconstructed PVs to guarantee they come from a proton-proton hard scattering event. These cuts are as follows,
 \begin{equation*}
-    N_{\rm d.o.f.}> 4; \quad  \left|z\right| < 24~\mathrm{cm}; \quad \sqrt{x^{2} + y^{2}} < 2~\mathrm{cm}.
+    N_{\rm d.o.f.}> 4; \quad  \left|z\right| < 24\cm; \quad \sqrt{x^{2} + y^{2}} < 2\cm.
 \end{equation*}
 
 
-The PVs are ordered based on the sum \pt of tracks used in their reconstruction. Selected physics objects are associated to the PV with the greatest sum \pt. 
+\noindent The PVs are ordered based on the sum \pt of their reconstructed tracks. Selected physics objects are associated to the PV with the greatest sum \pt. 
 
 
 
 
 \subsubsection{Muon}
-Muon candidates are reconstructed using both the muon and tracker systems. The coverage of these two detector systems allows reconstruction of muons within $\left|\eta\right| < 2.4$ and $p_{T}$ as low as 5 GeV~\cite{Chatrchyan:2012xi}. Muons are required to be reconstructed using both the \emph{global muon} and \emph{tracker muon} reconstruction algorithms. These algorithms are distinct in that one begins with tracker information and extrapolates to find consistency with hits in the muons system (\emph{tracker muons}), while the other (\emph{global muon}) inverts the reconstruction steps starting from the muon system and finding tracks that are consistent. The combination of these two algorithms makes for a muon reconstruction that is accurate in predicting muon momentum and efficient in detecting muons within the detector acceptance.
+Muon candidates are reconstructed using both the muon and tracker systems. The coverage of these two detector systems allows reconstruction of muons within $\left|\eta\right| < 2.4$ and $p_{T}$ as low as 5\GeV~\cite{Chatrchyan:2012xi}. The details of particle-flow muon reconstruction are described in Section~\ref{sec:cmsExperiment:reconstruction:muon}. In the analysis, selected muons are required to be reconstructed using both the \emph{global} muon and \emph{tracker} muon reconstruction algorithms. The former begins with tracker information and extrapolates to find consistency with hits in the muons system, while the latter inverts the reconstruction steps starting from the muon system and finding tracks that are consistent. The combination of these two algorithms makes for a muon reconstruction that is accurate in predicting muon momentum and efficient in detecting muons within the detector acceptance.
 
-In the interest of detecting muons decaying from vector bosons, a set of identification and isolation requirements are applied~\cite{Sirunyan:2018fpa}. The muon identification requirements are designed to have high selection efficiency and a low probability of misidentifying non-prompt muons originating from non-bosonic decays. The muon POG provided selection criteria are listed in table~\ref{tab:muon_id}.
+In the interest of detecting muons decaying from vector bosons, a set of identification and isolation requirements are applied~\cite{Sirunyan:2018fpa}. The muon identification requirements are designed to have high selection efficiency and a low probability of misidentifying non-prompt muons originating from non-bosonic decays. The muon POG provided selection criteria are listed in table~\ref{tab:analysis:selection:muon_id}.
 
 \input{chapters/Analysis/sectionSelection/tables/muonSelection.tex}
 
 \noindent To increase the likelihood of selecting muons produced by the prompt decay of vector bosons, an isolation requirement is placed on all muons. The isolation of the muon is calculated by summing the \pt of all charged hadronic, neutral hadronic, and photon particle flow candidates in a cone of radius $\Delta R = 0.4$ about the muon candidate. This quantity is corrected to remove the contamination of the neutral component due to pileup by subtracting off the average energy deposited by pileup. It is defined as,
-\begin{equation}
-    I_{\rm PF} = I_{\rm ch. had} + \max \left(0, I_{\rm neu. had} +
-    I_{\gamma} - 0.5 I_{\rm PU}\right)
-\end{equation}
+\begin{equation*} 
+    Iso_\mathrm{PF} = Iso_\mathrm{ ch. had} + \max\left(0, Iso_\mathrm{ neu. had} + Iso_{\gamma} - 0.5 Iso_\mathrm{ pileup}\right)\,.
+\end{equation*}
 
-Simulated events are reweighted to account for differences in the muon reconstruction, identification, and isolation efficiencies with respect to data.
+\noindent Muons in the simulation are corrected for the energy scale, reconstruction, identification, and isolation efficiencies with respect to data.
 
 
 
@@ -43,18 +44,15 @@ Simulated events are reweighted to account for differences in the muon reconstru
 
 \subsubsection{Electron}
 
-Electrons are reconstructed by combining information from the electromagnetic calorimeter and the tracking system using a gaussian-sum
-filter (GSF) method \cite{Baffioni:2006cd}.  Corrections are applied to account for mismeasurement of electron momentum scale and resolution. All electrons are required to have $\pt \geq 20~\GeV$ and $|\eta| < 2.5$.  Electrons are identified using a tight cut-based scheme. The requirements for this selection are listed in table~\ref{tab:slt:electron_id}.
+Electrons are reconstructed by combining information from the electromagnetic calorimeter and the tracking system using a gaussian-sum filter (GSF) method \cite{Baffioni:2006cd}. The details of the particle-flow electron reconstruction are described in Section~\ref{sec:cmsExperiment:reconstruction:egamma}. Corrections are applied to account for mismeasurement of electron momentum scale and resolution. All electrons are required to have $\pt \geq 20 \GeV$ and $|\eta| < 2.5$.  Electrons are identified using a tight cut-based scheme. The requirements for this selection are listed in table~\ref{tab:analysis:selection:electron_id}.
 
 \input{chapters/Analysis/sectionSelection/tables/electronSelection.tex}
 
 \noindent The electrons are also required to pass a tight isolation criteria. The isolation variable is constructed by summing the energy of charged and neutral particle flow objects within a cone of radius $\Delta R = 0.4$ about the electron candidate and subtracting off the contribution from pileup.  The combined particle flow isolation with the pileup correction is,
-\begin{equation}
-    \nonumber
-    I_{\rm comb} = I_{\rm ch. had.} + \max\left(  0, I_{\rm neu. had.} + I_{\gamma} - \rho EA(|\eta_{e}|) \right).
-\end{equation}
-
-The pileup correction is dependent on the parameter $\rho$ which correlates with the average energy due to pileup, and the effective area which changes depending on the $|\eta|$ value of the electron.
+\begin{equation*}
+    Iso_\mathrm{comb} = Iso_\mathrm{ ch. had.} + \max\left(0, Iso_\mathrm{ neu. had.} + Iso_{\gamma} - \rho A_\mathrm{eff}(\abs{\eta_{\Pe}}) \right)\,,
+\end{equation*}
+\noindent The pileup correction is dependent on the parameter $\rho$ which correlates with the average energy due to pileup, and the effective area which changes depending on the $|\eta|$ value of the electron.
 
 
 
@@ -62,11 +60,11 @@ The pileup correction is dependent on the parameter $\rho$ which correlates with
 
 \subsubsection{Hadronic Tau}
 
-Hadronically decaying $\tau$ leptons are reconstructed using the hadron-plus-strips algorithm~\cite{ref:cms-tau}. This algorithm constructs candidates seeded by a PF jet that are consistent with either a single or triple charged pion decay of the $\tau$ lepton.  In the single charged pion decay mode, the presence of neutral pions is detected by reconstructing their photonic decays. If the hadronic tau candidate is found to overlap ($\Delta R < 0.3$) with either an electron or muon passing the analysis selections listed above, the tau candidate is rejected. Jets originating from non-$\tau$ decays are rejected with a MVA discriminator that takes into account the pileup contribution to the neutral component of the $\tau$ decay~\cite{CMS-TAU-16-003-001}.  
+Hadronically decaying tau leptons are reconstructed using the hadron-plus-strips algorithm~\cite{ref:cms-tau}. This algorithm constructs candidates seeded by a PF jet that are consistent with either a single or triple charged pion decay of the tau lepton.  In the single charged pion decay mode, the presence of neutral pions is detected by reconstructing their photonic decays. The details of the hadronic tau identification is described in Section~\ref{sec:cmsExperiment:reconstruction:tau}. 
 
-Reconstructed hadronic taus are required to have $p_{T} > 20$ GeV and $|\eta| < 2.3$ unless noted otherwise.  It is observed that the counting analysis is more sensitive to misidentification of hadronic jets as hadronic tau candidates, so while the tight working point is used in the shape analysis, the very tight working point is used for the counting analysis.
+Reconstructed hadronic taus are required to have $p_{T} > 20\GeV$ and $|\eta| < 2.3$ unless noted otherwise.  If the hadronic tau candidate is found to overlap ($\DR < 0.3$) with either an electron or muon passing the analysis selections listed above, the tau candidate is rejected. Jets originating from non-tau decays are rejected with a MVA discriminator that takes into account the pileup contribution to the neutral component of the tau decay~\cite{CMS-TAU-16-003-001}.  It is observed that the counting analysis is more sensitive to misidentification faking by hadronic jets. So while the tight working point is used in the shape analysis, the very tight working point is used for the counting analysis. 
 
-The scale factor accounting for different tau reconstruction and identification efficiencies were measured in several control regions~\cite{CMS-TAU-16-003-001}.  The measurement is carried out in both in two different control regions: one enriched in $Z\to\tau\tau$ production and one enriched in \ttbar.  Because of the large overlap with our signal region in the case of the latter, the former measurement is used so that the datasets that are used are uncorrelated.  For the selection algorithm and tight working point a scale factor of $0.95 \pm 0.05$ is used; for the very tight working point it is $0.92 \pm 0.05$.
+The scale factor accounting for the difference of tau identification efficiencies in the simulation and data were measured in several control regions~\cite{CMS-TAU-16-003-001}.  The measurement is carried out in both in two different control regions: one enriched in $\PZ\to\PGt\PGt$ production and one enriched in \ttbar.  Because of the large overlap with our signal region in the case of the latter, the former measurement is used so that the datasets that are used are uncorrelated.  For the selection algorithm and tight working point a scale factor of $0.95 \pm 0.05$ is used; for the very tight working point it is $0.92 \pm 0.05$. The scale factors accounting for difference of tau energy  in the  simulation and data are measured by fitting to the sensitive variables. One is the visible mass $m_{\rm vis}$ of the \cet or \cmt in the $\PZ\to\PGt\PGt$ region, the other is the visible mass of hadronic taus $m_\PGth$ ~\cite{CMS-TAU-16-003-001}. In this analysis, the scale factor measured with the former is applied to correct the simulation. 
 
 
 
@@ -74,15 +72,15 @@ The scale factor accounting for different tau reconstruction and identification 
 
 
 \subsubsection{Jet}
-Jets are reconstructed from PF candidates \cite{ref:pf}. PF candidates combine information from all of the detector subsystems to facilitate the reconstruction and identification of individual particles.  These PF candidates are clustered using the anti-$k_{t}$ algorigthm \cite{Cacciari:2008gp} with a cone size of $\Delta R = 0.4$. Once reconstructed, a number of corrections are applied to the jets to correct for pileup contamination, differing absolute response in jet \pt, and relative response in $\eta$ \cite{ref:jetscale}.  To reduce contamination from photons and prompt leptons, several ID requirements are placed on the jets and are listed in table~\ref{tab:slt:jet_id_2016}.
+Jets are reconstructed from particle-flow (PF) candidates \cite{ref:pf}. PF candidates combine information from all of the detector subsystems to facilitate the reconstruction and identification of individual particles.  These PF candidates are clustered using the anti-\kt algorigthm \cite{Cacciari:2008gp} with a cone size of $\DR = 0.4$. Once reconstructed, a number of corrections are applied to the jets to correct for pileup contamination, differing absolute response in jet \pt, and relative response in $\eta$ \cite{ref:jetscale}.  To reduce contamination from photons and prompt leptons, several ID requirements are placed on the jets and are listed in table~\ref{tab:analysis:selection:jet_id_2016}.
 
 \input{chapters/Analysis/sectionSelection/tables/jetSelection.tex}
 
-\noindent In addition to the above requirements, it is required that all jets have $\pt > 30$ GeV and $\left|\eta\right| < 4.7$.  Jets are vetoed if they overlap with a muon, electron, or tau passing the identification requirements described above within a cone size of $\Delta R = 0.3$. 
+\noindent In addition to the above requirements, it is required that all jets have $\pt > 30\GeV$ and $|\eta| < 4.7$.  Jets are vetoed if they overlap with a muon, electron, or tau passing the identification requirements described above within a cone size of $\Delta R = 0.3$. 
 
-\subsubsection{b-Tag} The identification of jets originating from the decay of \PQb quarks is done using the CSV \PQb tagging algorithm~\cite{Sirunyan:2298594} is used to optimize the efficiency for identifying \PQb jets while reducing the misidentification from jets originating from light quark (usdg).  In this analysis, the recommended medium working point ($\text{CSV} > 0.8484$) supplied by the \PQb tag POG is used.  
+\subsubsection{\PQb Tag} The identification of jets originating from the decay of \PQb quarks is done using the CSV \PQb tagging algorithm~\cite{Sirunyan:2298594} is used to optimize the efficiency for identifying \PQb jets while reducing the misidentification from jets originating from light quarks. Details of the \PQb tagging algorithms are described in section~\ref{sec:cmsExperiment:reconstruction:btag}.  In this analysis, the recommended medium working point ($\text{CSV} > 0.8484$) supplied by the \PQb tag POG is used.  
 
-To account for the difference in \PQb tag efficiency in data and simulation, the \PQb tag status of jets is modified based on a set of scale factors derived by the \PQb tag POG.  The method used for applying the \PQb tag scale factors modifies the status of individual jets to either promote or demote their \PQb tagging status~\cite{twiki:btag_method}.  The method relies on the user measuring the \PQb tag and mistag efficiencies in the simulated samples.  This is described further in Section~\label{sec:app:btag}.
+To account for the difference in \PQb tag efficiency in data and simulation, the \PQb tag status of jets is modified based on a set of scale factors derived by the \PQb tag POG.  The method used for applying the \PQb tag scale factors modifies the status of individual jets to either promote or demote their \PQb tagging status~\cite{twiki:btag_method}.  The method relies on the user measuring the \PQb tag and mistag efficiencies in the simulated samples.  This is described further in Section~\label{sec:analysis:calibration:btag}.
 
 
 \FloatBarrier
@@ -91,105 +89,66 @@ To account for the difference in \PQb tag efficiency in data and simulation, the
 % Event Selection
 % ===========================
 \subsection{Event Selection}
+\label{sec:analysis:selection:event}
 
-The event selection begins by requiring an event pass the lowest \pt theshold single electron or muon trigger that is not prescaled. From these datasets it is possible to select on a number of $\PW\PW$-like final states originating from \ttbar and tW production.  These final states are constructed based on the number of reconstructed leptons, jet multiplicity, and \PQb tag multiplicity.  The categorization of these events differs between the counting and shape analysis.  The common definition of the categories are listed below.
+The event selection begins by requiring an event pass the lowest \pt theshold single electron or muon trigger that is not prescaled. From these datasets it is possible to select on a number of \WW-like final states originating from \ttbar and tW production.  These final states are constructed based on the number of reconstructed leptons, jet multiplicity, and \PQb tag multiplicity.  The categorization of these events differs between the counting and shape analysis.  The common definition of the categories are listed below.
 
 
-\begin{itemize}
-    \singlespacing
-    \item $ee$:
-    \begin{itemize}
-        \item exactly two electrons
-        \item $p_{T} > 30, 20$ GeV
-        \item reject events with hadronic taus or muons
-        \item \PZ boson veto ($N_{b} \geq 1$ only): $M_{ee} < 75$ or $M_{ee} > 105\,\GeV$
-    \end{itemize}
-    \item $\mu\mu$:
-    \begin{itemize}
-        \item exactly two muons
-        \item $p_{T} > 25, 10$ GeV
-        \item reject events with hadronic taus or electrons
-        \item \PZ boson veto ($N_{b} \geq 1$ only): $M_{\mu\mu} < 75$ or $M_{\mu\mu} > 105\,\GeV$
-    \end{itemize}
-    \item $e\mu$:
-    \begin{itemize}
-        \item exactly one electron and one muon
-        \item lead muon (electron) $p_{T} > 25 (30)\,\GeV$
-        \item trailing muon (electron) $p_{T} > 10\,(20)\,\GeV$
-        \item reject events with hadronic taus 
-        \item events in electron datastream that fire muon trigger are vetoed
-    \end{itemize}
-    \item $e\tau$:
-    \begin{itemize}
-        \item exactly one electron and one hadronic tau
-        \item $p_{T} > 30, 20$ GeV
-        \item reject events with muons
-    \end{itemize}
-    \item $\mu\tau$:
-    \begin{itemize}
-        \item exactly one muon and one hadronic tau
-        \item $p_{T} > 25, 20$ GeV
-        \item reject events with electrons
-    \end{itemize}
-    \item e + jets:
-    \begin{itemize}
-        \item exactly one electron 
-        \item $p_{T} > 30$ GeV
-        \item reject events with muons or hadronic taus
-        \item at least four jets
-    \end{itemize}
-    \item $\mu + jets$:
-    \begin{itemize}
-        \item exactly one muon 
-        \item $p_{T} > 25$ GeV
-        \item reject events with electrons or hadronic taus
-        \item at least four jets
-    \end{itemize}
-\end{itemize}
+\begin{table}
+    \caption{Baseline categorization of events based on the triggering electron or muon, the presence (or vetoing) of isolated reconstructed charged leptons, plus additional jets, identified or not as originating from a \PQb quark. Kinematic criteria required on the charged leptons and jets are listed in the last column. Categories without hadrons in the final state require also the selected leptons to have opposite-sign charge. %Overlap between events that are collected in both electron and muon triggered data streams is properly accounted for.
+    \label{tab:analysis:selection:event_categories}}
+    \centering                                                              
+    \renewcommand{\arraystretch}{1.5}           
+    \setlength{\tabcolsep}{0.4em}
+    % \resizebox{0.9\textwidth}{!}{                                           
+    \begin{tabular}{c|c|ccc|l}                                            
+        trigger                & label  & $N_{\Pe}$ & $N_{\PGm}$ & $N_{\PGt}$   & additional requirements     \\
+        \hline                                                                                      
+        \multirow{4}{*}{\Pe}   & \cee   & 2         & 0          & 0            & $\pt^{\Pe} > 30, 20\GeV$, $|m_{\Pe\Pe} - m_{\PZ}| > 15\GeV$   \\
+                               & \cem   & 1         & 1          & 0            & $\pt^{\Pe} > 30\GeV$, $\pt^{\PGm} > 10\GeV$                   \\
+                               & \cet   & 1         & 0          & 1            & $\pt^{\Pe} > 30\GeV$, $\pt^{\PGt} > 20\GeV$                   \\
+                               & \ceh   & 1         & 0          & 0            & $\pt^{\Pe} > 30\GeV$, $\pt^\mathrm{j} > 30\GeV$               \\
+        \hline                                                                      
+        \multirow{4}{*}{\PGm}  & \cme   & 1         & 1          & 0            & $\pt^{\PGm} > 25\GeV$, $\pt^{\Pe} > 20\GeV$                   \\
+                               & \cmm   & 0         & 2          & 0            & $\pt^{\PGm} > 25, 10\GeV$, $|m_{\PGm\PGm} - m_{\PZ}| > 15\GeV$\\
+                               & \cmt   & 0         & 1          & 1            & $\pt^{\PGm} > 25\GeV$, $\pt^{\PGt} > 20\GeV$                  \\
+                               & \cmh   & 0         & 1          & 0            & $\pt^{\PGm} > 25\GeV$, $\pt^\mathrm{j} > 30\GeV$              \\
+    \end{tabular}
+    % }                                                          
+\end{table}
 
 
 
+These selections are designed to primarily target \ttbar production and specific \PW decay modes. The final states will tend to only contain events from a single datastream except for the \cem selection which has non-negligible overlap between the electron and muon datastreams. Any overlap in events between the two datastreams are removed by only taking the event from single muon datastream. Because the tau can decay to an electron, muon, or hadronically, each of these channels has some mixing between terms arising from $\PW\rightarrow\ell$ decays and $\PW\rightarrow\PGt\rightarrow\ell$ decays.  The mixing between the selected final states and the underlying \PW boson decays are shown in table~\ref{tab:analysis:selection:signal_breakdown}. These numbers are estimated from simulated \ttbar events and are consequently dependent on the values of branching fractions used in the simulation.  
 
-These selections are designed to primarily target $\ttbar$ production and specific \PW decay modes. The final states will tend to only contain events from a single datastream except for the $e\mu$ selection which has non-negligible overlap between the electron and muon datastreams. Any overlap in events between the two datastreams are removed by only taking the event from single muon datastream. Because the tau can decay to an electron, muon, or hadronically, each of these channels has some mixing between terms arising from $W\rightarrow\ell$ decays and $W\rightarrow\tau\rightarrow\ell$ decays.  The mixing between the selected final states and the underlying \PW boson decays are shown in table~\ref{tab:signal_breakdown}. These numbers are estimated from simulated \ttbar events and are consequently dependent on the values of branching fractions used in the simulation.  
+For the counting analysis, there is always a requirement that there be at least two jets and at least one \PQb tagged jet. The categories are partitioned based on whether there is exactly one \PQb jet or there are two or more \PQb jets. Additionally, the \cem selection is split into muon triggered and electron triggered categories: if the muon has the highest \pt and the muon trigger has fired it categorized as a \cme event; if the electron has highest \pt and the electron trigger fired it is categorized as an \cem event.
 
-For the counting analysis, there is always a requirement that there be at least two jets and at least one \PQb tagged jet. The categories are partitioned based on whether there is exactly one \PQb jet or there are two or more \PQb jets.  Additionally, the $e\mu$ selection is split into muon triggered and electron triggered categories: if the muon has the highest \pt and the muon trigger has fired it categorized as a $\mu e$ event; if the electron has highest \pt and the electron trigger fired it is categorized as an $e \mu$ event.
-
-The shape analysis takes advantage of subdividing the data into several additional \PQb tag and jet multiplicity categories to constrain systematics uncertainties, and to take advantage of higher tau reconsruction purity in lower jet multiplicity bins.  The categories are shown in table~\ref{tab:jet_categories}.  As described in the list above, the $ee$ and $\mu\mu$ categories have a \PZ veto applied in the case that there are one or more \PQb tags; this requirement is not applied in the zero \PQb tag case.  There is also a set of requirements to enhance the proportion of Drell-Yan in the $e\tau$ and $\mu\tau$ categories in the case that the number of jets is 0 or 1 and there are no \PQb tags.  The requirements are constructed to mainly reduce the \PW boson contribution and are :
+The shape analysis takes advantage of subdividing the data into several additional \PQb tag and jet multiplicity categories to constrain systematics uncertainties, and to take advantage of higher tau reconsruction purity in lower jet multiplicity bins.  The categories are shown in table~\ref{tab:analysis:selection:jet_categories}.  As described in the list above, the \cee and \cmm categories have a \PZ veto applied in the case that there are one or more \PQb tags; this requirement is not applied in the zero \PQb tag case.  There is also a set of requirements to enhance the proportion of Drell-Yan in the \cet and \cmt categories in the case that the number of jets is 0 or 1 and there are no \PQb tags.  The requirements are constructed to mainly reduce the \PW boson contribution and are :
 \begin{equation*}
-    40 \GeV \leq M_{\ell\tau_{h}} \leq 100 \GeV, \quad
-    \Delta\phi(\ell, \tau_{h}) > 2.5, \quad
-    M_{T}^{\ell} < 60 \GeV,
+    40 \GeV \leq m_{\ell\PGt_{h}} \leq 100 \GeV, \quad \Delta\phi(\ell, \PGt_{h}) > 2.5, \quad m_{\rm T}^{\ell, MET} < 60 \GeV,
 \end{equation*}
 
-\noindent where $M_{T}^{\ell}$ is the transverse mass of the electron or muon,
+\noindent where $m_{T}^{\ell, MET} $ is the transverse mass of the electron or muon,
 \begin{equation}
 \label{eq:trans_mass}
-    M_{T,\ell} = \sqrt{2 p_{T}^{\ell}\MET (1-\cos\Delta\phi(p_{T}^{\ell}, \MET))}.
+    m_{T}^{\ell, MET} = \sqrt{2 \pt^{\ell}\MET (1-\cos\Delta\phi(\pt^{\ell}, \MET))}.
 \end{equation}
 
 
+The breakdown of predicted backgrounds are shown in tables~\ref{tab:analysis:selection:yieldsShape1}, \ref{tab:analysis:selection:yieldsShape2} and \ref{tab:analysis:selection:yieldsCounting}.   
 
-In dilepton channel, at least one of leading and trailing lepton is 
-required to pass the single lepton trigger.
-In $e\mu$ channel, electron is required to fire single electron trigger and $p^T_e>p^T_\mu$.
-In $\mu e$ channel, muon is required to fire single muon trigger and $p^T_\mu>p^T_e$.
+% ----MARK finetuning ---
+In dilepton channel, at least one of leading and trailing lepton is required to pass the single lepton trigger. In \cem channel, electron is required to fire single electron trigger and $\pt^\Pe>\pt^\PGm$. In \cme channel, muon is required to fire single muon trigger and $\pt^\PGm>\pt^\Pe$.
 
 
-Figure~\ref{fig:triggerTest} shows the trailing lepton \pt in the $\mu\mu$, $ee$, $\mu e$, $e\mu$ channel.
-Events are split based on the trigger test of the leading and trailing lepton, which has four possible
-scenarios, both pass (blue), only leading pass (orange), only trailing pass (green), both fail (red).
-But the case of both fail should not appear due the event selection requirement. The scenario needs
-attention is only the trailing lepton triggering the event. Since the shape analysis template fits the
-trailing lepton \pt in the dilepton channel, it is good to know the contributions from such scenario and
-decide whether extra treatment of trigger systematics is needed.
+Figure~\ref{fig:analysis:selection:trTest} shows the trailing lepton \pt in the \cmm, \cee, \cme, \cem channel. Events are split based on the trigger test of the leading and trailing lepton, which has four possible scenarios, both pass (blue), only leading pass (orange), only trailing pass (green), both fail (red). But the case of both fail should not appear due the event selection requirement. The scenario needs attention is only the trailing lepton triggering the event. Since the shape analysis template fits the trailing lepton \pt in the dilepton channel, it is good to know the contributions from such scenario and decide whether extra treatment of trigger systematics is needed.
 
 
 \begin{figure}[h!]
   \centering
   \includegraphics[width=0.99\textwidth]{chapters/Analysis/sectionSelection/figures/trTest.png}
-  \caption{trailing lepton \pt in the $\mu\mu$,$ee$,$\mu e$,$e\mu$ channel. Data and MC events channel are split 
-  based on the trigger test of leading and trailing lepton.
-  \label{fig:triggerTest}}
+  \caption{trailing lepton \pt in the \cmm,\cee,\cme,\cem channel. Data and MC events channel are split based on the trigger test of leading and trailing lepton.
+  \label{fig:analysis:selection:trTest}}
 \end{figure}
 \FloatBarrier
 
@@ -201,31 +160,13 @@ decide whether extra treatment of trigger systematics is needed.
 % \input{chapters/Analysis/sectionSelection/tables/eventSelection.tex}
 
 
-% \begin{figure}[ht]
-%     \centering
-%     \includegraphics[width=0.99\textwidth]{chapters/Analysis/sectionSelection/figures/counting.png}
-%     \includegraphics[width=0.99\textwidth]{chapters/Analysis/sectionSelection/figures/shaping.png}
-%     \caption{caption}
-%     \label{fig:analysis:selection:yields}
-% \end{figure}
-
-
-% \begin{figure}[ht]
-%     \centering
-%     \includegraphics[width=0.49\textwidth]{chapters/Analysis/sectionSelection/figures/trgLep_mumu.png}
-%     \includegraphics[width=0.49\textwidth]{chapters/Analysis/sectionSelection/figures/trgLep_emu.png}
-%     \includegraphics[width=0.49\textwidth]{chapters/Analysis/sectionSelection/figures/trgLep_ee.png}
-%     \includegraphics[width=0.49\textwidth]{chapters/Analysis/sectionSelection/figures/trgLep_emu2.png}
-%     \caption{caption}
-%     \label{fig:analysis:selection:trigger}
-% \end{figure}
-
 
 
 
 \input{chapters/Analysis/sectionSelection/tables/sigcomp.tex}
-\input{chapters/Analysis/sectionSelection/tables/yields.tex}
-\input{chapters/Analysis/sectionSelection/tables/yields_ltau.tex}
+\input{chapters/Analysis/sectionSelection/tables/yieldsShape1}
+\input{chapters/Analysis/sectionSelection/tables/yieldsShape2}
+\input{chapters/Analysis/sectionSelection/tables/yieldsCounting}
 
 \FloatBarrier
 

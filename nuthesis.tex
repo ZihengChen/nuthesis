@@ -113,19 +113,13 @@
     \clearpage\phantomsection 
     % Table of Contents
     \setcounter{tocdepth}{2}
-    \begin{spacing}{1.2}
+    \begin{spacing}{1.5}
         \tableofcontents	
     \end{spacing}
 
-    % needed for the hyperlinks to work correctly
     \clearpage\phantomsection 
-    % List of Tables 
     \listoftables
-
-
-    % needed for the hyperlinks to work correctly
     \clearpage\phantomsection 
-    % List of Figures
     \listoffigures
 
 
@@ -133,26 +127,31 @@
     %%%%%%%%%%%%%%%%%%%%%%%%%%%
     % Actual text starts here %
     %%%%%%%%%%%%%%%%%%%%%%%%%%%
-    \mainmatter  
-    
-    % \include{chapters/Introduction/chapterMain}
-    
-    % \include{chapters/Physics/chapterMain}
-    % \include{chapters/CMSExperiment/chapterMain}
+    \mainmatter
+    \include{chapters/Introduction/chapterMain}
+    \include{chapters/Physics/chapterMain}
+    \include{chapters/CMSExperiment/chapterMain}
     \include{chapters/Analysis/chapterMain}
-    
-    % \include{chapters/HGCal/chapterMain}
-    
-    % \include{chapters/Conclusion/chapterMain}
+    \include{chapters/HGCal/chapterMain}
+    \include{chapters/Conclusion/chapterMain}
     
     
     %%%%%%%%%%%%%%%%%%%%%%%%%%%
     % some ending stuff       %
     %%%%%%%%%%%%%%%%%%%%%%%%%%%
-    % \begin{appendix}
-    % \input{chapters/Appendix/chapterMain.tex}
-    % \end{appendix}
-
+    \begin{appendix}
+        % \input{chapters/Physics/sectionQFT/sectionMain}
+        % \input{chapters/Analysis/sectionPlots/sectionMain}
+        % --------------------------------------------------
+        % \chapter{Supplement Materials for CLUE clustering algorithm}
+        % \input{chapters/HGCal/sectionStandaloneClue_psudocode}
+        % \input{chapters/HGCal/sectionStandaloneClue_perfDecom}
+    \end{appendix}
+    
+    
+    
+    
+     
 
     \begin{singlespace}
     \bibliographystyle{unsrt}

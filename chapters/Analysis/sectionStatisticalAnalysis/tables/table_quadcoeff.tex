@@ -1,70 +1,44 @@
 \begin{table}[ht]
     \centering
    	\setlength{\tabcolsep}{0.5 em}
-    \renewcommand{\arraystretch}{1.6}
-    \caption{ Coefficients of quadratic equations $c_{lk}$ in terms of E and X, where the index
-    $l\in \{ e,\mu,\tau \} $ corresponds to the three equations $F_e=0,F_\mu=0,F_\tau=0$ and the 
-    index $k\in\{ 0,1,2,\dots 9\}$. In the table, 
-    $ \Delta_{ij} \equiv E^{tl}_{ij} - X_l \times ( E^{te}_{ij} + E^{t\mu}_{ij} + E^{t\tau}_{ij} + E^{th}_{ij} )$ is 
-    a $6\times 6$ matrix, where the lower index $i,j$ are for the $6\times 6$ elements and the upper index denotes the channel. }
+    \renewcommand{\arraystretch}{2.5}
+    \caption{ Coefficients of quadratic equations $c_{lk}$ in terms of efficiency matrix $E$ and normalized yields $\{X_e,X_\PGm,X_\PGt\}$, where the index $l\in \{ \Pe,\mu,\tau \} $ and the index $k\in\{ 0,1,2,\dots 9\}$. In the table, $\Delta_{ij} \equiv \Eij^{\ctrl} - X_l \times ( \Eij^{\ctre} + \Eij^{\ctrm} + \Eij^{\ctrt} + \Eij^{\ctrh})$ is a $6\times 6$ matrix, where the lower index $i,j$ are for the $6\times 6$ elements. }
     
-    \begin{tabular}{c|l}
-
+    \resizebox{\textwidth}{!}{
+    \begin{tabular}{c|c}
     \hline
-    $c_{l0}$ & $\Delta_{hh}$ \\
+    $c_{l0}$ & $\Delta_{66}$ \\
     \hline
-    $c_{l1}$ & $\Delta_{ee}     - 2\Delta_{eh}   + \Delta_{hh}$ \\
+    $c_{l1}$ & $\Delta_{11} - 2\Delta_{16} + \Delta_{66}$ \\
     \hline
-    $c_{l2}$ & $\Delta_{\mu\mu} - 2\Delta_{\mu h} + \Delta_{hh}$ \\
+    $c_{l2}$ & $\Delta_{22} - 2\Delta_{26} + \Delta_{66}$ \\
     \hline
     
-    $c_{l3}$ & $   b^\tau_e   b^\tau_e   \Delta_{\tau_e   \tau_e}  
-    			 + b^\tau_\mu b^\tau_\mu \Delta_{\tau_\mu \tau_\mu}
-                 + b^\tau_h   b^\tau_h   \Delta_{\tau_h   \tau_h}
-                 
-                 + 2 b^\tau_e   b^\tau_\mu \Delta_{\tau_e   \tau_\mu} 
-    		     + 2 b^\tau_e   b^\tau_h   \Delta_{\tau_e   \tau_h}   
-    		     + 2 b^\tau_\mu b^\tau_h   \Delta_{\tau_\mu \tau_h} - $ \\
-                 
-             & $   2 b^\tau_e   \Delta_{e   \tau_h}
-                 - 2 b^\tau_\mu \Delta_{\mu \tau_h}
-                 - 2 b^\tau_h   \Delta_{h.  \tau_h} 
-                 + \Delta_{hh} $ \\
+    $c_{l3}$ & $   \bte\bte\Delta_{33} + \btm\btm\Delta_{44} + \bth\bth\Delta_{55} + 2\bte\btm\Delta_{34} + 2\bte\bth\Delta_{35} + 2\btm\bth\Delta_{45} 
+                - 2\bte\Delta_{15} - 2\btm\Delta_{25} - 2\bth\Delta_{56} + \Delta_{66} $ \\
 
     \hline
-    $c_{l4}$ & $2\Delta_{e\mu} - 2\Delta_{eh} -2\Delta_{\mu h} +2\Delta_{hh}$  \\
+    $c_{l4}$ & $  2\Delta_{12} - 2\Delta_{16} - 2\Delta_{26} + 2\Delta_{66}$ \\
     \hline
-    $c_{l5}$ & $  2b^\tau_e   \Delta_{e \tau_e} 
-    			+ 2b^\tau_\mu \Delta_{e \tau_\mu}
-                + 2b^\tau_h   \Delta_{e \tau_h}
-                - 2b^\tau_e   \Delta_{\tau_e   h} 
-    			- 2b^\tau_\mu \Delta_{\tau_\mu h}
-                - 2b^\tau_h   \Delta_{\tau_h   h} 
-                - 2\Delta_{eh}   + 2 \Delta_{hh} $ \\
+    $c_{l5}$ & $  2\bte\Delta_{13} + 2\btm\Delta_{14} + 2\bth\Delta_{15} - 2\bte\Delta_{36} - 2\btm\Delta_{46} - 2\bth\Delta_{56} - 2\Delta_{16} + 2 \Delta_{66} $ \\
         
     \hline            
-    $c_{l6}$ & $  2b^\tau_e   \Delta_{\mu \tau_e} 
-    			+ 2b^\tau_\mu \Delta_{\mu \tau_\mu}
-                + 2b^\tau_h   \Delta_{\mu \tau_h}
-                - 2b^\tau_e   \Delta_{\tau_e   h} 
-    			- 2b^\tau_\mu \Delta_{\tau_\mu h}
-                - 2b^\tau_h   \Delta_{\tau_h   h} 
-                - 2\Delta_{\mu h}   + 2 \Delta_{hh} $ \\
+    $c_{l6}$ & $  2\bte\Delta_{23} + 2\btm\Delta_{24} + 2\bth\Delta_{25}
+                - 2\bte\Delta_{36} - 2\btm\Delta_{46} - 2\bth\Delta_{56} 
+                - 2\Delta_{26} + 2\Delta_{66} $ \\
     \hline            
-    $c_{l7}$ & $ 2\Delta_{eh}      - 2 \Delta_{hh} $ \\
+    $c_{l7}$ & $ 2\Delta_{16} - 2 \Delta_{66} $ \\
     \hline
-    $c_{l8}$ & $ 2\Delta_{\mu h}   - 2 \Delta_{hh}$ \\
+    $c_{l8}$ & $ 2\Delta_{26} - 2 \Delta_{66}$ \\
     \hline
-    $c_{l9}$ & $  2b^\tau_e   \Delta_{\tau_e   h} 
-                 + 2b^\tau_\mu \Delta_{\tau_\mu h} 
-                 + 2b^\tau_h   \Delta_{\tau_h   h} 
-                 - 2 \Delta_{hh}$ \\
+    $c_{l9}$ & $   2\bte \Delta_{36} 
+                 + 2\btm \Delta_{46} 
+                 + 2\bth \Delta_{56} 
+                 - 2\Delta_{66}$ \\
     \hline
-
-    
-	\end{tabular}
+	\end{tabular}}
     
 
-\label{tab:quadcoeff}
+\label{tab:analysis:method:counting:quadcoeff}
     
 \end{table}

@@ -1,139 +1,102 @@
-\section{Systematics}
+\section{Systematic Uncertainties}
 \label{sec:analysis:systematics}
 
 
-The various sources of uncertainty that have been considered are
-described in the following sections. As described in Section~\ref{sec:analysis:method}, 
-the treatment of systematics
-differs between the two analysis approaches: the shape analysis makes
-use of nuisance parameters (n.p.);
-the counting analysis is carried out varying each systematic
-individually and assessing the variation on the estimates of the
-branching fractions.
+The various sources of uncertainty that have been considered are described in the following sections. As described in Section~\ref{sec:analysis:method},  the treatment of systematics differs between the two analysis approaches: the shape analysis makes use of nuisance parameters; the counting analysis is carried out varying each systematic individually and assessing the variation on the estimates of the branching fractions.
 
 
-\subsection{Source of Systematics}
+\subsection{Sources of Systematic Uncertainties}
+\label{sec:analysis:systematics:source}
+
+
 \subsubsection{Luminosity} 
-        
-The uncertainty on the CMS luminosity measurement is estimated to be
-2.5\% for the 2016 run~\cite{CMS-PAS-LUM-17-001}.  This uncertainty
-effects the overall scale of the data model, and is included as a
-normalization nuisance parameter that affects the overall normalization of all
-channels in a fully correlated manner.
+The uncertainty on the CMS luminosity measurement is estimated to be 2.5\% for the 2016 run~\cite{CMS-PAS-LUM-17-001}.  This uncertainty effects the overall scale of the all predicted yields in a fully correlated manner. 
+% In shape analysis, it is handled as a normalization nuisance parameter. In counting analysis, its effect on signal simulations is cancelled and effect on background simulation gets propagated.
 
 
 \subsubsection{Data-driven background estimates}
 
-The uncertainty is split into four normalization parameters: one for
-each of the final states $e\tau$, $\mu\tau$, $eh$, and $\mu h$.  The
-prior uncertainty for each is assumed to be 25\%.
+The uncertainty is split into four normalization parameters: one for each of the final states \cet, \cmt, \ceh, and \cmh.  
 
 \subsubsection{Cross section for simulated processes}
 
 \begin{itemize}
-    \item \ttbar: 10\%, PDF, $\alpha_{s}$, $\mu_{R}/\mu_{F}$
-    \item tW: 10\%
-    \item \WW: unconstrained
-    \item Z+jets: 10\%, PDF, $\alpha_{s}$, $\mu_{R}/\mu_{F}$
-    \item W+jets: 10\%
+    \item \ttbar: 5\%, (and PDF, $\alpha_{s}$, $\mu_{R}/\mu_{F}$ in shape analysis)
+    \item \tW:    5\%
+    \item \zjets: 10\%, (and PDF, $\alpha_{s}$, $\mu_{R}/\mu_{F}$ in shape analysis)
+    \item \wjets: 10\%
+    \item \gjets: 10\%
     \item diboson: 10\%
 \end{itemize}
+% For diboson, shape analysis treats \PWW as a signal and its cross-section is not constrained.
+Since shape analysis also incorporate \zjets control regions and is sensitive to the \ttbar cross-section, the cross-section of \zjets and \ttbar is further decomposed into extra nuisance parameters, including PDF, $\alpha_{s}$, $\mu_{R}/\mu_{F}$. The counting analysis does not have \zjets control regions and is insensitive to \ttbar cross-section due to the construction of ratio of channels. So overall uncertainties of \ttbar and \zjets are used.
 
 \subsubsection{\WW \pt reweighting}
-
-The reweighting of the \WW \pt is accounted for by including two n.p. for
-the resummation and factorization variations as described in
-section~\ref{sec:analysis:dataset}
+Shape analysis treats \WW as a signal. The reweighting of the \WW \pt is accounted for by including two nuisance parameter for the resummation and factorization variations as described in section~\ref{sec:analysis:calibration:genlevel}. In the \ttbar signal region employed by the counting analysis, there is little contamination from \WW process. Thus the \WW \pt reweighting and associated systematic effects are neglected.
 
 \subsubsection{top \pt reweighting}
+Top \pt reweighting is applied in nominal case because it is observed as unnecessary, but is used to estimate the associated uncertainties. In shape analysis, the uncertainty on the top \pt scale is included as a one-sided morphing templates generated based on previous top studies in shape analysis and it turns out to be highly constrained. In counting analysis, the construction of ratios allow cancellations of \ttbar related systematics and 1\% of the top \pt scale is used as the size of uncertainty, which gets propagated through the parameter extraction.
 
-As described in section~\ref{sec:analysis:dataset}, the uncertainty on the top \pt
-scale is included as a one-sided morphing templates generated based on
-previous top PAG studies.
 
 \subsubsection{Pileup}
 
-Each event is weighted with a scale factor to account for differences in
-the pileup spectrum between data and simulation.  The uncertainty on
-the event weights is mainly due to the uncertainty on the minimum bias
-cross section.  The nominal minimum bias cross section is $69.2 \pm
-3.18~\text{mb}$. The effect of the uncertainty is propagated through the
-analysis by calculating the distribution of pileup in data while varying
-the cross section up and down by one standard deviation.  
+Each event is weighted with a scale factor to account for differences in the pileup spectrum between data and simulation.  The uncertainty on the event weights is mainly due to the uncertainty on the minimum bias cross section.  The nominal minimum bias cross section is $69.2 \pm 3.18~\text{mb}$. The effect of the uncertainty is propagated through the analysis by calculating the distribution of pileup in data while varying the cross section up and down by one standard deviation.  
 
 \subsubsection{Trigger efficiency}
 
-The uncertainty due to the trigger efficiency scale factors is
-accounted for by saving the uncertainty of each weight and including the
-uncertainty in the bin uncertainty of the template histograms.  The scale
-factors are then included as normalization nuisance parameters in the
-fit model.
+% The uncertainty due to the trigger efficiency scale factors is accounted for by saving the uncertainty of each weight and including the uncertainty in the bin uncertainty of the template histograms.  
 
 \begin{itemize}
-    \item \textit{single muon}: 0.5\% normalization uncertainty on all
-        categories where the triggering lepton is a muon.
-    \item \textit{single electron}: accounted for as a shape uncertainty
-        in events where the event is exclusively triggered by an
-        electron.  This accounts for uncertainty in the determination of
-        the scale factors including the statistical uncertainty, the
-        variation due the triggering of the tag lepton, and variation
-        due to the probe electron.  A detailed description of the
-        electron trigger scale factors in included in
-        \ref{sec:electron_trigger}.
+    \item \textit{single muon}: 0.5\% normalization uncertainty on all categories where the triggering lepton is a muon.
+    \item \textit{single electron}: a $\pt$ and $\eta$ dependent correction is applied to events triggerred with single electron trigger. The correction and uncertainty is measured with tag-and-prob approach described in \ref{sec:analysis:calibration:trigger}. The uncertainty accounts for the statistical uncertainty, the variation due the triggering of the tag lepton, and variation due to the probe electron.
 \end{itemize}
 
 \subsubsection{Muon reconstruction}
     \begin{itemize}
-    \item \textit{identification/isolation}: the uncertainties are
-        accounted for each muon and are based on values provided
-        by the POG.  These are incorporated as a shape uncertainty that
-        are \pt dependent.  
-    \item \textit{energy scale}: to account for the muon energy scale,
-        the muon \pt is varied by $\pm 1 \sigma$ (0.2\%) and the effect of
-        the variation on the acceptance and change in kinematics is included
-        in the model through morphing templates.
-    %\textit{resolution}
+    \item \textit{identification/isolation}: the uncertainties are accounted for each muon and are based on values provided by the POG. 
+    \item \textit{energy scale}: to account for the muon energy scale, the muon \pt is varied by $\pm 1 \sigma$ (0.2\%).
     \end{itemize}
 
 \subsubsection{Electron reconstruction}
     \begin{itemize}
-        \item \textit{identification/isolation}: the uncertainties
-            provided per electron are taken from values provided by the
-            POG.  These are incorporated as a shape uncertainty that are
-            \pt dependent.
-        \item \textit{reconstructions}: treated the same as the
-            identification uncertainty.  Scale factors and their
-            uncertainties are only $\eta$ dependent. 
-        \item \textit{energy scale}: The electron energy scale is
-            assumed to be know at the 0.5\% level, and is assigned a
-            nuisance parameter that modifies the change to the shape of
-            the relevant kinematic quantity.
+        \item \textit{identification/isolation}: the uncertainties provided per electron are taken from values provided by the POG.
+        \item \textit{reconstructions}: treated the same as the identification uncertainty.  Scale factors and their uncertainties are only $\eta$ dependent. 
+        \item \textit{energy scale}: The electron energy scale is assumed to be know at the 0.5\% level, and is assigned a  nuisance parameter that modifies the change to the shape of the relevant kinematic quantity.
         %\item \textit{resolution}
     \end{itemize}
 
 \subsubsection{Tau reconstruction}
     \begin{itemize}
-        \item \textit{identification}: the $\tau$ POG recommends a 5\%
-            uncertainty on the scale factor applied to simulation.
-            Because a sideband is included to provide an \emph{in situ}
-            evaluation of the $\tau$ efficiency scale factor, the scale
-            factors are included as \pt-dependent n.p. in seven \pt
-            bins.
-        \item \textit{$jet\rightarrow\tau$}: scale factors and
-            uncertainties for jets faking taus were derived based on a
-            dilepton plus reconstructed tau control region.  A n.p. is
-            assigned to each \pt bin used to measure the scale factor
-            and an overall normalization n.p. is assigned to account for
-            any difference in rate between light and heavy jets.
-        \item \textit{$e\rightarrow\tau$}: a single normalization n.p.
-            is included to templates where an electron is
-            misreconstructed as a hadronically decaying tau.
-        \item \textit{energy scale}: the tau energy scale is corrected in
-            correspondence with POG recommendations and an uncertainty
-            of 1.2\% per decy mode is assigned.  These are included as
-            three shape uncertainties depending on the reconstructed
-            decay mode of the hadronically decaying tau.
+        \item \textit{identification}: the $\PGth$ POG recommends a 5\% uncertainty on the scale factor applied to simulation. In shape analysis, because a control region is included to provide an \emph{in situ} evaluation of the $\PGth$ efficiency scale factor, the scale factors are included as \pt-dependent nuisance parameter in seven \pt bins.
+        
+        \item \textit{$jet\rightarrow\PGth$}: scale factors and uncertainties for jets faking taus were derived based on a dilepton plus reconstructed tau control region.  A nuisance parameter is assigned to each \pt bin used to measure the scale factor and an overall normalization nuisance parameter is assigned to account for any difference in rate between light and heavy jets.
+        
+        \item \textit{$\Pe\rightarrow\PGth$}: a single normalization nuisance parameter is included to templates where an electron is misreconstructed as a hadronically decaying tau. The counting analysis neglects this uncertainty because the contribution of electron faking \PGth is only sizable in $\PZ \to \PGte \PGth$ control region, not considered by the counting analysis.  
+        
+        \item \textit{energy scale}: the tau energy scale is corrected in correspondence with POG recommendations and an uncertainty of 1.2\% per decy mode is assigned.  These are included as three shape uncertainties depending on the reconstructed decay mode of the hadronically decaying tau. 
     \end{itemize}
+
+    In addition, the uncertainties of different \PGth decay widths are investigated. Currently the world average of the major \PGth decay widths have about 0.5-1.0\% uncertainties. Five highest \PGth branching fractions include 
+    \begin{equation*}
+    \begin{split}
+    &   \mathcal{B}(\PGth\to \PGp^\pm)        = 0.1082(5), \quad 
+        \mathcal{B}(\PGth\to \PGp^\pm \PGp^0)  = 0.2549(9), \quad 
+        \mathcal{B}(\PGth\to \PGp^\pm2\PGp^0)  = 0.0926(10),\\
+    &   \mathcal{B}(\PGth\to3\PGp^\pm)        = 0.0931(5), \quad
+        \mathcal{B}(\PGth\to3\PGp^\pm \PGp^0)  = 0.0462(5).           
+    \end{split}
+    \end{equation*}
+    \noindent Since different decay modes are reconstructed separately by the CMS \PGth identification and thus have different efficiencies. The uncertainties of different \PGth widths could propagate to the \PGth identification efficiencies and lead to some impacts on the final results. To decide the impact, we tag the generator-level decay mode of reconstructed \PGth and variate the event weight accounting to the relative uncertainty of the tau decay branching fraction. Figure~\ref{fig:analysis:systematics:tauhDecayMode} shows the distribution of gen-level \PGth decay modes of $\ttbar \to cmt$ simulated events selected in the \cmt channel. Considering the above five major \PGth decay mode, the corresponding uncertainties on the \BWl are found to be less then 0.1\% relatively, small enough to neglect.
+    
+    \begin{figure}
+    \centering
+    \includegraphics[width=0.99\textwidth]{chapters/Analysis/sectionSystematics/figures/tauBr/tauhDecay_mutau.png}
+    \caption{Distribution of gen-level \PGth decay modes of $\ttbar \to cmt$ simulated events selected in the \cmt channel.}
+    \label{fig:analysis:systematics:tauhDecayMode}
+\end{figure}
+
+
+
 
 \subsubsection{Jet reconstruction}
 
@@ -147,7 +110,7 @@ fit model.
         \item \textit{energy scale}: the jet energy scale is varied by
             the various uncertainty sources on the jet energy
             corrections provided by the JetMET POG.  These are included
-            as 18 shape n.p.'s (N.B. the lepton kinematic quantities
+            as 18 shape nuisance parameter's (N.B. the lepton kinematic quantities
             which are fit are generally not affected by variation of the
             jet energy scale, but migration between different \PQb tag
             categories does happen)
@@ -171,6 +134,9 @@ factorized based on the various sources of uncertainty considered in the
 calculation of the scale factors.  The variation is propagated through
 the analysis through the inclusion of shape nuisance parameters for both
 b tagging and mistagging variation.
+
+
+
 
 \subsubsection{Theory/simulation modelling}
 
@@ -205,40 +171,39 @@ fairly sizeable statistical uncertainty, and can lead to exagerated
 uncertainties and strange behavior in the morphing templates (e.g., both
 the up and down variation will predict yields below/above the nominal
 sample).  Also, the size of the uncertainty resulting from the FSR
-variation is very large (up to 20\%) in the $\ell\tau$ categories.  This
+variation is very large (up to 20\%) in the \ceh categories.  This
 level of variation would be corrected for in the scale factors
 accounting for the difference in ID/misID efficiency for identified
-$\tau$ candidates, and that uncertainty in general would be much
-smaller, $<5\%$.  In appendix~\ref{sec:tau_fsr}, a method for accounting
-for this is described.
+$\PGth$ candidates, and that uncertainty in general would be much
+smaller, $<5\%$. 
 
 
 
 
-Four dedicated MC samples are used for the \ttbar theoretical uncertainties,
-including FSR, ISR, matrix element parton shower (MEPS), and underline events (UE).
-Based on the four dedicated and the nominal \ttbar samples,
-the shape analysis obtains four types of the template morphine,
-while the counting analysis propagates the four deviations of signal efficiency.
+% Four dedicated MC samples are used for the \ttbar theoretical uncertainties,
+% including FSR, ISR, matrix element parton shower (MEPS), and underline events (UE).
+% Based on the four dedicated and the nominal \ttbar samples,
+% the shape analysis obtains four types of the template morphine,
+% while the counting analysis propagates the four deviations of signal efficiency.
 
-However, it is noticed that variations of theoretical parameters in these
-four dedicated MC samples could have a large influence on the $\tau_h$ identification efficiency
-and the $j\to \tau$ misidentification rate. 
-Since the uncertainty of the $\tau_h$ identification efficiency and the $j\to \tau$ misidentification rate
-are accounted for separately, the changes related to the tau identification 
-in the dedicated \ttbar samples should be removed to avoid double counting.
-Thus a correction is needed for these dedicated samples.
-Such that, the tau identification and misidentification in the dedicated samples 
-are kept the same as the nominal \ttbar sample.
+% However, it is noticed that variations of theoretical parameters in these
+% four dedicated MC samples could have a large influence on the $\PGth$ identification efficiency
+% and the $j\to \PGth$ misidentification rate. 
+% Since the uncertainty of the $\PGth$ identification efficiency and the $j\to \PGth$ misidentification rate
+% are accounted for separately, the changes related to the tau identification 
+% in the dedicated \ttbar samples should be removed to avoid double counting.
+% Thus a correction is needed for these dedicated samples.
+% Such that, the tau identification and misidentification in the dedicated samples 
+% are kept the same as the nominal \ttbar sample.
 
 To derive the correction for these dedicated MC samples, we calculate the
 probabilities of reconstructing taus in the nominal and dedicated \ttbar events.
 The origins of the reconstructed taus are tagged based on the matching to the
 gen-level particles. Both Tight and VTight WP of tau identification are
 considered. The changes in the tau id and misid due to the FSR up and down 
-variation are shown in Figure~\ref{fig:appendix:reweighttt:sf_fsr}. The changes
-due to the ISR, MEPS, UE up and down variations are shown in Figure~\ref{fig:appendix:reweighttt:sf_isr_MEPS_UE}.
-It is clear that the FSR has a considerable impact on the tau id and misid that 
+variation are shown in Figure~\ref{fig:analysis:systematics:sf_fsr}. The changes
+due to the ISR, MEPS, UE up and down variations are shown in Figure~\ref{fig:analysis:systematics:sf_isr_MEPS_UE}.
+It is clear that the FSR has a considerable impact on the \PGth id and misid that 
 needs removal, while the effect from the ISR, MEPS and UE are neglectable.
 
 
@@ -246,67 +211,67 @@ needs removal, while the effect from the ISR, MEPS and UE are neglectable.
     \centering
     \includegraphics[width=0.49\textwidth]{chapters/Analysis/sectionSystematics/figures/ttTheoretical/2020_MCRatio_fsr_tauGenFlavor_tauTight.png}
     \includegraphics[width=0.49\textwidth]{chapters/Analysis/sectionSystematics/figures/ttTheoretical/2020_MCRatio_fsr_tauGenFlavor_tauVTight.png}
-    \caption{FSR effect on the $\tau_h$ identification and $j \to \tau_h$ misidentification obtained from the dedicated and the nominal \ttbar samples. 
+    \caption{FSR effect on the $\PGth$ identification and $j \to \PGth$ misidentification obtained from the dedicated and the nominal \ttbar samples. 
     The Tight and VTight WP are shown on the left and right, respectively.
     }
-    \label{fig:appendix:reweighttt:sf_fsr}
+    \label{fig:analysis:systematics:sf_fsr}
 \end{figure}
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.49\textwidth]{chapters/Analysis/sectionSystematics/figures/ttTheoretical/2020_MCRatio_isr_tauGenFlavor_tauTight.png}
-    \includegraphics[width=0.49\textwidth]{chapters/Analysis/sectionSystematics/figures/ttTheoretical/2020_MCRatio_isr_tauGenFlavor_tauVTight.png}
-    \includegraphics[width=0.49\textwidth]{chapters/Analysis/sectionSystematics/figures/ttTheoretical/2020_MCRatio_meps_tauGenFlavor_tauTight.png}
-    \includegraphics[width=0.49\textwidth]{chapters/Analysis/sectionSystematics/figures/ttTheoretical/2020_MCRatio_meps_tauGenFlavor_tauVTight.png}
-    \includegraphics[width=0.49\textwidth]{chapters/Analysis/sectionSystematics/figures/ttTheoretical/2020_MCRatio_ue_tauGenFlavor_tauTight.png}
-    \includegraphics[width=0.49\textwidth]{chapters/Analysis/sectionSystematics/figures/ttTheoretical/2020_MCRatio_ue_tauGenFlavor_tauVTight.png}
-    \caption{ISR, MEPS, UE effect on the $\tau_h$ identification and $j \to \tau_h$ misidentification obtained from the dedicated and the nominal \ttbar samples.
+    \includegraphics[width=0.4\textwidth]{chapters/Analysis/sectionSystematics/figures/ttTheoretical/2020_MCRatio_isr_tauGenFlavor_tauTight.png}
+    \includegraphics[width=0.4\textwidth]{chapters/Analysis/sectionSystematics/figures/ttTheoretical/2020_MCRatio_isr_tauGenFlavor_tauVTight.png}
+    \includegraphics[width=0.4\textwidth]{chapters/Analysis/sectionSystematics/figures/ttTheoretical/2020_MCRatio_meps_tauGenFlavor_tauTight.png}
+    \includegraphics[width=0.4\textwidth]{chapters/Analysis/sectionSystematics/figures/ttTheoretical/2020_MCRatio_meps_tauGenFlavor_tauVTight.png}
+    \includegraphics[width=0.4\textwidth]{chapters/Analysis/sectionSystematics/figures/ttTheoretical/2020_MCRatio_ue_tauGenFlavor_tauTight.png}
+    \includegraphics[width=0.4\textwidth]{chapters/Analysis/sectionSystematics/figures/ttTheoretical/2020_MCRatio_ue_tauGenFlavor_tauVTight.png}
+    \caption{ISR, MEPS, UE effect on the $\PGth$ identification and $j \to \PGth$ misidentification obtained from the dedicated and the nominal \ttbar samples.
     The Tight and VTight WP are shown on the left and right, respectively.
     }
-    \label{fig:appendix:reweighttt:sf_isr_MEPS_UE}
+    \label{fig:analysis:systematics:sf_isr_MEPS_UE}
 \end{figure}
 
 
 
 
-\begin{table}[h]
-    \centering
-    \caption{Comparison between nominal uncertainty (in a snapshot of
-        the analysis) and the uncertainty after applying the corrections
-        to the FSR variation.}
+% \begin{table}[h]
+%     \centering
+%     \caption{Comparison between nominal uncertainty (in a snapshot of
+%         the analysis) and the uncertainty after applying the corrections
+%         to the FSR variation.}
         
-    \begin{tabular}{l|cccc}
-                                  & $W\rightarrow e$ & $W\rightarrow \mu$ & $W\rightarrow \tau$ & $W\rightarrow h$ \\
-        \hline
-        nominal                   & 1.02             & 0.71               & 2.04                & 0.40             \\
-        w/ $\tau$ FSR corrections & 1.01             & 0.69               & 1.69                & 0.36             \\
-    \end{tabular}
-    \label{fig:fsr_correction}
-\end{table}
+%     \begin{tabular}{l|cccc}
+%                                   & $W\rightarrow e$ & $W\rightarrow \mu$ & $W\rightarrow \PGth$ & $W\rightarrow h$ \\
+%         \hline
+%         nominal                   & 1.02             & 0.71               & 2.04                & 0.40             \\
+%         w/ $\PGth$ FSR corrections & 1.01             & 0.69               & 1.69                & 0.36             \\
+%     \end{tabular}
+%     \label{fig:fsr_correction}
+% \end{table}
 
 
-Table~\label{fig:fsr_correction} shows total uncertainties of $Br(W)$ due 
-to FSR before and after the tau id and misid correction of the dedicated FSR sample.
-Before the correction, the dedicated FSR sample leads to an artificially large
-uncertainties which double counts the tau id and misid systematics.
+% Table~\label{fig:fsr_correction} shows total uncertainties of $Br(W)$ due 
+% to FSR before and after the tau id and misid correction of the dedicated FSR sample.
+% Before the correction, the dedicated FSR sample leads to an artificially large
+% uncertainties which double counts the tau id and misid systematics.
 
 
 
 
-The FSR dedicated \ttbar samples are corrected using the SF in Figure~\ref{fig:appendix:reweighttt:sf_fsr}.
-The up and down variation given by the dedicated MC samples lead to envelops on the \ttbar event efficiencies.
-As discussed in section~\ref{sec:analysis:method}, there are 21 \ttbar event efficiencies with 21 different
-$\WW$ decay scenarios. For VTight WP, the 21 envelops on efficiencies due to FSR, ISR, MEPS, and UE are shown in 
-Figure~\ref{fig:appendix:reweighttt:effAfterCorrFSR}-\ref{fig:appendix:reweighttt:effAfterCorrUE}. 
+The FSR dedicated \ttbar samples are corrected using the SF in Figure~\ref{fig:analysis:systematics:sf_fsr}.
+The up and down variations given by the dedicated MC samples lead to envelops on the \ttbar event efficiencies.
+As discussed in section~\ref{sec:analysis:method}, there are 21 \ttbar event efficiencies corresponding to 21 different
+$\WW$ decay scenarios. For VTight WP, the 21 envelops on efficiencies due to FSR, ISR, MEPS, and UE variations are shown in 
+Figure~\ref{fig:analysis:systematics:effAfterCorrFSR}-\ref{fig:analysis:systematics:effAfterCorrUE}. 
 Due to the finite statistics of the dedicated MC samples, the envelops edges are smear by the MC statistics, 
-which are also shown in the Figure~\ref{fig:appendix:reweighttt:effAfterCorrFSR}-\ref{fig:appendix:reweighttt:effAfterCorrUE}.
+which are also shown in the Figure~\ref{fig:analysis:systematics:effAfterCorrFSR}-\ref{fig:analysis:systematics:effAfterCorrUE}.
 
 
 \begin{figure}
     \centering
     \includegraphics[width=0.99\textwidth]{chapters/Analysis/sectionSystematics/figures/ttTheoretical/fsr.png}    
     \caption{FSR envelops on 21 efficiencies. VTight WP is shown.}
-    \label{fig:appendix:reweighttt:effAfterCorrFSR}
+    \label{fig:analysis:systematics:effAfterCorrFSR}
 \end{figure}
 
 
@@ -315,7 +280,7 @@ which are also shown in the Figure~\ref{fig:appendix:reweighttt:effAfterCorrFSR}
     \centering
     \includegraphics[width=0.99\textwidth]{chapters/Analysis/sectionSystematics/figures/ttTheoretical/isr.png}
     \caption{ISR envelops on 21 efficiencies. VTight WP is shown.}
-    \label{fig:appendix:reweighttt:effAfterCorrISR}
+    \label{fig:analysis:systematics:effAfterCorrISR}
 \end{figure}
 
 
@@ -323,7 +288,7 @@ which are also shown in the Figure~\ref{fig:appendix:reweighttt:effAfterCorrFSR}
     \centering
     \includegraphics[width=0.99\textwidth]{chapters/Analysis/sectionSystematics/figures/ttTheoretical/meps.png}
     \caption{MEPS envelops on 21 efficiencies. VTight WP is shown.}
-    \label{fig:appendix:reweighttt:effAfterCorrMEPS}
+    \label{fig:analysis:systematics:effAfterCorrMEPS}
 \end{figure}
 
 
@@ -331,76 +296,120 @@ which are also shown in the Figure~\ref{fig:appendix:reweighttt:effAfterCorrFSR}
     \centering
     \includegraphics[width=0.99\textwidth]{chapters/Analysis/sectionSystematics/figures/ttTheoretical/ue.png}
     \caption{UE envelops on 21 efficiencies. VTight WP is shown.}
-    \label{fig:appendix:reweighttt:effAfterCorrUE}
+    \label{fig:analysis:systematics:effAfterCorrUE}
 \end{figure}
 
 
 
 
+% \subsubsection{Tau Hadronic Decay Reweighting}
 
-\subsection{Shape analysis systematics}
+% The tau decay in the simulation is handled by \PYTHIA using the \PYTHIA default branching fractions, which are about 0.5\% different from the experimental values in the PDG~\ref{pdg2020}. This deviation is corrected by reweighting the simulated events with hadronic taus to match the PDG tau decay branching fractions. The 
 
-As described previously, each source of uncertainty is accounted for in
-the shape analysis by including one or more associated nuisance
-parameters.  After minimizing the likelihood, post-fit values for the
-nuisance parameters and their associated uncertainties are obtained.
-This is illustrated in figure~\ref{fig:pulls_all}.  In general, the
-pulls on the nuisance parameters do not exceed $2\sigma$ of their
-initial uncertainty, but many of the nuisance parameters do become
-constrained.  Additionally, the correlations for each parameter can be
-obtained and are displayed in figure~\ref{fig:corr_matrix}.  In order to
-isolate the effect of each nuisance parameter on the uncertainty of the 
-branching fractions, the minimization is repeated while individually fixing each
-nuisance parameter either to its post-fit value plus or minus the
-post-fit uncertainty.  The result of this process is shown in
-figure~\ref{fig:impacts_all}.
 
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=1.2\textwidth, angle=-90]{chapters/Analysis/sectionSystematics/figures/asimov_pulls_summary.pdf}
-    \caption{Pulls and constrain of all non-MC statistic nuisance
-        parameters after minimizing the likelihood.}
-    \label{fig:pulls_all}
-\end{figure}
+% The MC events with $\PGth$ in the \cet and $\mu \PGth$ channel is essential to the sensitivity of the $Br(W\to\PGth)$ measurement. However, the tau's hadronic decay branching fraction $B(\PGth \to  \rm{hadrons})$ in the MC simulation are different from the experimental world average in the PDG. The $\PGth$ selection efficiency could be impacted by such difference because various tau's hadronic  decay mode have different efficiencies in the CMS $\PGth$ reconstruction with SPH algorithm.
 
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=0.99\textwidth]{chapters/Analysis/sectionSystematics/figures/correlation_matrix_unblinded.pdf}
-    \caption{Correlation matrix for branching fractions and nuisance
-        parameters.  This does not include the nuisance parameters
-        associated with bin-by-bin MC statistical uncertainty.}
-    \label{fig:corr_matrix}
-\end{figure}
+% Thus it is necessary to reweight the MC events to correct the deviation of tau's decay in the simulation with respect to the PDG values. For the values in the \PYTHIA simulation assumption and the PDG world average, tau's hadronic decay branching fractions are listed in table~\ref{tab:tauhReweighting}. The difference between values in \PYTHIA8 and PDG is about $0.5\%$. The ratios of PDG and \PYTHIA values are also included, which are the event weights applied for the $\PGth \to h$ reweighting.
 
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=1.2\textwidth, angle=-90]{chapters/Analysis/sectionSystematics/figures/unblinded_impacts.pdf}
-    \caption{impacts}
-    \label{fig:impacts_all}
-\end{figure}
+    
+    
+% \begin{table}[ht]
+%   \centering
+%   \setlength{\tabcolsep}{1 em}
+%   \renewcommand{\arraystretch}{1.5}
+%   \caption{ The values of $B(\PGth \to  \rm{hadrons})$ in PYTHIA8 and in PDG.}
+%   \begin{tabular}{l|c|c|c}
+%   \hline
+%                               & PDG        & \PYTHIA   & PDG / \PYTHIA \\
+%   \hline
+%   $B(\PGth\to \PGp^\pm)$       & 0.1082(5)  & 0.1076825 & 1.00481       \\
+%   $B(\PGth\to \PGp^\pm+ \PGp^0)$& 0.2549(9)  & 0.2537447 & 1.00455       \\
+%   $B(\PGth\to \PGp^\pm+2\PGp^0)$& 0.0926(10) & 0.0924697 & 1.00141       \\
+%   $B(\PGth\to3\PGp^\pm)$       & 0.0931(5)  & 0.0925691 & 1.00574       \\
+%   $B(\PGth\to3\PGp^\pm+ \PGp^0)$& 0.0462(5)  & 0.0459365 & 1.00574       \\
+%   \hline
+%   \end{tabular}
+%   \label{tab:analysis:calibration:tauhReweighting}
+% \end{table}
+
+
+% \begin{figure}
+%     \centering
+%     \includegraphics[width=0.99\textwidth]{chapters/Analysis/sectionCalibration/figures/tauBr/tauhDecay_mutau.png}
+%     \includegraphics[width=0.99\textwidth]{chapters/Analysis/sectionCalibration/figures/tauBr/tauhDecay_mutau2.png}
+%     \includegraphics[width=0.99\textwidth]{chapters/Analysis/sectionCalibration/figures/tauBr/tauhDecay_etau.png}
+%     \includegraphics[width=0.99\textwidth]{chapters/Analysis/sectionCalibration/figures/tauBr/tauhDecay_etau2.png}
+%     \caption{The gen-level daughter mesons from hadronicly decaying taus in the $tt\to \mu \PGth, e \PGth$ events passing $\mu \PGth$ and $e \PGth$ selection.}
+%     \label{fig:appendix:reweightTauhBr:tauhBr}
+% \end{figure}
+
+
+% In MC events, the gen-level daughter mesons from hadronically decaying taus are saved.  The $\PGth$'s daughter mesons in the $tt\to \mu \PGth, e \PGth$ events  passing $\mu \PGth$ and $e \PGth$ selection are shown in Figure~\ref{fig:appendix:reweightTauhBr:tauhBr} The leading contributions to the reconstructed $\PGth$ are $\PGth\to \PGp^\pm+\PGp^0 $, $\PGth\to 3\PGp^\pm$, $\PGth\to \PGp^\pm+2\PGp^0$, $\PGth\to \PGp^\pm$, $\PGth\to 3\PGp^\pm + \PGp^0$.  MC events with taus in those five decay modes are reweighted by 
+
+% \begin{equation}
+%   w = \frac{^{\rm PDG} B(\PGth \to  \rm{hadrons}) }{^{\rm \PYTHIA} B( \PGth \to \rm{hadrons} )}. 
+% \end{equation} 
+
+
+% \noindent The uncertainties of the weights are from the the PDG uncertainties.  The systematic uncertainty due to the uncertainties of $B(\PGth \to  \rm{hadrons})$ reweighting can be estimated. The effect of the $B(\PGth \to  \rm{hadrons})$  reweighting on the $B(W)$ result is small. The relative systematics from $B(\PGth \to  \rm{hadrons})$ reweighting are about $0.003 - 0.146 \%$,  shown in table~ \ref{tab:syst_tauhReweighting}.
+
 
 \FloatBarrier
 
 
 
-\subsection{Counting analysis systematics}
+\subsection{Systematic Uncertainties of Shape Analysis}
 
-For the counting analysis, the systematics are assessed individually by
-varying up and down the sources of systematic uncertainty listed in
-Section~\ref{sec:analysis:systematics}. The same branching fraction 
-extraction is repeated with the variated systematic parameter.
-The change in the branching fractions 
-with respect to the nominal value is treated as the systematical uncertainty
-due to a given source of systematics.
+As described previously, each source of uncertainty is accounted for in
+the shape analysis by including one or more associated nuisance
+parameters.  After minimizing the likelihood, post-fit values for the
+nuisance parameters and their associated uncertainties are obtained.
+This is illustrated in Figure~\ref{fig:analysis:systematics:pulls_all}.  In general, the
+pulls on the nuisance parameters do not exceed two sigma of their
+initial uncertainty, but many of the nuisance parameters do become
+constrained.  Additionally, the correlations for each parameter can be
+obtained and are displayed in Figure~\ref{fig:analysis:systematics:corr_matrix}.  In order to
+isolate the effect of each nuisance parameter on the uncertainty of the 
+branching fractions, the minimization is repeated while individually fixing each
+nuisance parameter either to its post-fit value plus or minus the
+post-fit uncertainty.  The result of this process is shown in
+Figure~\ref{fig:analysis:systematics:pulls_all}.
 
-Recall that channels are divided into 
-four groups based on the trigger types and \PQb tag multiplicities,
-($\mu1b$, $\mu2b$, $e1b$, $e2b$), each of which produces a $\beta$ measurement. 
-Table~\ref{tab:syst_alt} shows the 
-uncertainties of $\beta$ from these four groups due to each individual source of systematics.
-The combine of the four groups assumes
+\begin{sidewaysfigure}[ht]
+    \centering
+    \includegraphics[width=\textwidth]{chapters/Analysis/sectionSystematics/figures/pulls_impacts_final.pdf}
+    \caption{Pulls and constrain of all non-MC statistic nuisance
+        parameters after minimizing the likelihood.}
+    \label{fig:analysis:systematics:pulls_all}
+\end{sidewaysfigure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.99\textwidth]{chapters/Analysis/sectionSystematics/figures/correlation_matrix_full.pdf}
+    \caption{Correlation matrix for branching fractions and nuisance
+        parameters.  This does not include the nuisance parameters
+        associated with bin-by-bin MC statistical uncertainty.}
+    \label{fig:analysis:systematics:corr_matrix}
+\end{figure}
+
+% \begin{figure}[ht]
+%     \centering
+%     \includegraphics[width=1.2\textwidth, angle=-90]{chapters/Analysis/sectionSystematics/figures/unblinded_impacts.pdf}
+%     \caption{impacts}
+%     \label{fig:impacts_all}
+% \end{figure}
+
+\FloatBarrier
+
+
+
+\subsection{Systematic Uncertainties of Counting Analysis}
+
+For the counting analysis, the systematics are assessed individually by varying up and down the sources of systematic uncertainties. The same branching fraction extraction is repeated with the variated systematic parameter. The change in the branching fractions with respect to the nominal value is treated as the systematic uncertainty resulting from a given source of systematics.
+
+Recall that channels are divided into four groups based on the trigger types and \PQb tag multiplicities, (\gmb, \gmbb, \geb, \gebb), each of which produces one \BWl measurement. Table~\ref{tab:syst_alt} shows the uncertainties of \BWl in these four groups due to each individual source of systematics. The combine of the four groups assumes
 \begin{enumerate}
-    \item one source of systematics is fully correlated among the four groups.
+    \item one single source of systematics is fully correlated among the four groups.
     \item different sources of systematics are mutually independent.
 \end{enumerate}
 
@@ -409,21 +418,19 @@ The combine of the four groups assumes
     \chi^2 (\beta) = (\beta_0 - \textbf{A} \beta )^T \textbf{V}^{-1} (\beta_0 - \textbf{A} \beta )
 \end{equation}
 
-\noindent where $\beta = [\beta_e, \beta_\mu, \beta_\tau]^T $ is the combined branching fraction, and
-$\beta_0$ is the nominal value of the four measurements in the $\mu1b$, $\mu2b$, $e1b$, $e2b$ group, defined as
+\noindent where $\beta = [\bwe, \bwm, \bwt]^T $ is the combined branching fraction, and
+$\beta_0$ is the nominal value of the four measurements in the \gmb, \gmbb, \geb, \gebb group, defined as
 % 
 \begin{equation}
     \beta_0 = \bigg [
-    \beta_e^{\mu1b}, \beta_\mu^{\mu1b}, \beta_\tau^{\mu1b}, \quad 
-    \beta_e^{\mu2b}, \beta_\mu^{\mu2b}, \beta_\tau^{\mu2b}, \quad 
-    \beta_e^{e1b}, \beta_\mu^{e1b}, \beta_\tau^{e1b}, \quad
-    \beta_e^{e2b}, \beta_\mu^{e2b}, \beta_\tau^{e2b}
-    \bigg ]^T
+    \bwe^{\gmb},  \bwm^{\gmb},  \bwt^{\gmb}, \quad 
+    \bwe^{\gmbb}, \bwm^{\gmbb}, \bwt^{\gmbb}, \quad 
+    \bwe^{\geb},  \bwm^{\geb},  \bwt^{\geb}, \quad
+    \bwe^{\gebb}, \bwm^{\gebb}, \bwt^{\gebb}
+    \bigg ]^T,
 \end{equation}
 
-\noindent And $\textbf{A}=[I_{3\times3}, I_{3\times3}, I_{3\times3}, I_{3\times3}]^T$ is a $12 \times 3$ 
-matrix consist of four $3\times 3$ identity matrices. $\textbf{V}$ is the variance matrix for the 12 
-elements in $\beta_0$, which sums the statistical and the systematical uncertainties,
+\noindent and $\textbf{A}=[I_{3\times3}, I_{3\times3}, I_{3\times3}, I_{3\times3}]^T$ is a $12 \times 3$  matrix consist of four $3\times 3$ identity matrices. $\textbf{V}$ is the variance matrix for the 12 elements in $\beta_0$, which combines the various sources of statistical and the systematic uncertainties.
 
 \begin{equation}
     \textbf{V} =
@@ -431,18 +438,16 @@ elements in $\beta_0$, which sums the statistical and the systematical uncertain
     \sum_{\theta \in \text{syst}} \big( \Delta_{\theta}\beta_0 \big) \otimes  \big( \Delta_{\theta}\beta_0 \big).
 \end{equation}
 
-\noindent where $\Delta_{\theta}\beta_0$ are shown as rows in Table~\ref{tab:syst_alt} and the statistical and systematical part
-of the $\textbf{V}$ matrix is shown in Figure~\ref{fig:corBetaBar}. The combined result can 
-be analytically calculated 
+\noindent where $\Delta_{\theta}\beta_0$ is the variation of \BWl with respective to one sigma of systematic parameter $\theta$, and the absolute value of $\Delta_{\theta}\beta_0$ are the shown as rows in Table~\ref{tab:syst_alt}. The statistical and systematic part of the $\textbf{V}$ matrix is shown in Figure~\ref{fig:corBetaBar}. The combined \bwl can be analytically calculated:
 \begin{equation}
     \beta =   (\textbf{A}^T \textbf{V}^{-1} \textbf{A})^{-1}(\textbf{A}^T \textbf{V}^{-1}) \beta_0 , \quad
-    \text{with } \textbf{Var}\big[\beta\big]  =   (\textbf{A}^T \textbf{V}^{-1} \textbf{A})^{-1}
+    \text{with } \textbf{Var}\big[\beta\big]  =   (\textbf{A}^T \textbf{V}^{-1} \textbf{A})^{-1}.
 \end{equation}
 
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.99\textwidth]{chapters/Analysis/sectionSystematics/figures/covarMatrix_total.png}
-    \caption{ the statistical and systematical part of the $\textbf{V}$ matrix. }
+    \caption{ the statistical and systematic part of the $\textbf{V}$ matrix. }
     \label{fig:corBetaBar}
 \end{figure}
 
@@ -455,24 +460,24 @@ be analytically calculated
 % \subsubsection{Method and Result of Analytic Combining}
 
 % The counting analysis extracts leptonic branching fractions
-% $\{\beta_e, \beta_\mu, \beta_\tau\}$ simultaneously from yields of mutually exclusive channels, 
+% $\{\bwe, \bwm, \bwt\}$ simultaneously from yields of mutually exclusive channels, 
 % grouped in four trigger-bjet categories, $\mu-1b$,  $\mu-2b$,  $e-1b$ and $e-2b$.
-% Its parameter extraction outputs totally 4 sets of $\{\beta_e, \beta_\mu, \beta_\tau\}$,
-% one set in each category. We denote the output 4 sets of $\{\beta_e, \beta_\mu, \beta_\tau\}$
+% Its parameter extraction outputs totally 4 sets of $\{\bwe, \bwm, \bwt\}$,
+% one set in each category. We denote the output 4 sets of $\{\bwe, \bwm, \bwt\}$
 % as a vector $\beta$.
 
 % \begin{equation}
 %     \beta = \bigg [
-%     \beta_e^{\mu1b}, \beta_\mu^{\mu1b}, \beta_\tau^{\mu1b}, \quad 
-%     \beta_e^{\mu2b}, \beta_\mu^{\mu2b}, \beta_\tau^{\mu2b}, \quad 
-%     \beta_e^{e1b}, \beta_\mu^{e1b}, \beta_\tau^{e1b}, \quad
-%     \beta_e^{e2b}, \beta_\mu^{e2b}, \beta_\tau^{e2b}
+%     \bwe^{\gmb}, \bwm^{\gmb}, \bwt^{\gmb}, \quad 
+%     \bwe^{\gmbb}, \bwm^{\gmbb}, \bwt^{\gmbb}, \quad 
+%     \bwe^{\geb}, \bwm^{\geb}, \bwt^{\geb}, \quad
+%     \bwe^{\gebb}, \bwm^{\gebb}, \bwt^{\gebb}
 %     \bigg ]
 % \end{equation}
 
 % $\beta$ variates with respect to the statistical fluctuation 
-% of event yields, as well as the variation of systematical parameters,
-% leading to its statistical and systematical uncertainties.
+% of event yields, as well as the variation of systematic parameters,
+% leading to its statistical and systematic uncertainties.
 
 
 % The statistical variance of $\beta$ is calculated by propagating 
@@ -488,13 +493,13 @@ be analytically calculated
 %     \label{eqn:statVar}
 % \end{equation}
 
-% The systematic uncertainty due to a given systematical parameter is
-% evaluated by variating this systematical parameter by its 
+% The systematic uncertainty due to a given systematic parameter is
+% evaluated by variating this systematic parameter by its 
 % own uncertainty and then taking the changes of outcoming $\beta$. 
 % The total systematic variance is obtained by summing all systematic 
 % uncertainties in quadrature. As is given in Eqn \ref{eqn:systVar}.
 % This summation of quadrature is based on the assumption made in counting analysis 
-% that all systematical parameters in consideration are independent from each other.
+% that all systematic parameters in consideration are independent from each other.
 
 
 % \begin{equation}
@@ -505,41 +510,41 @@ be analytically calculated
 % \end{equation}
 
 % The outer product of variations is based on the fact that all elements of
-% $\beta$ is fully correlated when tuning up and down a systematical parameters.
+% $\beta$ is fully correlated when tuning up and down a systematic parameters.
 % Table \ref{tbl:errors} shows the squared root of diagonal elements of 
 % $\textbf{V}_{stat}$ and $\textbf{V}_{syst}$. The full matrix of $\textbf{V}_{stat}$ 
 % and $\textbf{V}_{syst}$ are shown in Fig \ref{fig:varStatSyst}.
 % The total variance of $\beta$ is summation of statistics and systematics variance.
 % The variance matrix not only represents the sensitivity of the measurement 
 % to each systematics, but also characterizes the correction among 
-% $\{\beta_e, \beta_\mu, \beta_\tau\}$ within each category and across all four categories. 
+% $\{\bwe, \bwm, \bwt\}$ within each category and across all four categories. 
 
 % \begin{equation}
 %     \textbf{V} = \textbf{V}_{stat} + \textbf{V}_{syst}
 % \end{equation}
 
 % To combine the branching fraction in four categories, we construct $\chi^2$ parametrized
-% by average branching fractions, $\bar{\beta}_e,\bar{\beta}_\mu, \bar{\beta}_\tau$ 
+% by average branching fractions, $\bar{\beta}_e,\bar{\beta}_\mu, \bar{\beta}_\PGth$ 
 % in Eqn \ref{eqn:DefineChisquared}. 
 
 % \begin{equation}
-%     \chi^2 (\bar{\beta}_e, \bar{\beta}_\mu, \bar{\beta}_\tau) = 
+%     \chi^2 (\bar{\beta}_e, \bar{\beta}_\mu, \bar{\beta}_\PGth) = 
 %     (\beta - \bar{\beta} )^T \textbf{V}^{-1} (\beta - \bar{\beta} )
 %     \label{eqn:DefineChisquared}
 % \end{equation}
 
-% where $\bar{\beta}$ is linearly parametrized by $\bar{\beta}_e, \bar{\beta}_\mu, \bar{\beta}_\tau$ 
+% where $\bar{\beta}$ is linearly parametrized by $\bar{\beta}_e, \bar{\beta}_\mu, \bar{\beta}_\PGth$ 
 % via a $12 \times 3$ matrix A which consists of four $3\times 3$ identity matrices
 % distributing parameters linearly to 4 categories.
 
 % \begin{equation}
-%     \bar{\beta} = A \bigg [ \bar{\beta}_e, \bar{\beta}_\mu, \bar{\beta}_\tau \bigg ]
+%     \bar{\beta} = A \bigg [ \bar{\beta}_e, \bar{\beta}_\mu, \bar{\beta}_\PGth \bigg ]
 %     =
 %     \bigg [
-%     \bar{\beta}_e, \bar{\beta}_\mu, \bar{\beta}_\tau, \quad 
-%     \bar{\beta}_e, \bar{\beta}_\mu, \bar{\beta}_\tau, \quad 
-%     \bar{\beta}_e, \bar{\beta}_\mu, \bar{\beta}_\tau, \quad 
-%     \bar{\beta}_e, \bar{\beta}_\mu, \bar{\beta}_\tau
+%     \bar{\beta}_e, \bar{\beta}_\mu, \bar{\beta}_\PGth, \quad 
+%     \bar{\beta}_e, \bar{\beta}_\mu, \bar{\beta}_\PGth, \quad 
+%     \bar{\beta}_e, \bar{\beta}_\mu, \bar{\beta}_\PGth, \quad 
+%     \bar{\beta}_e, \bar{\beta}_\mu, \bar{\beta}_\PGth
 %     \bigg ]
 % \end{equation}
 
@@ -577,19 +582,19 @@ be analytically calculated
 % in Glen Cowan's Statistical Data Analysis.
 % With this combining method, the values of average branching 
 % fractions are shown in Eqn \ref{eqn:averagebf}. The correlation of 
-% $\bar{\beta}_e,\bar{\beta}_\mu, \bar{\beta}_\tau$ is shown in Fig \ref{fig:corBetaBar}. 
+% $\bar{\beta}_e,\bar{\beta}_\mu, \bar{\beta}_\PGth$ is shown in Fig \ref{fig:corBetaBar}. 
 
 % \begin{align}
 %     \bar{\beta}_e^{LS}    &= 0.1080 \times \big[1 \pm 0.37\% \text{ (stat)} \pm 2.06\% \text{ (syst)} \big] \\
 %     \bar{\beta}_\mu^{LS}  &= 0.1080 \times \big[1 \pm 0.33\% \text{ (stat)} \pm 2.15\% \text{ (syst)} \big] \\
-%     \bar{\beta}_\tau^{LS} &= 0.1080 \times \big[1 \pm 0.81\% \text{ (stat)} \pm 6.35\% \text{ (syst)} \big]
+%     \bar{\beta}_\PGth^{LS} &= 0.1080 \times \big[1 \pm 0.81\% \text{ (stat)} \pm 6.35\% \text{ (syst)} \big]
 %     \label{eqn:averagebf}
 % \end{align}
 
 % \begin{figure}[ht]
 %     \centering
 %     % \includegraphics[width=7cm]{section5/figures/covarMatrix_beta.png}
-%     \caption{ The correlation of $\bar{\beta}_e,\bar{\beta}_\mu, \bar{\beta}_\tau$ }
+%     \caption{ The correlation of $\bar{\beta}_e,\bar{\beta}_\mu, \bar{\beta}_\PGth$ }
 %     \label{fig:corBetaBar}
 % \end{figure}
 

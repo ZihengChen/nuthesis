@@ -31,61 +31,61 @@ the integral,
     d\beta_{\tau}
 \end{equation}
 
-\noindent Carrying out the integration is very similar to the one dimensional
-case.  The resulting expression is,
+% \noindent Carrying out the integration is very similar to the one dimensional
+% case.  The resulting expression is,
 
-\begin{equation}
-    f(r_{e\tau}, r_{\mu\tau}) 
-    = \frac{bd}{2\pi \sigma_{e}\sigma_{\mu}\sigma_{\tau} a^{3}}
-        \left[ \Phi \left(\frac{b}{a\sqrt{\Psi}}\right)
-         - \Phi\left(\frac{b}{a\sqrt{\Psi}}\right)\right] 
-         +
-         \frac{\sqrt{\Psi}}{\sqrt{2\pi^{3}}\sigma_{e}\sigma_{\mu}\sigma_{\tau}}e^{-\frac{c}{2\Psi}},
-\end{equation}
+% \begin{equation}
+%     f(r_{e\tau}, r_{\mu\tau}) 
+%     = \frac{bd}{2\pi \sigma_{e}\sigma_{\mu}\sigma_{\tau} a^{3}}
+%         \left[ \Phi \left(\frac{b}{a\sqrt{\Psi}}\right)
+%          - \Phi\left(\frac{b}{a\sqrt{\Psi}}\right)\right] 
+%          +
+%          \frac{\sqrt{\Psi}}{\sqrt{2\pi^{3}}\sigma_{e}\sigma_{\mu}\sigma_{\tau}}e^{-\frac{c}{2\Psi}},
+% \end{equation}
 
-\noindent where,
+% \noindent where,
 
-\begin{align} 
-    a \equiv a\left(r_{e\tau}, r_{\mu\tau}\right) 
-            &= \frac{r_{e\tau}^{2}\left(1 - \rho_{\mu\tau} \right)}{\sigma_{e}^{2}}
-            + \frac{r_{\mu\tau}^{2}\left(1 - \rho_{e\tau} \right)}{\sigma_{\mu}^{2}}
-            + \frac{\left(1 - \rho_{e\mu} \right)}{\sigma_{\tau}^{2}} \\
-            \nonumber
-            &+ \frac{2r_{e\tau}r_{\mu\tau}\left( \rho_{e\tau} \rho_{\mu\tau}   - \rho_{e\mu} \right)}{\sigma_{e}\sigma_{\mu}} 
-            \nonumber
-            + \frac{2r_{e\tau}\left( \rho_{e\mu} \rho_{\mu\tau}   - \rho_{e\tau} \right)}{\sigma_{e}\sigma_{\tau}} \\
-            \nonumber
-            &+ \frac{2r_{\mu\tau}\left( \rho_{e\mu} \rho_{e\tau}   - \rho_{\mu\tau} \right)}{\sigma_{\mu}\sigma_{\tau}}
-\end{align}
-\begin{align}
-    b \equiv b(r_{e\tau}, r_{\mu\tau}) 
-        &= \frac{r_{e\tau}\beta_{e}\left(1 - \rho_{\mu\tau} \right)}{\sigma_{e}^{2}}
-        + \frac{r_{\mu\tau}\beta_{\mu}\left(1 - \rho_{e\tau} \right)}{\sigma_{\mu}^{2}}
-        + \frac{\beta_{\tau}\left(1 - \rho_{e\mu} \right)}{\sigma_{\tau}^{2}} \\
-        \nonumber
-        &+ \frac{\left(r_{e\tau}\beta_{\mu} + r_{\mu\tau}\beta_{e}\right)\left( \rho_{e\tau} \rho_{\mu\tau} - \rho_{e\mu} \right)}{\sigma_{e}\sigma_{\mu}}
-        \nonumber
-        + \frac{\left(r_{e\tau}\beta_{\tau} + \beta_{e}\right)\left( \rho_{e\mu} \rho_{\mu\tau}   - \rho_{e\tau} \right)}{\sigma_{e}\sigma_{\tau}} \\ 
-        \nonumber
-        &+ \frac{\left(r_{\mu\tau}\beta_{\tau} + \beta_{\mu}\right)\left( \rho_{e\tau} \rho_{e\mu}   - \rho_{\mu\tau} \right)}{\sigma_{\mu}\sigma_{\tau}}
-\end{align}
-\begin{align}
-    c &= \frac{\beta_{e}^{2}\left(1 - \rho_{\mu\tau} \right)}{\sigma_{e}^{2}}
-    + \frac{\beta_{\mu}^{2}\left(1 - \rho_{e\tau} \right)}{\sigma_{\mu}^{2}}
-    + \frac{\beta_{\tau}^{2}\left(1 - \rho_{e\mu} \right)}{\sigma_{\tau}^{2}} \\
-        \nonumber
-        &+ \frac{2\beta_{e}\beta_{\mu}\left( \rho_{e\tau} \rho_{\mu\tau} - \rho_{e\mu} \right)}{\sigma_{e}\sigma_{\mu}}
-        \nonumber
-        + \frac{2\beta_{e}\beta_{\tau}\left( \rho_{e\mu} \rho_{\mu\tau}   - \rho_{e\tau} \right)}{\sigma_{e}\sigma_{\tau}} \\ 
-        \nonumber
-        &+ \frac{2\beta_{\mu}\beta_{\tau}\left( \rho_{e\tau} \rho_{e\mu}   - \rho_{\mu\tau} \right)}{\sigma_{\mu}\sigma_{\tau}}
-\end{align}
+% \begin{align} 
+%     a \equiv a\left(r_{e\tau}, r_{\mu\tau}\right) 
+%             &= \frac{r_{e\tau}^{2}\left(1 - \rho_{\mu\tau} \right)}{\sigma_{e}^{2}}
+%             + \frac{r_{\mu\tau}^{2}\left(1 - \rho_{e\tau} \right)}{\sigma_{\mu}^{2}}
+%             + \frac{\left(1 - \rho_{e\mu} \right)}{\sigma_{\tau}^{2}} \\
+%             \nonumber
+%             &+ \frac{2r_{e\tau}r_{\mu\tau}\left( \rho_{e\tau} \rho_{\mu\tau}   - \rho_{e\mu} \right)}{\sigma_{e}\sigma_{\mu}} 
+%             \nonumber
+%             + \frac{2r_{e\tau}\left( \rho_{e\mu} \rho_{\mu\tau}   - \rho_{e\tau} \right)}{\sigma_{e}\sigma_{\tau}} \\
+%             \nonumber
+%             &+ \frac{2r_{\mu\tau}\left( \rho_{e\mu} \rho_{e\tau}   - \rho_{\mu\tau} \right)}{\sigma_{\mu}\sigma_{\tau}}
+% \end{align}
+% \begin{align}
+%     b \equiv b(r_{e\tau}, r_{\mu\tau}) 
+%         &= \frac{r_{e\tau}\beta_{e}\left(1 - \rho_{\mu\tau} \right)}{\sigma_{e}^{2}}
+%         + \frac{r_{\mu\tau}\beta_{\mu}\left(1 - \rho_{e\tau} \right)}{\sigma_{\mu}^{2}}
+%         + \frac{\beta_{\tau}\left(1 - \rho_{e\mu} \right)}{\sigma_{\tau}^{2}} \\
+%         \nonumber
+%         &+ \frac{\left(r_{e\tau}\beta_{\mu} + r_{\mu\tau}\beta_{e}\right)\left( \rho_{e\tau} \rho_{\mu\tau} - \rho_{e\mu} \right)}{\sigma_{e}\sigma_{\mu}}
+%         \nonumber
+%         + \frac{\left(r_{e\tau}\beta_{\tau} + \beta_{e}\right)\left( \rho_{e\mu} \rho_{\mu\tau}   - \rho_{e\tau} \right)}{\sigma_{e}\sigma_{\tau}} \\ 
+%         \nonumber
+%         &+ \frac{\left(r_{\mu\tau}\beta_{\tau} + \beta_{\mu}\right)\left( \rho_{e\tau} \rho_{e\mu}   - \rho_{\mu\tau} \right)}{\sigma_{\mu}\sigma_{\tau}}
+% \end{align}
+% \begin{align}
+%     c &= \frac{\beta_{e}^{2}\left(1 - \rho_{\mu\tau} \right)}{\sigma_{e}^{2}}
+%     + \frac{\beta_{\mu}^{2}\left(1 - \rho_{e\tau} \right)}{\sigma_{\mu}^{2}}
+%     + \frac{\beta_{\tau}^{2}\left(1 - \rho_{e\mu} \right)}{\sigma_{\tau}^{2}} \\
+%         \nonumber
+%         &+ \frac{2\beta_{e}\beta_{\mu}\left( \rho_{e\tau} \rho_{\mu\tau} - \rho_{e\mu} \right)}{\sigma_{e}\sigma_{\mu}}
+%         \nonumber
+%         + \frac{2\beta_{e}\beta_{\tau}\left( \rho_{e\mu} \rho_{\mu\tau}   - \rho_{e\tau} \right)}{\sigma_{e}\sigma_{\tau}} \\ 
+%         \nonumber
+%         &+ \frac{2\beta_{\mu}\beta_{\tau}\left( \rho_{e\tau} \rho_{e\mu}   - \rho_{\mu\tau} \right)}{\sigma_{\mu}\sigma_{\tau}}
+% \end{align}
 
-\begin{equation}
-    \Psi = 1 - \rho_{e\mu}^{2} - \rho_{e\tau}^{2} - \rho_{\mu\tau}^{2} + 2\rho_{e\mu}\rho_{e\tau}\rho_{\mu\tau}
-\end{equation}
+% \begin{equation}
+%     \Psi = 1 - \rho_{e\mu}^{2} - \rho_{e\tau}^{2} - \rho_{\mu\tau}^{2} + 2\rho_{e\mu}\rho_{e\tau}\rho_{\mu\tau}
+% \end{equation}
 
-\noindent This expression gives the analytic expression for the PDF of two ratios
-derived from three normally distributed quantities accounting for their
-correlations and is used in drawing figure~\ref{fig:ratio_contours_2D}.
-\FloatBarrier
+% \noindent This expression gives the analytic expression for the PDF of two ratios
+% derived from three normally distributed quantities accounting for their
+% correlations and is used in drawing figure~\ref{fig:ratio_contours_2D}.
+% \FloatBarrier

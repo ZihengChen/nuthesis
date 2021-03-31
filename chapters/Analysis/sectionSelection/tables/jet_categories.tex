@@ -1,27 +1,31 @@
 \begin{table}[]
     \centering
-    \setlength{\tabcolsep}{1.5em}
-    \renewcommand{\arraystretch}{1.1}
-    \caption{Categories used in the shape analysis based on jet and b
-    tag multiplicities.}
-    
-    \begin{tabular}{l|c|c|c|c}
-                                    & $N_{j} = 0$        & $N_{j} = 1$        & $N_{j} = 2$        & $N_{j} \geq 3$     \\
+    \setlength{\tabcolsep}{1em}
+    \renewcommand{\arraystretch}{2}
+    \caption{Categorization of the events with electron, muon, and/or tau leptons passing the reconstruction criteria, based on their jet and \PQb-tagged jet multiplicities.}
+    \label{tab:jet_categories}
+    \begin{tabular}{l|c|c|c|c|c}
+                                    & $N_\mathrm{j} = 0$           & $N_\mathrm{j} = 1$                            & $N_\mathrm{j} = 2$ & $N_\mathrm{j} = 3$      & $N_\mathrm{j} \geq 4$ \\
 	\hline
-    \multirow{2}{*}{$N_{b} = 0$}    & $e\tau$, $\mu\tau$ & $e\tau$, $\mu\tau$ & \multicolumn{2}{c}{$e\tau$, $\mu\tau$} \\
-                                    & $e\mu$             & $e\mu$             & \multicolumn{2}{c}{$ee, \mu\mu, e\mu$} \\
+    \multirow{2}{*}{$N_\PQb = 0$} & $\Pe\PGt$, $\PGm\PGt$,   & $\Pe\PGt$, $\PGm\PGt$,                    & \multicolumn{2}{c}{$\Pe\PGt$, $\PGm\PGt$}  &                    \\
+                                    & $\Pe\PGm$                & $\Pe\PGm$                                 & \multicolumn{2}{c}{$\Pe\Pe, \PGm\PGm, \Pe\PGm$}  &                    \\
 	\hline
-    \multirow{3}{*}{$N_{b} = 1$}    &                    & $e\tau$, $\mu\tau$ & $e\tau$, $\mu\tau$ & $e\tau$, $\mu\tau$ \\
-	\cline{4-5}
-                                    &                    & $e\mu$             & \multicolumn{2}{c}{$ee, \mu\mu, e\mu$}  \\
-                                    &                    &                    & \multicolumn{2}{c}{$ej$, $\mu j$}  \\
+
+    \multirow{3}{*}{$N_\PQb = 1$} &                       & $\Pe\PGt$, $\PGm\PGt, \Pe\PGm$               & $\Pe\PGt$, $\PGm\PGt$                      & \multicolumn{2}{c}{$\Pe\PGt$, $\PGm\PGt$} \\
+	\cline{3-6}
+                                    & \multicolumn{2}{c|}{} & \multicolumn{3}{c}{$\Pe\Pe, \PGm\PGm, \Pe\PGm$}                                        \\
+	\cline{4-6}
+                                    & \multicolumn{4}{c|}{} & $\Pe \mathrm{h}$, $\PGm \mathrm{h}$ \\
 	\hline
-    \multirow{3}{*}{$N_{b} \geq 2$} & \multicolumn{2}{c|}{}                   & $e\tau$, $\mu\tau$ & $e\tau$, $\mu\tau$ \\
-	\cline{4-5}
-                                    & \multicolumn{2}{c|}{}                   & \multicolumn{2}{c}{$ee, \mu\mu, e\mu$}  \\
-                                    & \multicolumn{2}{c|}{}                   & \multicolumn{2}{c}{$ej$, $\mu j$}  \\
+
+    \multirow{3}{*}{$N_\PQb \geq 2$} & \multicolumn{2}{c|}{} & $\Pe\PGt$, $\PGm\PGt$ & \multicolumn{2}{c}{$\Pe\PGt$, $\PGm\PGt$} \\
+	\cline{4-6}
+                                    & \multicolumn{2}{c|}{} & \multicolumn{3}{c}{$\Pe\Pe, \PGm\PGm, \Pe\PGm$}                                        \\
+	\cline{4-6}
+                                    & \multicolumn{4}{c|}{} & $\Pe \mathrm{h}$, $\PGm \mathrm{h}$ \\
 	\hline
     \end{tabular}
     
-    \label{tab:jet_categories}
+    \label{tab:analysis:selection:jet_categories}
 \end{table}
+

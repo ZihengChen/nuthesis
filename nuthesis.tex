@@ -92,15 +92,14 @@
 
     % Abstract page.
     \abstract
-    The leptonic and inclusive hadronic decay branching fractions of the W boson are studied using 35.9\fbinv of proton-proton collision data collected at $\sqrt{s}=13\TeV$ during the 2016 run of the CMS experiment. Events characterized by the production of two W boson pairs from \ttbar and \tW are selected. Multiple event categories sensitive to the signal processes are defined based on the presence of energetic isolated charged leptons, the number of hadronic jets, and the number of b tagged jets.  
+    The leptonic and inclusive hadronic decay branching fractions of the W boson are studied using 35.9\fbinv of proton-proton collision data collected at $\sqrt{s}=13\TeV$ during the 2016 run of the CMS experiment. Events characterized by the production of pairs of W bosons from \ttbar and \tW processes are selected. Multiple event categories sensitive to the signal processes are defined based on the presence of energetic isolated charged leptons, the number of hadronic jets, and the number of b tagged jets.  
     
-    Two analysis approaches are developed. One (referred to as the shape analysis) performs a maximum likelihood estimation of the W branching fractions based on a fit to the distribution of the lepton transverse momentum in each data category simultaneously. The other (referred to as the counting analysis) constructs ratios of yields in channels with the same trigger and analytically solves the branching fractions from a set of quadratic equations. Its purpose is to cross-check the shape analysis. In terms of precision, the shape analysis is about three times more precise than the counting analysis. This is because the counting is limited by the tau identification systematic uncertainties, while the shape analysis exploits extra data regions to control systematic uncertainties and acquires extra sensitivity with the shape information.
-    
+    Two analysis approaches are developed in parallel for cross-check. One (referred to as the shape analysis) performs a maximum likelihood estimation of the W branching fractions based on a fit to the distribution of the lepton transverse momentum in each data category simultaneously. The other (referred to as the counting analysis) constructs ratios of yields in channels with the same trigger and analytically solves the branching fractions from a set of quadratic equations. In terms of precision, the shape analysis is about three times more precise than the counting analysis. This is because the shape analysis exploits extra data regions to control systematic uncertainties and acquires extra sensitivity with the shape information, while the counting is limited by the tau identification systematic uncertainties.
     
     
     In shape analysis, the branching fractions of the W boson decaying into electron, muon, and tau lepton final states are determined as $10.83(10)\%$, $10.94(08)\%$, $10.77(21)\%$, respectively; in counting analysis they are measured as $11.15(27)\%$, $11.13(22)\%$, $10.63(65)\%$, respectively. Both support the lepton flavor universality for the weak interaction. 
     
-    Under the assumption of lepton universality, the shape analysis further determines the inclusive leptonic and hadronic decay branching fractions as $(10.89 \pm 0.08)\%$ and $(67.32 \pm 0.23)\%$, respectively. From these results, the sum square of elements in the first two rows of the Cabibbo--Kobayashi--Maskawa (CKM) matrix  $\sum{\abs{\mathrm{V_{ij}}}^{2}} = 1.991 \pm 0.019$, the CKM element $\abs{\mathrm{V_{cs}}} = 0.969 \pm 0.011$, and the strong coupling constant at the W mass scale, $\alpS(m_\mathrm{W}) = 0.094 \pm 0.033$.
+    Under the assumption of lepton universality, the shape analysis further determines the inclusive leptonic and hadronic decay branching fractions as $(10.89 \pm 0.08)\%$ and $(67.32 \pm 0.23)\%$, respectively. From these results, three standard model quantities are derived: the sum square of elements in the first two rows of the Cabibbo--Kobayashi--Maskawa (CKM) matrix  $\sum{\abs{\mathrm{V_{ij}}}^{2}} = 1.991 \pm 0.019$, the CKM element $\abs{\mathrm{V_{cs}}} = 0.969 \pm 0.011$, and the strong coupling constant at the W mass scale, $\alpS(m_\mathrm{W}) = 0.094 \pm 0.033$.
 
 
     % Acknowledgements page.
@@ -136,25 +135,25 @@
     % Actual text starts here %
     %%%%%%%%%%%%%%%%%%%%%%%%%%%
     \mainmatter
-    % \include{chapters/Introduction/chapterMain}
-    % \include{chapters/Physics/chapterMain}
-    % \include{chapters/CMSExperiment/chapterMain}
-    % \include{chapters/Analysis/chapterMain}
-    % \include{chapters/HGCal/chapterMain}
+    \include{chapters/Introduction/chapterMain}
+    \include{chapters/Physics/chapterMain}
+    \include{chapters/CMSExperiment/chapterMain}
+    \include{chapters/Analysis/chapterMain}
+    \include{chapters/HGCal/chapterMain}
     \include{chapters/Conclusion/chapterMain}
     
     
-    % %%%%%%%%%%%%%%%%%%%%%%%%%%%
-    % % some ending stuff       %
-    % %%%%%%%%%%%%%%%%%%%%%%%%%%%
-    % \begin{appendix}
-    %     \input{chapters/Physics/sectionQFT/sectionMain}
-    %     \input{chapters/Analysis/sectionPlots/sectionMain}
-    %     --------------------------------------------------
-    %     \chapter{Supplement Materials for CLUE clustering algorithm}
-    %     \input{chapters/HGCal/sectionStandaloneClue_psudocode}
-    %     \input{chapters/HGCal/sectionStandaloneClue_perfDecom}
-    % \end{appendix}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % some ending stuff       %
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \begin{appendix}
+        \input{chapters/Physics/sectionQFT/sectionMain}
+        \input{chapters/Analysis/sectionPlots/sectionMain}
+        --------------------------------------------------
+        \chapter{Supplement Materials for CLUE clustering algorithm}
+        \input{chapters/HGCal/sectionStandaloneClue_psudocode}
+        \input{chapters/HGCal/sectionStandaloneClue_perfDecom}
+    \end{appendix}
     
     
     

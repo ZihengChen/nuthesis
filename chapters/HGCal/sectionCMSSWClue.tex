@@ -1,4 +1,4 @@
-\section{Heterogeneous Computing of CLUE in the CMS Software Framework}
+\section{CLUE in the CMS Software Framework (CMSSW)}
 \label{sec:cmsswClue}
 
 
@@ -7,7 +7,7 @@
 In this section, we present both CPU and GPU implementations of CLUE in the application of HGCAL clustering in the CMS Software framework (CMSSW). Comparing with the previous HGCAL clustering algorithm, CLUE on CPU (GPU) in CMSSW is 30x (180x) faster in processing PU200 events while outputting almost the same clustering results.
 
 
-\subsection{Implementation in the CMSSW}
+\subsection{Integration in the CMSSW}
 
 
 
@@ -30,7 +30,7 @@ CLUsters of Energy (CLUE) \cite{cluepaper} is a recently-proposed parallelizable
 \begin{figure}[ht]
     \centering
     \includegraphics[trim=0.5cm 0cm 0.5cm 0cm, clip,width=0.99\textwidth]{chapters/HGCal/figures/chep/CMSSWFollow.png}
-    \caption{ Workflow of CLUE-GPU in CMSSW. Hits are offloaded from CPU to GPU after energy calibration. Then CLUE process are carried out on GPU. In the end, the cluster indices of all hits are transported back to CPU for post processing.}
+    \caption{ Workflow of CLUE-GPU in CMS Software framework (CMSSW). Hits are offloaded from CPU to GPU after energy calibration. Then CLUE process are carried out on GPU. In the end, the cluster indices of all hits are transported back to CPU for post processing.}
     \label{fig:cmssw}
 \end{figure}
 
@@ -39,7 +39,7 @@ CLUsters of Energy (CLUE) \cite{cluepaper} is a recently-proposed parallelizable
 \begin{figure}[ht]
     \centering
     \includegraphics[trim=0cm 0cm 0cm 0cm, clip, width=0.90\textwidth]{chapters/HGCal/figures/chep/results.png}
-    \caption{ Example of clustering result from previous algorithm in CMSSW\_10\_6\_X (\emph{left}) and CLUE-CPU (\emph{middle}) and CLUE-GPU (\emph{right}). The example shows a small region on the 12$^{th}$ layer of a simulated of $t\bar{t}$ event.
+    \caption{ Example of clustering result from previous algorithm in CMSSW version 10.6.X (\emph{left}) and CLUE-CPU (\emph{middle}) and CLUE-GPU (\emph{right}). The example shows a small region on the 12$^{th}$ layer of a simulated of $t\bar{t}$ event.
     }
     \label{fig:results}
 \end{figure}
@@ -57,7 +57,7 @@ To validate the implementation of CLUE in CMSSW, results of CLUE-CPU and CLUE-GP
     \centering
     \includegraphics[trim=0cm 0cm 0cm 0cm, clip,width=0.99\textwidth]{chapters/HGCal/figures/chep/performance.png}
     \caption{ 
-    Average execution time of HGCAL clustering for PU200 events. The testing platform is based on Intel i7-4770K CPU and NVIDIA GTX 1080 GPU. Blue, orange and green bars represent execution time of CMSSW\_10\_6\_X, CLUE-CPU and CLUE-GPU respectively. Both CMSSW\_10\_6\_X and CLUE-CPU use a single CPU thread. Three green bars are three evolving versions of CLUE-GPU and the most updated one is version 3 with 32 ms execution time, shown as the bottom-most green bar.
+    Average execution time of HGCAL clustering for PU200 events. The testing platform is based on Intel i7-4770K CPU and NVIDIA GTX 1080 GPU. Blue, orange and green bars represent execution time of CMSSW\_10\_6\_X, CLUE-CPU and CLUE-GPU respectively. Both CMSSW\_10\_6\_X and CLUE-CPU use a single CPU thread. Three green bars are three evolving versions of CLUE-GPU.
     }
     \label{fig:performance}
 \end{figure}

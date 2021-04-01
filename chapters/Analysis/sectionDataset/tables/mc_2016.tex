@@ -1,8 +1,8 @@
 \begin{table}[ht]
     \centering
     \setlength{\tabcolsep}{2em}
-    \renewcommand{\arraystretch}{1.1}
-    \caption{Simulated MC samples.} \label{tab:analysis:dataset:mc2016}
+    \renewcommand{\arraystretch}{1.3}
+    \caption{Simulated datasets.} \label{tab:analysis:dataset:mc2016}
     % \small
     \begin{tabular}{l c c}
         \hline
@@ -12,6 +12,8 @@
         \ttbar  (leptonic)                                  & \POWHEG+\PYTHIA    & 87.32    \\
         \ttbar  (semi-leptonic)                             & \POWHEG+\PYTHIA    & 364.35   \\
         \tW                                                 & \POWHEG+\PYTHIA    & 35.6     \\
+        \PQt (t-channel)                                    & \POWHEG+\PYTHIA    & 136.02   \\
+        \PAQt (t-channel)                                   & \POWHEG+\PYTHIA    & 80.95    \\
         \hline
         \zjets                                              &                    &          \\
         \hspace*{1em} $10 < m_{\ell\ell} < 50\GeV$          & \MCATNLO+\PYTHIA   & 18610    \\
@@ -24,6 +26,13 @@
         \PW + 2 jet                                         & \MADGRAPH+\PYTHIA  & 3775.2   \\
         \PW + 3 jet                                         & \MADGRAPH+\PYTHIA  & 1139.8   \\
         \PW + 4 jet                                         & \MADGRAPH+\PYTHIA  & 655.82   \\
+        \hline
+        \gjets                                              &                    &          \\
+        \hspace*{1em} $  40 < \HT < 100 \GeV$               & \MADGRAPH+\PYTHIA  & 17410    \\
+        \hspace*{1em} $ 100 < \HT < 200 \GeV$               & \MADGRAPH+\PYTHIA  & 5363     \\
+        \hspace*{1em} $ 200 < \HT < 400 \GeV$               & \MADGRAPH+\PYTHIA  & 1178     \\
+        \hspace*{1em} $ 400 < \HT < 600 \GeV$               & \MADGRAPH+\PYTHIA  & 131.8    \\
+        \hspace*{1em} $ \HT > 600 \GeV$                     & \MADGRAPH+\PYTHIA  & 44.27    \\
         \hline
         $\PQq\PQq\rightarrow \PW\PW \rightarrow 2\ell 2\PGn$& \POWHEG            & 12.13    \\
         $\Pg\Pg\rightarrow \PW\PW \rightarrow 2\ell 2\PGn$  & \POWHEG            & 0.588    \\

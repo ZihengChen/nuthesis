@@ -1,0 +1,25 @@
+\begin{table}[ht]
+    \centering
+    \setlength{\tabcolsep}{0.8em}
+    \renewcommand{\arraystretch}{1.5}
+    % \small
+    \caption{Summary of object selection. For \PGth, shape (counting) analysis uses Tight (VTight) working points of \PGth isolation MVA.}
+    \label{tab:analysis:selection:ObjectSelectionSum}
+    % \begin{tabular}{l|ccc}
+    \begin{tabular}{c|c|c|c }
+    
+        \hline
+             & kinematic space  & reconstruction quality  & overlapping veto\\ \hline                                                                   
+        \multirow{2}{*}{\Pe}    & \multirow{2}{*}{$\pt>20\GeV, ~\abs{\eta}<2.5$}    & Tight identification  &   \\
+                                &                                                   & Tight isolation       &   \\ \hline
+        \multirow{2}{*}{\PGm}   & \multirow{2}{*}{$\pt>10\GeV, ~\abs{\eta}<2.4$}    & Tight identification  &   \\
+                                &                                                   & Tight isolation       &   \\ \hline
+        \multirow{4}{*}{\PGth}  & \multirow{4}{*}{$\pt>20\GeV, ~\abs{\eta}<2.3$}    & Decay mode matching   &   \multirow{4}{*}{$\DR(\PGth,\Pe/\PGm)>0.3$} \\
+                                &                                                   & (V)Tight isolation    &   \\
+                                &                                                   & Tight \PGm rejection  &   \\
+                                &                                                   & VTight \Pe rejection  &   \\ \hline
+        jet                     & \multirow{2}{*}{$\pt>30\GeV, ~\abs{\eta}<2.5$}    & Loose identification  &   \multirow{2}{*}{$\DR(j,\Pe/\PGm/\PGth)>0.4$} \\
+        (\PQb tag)              &                                                   & (Medium CSV)          &   \\                    
+        \hline
+    \end{tabular}
+\end{table}

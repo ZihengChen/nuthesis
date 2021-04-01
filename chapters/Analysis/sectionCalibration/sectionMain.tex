@@ -1,30 +1,7 @@
 
-\section{Calibrations}
+\section{Calibrations and Corrections}
 \label{sec:analysis:calibration}
-The some of the standard calibrations for the physics objects have been described in the object selection in Section~\ref{sec:analysis:selection:object}. These include energy scale and identification/isolation efficiencies of \Pe, \PGm, \PGth, and jet energy scale and jet energy resolution. This section presents additional calibrations and corrections, involving
 
-
-\begin{itemize}
-    \item the generator-level reweightings for pile-up, $\pt^\PQt$, $\pt^\WW$, $\pt^\PZ$;
-    \item the single-muon and single-electron HLT efficiencies, the electron L1T prefiring;
-    \item the probabilities of jet faking hadronic tau;
-    \item the \PQb tagging efficiencies and mistaggomg probabilities.
-\end{itemize}
-
-
-
-% Calibrations of simulated data are important to account for the potential deviations from the experimental data. Many common calibrations are measured by dedicated groups and shared among CMS analysis. These include the calibrations and corrections mentioned in Section~\ref{sec:analysis:calibration:simulation} and \ref{sec:analysis:selection:object}. 
-
-
-% This chapter de the major calibrations applied to the simulation. The
-
-
-
-% % tau decay
-% \subsubsection{$Br(\PGth)$ Reweighting}
-
-% The tau decay modes diverge slightly from the values listed in the PDG as can be seen in Table~\ref{tab:dat:tauDecayBr}. The MC events have been reweighted according to their gen-level tau decay mode to correct the tau decay in the simulation to the PDG experimental value. The impact of this on the branching fraction determination is estimated and included as a systematic uncertainty
-% \input{chapters/Analysis/sectionDataset/tables/tauBr.tex}
 
 
 \subsection{Generator-Level Reweightings}
@@ -38,7 +15,8 @@ Differences between the pileup distribution used in simulation and data is corre
     \centering
     \includegraphics[height=0.4\textheight]{chapters/Analysis/sectionCalibration/figures/generator/pileup_systematics}
     % \includegraphics[height=0.4\textheight]{chapters/Analysis/sectionCalibration/figures/generator/n_pv}
-    \caption{\emph{(left top)} Pileup distribution in data and simulation including the $\pm\sigma$ variation of the data pileup distributions. \emph{(left bottom)} The weights parameterized by number of simulated pileup resulting from taking the ratio of the pileup distribution in data and simulation. \emph{(right)} Comparison of primary vertex multiplicity between data and simulated datasets. }
+    \caption{\emph{(top)} Pileup distribution in data and simulation including the $\pm\sigma$ variation of the data pileup distributions. \emph{(bottom)} The weights parameterized by number of simulated pileup resulting from taking the ratio of the pileup distribution in data and simulation. }
+    % \emph{(right)} Comparison of primary vertex multiplicity between data and simulated datasets. }
     \label{fig:analysis:calibration:pileup}
 \end{figure}
 \FloatBarrier
@@ -87,6 +65,33 @@ Estimation of the \WW process relies on the \POWHEG MC generator which is a NLO 
 
 
 
+\subsection{Corrections for Physics Objects}
+\label{sec:analysis:calibration:objects}
+
+The some of the standard calibrations for the physics objects are provided by POGs and are applied to the selected objects in this analysis to account for potential mismodeling of the reconstruction and selection of physics objects in the simulation.
+\subsubsection{Muons} 
+Muons in the simulation are corrected for the energy scale, identification, and isolation efficiencies.
+
+\subsubsection{Electrons} 
+Electrons are corrected for the energy scale and resolution, reconstruction, and isolation efficiencies.
+
+\subsubsection{Hadronic Taus} 
+The scale factor accounting for the difference of tau identification efficiencies in the simulation and data were measured in several control regions~\cite{CMS-TAU-16-003-001}.  The measurement is carried out in both in two different control regions: one enriched in $\PZ\to\PGtl\PGth$ production and one enriched in \ttbar.  Because of the large overlap with our signal region in the case of the latter, the former measurement is used so that the datasets that are used are uncorrelated.  For the selection algorithm and tight working point a scale factor of $0.95 \pm 0.05$ is used; for the very tight working point it is $0.92 \pm 0.05$. The scale factors accounting for difference of tau energy in the  simulation and data are measured by fitting to the sensitive variables. This energy correction is split into different \PGth decay modes.  Two sensitive variables are considered. One is the visible mass $m_{\rm vis}$ of the \cet or \cmt in the $\PZ\to\PGt\PGt$ region, the other is the visible mass of hadronic taus $m_\PGth$ ~\cite{CMS-TAU-16-003-001}. In this analysis, the energy scale factors measured with the former are applied to correct the simulation. The values of energy scale factors are
+\begin{equation*}
+    \PGt \to \mathrm{h}^{\pm}:0.995(5), \quad \PGt \to \mathrm{h}^{\pm}\PGpz:1.011(3), \quad \PGt \to \mathrm{h}^{\pm}\mathrm{h}^{\mp}\mathrm{h}^{\pm}\PGpz:1.006(3)
+\end{equation*}
+\noindent Also corrections for $j\to \PGth$ misidentification is applied, which is measured by us in a $j\to \PGth$ fake-enriched region. More details about the measurement is presented in Section~\ref{sec:analysis:calibration:jetToTauh}.
+
+
+\subsubsection{Jets and $\mathrm{b}$ tags}
+The measurement of jet energy in the detector has a small offset and spread comparing with the ground-truth of the original seeding gluons or quarks because of the noisy hadronic and pile-up environment and the nature of detector response. This effect is accounted for by the jet energy scale (JES) and jet energy resolution (JER).
+
+To account for the difference in \PQb tag efficiency in data and simulation, the \PQb tag status of jets is modified based on a set of scale factors derived by the \PQb tag POG.  The method used for applying the \PQb tag scale factors modifies the status of individual jets to either promote or demote their \PQb tagging status~\cite{twiki:btag_method}.  The method relies on the user measuring the \PQb tag efficiencies and mistag probabilities in the simulated samples.  This is described further in Section~\label{sec:analysis:calibration:btag}.
+
+
+
+
+
 
 
 
@@ -100,7 +105,7 @@ The corrections of the single muon trigger efficiencies \texttt{HLT\_IsoMu24} ar
     \centering
     \includegraphics[width=0.45\textwidth]{chapters/Analysis/sectionCalibration/figures/trigger/muTrSF_BCDEF.png}
     \includegraphics[width=0.45\textwidth]{chapters/Analysis/sectionCalibration/figures/trigger/muTrSF_GH.png}
-    \caption{Scale factors for the corrections of the single muon trigger efficiencies in run periods 2016 BCDEF \emph{(left)} and GH \emph{(right)}. The uncertainties shown are statistical uncertainties in the measurement of the scale factors.}
+    \caption{Scale factors for the single muon trigger efficiencies in run periods 2016 BCDEF \emph{(left)} and GH \emph{(right)}. The uncertainties displayed are only statistical uncertainties.}
     \label{fig:analysis:calibration:mu24TriggerSF}
 \end{figure}
 
@@ -114,7 +119,7 @@ The correctons of the single electron trigger efficiencies \texttt{HLT\_Ele27\_W
 \begin{figure}
     \centering
     \includegraphics[width=0.5\textwidth]{chapters/Analysis/sectionCalibration/figures/eTrigger/dileptonMass_tag30.png}
-    \caption{$m_{\cee}$ of the selected events for the measurement of the scale factors of single-electron trigger efficiencies.}
+    \caption{The $m_{\cee}$ distribution of the selected events for the measurement of the scale factors of single-electron trigger efficiencies.}
     \label{fig:analysis:calibration:mass_ee}
 \end{figure}
 In our SF measurement, the dataset used  is 2016 re-reco \texttt{SingleElectron} dataset with the golden certificate luminosity mask, while the simulations include \texttt{DYJETSToLL\_M-10to50\_amcatnlo}, \texttt{DYJETSToLL\_M-50\_amcatnlo} and \texttt{TT\_powheg}, reweighted to pile-up $\sigma_{\rm mb} = 69.2\pm 2.3$ nb. The electrons are selected with tight identification and tight particle-flow isolation with $\pt>20\GeV$ and $|\eta|<2.5$. Among selected electrons, tagged electrons are defined as $\pt>30\GeV$ and outside gap between barrel and endcap calorimeter $1.444<|\eta|<1.56$, and match with \texttt{HLT\_Ele27\_WPTight\_Gsf} triggering objects. Events are selected by requiring exactly 2 opposite electrons with at least 1 tagged electron and $60<m_{\cee}<120 \GeV$. This event selection yields a sample of events significantly dominated by Drell-Yan (DY)  process. The distribution of $m_{\cee}$ is shown in fig~\ref{fig:analysis:calibration:mass_ee}, where it can be seen that the purity of DY is very high in the selected \cee events. Thus a signal-backgound fit is not necessary to get DY yields.
@@ -132,13 +137,13 @@ SF (\pt, \eta) = \frac{\epsilon_{\rm{Data}} (\pt, \eta) }{\epsilon_{\rm{Simulati
     \centering
     \includegraphics[width=0.99\textwidth]{chapters/Analysis/sectionCalibration/figures/eTrigger/eff2d_BCDEF.png}
     \includegraphics[width=0.99\textwidth]{chapters/Analysis/sectionCalibration/figures/eTrigger/eff2d_GH.png}
-    \caption{The 2D maps of $\epsilon_{\rm{data}}$, $\epsilon_{\rm{MC}}$ and $SF$ in run period 2016 BCDEF \emph{(upper)} and 2016 GH \emph{(lower)}.}
+    \caption{The 2D maps of $\epsilon_{\rm{data}}$, $\epsilon_{\rm{MC}}$ and scale factors in run period 2016 BCDEF \emph{(upper)} and 2016 GH \emph{(lower)}.}
     \label{fig:analysis:calibration:ele27SF}
 \end{figure}
 \begin{figure}
     \centering
     \includegraphics[width=0.99\textwidth]{chapters/Analysis/sectionCalibration/figures/eTrigger/result_period.png}
-    \caption{$SF$ in each 2016 data taking period.}
+    \caption{Scale factors in each 2016 data taking period.}
     \label{fig:analysis:calibration:ele27SFperiods}
 \end{figure}
 % two shifts
@@ -152,14 +157,14 @@ The systematical uncertainties of the scale factors are estimated by ``two shift
 \begin{figure}
     \centering
     \includegraphics[width=0.99\textwidth]{chapters/Analysis/sectionCalibration/figures/eTrigger/result_BCDEF.png}
-    \caption{$SF$ and uncertainties in the 2016 BCDEFF. Total uncertainties \emph{(upper right)} combines the ``two shifts" \emph{(lower)} and statistical uncertainties.}
+    \caption{Scale factors and uncertainties in the 2016 BCDEFF. Total uncertainties \emph{(upper right)} combines the ``two shifts" \emph{(lower)} and statistical uncertainties.}
     \label{fig:analysis:calibration:eTrSF_err_BCDEF}
 \end{figure}
 
 \begin{figure}
     \centering
     \includegraphics[width=0.99\textwidth]{chapters/Analysis/sectionCalibration/figures/eTrigger/result_GH.png}
-    \caption{$SF$ and uncertainties in the 2016 GH. Total uncertainties \emph{(upper right)} combines the ``two shifts" \emph{(lower)} and statistical uncertainties.}
+    \caption{Scale factors and uncertainties in the 2016 GH. Total uncertainties \emph{(upper right)} combines the ``two shifts" \emph{(lower)} and statistical uncertainties.}
     \label{fig:analysis:calibration:eTrSF_err_GH}
 \end{figure}
 
@@ -210,7 +215,7 @@ The origins of selected \PGth are tagged based on generator-level truth. For eac
     \includegraphics[width=0.32\textwidth]{chapters/Analysis/sectionCalibration/figures/jetToTauh/eetau_dilepton_mass_pickles_lltauTight.png}
     \includegraphics[width=0.32\textwidth]{chapters/Analysis/sectionCalibration/figures/jetToTauh/eetau_tauPt_pickles_lltauTight.png}
     \includegraphics[width=0.32\textwidth]{chapters/Analysis/sectionCalibration/figures/jetToTauh/eetau_tauGenFlavor_pickles_lltauTight.png}
-    \caption{The kinematics distribution of $\cem+\PGth$, $\cmm+\PGth$, $\cee+\PGth$ channels. Tight working point.}
+    \caption{The kinematics distribution of $\cem+\PGth$, $\cmm+\PGth$, $\cee+\PGth$ channels with Tight \PGth working point.}
     \label{fig:analysis:calibration:llt_tight}
 \end{figure}
 \begin{figure}
@@ -224,7 +229,7 @@ The origins of selected \PGth are tagged based on generator-level truth. For eac
     \includegraphics[width=0.32\textwidth]{chapters/Analysis/sectionCalibration/figures/jetToTauh/eetau_dilepton_mass_pickles_lltauVTight.png}
     \includegraphics[width=0.32\textwidth]{chapters/Analysis/sectionCalibration/figures/jetToTauh/eetau_tauPt_pickles_lltauvTight.png}
     \includegraphics[width=0.32\textwidth]{chapters/Analysis/sectionCalibration/figures/jetToTauh/eetau_tauGenFlavor_pickles_lltauVTight.png}
-    \caption{The kinematics distribution of $\cem+\PGth$, $\cmm+\PGth$, $\cee+\PGth$ channels. VTight working point.}
+    \caption{The kinematics distribution of $\cem+\PGth$, $\cmm+\PGth$, $\cee+\PGth$ channels with Very Tight \PGth working point.}
     \label{fig:analysis:calibration:llt_vtight}
 \end{figure}
 
@@ -246,7 +251,7 @@ To measure $SF (\PQq \to \PGth)$  and $SF (\PQb \to \PGth)$, a template fit to t
 \begin{table}[h]
     \setlength{\tabcolsep}{6pt} % Default value: 6pt
     \renewcommand{\arraystretch}{1.5} % Default value: 1
-    \caption{ $SF (j\to \PGth)$ for Tight and VTight \PGth  working point.}
+    \caption{ Scale factors of $(j\to \PGth)$ with Tight and Very Tight \PGth  working point.}
     \begin{tabular}{c|ccccc}
     \hline
     $p^T_{\PGth}$ [\GeV]  & 20-25      & 25-30         & 30-40         & 40-50         & 50-80         \\
@@ -268,7 +273,7 @@ To measure $SF (\PQq \to \PGth)$  and $SF (\PQb \to \PGth)$, a template fit to t
     \includegraphics[width=0.49\textwidth]{chapters/Analysis/sectionCalibration/figures/jetToTauh/corr2_lltauVTight_splitJetFlavor.png}
     \includegraphics[width=0.49\textwidth]{chapters/Analysis/sectionCalibration/figures/jetToTauh/pull2_lltauTight_splitJetFlavor.png}
     \includegraphics[width=0.49\textwidth]{chapters/Analysis/sectionCalibration/figures/jetToTauh/pull2_lltauVTight_splitJetFlavor.png}
-    \caption{The correlation matrix and the pulls of the fitting parameters for Tight (left) and VTight (right) \PGth working point. }
+    \caption{The correlation matrix and the pulls of the fitting parameters for Tight (\emph{left}) and Very Tight (\emph{right}) \PGth working point. }
     \label{fig:analysis:calibration:takeTauID_result}
 \end{figure}
 In the \BWl measurement, to correct the potential mis-modeling of $j\to \PGth$ in the simulation, the origins of selected hadronic taus in the \cet and \cmt channels are tagged with the gen-level truth in the simulated events. The approach of tagging \PGth origins is the same as described here. Based on the \PGth origins, corresponding scale factor in Table~\ref{tab:analysis:calibration:takeTauID_result} is applied to reweight the simulated event.
@@ -305,7 +310,7 @@ The measurement of the \PQb tag efficiency in simulation $\epsilon$ relies on kn
     \includegraphics[width=0.3\textwidth]{chapters/Analysis/sectionCalibration/figures/btag/bmva_mceff_vs_pt_b}
     \includegraphics[width=0.3\textwidth]{chapters/Analysis/sectionCalibration/figures/btag/bmva_mceff_vs_pt_c}
     \includegraphics[width=0.3\textwidth]{chapters/Analysis/sectionCalibration/figures/btag/bmva_mceff_vs_pt_usdg}
-    \caption{The \PQb tag efficiencies for jets originating from \PQb quark (left), \PQc quark (middle), and light quark (right).
+    \caption{The \PQb tag efficiencies for jets originating from \PQb quark (\emph{left}), \PQc quark (\emph{middle}), and light quark (\emph{right}).
     \label{fig:analysis:calibration:btag_eff}
     }
 \end{figure}

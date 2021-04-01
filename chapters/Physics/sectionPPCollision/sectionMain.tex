@@ -1,6 +1,6 @@
 
 
-\section{Physics in the Hadron Collider}
+\section{Physics in the Hadron Colliders}
 \label{sec:physics:ppCollision} 
 
 When protons collide in the hadron colliders, it is actually the quarks and gluons inside the protons, called partons, that collide at the high center-of-mass energies. This high energy collision between partons is called the hard process and can be calculated perturbatively with the quantum field theory. However, the experimental observables from the proton-proton collision not only involves the physics in the hard process, but also includes many low-energy QCD processes happening before and after the hard process that cannot be treated with perturbative QCD (pQCD). Therefore, to properly make predictions to experiments, efforts are made to understand how partons distribute in the collided protons before the hard process, and how outcoming particles evolve in the long-distance range after the hard process. These studies yield the topics of the parton distribution function (PDF) and jet physics. In this section, brief descriptions of the PDF, hard process, and jet physics are presented. This provides a basic picture to understand event generators described in Section~\ref{sec:cmsexperiment:simulation}. Also, it helps understand the sources of some theoretical uncertainties in the \PW branching fraction analysis.
@@ -62,7 +62,7 @@ The hard processes between partons happen in the short-distance range and can be
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.99\textwidth]{chapters/Physics/sectionPPCollision/figures/SigmaNew_v0.pdf}
-    \caption{Summary of the cross-sections of the SM processes in the LHC. The grey bar shows the theoretical predictions. The red, blue and green shows the CMS measurements or the exclusion limits at 7, 8, 13\TeV.}
+    \caption{Summary of the cross-sections of the SM processes in the LHC. The grey bar shows the theoretical predictions. The red, blue and green points indicate the CMS measurements or the exclusion limits at 7, 8, 13\TeV.}
     \label{fig:physics:ppCollision:hardxs}
 \end{figure}
 
@@ -113,7 +113,7 @@ The hard processes between partons happen in the short-distance range and can be
 \end{figure}
 \noindent For \ttbar, the top quark pairs are produced with the QCD interaction. The tree-level diagrams for the \ttbar production is shown in Figure~\ref{fig:physics:collider:tt}. The quark-antiquark annihilation, shown as Figure~\ref{fig:physics:ppCollision:tt} left, was the dominant process in the Tevatron, where the quark and antiquark are the valence quark in the proton and anti-proton. But in the LHC, which collides proton-proton at a higher center-of-mass energy, gluon-gluon fusion in the s channel and t channel, shown as  Figure~\ref{fig:physics:ppCollision:tt} middle and right, are the dominant diagrams. The top quark decays into one \PQb quark and one \PW boson instantly after being produced. The resulting pair of \PW bosons are used to measure \PW branching fractions in this thesis. Meanwhile, the outcoming \PQb quarks are used to tag the \ttbar events. The theoretical prediction of \ttbar cross-section at LHC 13\TeV is
 \begin{equation}
-    \sigma_{tt} = 831.76 ^{+19.77}_{-29.20}\text{~(scale)}\pm35.06 \text{~(PDF, \alpS)~pb} .
+    \sigma_{tt} = 00.00 \pm 0.00 \text{~(scale)} \pm 0.00 \text{~(PDF, \alpS)~pb [FIXME]} .
 \end{equation}
 
 
@@ -132,7 +132,7 @@ The hard processes between partons happen in the short-distance range and can be
 \end{figure}
 \noindent The \tW production is induced via weak interactions and has smaller cross-section compared to \ttbar production. The tree-level \tW processes are shown in Figure~\ref{fig:physics:ppCollision:tw}. One \PW boson is produced associated with top quark. The outcoming top quark decays into one \PQb quark and another \PW boson. The two \PW bosons are used for \PW measurements, while the \PQb quarks is used to tag the \tW event. The SM theoretical cross section for \tW is 
 \begin{equation}
-    \sigma_{tW} = 71.7 \pm 1.80 \text{~(scale)} \pm 3.40 \text{~(PDF, \alpS)~pb }
+    \sigma_{tW} = 00.00 \pm 0.00 \text{~(scale)} \pm 0.00 \text{~(PDF, \alpS)~pb [FIXME]}
 \end{equation}
 
 
@@ -143,19 +143,19 @@ The hard processes between partons happen in the short-distance range and can be
         a -- [photon, edge label=\PZ] b,
         f1 [particle=\PW, red] -- [photon] b -- [photon] f2 [particle=\PW, red],
     }; \qquad
-    \feynmandiagram[small, vertical=a to b]{
+    \feynmandiagram[small, horizontal=i1 to a, vertical=a to b]{
         i1 [particle=\PQq] -- [fermion] a -- [photon] f1 [particle=\PW, red],
         a -- [fermion, edge label=\(\PQq^{\prime\prime}\)] b,
         i2 [particle=\(\PQq^{\prime}\)] -- [anti fermion] b -- [photon] f2 [particle=\PW, red],
         i1 -- [opacity=0.0] i2,
         f1 -- [opacity=0.0] f2,
     };
-    \caption{The Tree-level process of \WW production. These two diagrams are both induced by electroweak interactions. }
+    \caption{The tree-level process of \WW production. These two diagrams are both induced by electroweak interactions. }
     \label{fig:physics:ppCollision:ww}
 \end{figure}
 \noindent The \WW events are produced by electroweak interactions. Figure~\ref{fig:physics:ppCollision:ww} shows two major tree-level processes of the \WW production. In the first diagram, quark and antiquark annihilate into a virtual $Z/\gamma$, which then decays into \WW via the electroweak triple-gauge-coupling (TGC). In the second diagram, \WW is produced in the t-channel of quark-quark scattering. The \WW processes contribute at small cross-sections to the event selection with $n_b=0$. The treatment of the \WW process is different between the shape analysis and the counting analysis: the shape analysis treat it as a signal process, while the counting analysis which does not have any $n_b=0$ category treats it as a background. The SM theoretical cross-section for \WW is 
 \begin{equation}
-    \sigma_{\WW} = 00 \pm 00  \text{~(scale)}  \pm 00  \text{~(PDF, \alpS)~pb }
+    \sigma_{\WW} = 00 \pm 00  \text{~(scale)}  \pm 00  \text{~(PDF, \alpS)~pb [FIXME]}
 \end{equation}
 
 

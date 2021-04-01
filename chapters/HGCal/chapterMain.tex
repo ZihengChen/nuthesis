@@ -1,5 +1,16 @@
-\chapter{Clustering for the HGCAL Reconstruction}
+\chapter{Clustering for the Reconstruction of the CMS High Granularity Calorimeter}
 \label{sec:hgcal}
+
+
+% phase II upgrade
+The luminosity of the future High Luminosity Large Hadron Collider (HL-LHC) is going to achieve up to $7.5\times 10^{34}$ $\text{cm}^{-2}\text{s}^{-1}$ \cite{hllhcweb} in its ultimate scenario, which is 5 times that delivered at present. This leads to the production of high pile-up events containing up to 200 interactions in each bunch crossing (PU200). Current CMS endcap calorimeters \cite{Chatrchyan:2008aa} are designed with a lifetime radiation limit of 500 fb$^{-1}$ \cite{CMSCollaboration:2015zni}, which will be reached at the end of LHC Run-III in 2023. During the third long shutdown period of LHC from 2024 to 2026, the CMS Collaboration is going to conduct the Phase-II upgrade of the CMS detector \cite{CMSCollaboration:2015zni}. One of the major tasks in the CMS Phase-II upgrade is to replace the current endcap calorimeters, including both endcap electromagnetic and hadronic calorimeters, with a new high granularity calorimeter system (HGCAL) which is based on highly-segmented Silicon sensors and plastic scintillators.
+
+
+The \BWl measurement presented in this thesis achieves 2\% relative uncertainty on the \BWt result. One of the most offending systematic uncertainties that limit the precision is the efficiency of hadronic identification, which has a 5\% relative uncertainty, about 1\% coming from the statistics of the measurement, 4\% coming from the systematics related to the track cuts of $\pt>0.5\GeV$. HGCAL is designed to make the most advantage of its fine channels to achieve the best possible spatial resolution, energy resolution and particle identification efficiency. It is able to detector photons and charged hadrons at much smaller separation, which is one of the key steps to reconstruct \PGth decay mode in the hadron-plus-strip algorithm. Furthermore, noval computer vision (CV) based deep learning particle identification is under developing, which aims at identifying particles directly from the images of candidate jets. Therefore, in the HL-LHC era, HGCAL is able to bring a noticeable improvement of \BWl precision.
+
+In parallel with the \BWl analysis, I have been heavily involved in the clustering algorithm of the HGCAL reconstruction. This chapter summarizes my main R\&D work for the HGCAL clustering algorithm.
+
+
 
 % This chapter discusses CLUE clustering algorithm to reconstruct 2D layer clusters, followed by an introduction of TICL that 
 % links the layer clusters to form trackersters for particle candidates. This chapter is based on published results in 
@@ -8,7 +19,7 @@
 
 
 
-\input{chapters/HGCal/sectionOverview}
+\input{chapters/HGCal/sectionDesign}
 \input{chapters/HGCal/sectionStandaloneClue}
 \input{chapters/HGCal/sectionCMSSWClue}
 % \input{chapters/HGCal/sectionCMSSWTicl}

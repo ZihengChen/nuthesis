@@ -70,44 +70,7 @@ The hard processes between partons happen in the short-distance range and can be
 
 \begin{figure}[ht]
     \centering
-    \feynmandiagram[small,horizontal=a to b]{
-        i1 [particle=\PQq] -- [fermion] a -- [fermion] i2 [particle=\PQq],
-        a -- [gluon, edge label=\Pg] b,
-        f1 [particle=\PQt] -- [fermion] b -- [fermion] f2 [particle=\PQt],
-        % top decay
-        f1b[particle=\PQb] -- [fermion] f1 -- [photon] f1W [particle=\PW, red],
-        f2b[particle=\PQb] -- [anti fermion] f2 -- [photon] f2W [particle=\PW, red],
-        f1 -- [opacity=0.0] f2,
-        f1W -- [opacity=0.0] f2W,
-        f1b -- [opacity=0.0] f1W,
-        f2b -- [opacity=0.0] f2W,
-    }; \qquad
-    \feynmandiagram[small,horizontal=a to b]{
-        i1 [particle=\Pg] -- [gluon] a -- [gluon] i2 [particle=\Pg],
-        a -- [gluon, edge label=\Pg] b,
-        f1 [particle=\PQt] -- [fermion] b -- [fermion] f2 [particle=\PQt],
-        % top decay
-        f1b[particle=\PQb] -- [fermion] f1 -- [photon] f1W [particle=\PW, red],
-        f2b[particle=\PQb] -- [anti fermion] f2 -- [photon] f2W [particle=\PW, red],
-        f1 -- [opacity=0.0] f2,
-        f1W -- [opacity=0.0] f2W,
-        f1b -- [opacity=0.0] f1W,
-        f2b -- [opacity=0.0] f2W,
-    }; \qquad
-    \feynmandiagram[small, vertical=a to b, horizontal=a to f1]{
-        i1 [particle=\Pg] -- [gluon] a -- [anti fermion] f1 [particle=\PQt],
-        a -- [fermion, edge label=\PQt] b,
-        i2 [particle=\Pg] -- [gluon] b -- [fermion] f2 [particle=\PQt],
-        % top decay
-        f1b[particle=\PQb] -- [fermion] f1 -- [photon] f1W [particle=\PW, red],
-        f2b[particle=\PQb] -- [anti fermion] f2 -- [photon] f2W [particle=\PW, red],
-        f1 -- [opacity=0.0] f2,
-        f1W -- [opacity=0.0] f2W,
-        f1b -- [opacity=0.0] f1W,
-        f2b -- [opacity=0.0] f2W,
-        % i1 -- [opacity=0.0] i2,
-        % f1 -- [opacity=0.0] f2,
-    };
+    \input{chapters/Physics/sectionPPCollision/figures/feynman_tt}
     \caption{The tree-level processes of \ttbar production in the LHC. In all three diagrams, \ttbar is produced with the QCD interaction. In the LHC, the dominant production processes are the two diagrams on the right, with two incoming gluons colliding in the s-channel and t-channel, respectively. The top quark decays into one \PW boson and one \PQb quark immediately after the production.}
     \label{fig:physics:ppCollision:tt}
 \end{figure}
@@ -120,13 +83,7 @@ The hard processes between partons happen in the short-distance range and can be
 
 \begin{figure}[ht]
     \centering
-    \feynmandiagram[small,horizontal=a to b]{
-        i1 [particle=\PQb] -- [fermion] a -- [gluon] i2 [particle=\Pg],
-        a -- [fermion, edge label=\PQb] b,
-        f1 [particle=\PW , red] -- [photon] b -- [fermion] f2 [particle=\PQt],
-        f2b[particle=\PQb] -- [anti fermion] f2 -- [photon] f2W [particle=\PW, red],
-        f1 -- [opacity=0.0] f2W,
-    }; \qquad
+    \input{chapters/Physics/sectionPPCollision/figures/feynman_tW}
     \caption{The tree-level processes of \tW production. The incoming \PQb quark scatters off a gluon with QCD interaction and gets excited into a top quark via the electroweak interaction.}
     \label{fig:physics:ppCollision:tw}
 \end{figure}
@@ -138,18 +95,7 @@ The hard processes between partons happen in the short-distance range and can be
 
 \begin{figure}[ht]
     \centering
-    \feynmandiagram[small,horizontal=a to b]{
-        i1 [particle=\PQq] -- [fermion] a -- [fermion] i2 [particle=\PQq],
-        a -- [photon, edge label=\PZ] b,
-        f1 [particle=\PW, red] -- [photon] b -- [photon] f2 [particle=\PW, red],
-    }; \qquad
-    \feynmandiagram[small, horizontal=i1 to a, vertical=a to b]{
-        i1 [particle=\PQq] -- [fermion] a -- [photon] f1 [particle=\PW, red],
-        a -- [fermion, edge label=\(\PQq^{\prime\prime}\)] b,
-        i2 [particle=\(\PQq^{\prime}\)] -- [anti fermion] b -- [photon] f2 [particle=\PW, red],
-        i1 -- [opacity=0.0] i2,
-        f1 -- [opacity=0.0] f2,
-    };
+    \input{chapters/Physics/sectionPPCollision/figures/feynman_WW}
     \caption{The tree-level process of \WW production. These two diagrams are both induced by electroweak interactions. }
     \label{fig:physics:ppCollision:ww}
 \end{figure}

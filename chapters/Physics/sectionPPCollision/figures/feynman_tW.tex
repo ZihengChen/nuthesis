@@ -1,0 +1,16 @@
+    \feynmandiagram[scale=0.7][horizontal=a to b]{
+        i1 [particle=\PQb] -- [fermion] a -- [gluon] i2 [particle=\Pg],
+        a -- [fermion, edge label=\PQb] b,
+        f1 [particle=\PW , red] -- [photon] b -- [fermion] f2 [particle=\PQt],
+        f2b[particle=\PQb] -- [anti fermion] f2 -- [photon] f2W [particle=\PW, red],
+        f1 -- [opacity=0.0] f2W,
+    }; \quad
+            
+    \feynmandiagram[scale=0.7][vertical=a to b]{
+        i1 [particle=\PQb] -- [fermion] a -- [photon] f1 [particle=\PW, red],
+        a -- [fermion, edge label=\PQb] b,
+        i2 [particle=\Pg] -- [gluon] b -- [fermion] f2 [particle=\PQt],
+        f2b[particle=\PQb] -- [anti fermion] f2 -- [photon] f2W [particle=\PW, red],
+        i1 -- [opacity=0.0] i2,
+        f1 -- [opacity=0.0] f2W -- [opacity=0.0] f2b,
+    };

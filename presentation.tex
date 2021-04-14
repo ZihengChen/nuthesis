@@ -1,0 +1,95 @@
+\documentclass[xcolor=dvipsnames, 10pt]{beamer}
+\usepackage{textpos}
+\usepackage{amsmath}
+\usepackage{graphicx} 
+\usepackage[com pat = 1.1.0]{tikz-feynman}
+\usepackage{multirow}
+\usepackage[utf8]{inputenc}
+\usepackage{color, colortbl}
+\usepackage{relsize}
+\usepackage{slashed}
+\usepackage[many]{tcolorbox}
+
+%%% ====================================================================
+% from cms-tdr.cls 
+% PENNAMES
+\usepackage[low-sup]{subdepth}  
+% corrects normal super/sub after subdepth: 
+% https://tex.stackexchange.com/questions/352936/wrong-superscript-placement-with-hepparticles
+% \usepackage[italic,italicGreek]{heppennames2}
+\usepackage[pazoGreek]{heppennames2}
+\usepackage{ptdr-definitions}
+%%% ====================================================================
+
+
+
+\usetheme{Madrid}
+\useinnertheme{rectangles}
+
+% set bib
+\setbeamertemplate{bibliography item}{\insertbiblabel}
+\setbeamertemplate{bibliography entry title}{}
+\setbeamertemplate{bibliography entry location}{}
+\setbeamertemplate{bibliography entry note}{}
+
+% NWU color theme
+% \usecolortheme{whale}
+\definecolor{NUpurple}{RGB}{078,042,132}
+\definecolor{NUpurple60}{RGB}{131,110,170}
+\definecolor{NUpurple30}{RGB}{182,172,209}
+\definecolor{NUpurple10}{RGB}{228,224,238}
+\definecolor{Gray}{gray}{0.9}
+\usecolortheme[named=NUpurple]{structure}
+\setbeamercolor{block title}{bg=NUpurple}
+
+% NWU CMS Logo
+\addtobeamertemplate{frametitle}{}{
+    \begin{textblock*}{\textwidth}(.9\textwidth,-0.75cm)
+    \includegraphics[width=0.05\textwidth]{slides/logos/logo_nwu.png}
+    \includegraphics[width=0.05\textwidth]{slides/logos/logo_cms.png}
+    \end{textblock*}}
+    
+
+% extra beamer settings
+\AtBeginSection[]{\begin{frame}{Table of Contents}\setcounter{tocdepth}{2}\tableofcontents[currentsection, hideothersubsections]\end{frame}}
+
+
+
+\title[\BWl measurement]{Measurement of W boson Branching Fraction in p-p Collisions at $\sqrt{s} = 13\TeV$  with the CMS Experiment}
+\date{\today}
+\author[Z. Chen]{Ziheng Chen}
+\institute[NWU]{Department of Physics and Astronomy, \\ Northwestern University}
+% \logo { \includegraphics[width=0.1\textwidth]{slides/logos/logo_nwu.png} \qquad 
+% \includegraphics[width=0.1\textwidth]{slides/logos/logo_cms.png}}
+
+\addtobeamertemplate{title page}
+{\centering \footnotesize {\color{NUpurple} Defence for the Ph.D. Degree in the Field of Physics  \rule{\linewidth}{0.2mm}} } 
+{\centering \footnotesize \begin{center}  supervisor: Prof. Mayda Velasco  \end{center} }
+
+    
+\begin{document}
+% title page
+\begin{frame}{} \titlepage \end{frame}
+% contents page
+\begin{frame}{Table of Contents}\setcounter{tocdepth}{2}\tableofcontents \end{frame}
+% sections
+\input{slides/introduction}
+% \input{slides/cms}
+% \input{slides/analysis}
+% \input{slides/conclusion}
+
+\begin{frame}[allowframebreaks]
+    \tiny{
+    \bibliographystyle{unsrt}
+    \bibliography{
+        chapters/Introduction/chapterReference,
+        chapters/Physics/chapterReference,
+        chapters/CMSExperiment/chapterReference,
+        chapters/Analysis/chapterReference,
+        chapters/HGCal/chapterReference
+        }
+    }
+\end{frame}
+
+
+\end{document}

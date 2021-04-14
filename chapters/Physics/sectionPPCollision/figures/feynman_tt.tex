@@ -1,0 +1,38 @@
+    \feynmandiagram[small,horizontal=a to b]{
+        i1 [particle=\PQq] -- [fermion] a -- [fermion] i2 [particle=\PQq],
+        a -- [gluon, edge label=\Pg] b,
+        f1 [particle=\PQt] -- [fermion] b -- [fermion] f2 [particle=\PQt],
+        % top decay
+        f1b[particle=\PQb] -- [fermion] f1 -- [photon] f1W [particle=\PW, red],
+        f2b[particle=\PQb] -- [anti fermion] f2 -- [photon] f2W [particle=\PW, red],
+        f1 -- [opacity=0.0] f2,
+        f1W -- [opacity=0.0] f2W,
+        f1b -- [opacity=0.0] f1W,
+        f2b -- [opacity=0.0] f2W,
+    }; \qquad
+    \feynmandiagram[small,horizontal=a to b]{
+        i1 [particle=\Pg] -- [gluon] a -- [gluon] i2 [particle=\Pg],
+        a -- [gluon, edge label=\Pg] b,
+        f1 [particle=\PQt] -- [fermion] b -- [fermion] f2 [particle=\PQt],
+        % top decay
+        f1b[particle=\PQb] -- [fermion] f1 -- [photon] f1W [particle=\PW, red],
+        f2b[particle=\PQb] -- [anti fermion] f2 -- [photon] f2W [particle=\PW, red],
+        f1 -- [opacity=0.0] f2,
+        f1W -- [opacity=0.0] f2W,
+        f1b -- [opacity=0.0] f1W,
+        f2b -- [opacity=0.0] f2W,
+    }; \qquad
+    \feynmandiagram[small, vertical=a to b, horizontal=a to f1]{
+        i1 [particle=\Pg] -- [gluon] a -- [anti fermion] f1 [particle=\PQt],
+        a -- [fermion, edge label=\PQt] b,
+        i2 [particle=\Pg] -- [gluon] b -- [fermion] f2 [particle=\PQt],
+        % top decay
+        f1b[particle=\PQb] -- [fermion] f1 -- [photon] f1W [particle=\PW, red],
+        f2b[particle=\PQb] -- [anti fermion] f2 -- [photon] f2W [particle=\PW, red],
+        f1 -- [opacity=0.0] f2,
+        f1W -- [opacity=0.0] f2W,
+        f1b -- [opacity=0.0] f1W,
+        f2b -- [opacity=0.0] f2W,
+        % i1 -- [opacity=0.0] i2,
+        % f1 -- [opacity=0.0] f2,
+    };

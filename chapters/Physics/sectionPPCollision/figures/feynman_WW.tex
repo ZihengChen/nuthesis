@@ -1,0 +1,12 @@
+    \feynmandiagram[small,horizontal=a to b]{
+        i1 [particle=\PQq] -- [fermion] a -- [fermion] i2 [particle=\PQq],
+        a -- [photon, edge label=\PZ] b,
+        f1 [particle=\PW, red] -- [photon] b -- [photon] f2 [particle=\PW, red],
+    }; \qquad
+    \feynmandiagram[small, horizontal=i1 to a, vertical=a to b]{
+        i1 [particle=\PQq] -- [fermion] a -- [photon] f1 [particle=\PW, red],
+        a -- [fermion, edge label=\(\PQq^{\prime\prime}\)] b,
+        i2 [particle=\(\PQq^{\prime}\)] -- [anti fermion] b -- [photon] f2 [particle=\PW, red],
+        i1 -- [opacity=0.0] i2,
+        f1 -- [opacity=0.0] f2,
+    };

@@ -13,7 +13,7 @@
 %%% ====================================================================
 % from cms-tdr.cls 
 % PENNAMES
-\usepackage[low-sup]{subdepth}  
+% \usepackage[low-sup]{subdepth} 
 % corrects normal super/sub after subdepth: 
 % https://tex.stackexchange.com/questions/352936/wrong-superscript-placement-with-hepparticles
 % \usepackage[italic,italicGreek]{heppennames2}
@@ -42,11 +42,15 @@
 \usecolortheme[named=NUpurple]{structure}
 \setbeamercolor{block title}{bg=NUpurple}
 
+
+
+
+
 % NWU CMS Logo
 \addtobeamertemplate{frametitle}{}{
-    \begin{textblock*}{\textwidth}(.9\textwidth,-0.75cm)
-    \includegraphics[width=0.05\textwidth]{slides/logos/logo_nwu.png}
-    \includegraphics[width=0.05\textwidth]{slides/logos/logo_cms.png}
+    \begin{textblock*}{\textwidth}(.9\textwidth,-0.8cm)
+    \includegraphics[width=0.052\textwidth]{slides/logos/logo_nwu.png}
+    \includegraphics[width=0.052\textwidth]{slides/logos/logo_cms.png}
     \end{textblock*}}
     
 
@@ -54,14 +58,11 @@
 \AtBeginSection[]{\begin{frame}{Table of Contents}\setcounter{tocdepth}{2}\tableofcontents[currentsection, hideothersubsections]\end{frame}}
 
 
-
+% slides information
 \title[\BWl measurement]{Measurement of W boson Branching Fraction in p-p Collisions at $\sqrt{s} = 13\TeV$  with the CMS Experiment}
 \date{\today}
 \author[Z. Chen]{Ziheng Chen}
 \institute[NWU]{Department of Physics and Astronomy, \\ Northwestern University}
-% \logo { \includegraphics[width=0.1\textwidth]{slides/logos/logo_nwu.png} \qquad 
-% \includegraphics[width=0.1\textwidth]{slides/logos/logo_cms.png}}
-
 \addtobeamertemplate{title page}
 {\centering \footnotesize {\color{NUpurple} Defence for the Ph.D. Degree in the Field of Physics  \rule{\linewidth}{0.2mm}} } 
 {\centering \footnotesize \begin{center}  supervisor: Prof. Mayda Velasco  \end{center} }
@@ -70,13 +71,28 @@
 \begin{document}
 % title page
 \begin{frame}{} \titlepage \end{frame}
+
 % contents page
-\begin{frame}{Table of Contents}\setcounter{tocdepth}{2}\tableofcontents \end{frame}
+\begin{frame}{Outline}
+\setcounter{tocdepth}{2}
+    \begin{columns}[t]
+        \column{.5\textwidth}
+        \tableofcontents[sections={1-3}]
+
+        \column{.5\textwidth}
+        \tableofcontents[sections={4-7}]
+    \end{columns}
+\end{frame}
+
+
 % sections
 \input{slides/introduction}
-% \input{slides/cms}
-% \input{slides/analysis}
-% \input{slides/conclusion}
+\input{slides/cms}
+\input{slides/data}
+\input{slides/method}
+\input{slides/systematics}
+\input{slides/result}
+\input{slides/conclusion}
 
 \begin{frame}[allowframebreaks]
     \tiny{

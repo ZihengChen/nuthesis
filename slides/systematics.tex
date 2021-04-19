@@ -1,0 +1,124 @@
+\section{Systematics}
+
+\begin{frame}{Systematics}
+
+    \begin{itemize}
+        \smaller
+        \item Statisitical uncertainties are calculated using different approaches for the two
+            analyses
+        \item Shape analysis:
+        \begin{itemize}
+            \smaller
+            \item uncertainty is included in fit with nuisance parameters (n.p.)
+            \item most uncertainties are accounted for using morphing templates
+            \item MC statistical uncertainty accounted for on a bin-by-bin basis using Barlow-Beeston
+                approach
+            \item correlations between channels is accounted for at time of minimization
+        \end{itemize}
+        \item Counting analysis:
+        \begin{itemize}
+            \smaller
+            \item uncertainty accounted for by carrying out measurement with each uncertainty source
+                varied by $\pm 1\sigma$
+            \item different jet and trigger categories are combined considering correlations.
+        \end{itemize}
+    \end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{Systematics}
+
+    \begin{itemize}
+        \smaller
+        \item lumi and cross-sections of \ttbar, \tW, \zjets,\wjets, \gjets. dibson
+        \item gen-level reweightings: PU, top \pt, \WW \pt  
+        \item HLT efficiencies: single muon trigger and single electron trigger.
+        \item object systematics
+        \begin{itemize}
+        \smaller
+            \item muon: identification, isolation, energy scale
+            \item electron: identification, reconstruction, energy scale
+            \item tau: identification, misidentification, energy scale.
+            \item jet: energy scale, energy resolution
+            \item btag: tag/mistag.
+        \end{itemize}
+        \item tau decay branching fractions: \bte, \btm,  \bth of major \PGth modes
+        \item simulation: ISR/FSR, ME-PS matching, UE tuning.
+        
+        
+    \end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{Systematics}
+
+    \begin{itemize}
+    \smaller
+        \item brought up in a CMS week talk.
+        \item tau reconstruction efficiencies are different for different \PGth decay mode.
+        \item major \PGth decay branching fractions 
+            \begin{equation*}\tiny
+            \begin{split}
+            &   \mathcal{B}(\PGth\to \PGp^\pm)        = 0.1082(5), \quad 
+                \mathcal{B}(\PGth\to \PGp^\pm \PGp^0)  = 0.2549(9), \quad 
+                \mathcal{B}(\PGth\to \PGp^\pm2\PGp^0)  = 0.0926(10),\\
+            &   \mathcal{B}(\PGth\to3\PGp^\pm)        = 0.0931(5), \quad
+                \mathcal{B}(\PGth\to3\PGp^\pm \PGp^0)  = 0.0462(5).           
+            \end{split}
+            \end{equation*}
+        \item find the decay mode of \PGth in simulation based on gen-level information. 
+        \item propagate uncertainty of each $\mathcal{B}(\PGth)$
+        \item impact less than 0.1\%. neglectable.
+    \end{itemize}
+        
+
+    \begin{figure}
+    \centering
+    \includegraphics[width=0.99\textwidth]{chapters/Analysis/sectionSystematics/figures/tauBr/tauhDecay_mutau.png}
+    \end{figure}
+\end{frame}
+
+
+\begin{frame}{Systematics}
+
+    \begin{itemize}
+    \smaller
+        \item tau reconstruction is sensitive to $\alpS$ in the FSR systematics. 
+        \item remove the effect of \PGth identification when evaluating FSR systematics.
+        \item avoid double counting \PGth identification systematics.
+        \item measure the \PGth identification efficiency in nominal and FSR+- simulation.
+        \item reweight the FSR+- simulation with scale factors.
+    \end{itemize}
+        
+
+    \begin{figure}
+    \centering
+    \includegraphics[width=0.49\textwidth]{chapters/Analysis/sectionSystematics/figures/ttTheoretical/2020_MCRatio_fsr_tauGenFlavor_tauTight.png}
+    % \includegraphics[width=0.49\textwidth]{chapters/Analysis/sectionSystematics/figures/ttTheoretical/2020_MCRatio_fsr_tauGenFlavor_tauVTight.png}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Systematics}
+    \centering
+    \includegraphics[width=\textwidth]{chapters/Analysis/sectionSystematics/figures/pulls_impacts_final.pdf}
+\end{frame}
+
+\begin{frame}{Systematics}
+    \centering
+    \includegraphics[width=0.7\textwidth]{chapters/Analysis/sectionSystematics/figures/correlation_matrix_full.pdf}
+\end{frame}
+
+\begin{frame}{}
+    \centering
+    \begin{table}[]
+        \renewcommand{\arraystretch}{1.1}
+        \setlength{\tabcolsep}{0.4em}
+        \centering
+        \resizebox{0.6\textwidth}{!}{\input{chapters/Analysis/sectionSystematics/tables/syst_alt.tex}}
+    \end{table}
+\end{frame}
+
+
+

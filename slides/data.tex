@@ -1,0 +1,531 @@
+\section{Analysis Configurations}
+
+\subsection{Data and simulations}
+
+% -------------
+% new frame
+% -------------
+\begin{frame}{Data and simulations}
+\smaller
+    \begin{block}{Data}
+        \begin{itemize}
+            \item 2016 run rereco-MINIAOD ($\mathcal{L} = 35.9\fbinv, \sqrt{s}=13\TeV$)
+            \item \texttt{SingleMuon\_run2016[B-H]-03Feb2017} triggered with \texttt{HLT\_Iso(Tk)Mu24}
+            \item \texttt{SingleElectron\_run2016[B-H]-03Feb2017} triggered with \texttt{HLT\_Ele27\_WPTight\_Gsf} 
+        \end{itemize}
+    \end{block}
+    
+    \begin{block}{Simulation}
+        \begin{itemize}
+            \item primary signal: \ttbar, \tW, \WW $^*$, \wjets $^*$ (* treated as background in counting analysis.)
+            \item background:  \zjets, \gjets, $\PZ\PZ$, $\PZ\PW$, QCD
+            \item simulation assumes $\BWl = 0.108$
+            \item simulation are produced with
+            \begin{itemize}
+            \smaller
+                \item NNPDF3.0 for parton distribution function.
+                \item \PYTHIA8 for parton shower, hadronization and decay of unstable particles.
+                \item \texttt{CUETP8M2T4} tuning for underlying events. 
+                \item \GEANTfour for detector simulation
+                \item the same software program for reconstruction and triggering as collision data
+            \end{itemize}
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+
+
+\subsection{Selections}
+% -------------
+% new frame
+% -------------
+\begin{frame}{Object Selection}
+    \begin{table}
+        \centering
+        \setlength{\tabcolsep}{1em}
+        \renewcommand{\arraystretch}{1.5}
+        \resizebox{0.95\textwidth}{!}{\input{chapters/Analysis/sectionSelection/tables/objectSelectionSummary}}
+    \end{table}
+\end{frame}
+
+\begin{frame}{Event Selection}
+    \begin{table}
+        \centering
+        \setlength{\tabcolsep}{1em}
+        \renewcommand{\arraystretch}{1.5}
+        \resizebox{0.95\textwidth}{!}{\input{chapters/Analysis/sectionSelection/tables/eventCatagory}}
+    \end{table}
+    QCD from ss in \cet, \cmt, \cem
+    anti-isolation letpon in \ceh \cmh
+\end{frame}
+
+
+
+
+
+
+% -------------
+% new frame
+% -------------
+\begin{frame}{Event Selection baseline 1b}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.24\textwidth]{chapters/Analysis/sectionPlots/figures/kinematics_pickles/emu/1b/emu_1b_lepton2_pt.pdf}
+        \includegraphics[width=0.24\textwidth]{chapters/Analysis/sectionPlots/figures/kinematics_pickles/mumu/1b/mumu_1b_lepton2_pt.pdf}
+        \includegraphics[width=0.24\textwidth]{chapters/Analysis/sectionPlots/figures/kinematics_pickles/mutau/1b/mutau_1b_lepton2_pt.pdf}
+        \includegraphics[width=0.24\textwidth]{chapters/Analysis/sectionPlots/figures/kinematics_pickles/mu4j/1b/mu4j_1b_lepton1_pt.pdf}
+
+        \includegraphics[width=0.24\textwidth]{chapters/Analysis/sectionPlots/figures/kinematics_pickles/ee/1b/ee_1b_lepton2_pt.pdf}
+        \includegraphics[width=0.24\textwidth]{chapters/Analysis/sectionPlots/figures/kinematics_pickles/emu2/1b/emu2_1b_lepton1_pt.pdf}
+        \includegraphics[width=0.24\textwidth]{chapters/Analysis/sectionPlots/figures/kinematics_pickles/etau/1b/etau_1b_lepton2_pt.pdf}
+        \includegraphics[width=0.24\textwidth]{chapters/Analysis/sectionPlots/figures/kinematics_pickles/e4j/1b/e4j_1b_lepton1_pt.pdf}
+    \end{figure}
+\end{frame}
+
+
+% -------------
+% new frame
+% -------------
+\begin{frame}{Event Selection  baseline 2b}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.24\textwidth]{chapters/Analysis/sectionPlots/figures/kinematics_pickles/emu/2b/emu_2b_lepton2_pt.pdf}
+        \includegraphics[width=0.24\textwidth]{chapters/Analysis/sectionPlots/figures/kinematics_pickles/mumu/2b/mumu_2b_lepton2_pt.pdf}
+        \includegraphics[width=0.24\textwidth]{chapters/Analysis/sectionPlots/figures/kinematics_pickles/mutau/2b/mutau_2b_lepton2_pt.pdf}
+        \includegraphics[width=0.24\textwidth]{chapters/Analysis/sectionPlots/figures/kinematics_pickles/mu4j/2b/mu4j_2b_lepton1_pt.pdf}
+        \includegraphics[width=0.24\textwidth]{chapters/Analysis/sectionPlots/figures/kinematics_pickles/ee/2b/ee_2b_lepton2_pt.pdf}
+        \includegraphics[width=0.24\textwidth]{chapters/Analysis/sectionPlots/figures/kinematics_pickles/emu2/2b/emu2_2b_lepton1_pt.pdf}
+        \includegraphics[width=0.24\textwidth]{chapters/Analysis/sectionPlots/figures/kinematics_pickles/etau/2b/etau_2b_lepton2_pt.pdf}
+        \includegraphics[width=0.24\textwidth]{chapters/Analysis/sectionPlots/figures/kinematics_pickles/e4j/2b/e4j_2b_lepton1_pt.pdf}
+    \end{figure}
+\end{frame}
+
+% -------------
+% new frame
+% -------------
+\begin{frame}{Event Selection baseline}
+    \begin{table}
+        \centering
+        \setlength{\tabcolsep}{1em}
+        \renewcommand{\arraystretch}{2}
+        \resizebox{0.96\textwidth}{!}{\input{chapters/Analysis/sectionSelection/tables/sigcomp}}
+    \end{table}
+\end{frame}
+
+
+% -------------
+% new frame
+% -------------
+\begin{frame}{Event Selection baseline}
+    \begin{table}
+        \centering
+        \setlength{\tabcolsep}{1em}
+        \renewcommand{\arraystretch}{2}
+        \resizebox{0.99\textwidth}{!}{\input{chapters/Analysis/sectionSelection/tables/yieldsCounting}}
+    \end{table}
+\end{frame}
+
+
+% -------------
+% new frame
+% -------------
+\begin{frame}{Event Selection extended}
+    \begin{table}
+        \centering
+        \setlength{\tabcolsep}{1em}
+        \renewcommand{\arraystretch}{2}
+        \resizebox{0.7\textwidth}{!}{\input{slides/tables/eventCatagoryJets}}
+    \end{table}
+\end{frame}
+
+
+
+
+% -------------
+% new frame
+% -------------
+\begin{frame}{Event Selection  baseline 2b}
+    \begin{tcolorbox}[colframe=red,colback=white]{$Z\to \PGtl \PGth$}
+        \begin{center}
+        \includegraphics[width=0.3\textwidth]{chapters/Analysis/sectionPlots/figures/data_mc_overlays/etau_2016_cat_eq0_eq0_signal_linear_lepton_lepton2_pt.png}
+        \includegraphics[width=0.3\textwidth]{chapters/Analysis/sectionPlots/figures/data_mc_overlays/etau_2016_cat_eq1_eq0_signal_linear_lepton_lepton2_pt.png}
+        \includegraphics[width=0.3\textwidth]{chapters/Analysis/sectionPlots/figures/data_mc_overlays/etau_2016_cat_gt2_eq0_signal_linear_lepton_lepton2_pt.png}
+        \includegraphics[width=0.3\textwidth]{chapters/Analysis/sectionPlots/figures/data_mc_overlays/mutau_2016_cat_eq0_eq0_signal_linear_lepton_lepton2_pt.png}
+        \includegraphics[width=0.3\textwidth]{chapters/Analysis/sectionPlots/figures/data_mc_overlays/mutau_2016_cat_eq1_eq0_signal_linear_lepton_lepton2_pt.png}
+        \includegraphics[width=0.3\textwidth]{chapters/Analysis/sectionPlots/figures/data_mc_overlays/mutau_2016_cat_gt2_eq0_signal_linear_lepton_lepton2_pt.png}        
+        \end{center}
+    \end{tcolorbox}
+\end{frame}
+
+% -------------
+% new frame
+% -------------
+\begin{frame}{Event Selection  baseline 2b}
+    \begin{tcolorbox}[colframe=blue,colback=white]{$\WW \to \Pe \PGm$}
+        \begin{center}
+        \includegraphics[width=0.30\textwidth]{chapters/Analysis/sectionPlots/figures/data_mc_overlays/emu_2016_cat_eq0_eq0_a_signal_linear_lepton_lepton2_pt.png}
+        \includegraphics[width=0.30\textwidth]{chapters/Analysis/sectionPlots/figures/data_mc_overlays/emu_2016_cat_eq1_eq0_a_signal_linear_lepton_lepton2_pt.png}
+        \end{center}
+    \end{tcolorbox}
+\end{frame}
+
+% -------------
+% new frame
+% -------------
+\begin{frame}{Event Selection  baseline 2b}
+    \begin{tcolorbox}[colframe=orange,colback=white]{$\ttbar$ extra}
+        \begin{center}
+        \includegraphics[width=0.30\textwidth]{chapters/Analysis/sectionPlots/figures/data_mc_overlays/etau_2016_cat_eq1_eq1_signal_linear_lepton_lepton2_pt.png}
+        \includegraphics[width=0.30\textwidth]{chapters/Analysis/sectionPlots/figures/data_mc_overlays/mutau_2016_cat_eq1_eq1_signal_linear_lepton_lepton2_pt.png}
+        \includegraphics[width=0.30\textwidth]{chapters/Analysis/sectionPlots/figures/data_mc_overlays/emu_2016_cat_eq1_eq1_a_signal_linear_lepton_lepton2_pt.png}
+        \end{center}
+    \end{tcolorbox}
+\end{frame}
+
+
+% -------------
+% new frame
+% -------------
+\begin{frame}{Event Selection extended}
+    \begin{table}
+        \centering
+        \setlength{\tabcolsep}{1em}
+        \renewcommand{\arraystretch}{2}
+        \resizebox{0.99\textwidth}{!}{\input{chapters/Analysis/sectionSelection/tables/yieldsShape1}}
+    \end{table}
+\end{frame}
+
+
+% -------------
+% new frame
+% -------------
+\begin{frame}{Event Selection extended}
+    \begin{table}
+        \centering
+        \setlength{\tabcolsep}{1em}
+        \renewcommand{\arraystretch}{2}
+        \resizebox{0.99\textwidth}{!}{\input{chapters/Analysis/sectionSelection/tables/yieldsShape2}}
+    \end{table}
+\end{frame}
+
+
+
+\subsection{Calibrations}
+
+% -------------
+% new frame
+% -------------
+\begin{frame}{Generator reweighting}
+\smaller
+    \begin{columns}
+        % add column
+        \column{0.23\textwidth}
+        \begin{block}{pileup}
+            \includegraphics[width=\textwidth]{chapters/Analysis/sectionCalibration/figures/generator/pileup_systematics.pdf}
+        \end{block}
+        
+        % add column
+        \column{0.24\textwidth}
+        \begin{block}{top \pt}
+            \includegraphics[width=\textwidth]{chapters/Analysis/sectionCalibration/figures/generator/top_pt_weight.pdf}
+        \end{block}
+        % add column
+        \column{0.24\textwidth}
+        \begin{block}{\PZ \pt}
+            \includegraphics[width=\textwidth]{chapters/Analysis/sectionCalibration/figures/generator/z_pt_weighting.pdf}
+        \end{block}
+         % add column
+        \column{0.24\textwidth}
+        \begin{block}{\WW \pt}
+            \includegraphics[width=\textwidth]{chapters/Analysis/sectionCalibration/figures/generator/ww_pt_lepton_pt.pdf}
+        \end{block}
+            
+    \end{columns}
+\end{frame}
+
+
+% -------------
+% new frame
+% -------------
+\begin{frame}{}
+\smaller
+    \begin{columns}
+        \column{0.48\textwidth}
+        \begin{exampleblock}{electron}
+            \begin{itemize} 
+            \smaller
+                \item energy scale and energy resolution
+                \item reconstruction efficiency
+                \item isolation efficiency
+            \end{itemize}
+        \end{exampleblock}
+        
+        \column{0.48\textwidth}
+        \begin{exampleblock}{muon}
+            \begin{itemize} 
+            \smaller
+                \item energy scale
+                \item identification efficiency
+                \item isolation efficiency
+            \end{itemize}
+        \end{exampleblock}
+    \end{columns}
+        
+
+    \begin{exampleblock}{hadronic tau}
+        \begin{itemize} 
+        \smaller
+            \item energy scale depending on reconstruction modes, derived by fitting $m_\PGth$ or $m_\ell\PGth$. We used the calibration from $m_\ell\PGth$ fit. 
+            $$\PGt \to \mathrm{h}^{\pm}:0.995(5), \quad \PGt \to \mathrm{h}^{\pm}\PGpz:1.011(3), \quad \PGt \to \mathrm{h}^{\pm}\mathrm{h}^{\mp}\mathrm{h}^{\pm}\PGpz:1.006(3)$$
+                
+
+            \item identification efficiency, derived from $\PZ \to \PGtl \PGth$ and $\ttbar \to \ell \PGth$ region. We use the calibration from $\PZ \to \PGtl \PGth$ region.
+            $$\text{0.95(5) --- Tight, 0.92(5) --- VTight working point}$$
+            
+            \item $j\to\PGth$. customized measured of $j\to\PGth$ scale factors with \pt and jet flavor depedence.
+        \end{itemize}
+    \end{exampleblock}
+    
+    \begin{columns}
+        \column{0.48\textwidth}
+        \begin{exampleblock}{jet}
+            \begin{itemize} 
+            \smaller
+                \item energy scale and energy resolution
+            \end{itemize}
+        \end{exampleblock}
+        \column{0.48\textwidth}
+
+        
+        \begin{exampleblock}{b tag}
+            \begin{itemize} 
+            \smaller
+                \item tag efficiency 
+                \item mistag probability
+                \item promote/demote approach
+            \end{itemize}
+        \end{exampleblock}
+    \end{columns}
+\end{frame}
+
+
+% -------------
+% new frame
+% -------------
+\begin{frame}{}
+\smaller
+    \begin{columns}
+    \column{.49\textwidth}
+     \begin{block}{muon trigger}
+        \centering
+        \includegraphics[width=0.45\textwidth]{chapters/Analysis/sectionCalibration/figures/trigger/muTrSF_BCDEF.png}
+        \includegraphics[width=0.45\textwidth]{chapters/Analysis/sectionCalibration/figures/trigger/muTrSF_GH.png}
+    \end{block} 
+    
+    \column{.49\textwidth}
+     \begin{block}{electron trigger}
+        \centering
+        \includegraphics[width=0.45\textwidth, trim=24cm 0 3.7cm 0, clip]{chapters/Analysis/sectionCalibration/figures/eTrigger/eff2d_BCDEF.png}
+        \includegraphics[width=0.45\textwidth, trim=24cm 0 3.7cm 0, clip]{chapters/Analysis/sectionCalibration/figures/eTrigger/eff2d_GH.png}
+    \end{block}
+    \end{columns}
+    
+    \begin{block}{electron prefiring correction}
+        \begin{columns}
+            \column{0.6\textwidth}
+            \begin{itemize} 
+                \smaller
+                \item due to timing issue, L1T signal in higher eta could be treated as from previous bunching crossing by mistake.
+                \item the wrong brunching crossing fails the HLT due to absence of the triggering objects, resulting data loss.
+                \item this is not simulated. 
+                \item corrected by a scale factor calculated from prefirable jets and photons $$ SF = \prod_{i=\PGg,jet}\bigg(1-\epsilon_i(\pt, \eta) \bigg) $$
+                \item scale down the events by ~1\%.
+            \end{itemize}
+            
+            \column{0.35\textwidth}
+            % \includegraphics[width=\textwidth]{chapters/Analysis/sectionCalibration/figures/prefiring/L1prefiring_jetpt_2016BtoH.png}
+            \includegraphics[width=\textwidth]{chapters/Analysis/sectionCalibration/figures/prefiring/L1prefiring_photonpt_2016BtoH.png}
+            
+        \end{columns}
+    \end{block}
+
+\end{frame}
+
+% -------------
+% new frame
+% -------------
+\begin{frame}{}
+\smaller
+    \begin{columns}
+    \smaller 
+        \column{0.6\textwidth}
+        \begin{itemize} 
+            \item measured with tag and prob approach.
+            \begin{itemize} 
+            \smaller \smaller
+                \item tagged electron: $\pt > 30\GeV$ , matched with \texttt{HLT\_Ele27\_WPTight\_Gsf}
+                \item two opposite electrons (at least one tagged)
+                \item $60<m_{\cee}<120\GeV$
+                \item dominated by \zjets.
+                \item for each tagged electron, the other electron become prob for measurement.
+            \end{itemize}
+            \item trigger efficiency is defined as 
+            $$ \epsilon (\pt, \eta) = \frac{ N_{\rm passing} (\pt, \eta) } {  N_{\rm total} (\pt, \eta) } $$
+            the ratio of $\epsilon (\pt, \eta)$ between data and MC is 
+            $$ SF (\pt, \eta) = \frac{\epsilon_{\rm{Data}} (\pt, \eta) }{\epsilon_{\rm{MC}} (\pt, \eta) }. $$
+            
+            \item split $SF (\pt, \eta)$ measurement into BCDEF and GH periods.
+        \end{itemize}
+        \column{0.4\textwidth}
+        \includegraphics[width=\textwidth]{chapters/Analysis/sectionCalibration/figures/eTrigger/dileptonMass_tag30.png}
+    \end{columns}
+    
+    \begin{center}
+        \includegraphics[width=\textwidth]{chapters/Analysis/sectionCalibration/figures/eTrigger/result_period.png}
+    \end{center}
+\end{frame}
+
+
+
+% -------------
+% new frame
+% -------------
+\begin{frame}{}
+\smaller
+    \begin{center}
+        \includegraphics[width=0.49\textwidth,trim=3cm 0 3cm 0, clip]{chapters/Analysis/sectionCalibration/figures/eTrigger/result_BCDEF.png}
+        \includegraphics[width=0.49\textwidth,trim=3cm 0 3cm 0, clip]{chapters/Analysis/sectionCalibration/figures/eTrigger/result_GH.png}
+    \end{center}
+    
+    \begin{itemize}
+        \item the systematic uncertainty of the $SF (\pt, \eta)$ is estimated by ``two shifts"
+        \begin{itemize}
+        \smaller
+            \item shift up the \pt threshold for tagging electron by 10\GeV to simulate a different trigger. This estimates the systematical effect that some L1 seed could have a threshold of 32\GeV.
+            \item shift up and down the probing electron \pt by 0.5\GeV. This estimates the effect of the electron energy scale.
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+
+
+
+
+% -------------
+% new frame
+% -------------
+\begin{frame}{$j\to \PGth$ Reweighting}
+\smaller
+    \begin{itemize}
+        \item Both signal and background MC contains $j\to \PGth$.
+        \item correct these simulated events by $SF_{j\to \PGth}(\pt)$ 
+        \item $SF_{j\to \PGth}(\pt)$ is measured in $j\to \PGth$ enriched regions
+        \begin{itemize}
+        \smaller
+            \item $\cmm + \PGth$ and $\cmm + \PGth$ enriched with light jet faking \PGth.
+            \item $\cem + \PGth$ enriched with b jet faking \PGth.
+            \item from MC, the origins of \PGth are found by matching with gen-level particles.
+        \end{itemize}
+        \item both Tight and VTight tau identification working points are considered.
+    \end{itemize}
+\end{frame}
+
+
+% -------------
+% new frame
+% -------------
+\begin{frame}{}
+\smaller
+    \begin{center}
+        \includegraphics[width=0.32\textwidth]{chapters/Analysis/sectionCalibration/figures/jetToTauh/mumutau_tauPt_pickles_lltauTight.png}
+        \includegraphics[width=0.32\textwidth]{chapters/Analysis/sectionCalibration/figures/jetToTauh/eetau_tauPt_pickles_lltauTight.png}
+        \includegraphics[width=0.32\textwidth]{chapters/Analysis/sectionCalibration/figures/jetToTauh/emutau_tauPt_pickles_lltauTight.png}
+        
+        \includegraphics[width=0.32\textwidth]{chapters/Analysis/sectionCalibration/figures/jetToTauh/mumutau_tauGenFlavor_pickles_lltauTight.png}
+        \includegraphics[width=0.32\textwidth]{chapters/Analysis/sectionCalibration/figures/jetToTauh/eetau_tauGenFlavor_pickles_lltauTight.png}
+        \includegraphics[width=0.32\textwidth]{chapters/Analysis/sectionCalibration/figures/jetToTauh/emutau_tauGenFlavor_pickles_lltauTight.png}
+    \end{center}
+\end{frame}
+
+% -------------
+% new frame
+% -------------
+\begin{frame}{}
+\smaller
+    \begin{center}
+    \includegraphics[width=0.49\textwidth]{chapters/Analysis/sectionCalibration/figures/jetToTauh/fit2_ptflavor2_lltauTight.png}
+    \includegraphics[width=0.49\textwidth]{chapters/Analysis/sectionCalibration/figures/jetToTauh/fit2_ptflavor2_lltauVTight.png}
+    \end{center}
+    
+    \begin{itemize} 
+        \smaller
+        \item fit the \pt distribution of \PGth.
+        \item free parameters for $SF_{\PQq\to \PGth}(\pt)$ and $SF_{\PQb\to \PGth}(\pt)$ in six \pt bins
+        \item systematic parameters considered 
+        \begin{itemize} 
+            \smaller
+            \item luminosity (2.5\% error)
+            \item cross-sections of \ttbar (5\%), \zjets (5\%), \wjets (5\%), diboson (10\%)
+            \item reconstruction efficiencies of electron (2\%) and muon (1\%)
+        \end{itemize} 
+        systematic parameters are Gaussian constrained w.r.t their assumed uncertainties.
+    \end{itemize}
+\end{frame}
+
+% -------------
+% new frame
+% -------------
+\begin{frame}{}
+\smaller
+    \begin{center}
+    \includegraphics[width=0.4\textwidth]{chapters/Analysis/sectionCalibration/figures/jetToTauh/corr2_lltauTight_splitJetFlavor.png}
+    \includegraphics[width=0.4\textwidth]{chapters/Analysis/sectionCalibration/figures/jetToTauh/corr2_lltauVTight_splitJetFlavor.png}
+    \includegraphics[width=0.4\textwidth]{chapters/Analysis/sectionCalibration/figures/jetToTauh/pull2_lltauTight_splitJetFlavor.png}
+    \includegraphics[width=0.4\textwidth]{chapters/Analysis/sectionCalibration/figures/jetToTauh/pull2_lltauVTight_splitJetFlavor.png}
+    \end{center}
+\end{frame}
+
+
+\subsection{Modeling of QCD background}
+\begin{frame}{Frame Title}
+
+    \begin{center}
+        \includegraphics[width=0.9\textwidth, trim=0 21cm 32cm 18cm, clip]{chapters/Analysis/sectionBackground/figures/ltau_kinematics/ltau2.png}
+    \end{center}
+    
+    normalization from 2j0b and iso-0j0b
+    \begin{equation}
+    SF^{\rm SS \to OS} = \frac{N^{\rm OS}_{\rm data} - \sum N^{\rm OS}_{\rm MC} }{ N^{\rm SS}_{\rm data} - \sum N^{\rm SS}_{\rm MC} }
+    \end{equation}
+
+\end{frame}
+
+
+\begin{frame}{Frame Title}
+
+    \begin{center}
+        \includegraphics[width=0.9\textwidth, trim=0 52cm 28cm 0, clip]{chapters/Analysis/sectionBackground/figures/ljets_kinematics/4j1b.png}
+    \end{center}
+    
+    shape correction from 123j1b region
+    \begin{equation}
+        SF^{\rm \overline{iso} \to iso} (\pt, \eta) =  \frac{N^{\rm iso}_{\rm data} (\pt, \eta) - \sum N^{\rm iso}_{\rm MC}(\pt, \eta) } {N^{\rm \overline{iso}}_{\rm data} (\pt, \eta)- \sum N^{\rm \overline{iso}}_{\rm MC}(\pt, \eta) }
+    \end{equation}
+
+    
+    \begin{center}
+        \includegraphics[width=0.5\textwidth]{chapters/Analysis/sectionBackground/figures/ljets_kinematics/123j1b/SF_mu_2d.png}
+    \end{center}
+\end{frame}
+
+
+\begin{frame}{Frame Title}
+    \includegraphics[width=0.8\textwidth]{chapters/Analysis/sectionBackground/figures/ljets_application/mcNorm_ddShape.png}
+    
+\end{frame}
+
+
+
+
+
+

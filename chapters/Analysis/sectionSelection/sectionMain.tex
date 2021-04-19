@@ -87,9 +87,17 @@ Jets are reconstructed from particle-flow (PF) candidates \cite{ref:pf}. PF cand
 Table~\ref{tab:analysis:selection:ObjectSelectionSum} gives a summary of the selection of physics objects, including electrons, muons, taus, jets and \PQb tags. The corrections and calibrations of the physics objects are described in Section~\ref{sec:analysis:calibration:objects}.
 
 
-\input{chapters/Analysis/sectionSelection/tables/objectSelectionSummary}
 
 
+\begin{table}[ht]
+    \centering
+    \setlength{\tabcolsep}{0.8em}
+    \renewcommand{\arraystretch}{1.5}
+    % \small
+    \caption{Summary of object selection. For \PGth, shape (counting) analysis uses Tight (VTight) working points of \PGth isolation MVA.}
+    \label{tab:analysis:selection:ObjectSelectionSum}
+    \input{chapters/Analysis/sectionSelection/tables/objectSelectionSummary}
+\end{table}
 
 
 \FloatBarrier
@@ -103,7 +111,7 @@ Table~\ref{tab:analysis:selection:ObjectSelectionSum} gives a summary of the sel
 The event selection begins by requiring an event pass the lowest \pt theshold single electron or muon trigger that is not prescaled. From these datasets it is possible to select on a number of \WW-like final states originating from \ttbar and \tW production.  These final states are constructed based on the number of reconstructed leptons, jet multiplicity, and \PQb tag multiplicity.  The categorization of these events differs between the counting and shape analysis.  The common definition of the categories are listed in Table~\ref{tab:analysis:selection:event_categories}. There are eight channels defined by the multiplicities of leptons: 
 \begin{itemize}
     \item \cee, \cem, \cet, \ceh channels based on single electron trigger; 
-    \item \cme, \cmm, \cmt, \cmh channels based on the single muon trigger/
+    \item \cme, \cmm, \cmt, \cmh channels based on the single muon trigger;
 \end{itemize}
 \noindent In addition, $n_j$ and $n_\PQb$ requirement are applied to further partition these eight channels, which are illustrated in Table~\ref{tab:analysis:selection:jet_categories}. These selections are designed to primarily target \ttbar production and specific \PW decay modes. The final states will tend to only contain events from a single datastream except for the \cem selection which has non-negligible overlap between the electron and muon datastreams. Any overlap in events between the two datastreams are removed by only taking the event from single muon datastream. The shape analysis merges \cem and \cme channel, while the counting analysis keeps the two separated, requiring additionally $\pt^\Pe  >(<) \pt^\PGm$ in \cem (\cme) if an event satisfies both channel.
 
@@ -117,21 +125,7 @@ The event selection begins by requiring an event pass the lowest \pt theshold si
     \renewcommand{\arraystretch}{1.8}           
     \setlength{\tabcolsep}{0.5em}
     % \resizebox{0.9\textwidth}{!}{                                           
-    \begin{tabular}{c|c|ccc|c|c}     
-        \hline 
-        trigger                & label  & $N_{\Pe}$ & $N_{\PGm}$ & $N_{\PGt}$   & \pt & other  \\
-        \hline                                                                                      
-        \multirow{4}{*}{\Pe}   & \cee   & 2         & 0          & 0            & $\pt^{\Pe(\Pe)}  > 30 \, (20)\GeV$ & OS, $|m_{\cee} - m_{\PZ}| > 15\GeV$   \\
-                               & \cem   & 1         & 1          & 0            & $\pt^{\Pe(\PGm)} > 30 \, (10)\GeV$ & OS\\
-                               & \cet   & 1         & 0          & 1            & $\pt^{\Pe(\PGth)}> 30 \, (20)\GeV$ & OS\\
-                               & \ceh   & 1         & 0          & 0            & $\pt^{\Pe} > 30\GeV$               &    \\
-        \hline                                                                      
-        \multirow{4}{*}{\PGm}  & \cme   & 1         & 1          & 0            & $\pt^{\PGm(\Pe)}  > 25 \, (20)\GeV$ & OS \\
-                               & \cmm   & 0         & 2          & 0            & $\pt^{\PGm(\PGm)} > 25 \, (10)\GeV$ & OS,$|m_{\cmm} - m_{\PZ}| > 15\GeV$  \\
-                               & \cmt   & 0         & 1          & 1            & $\pt^{\PGm(\PGth)}> 25 \, (20)\GeV$ & OS \\
-                               & \cmh   & 0         & 1          & 0            & $\pt^{\PGm} > 25\GeV$               &    \\\hline 
-                        
-    \end{tabular}
+    \input{chapters/Analysis/sectionSelection/tables/eventCatagory}
     % }                                                          
 \end{table}
 
@@ -141,27 +135,7 @@ The event selection begins by requiring an event pass the lowest \pt theshold si
     \setlength{\tabcolsep}{0.6em}
     \renewcommand{\arraystretch}{1.5}
     \caption{Categorization of the events with electron, muon, and/or tau leptons passing the reconstruction criteria, based on their jet and \PQb-tagged jet multiplicities. The yellow cells are the regions Incorporated in the shape analysis only. Also shape analysis splits $n_j=2$ and $n_j\geq 3$ regions for \cet and \cmt channels, shown as the yellow lines.}
-    \begin{tabular}{l|c|c|c c|c}
-
-                                    & $N_j = 0$     & $N_j = 1$      & $N_j = 2$                    & \multicolumn{1}{|c|}{$N_j = 3$}   & $N_j \geq 4$ \\
-	\hline
-    \multirow{2}{*}{$N_\PQb = 0$}   & \cellcolor{yellow}\cet, \cmt,  & \cellcolor{yellow}\cet, \cmt,& \multicolumn{2}{c}{\cellcolor{yellow}\cet, \cmt}      & \cellcolor{yellow}\\
-                                    & \cellcolor{yellow}\cem         & \cellcolor{yellow}\cem       & \multicolumn{2}{c}{\cellcolor{yellow}\cee, \cmm, \cem}& \cellcolor{yellow}\\
-	\hline
-    \multirow{3}{*}{$N_\PQb = 1$}   &   & \cellcolor{yellow} \cet, \cmt, \cem  & \cet, \cmt   & \multicolumn{2}{!{\color{yellow}\vrule width 2pt}c}{\cet, \cmt} \\
-	\cline{3-6}
-                                    & \multicolumn{2}{c|}{} & \multicolumn{3}{c}{\cee, \cmm, \cem}                                        \\
-	\cline{4-6}
-                                    & \multicolumn{4}{c|}{} & \ceh, \cmh \\
-	\hline
-
-    \multirow{3}{*}{$N_\PQb \geq 2$} & \multicolumn{2}{c|}{} & \cet, \cmt & \multicolumn{2}{!{\color{yellow}\vrule width 2pt}c}{\cet, \cmt} \\
-	\cline{4-6}
-                                    & \multicolumn{2}{c|}{} & \multicolumn{3}{c}{$\cee, \cmm, \cem$}                                        \\
-	\cline{4-6}
-                                    & \multicolumn{4}{c|}{} & \ceh, \cmh \\
-	\hline
-    \end{tabular}
+    \input{chapters/Analysis/sectionSelection/tables/eventCatagoryJet}
     
     \label{tab:analysis:selection:jet_categories}
 \end{table}
@@ -247,12 +221,62 @@ In dilepton channels \cee, \cmm, \cem, \cme, at least one of leading and trailin
 
 
 
+\begin{sidewaystable}[ht]
+    \centering
+    \setlength{\tabcolsep}{0.4em}
+    \renewcommand{\arraystretch}{1.5}
+
+    \caption{Composition of accepted \ttbar and \tW events, breakdown by 21 \WW decay modes.  Values are in percent.}
+    \resizebox{\textwidth}{!}{\input{chapters/Analysis/sectionSelection/tables/sigcomp.tex}}
+    \label{tab:analysis:selection:signal_breakdown}
+    
+\end{sidewaystable}
 
 
-\input{chapters/Analysis/sectionSelection/tables/sigcomp.tex}
-\input{chapters/Analysis/sectionSelection/tables/yieldsShape1}
-\input{chapters/Analysis/sectionSelection/tables/yieldsShape2}
-\input{chapters/Analysis/sectionSelection/tables/yieldsCounting}
+
+
+\begin{sidewaystable}
+    \centering
+    \setlength{\tabcolsep}{0.2em}
+    \renewcommand{\arraystretch}{1.5}
+    
+    \caption{Estimates of the yields for various processes in the \cee,
+    \cmm, \cem and \ceh, \cmh final states broken down by the
+    number of \PQb tags.  The estimate of the expected yield is compared to
+    the yield observed from data.  Uncertainties are statistical plus
+    variation from luminosity and normalization uncertainties.}
+    \resizebox{\textwidth}{!}{\input{chapters/Analysis/sectionSelection/tables/yieldsShape1}}
+    \label{tab:analysis:selection:yieldsShape1}
+\end{sidewaystable}
+
+
+\begin{sidewaystable}[]
+    \centering
+    \setlength{\tabcolsep}{0.4em}
+    \renewcommand{\arraystretch}{2}
+    
+    \caption{Estimates of the yields for various processes in
+    the \cet and \cmh categories broken down by the number of \PQb tags.
+    The estimate of the expected yield is compared to the yield observed
+    from data.  Uncertainties are statistical only.}
+    
+    \resizebox{\textwidth}{!}{\input{chapters/Analysis/sectionSelection/tables/yieldsShape2}}
+    \label{tab:analysis:selection:yieldsShape2}
+\end{sidewaystable}
+
+
+
+
+\begin{sidewaystable}
+    \centering
+    \setlength{\tabcolsep}{0.4em}
+    \renewcommand{\arraystretch}{2}
+    \caption{Estimates of the yields. The estimate of the expected yield is compared to the yield observed from data.  Uncertainties are statistical only.
+    \label{tab:analysis:selection:yieldsCounting}}
+    \resizebox{\textwidth}{!}{\input{chapters/Analysis/sectionSelection/tables/yieldsCounting}}
+\end{sidewaystable}
+
+
 
 \FloatBarrier
 

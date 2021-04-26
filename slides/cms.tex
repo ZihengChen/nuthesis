@@ -9,7 +9,7 @@
     \begin{center}
         \includegraphics[width=0.98\textwidth]{slides/figures/CMS_NSF_DOE.jpeg}
     \end{center}
-    The Phase-2 upgrade for the HL-LHC (2026-2035). \tiny{ https://www.classe.cornell.edu/NewsAndEvents/CLASSENewsCMS180129Ryan.html}
+    The CMS phase-2 upgrade for the HL-LHC (2026-2035). \tiny{ https://www.classe.cornell.edu/NewsAndEvents/CLASSENewsCMS180129Ryan.html}
 \end{frame}
 
 
@@ -59,10 +59,10 @@
     
     \begin{itemize} 
     \smaller
-        \item A computing crisis: need 40x computing power (L1T 7.5x, high PU 3x, detector complexity 1.3x) 
+        \item A computing crisis: need 30x computing power. (L1T 7.5x, high PU 3x, detector complexity 1.3x)
         \item GPUs to be added to the CMS HLT computers.
         \item Work on HLT/Offline HGCAL reconstruction and its high performance computing with GPUs.
-        \item Comparing with previous HGCAL clustering, CLUE gives exactly the same clustering results but is 200x faster (1000x if excluding data traffic/reformation time) 
+        \item Comparing with previous HGCAL clustering, CLUE gives exactly the same clustering results but is 200x faster. (1000x if excluding data traffic/reshaping)
     \end{itemize}
     
     \begin{center}
@@ -74,21 +74,31 @@
 
 \begin{frame}{Reconstruction with particle-flow}
 \smaller
-    \begin{center}
-        \includegraphics[width=0.7\textwidth]{chapters/CMSExperiment/sectionReconstruction/figures/pfa.png}
-    \end{center}
+    \begin{columns}
+        \column{0.7\textwidth}
+        \includegraphics[width=\textwidth]{chapters/CMSExperiment/sectionReconstruction/figures/pfa.png}
+        
+        \column{0.25\textwidth}
+        \begin{block}{}
+            \begin{itemize}
+            \smaller \smaller
+                \item \textcolor{NUpurple}{$\PGm$:} seed from muon chamber and link to tracker (global muon) or vise versa (tracker muon).
+                \item \textcolor{NUpurple}{$\Pe (\PGg)$:} ECAL clusters (not) linked to GSF tracks.
+                \item \textcolor{NUpurple}{$h^{\pm} (h^{0})$:} HCAL clusters and overlapped ECAL clusters (not) linked to tracks.
+            \end{itemize}
+        \end{block}
+    \end{columns}
+    
+
     \begin{itemize} 
-        \item Combines information from all sub-detectors to reconstruct final state particles (PF candidates). 
-        \vspace{-0.05\textheight}
-        \begin{itemize}
-        \smaller
-            \item \PGm, \Pe, $\mathrm{h}^{\pm}$, $\mathrm{h}^{0}$, \PGg
-        \end{itemize}
-        \item Main steps include building PF blocks, linking, identification/energy regression.
+        \item Combines information from all sub-detectors to reconstruct final state particles (PF candidates): $\PGm, \Pe, h^{\pm}, h^{0}, \PGg$.
+        % \item Main steps include building PF blocks, linking, identification/energy regression.
         \item Jets are made by clustering PF candidates with anti-\kt algorithm. 
         \item Jets originating from b quark and \textcolor{red}{\PGth} are tagged.
     \end{itemize}
 \end{frame}
+
+
 
 \begin{frame}{Hadronic tau reconstruction}
 \smaller
@@ -98,10 +108,10 @@
     \end{center}
     \begin{block}{tau properties}
     \begin{itemize} 
-        \item Mass $m_\PGt = 1.776\GeV$. Lifetime mean distance $c \cdot \Gamma = 87\mum$
-        \item 65\% decay hadronically
+        \item Mass $m_\PGt = 1.776\GeV$. Lifetime mean distance $c \cdot \Gamma = 87\mum$.
+        \item 65\% decay hadronically.
         \item Hadronic decays have fixed patterns of final-state particles. 
-        \item Exist well defined visible mass at $\rho (770)$ and $a_1(1260)$
+        \item Exist well defined visible mass at $\rho (770)$ and $a_1(1260)$.
     \end{itemize}  
     \end{block}
     In CMS, taus are reconstructed in their hadronic modes based on PF jets. 
@@ -112,18 +122,19 @@
     \begin{center}
         \includegraphics[width=0.6\textwidth]{slides/figures/tauReco.png}
     \end{center}
+    
     \begin{block}{step-1 decay mode finding}
-    Hadrons-plus-strips (HPS) algorithm is used to check the competence of jet structure to specific \PGth decay pattern.
+    Hadrons-plus-strips (HPS) algorithm is used to check the consistence of jet structure with specific \PGth decay pattern.
     \begin{enumerate}
-        \item cluster \Pe/\PGg into strips. merging \Pe/\PGg in \pt decreasing order with a dynamic window size $\Delta\eta \times \Delta \phi = 0.20\pt^{-0.66} \times 0.35 \pt^{-0.71}$ 
+        \item cluster \Pe/\PGg into strips. merge \Pe/\PGg in \pt decreasing order with a dynamic window size $\Delta\eta \times \Delta \phi = 0.20\pt^{-0.66} \times 0.35 \pt^{-0.71}$.
         \item select charged hadrons (prong) $\pt>0.5\GeV$ and $d_{xy}<0.1$~cm.
         \item match the hadrons-plus-strips to possible \PGth decay modes. ($h^-$, $h^- h^0$, $h^- h^+ h^-$ in 2016)
         \item veto when
-        \begin{itemize} 
+        \begin{itemize}
         \smaller
             \item not single charged
             \item visible mass not competent with expected $\rho (770)$ and $a_1(1260)$ resonance
-            \item any hadrons or strips falls outside signal cone $\Delta R_{sig} = \frac{3.0 \text{ GeV } } { \pt (\text{ hadronic system})  }$, with $0.05 \leq \Delta R_{sig} \leq 0.1.$
+            \item any hadrons or strips falls outside signal cone $\Delta R_{sig} = \min( \max( 0.05 , \frac{3.0 \GeV} {\pt}), 0.1)$
         \end{itemize}
     \end{enumerate}  
     \end{block}
@@ -137,11 +148,11 @@
         \column{0.6\textwidth}
         \begin{block}{step-2 discriminate contaminations}
         \begin{itemize} 
-            \item discriminate against quark and gluon jets.
-            \item iso-based discriminator: 
+            \item Discriminate against quark and gluon jets.
+            \item Isolation-based discriminator: 
             \begin{itemize} 
             \smaller
-                \item isolation is calculated energy sum in the ring between signal cone and $\Delta R = 0.3$ cone.
+                \item isolation is calculated energy sum in the ring between signal cone and $\Delta R = 0.3$ cone;
                 \item quark and gluon jets tend to have larger isolation, while tau jets tend to have smaller.
             \end{itemize}
         
@@ -154,9 +165,25 @@
             \item MVA-based discriminator: 
             \begin{itemize} 
             \smaller
-                \item combine isolation and other variables sensitives to tau lifetime (e.g. SIP3D, d0).
-                \item use boosted decision tree (BDT)
+                \item combine isolation and other variables sensitives to tau lifetime (e.g. SIP3D, $d_{xy}$);
+                \item use boosted decision tree (BDT);
+                \item our analysis.
             \end{itemize}
+            
+            \item Deep-learning discriminator:
+            \begin{itemize} 
+            \smaller
+                \item developed most recently for full run-2 analysis;
+                \item combine features of constituent PF candidates, the reconstructed tau, and the global event;
+                \item 2017v1: twenty dense layers;
+                \item 2017v2: five dense layers on the concatenation of outputs from 
+                \begin{itemize} 
+                \smaller
+                    \item CNNs for inner/outer cone PF candidates;
+                    \item DNN for tau and event features.
+                \end{itemize}
+            \end{itemize}
+                        
             
             
         \end{itemize}

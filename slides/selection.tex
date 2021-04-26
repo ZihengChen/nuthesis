@@ -18,12 +18,14 @@
         \item Baseline categories require
         \begin{itemize}
         \smaller
-            \item $n_j\geq 2$ in $\ell\ell$ and $\ell \PGth$ channels.
-            \item $n_j\geq 4$ in \ceh and \cmh channels.
+            \item $n_j\geq 2$ in $\ell\ell$ and $\ell \PGth$ channels,
+            \item $n_j\geq 4$ in \ceh and \cmh channels,
         \end{itemize}
         with either $n_b=1$ or $n_b\geq2$, giving a high purity of \ttbar and \tW.
     \end{itemize}
     
+    \footnotetext[1]{\tiny OS for opposite sign.}
+    \footnotetext[2]{\tiny counting analysis uses $\pt^\PGm>30 \GeV$ for the leading muon in muon triggered channels to reduce QCD.}
 \end{frame}
 
 
@@ -112,11 +114,16 @@
 % new frame
 % -------------
 \begin{frame}{}
+
     \begin{tcolorbox}[colframe=red,colback=white]{$\PZ\to \PGtl \PGth$}
+    \smaller
         \begin{center}
+        \color{red}
+        $\cet: n_j=0, n_b=0$ \hspace{0.12\textwidth} $n_j=1, n_b=0$ \hspace{0.12\textwidth} $n_j\geq2, n_b=0$ \\
         \includegraphics[width=0.3\textwidth]{chapters/Analysis/sectionPlots/figures/data_mc_overlays/etau_2016_cat_eq0_eq0_signal_linear_lepton_lepton2_pt.png}
         \includegraphics[width=0.3\textwidth]{chapters/Analysis/sectionPlots/figures/data_mc_overlays/etau_2016_cat_eq1_eq0_signal_linear_lepton_lepton2_pt.png}
-        \includegraphics[width=0.3\textwidth]{chapters/Analysis/sectionPlots/figures/data_mc_overlays/etau_2016_cat_gt2_eq0_signal_linear_lepton_lepton2_pt.png}
+        \includegraphics[width=0.3\textwidth]{chapters/Analysis/sectionPlots/figures/data_mc_overlays/etau_2016_cat_gt2_eq0_signal_linear_lepton_lepton2_pt.png} \\
+        $\cmt: n_j=0, n_b=0$ \hspace{0.12\textwidth} $n_j=1, n_b=0$ \hspace{0.12\textwidth} $n_j\geq2, n_b=0$ \\
         \includegraphics[width=0.3\textwidth]{chapters/Analysis/sectionPlots/figures/data_mc_overlays/mutau_2016_cat_eq0_eq0_signal_linear_lepton_lepton2_pt.png}
         \includegraphics[width=0.3\textwidth]{chapters/Analysis/sectionPlots/figures/data_mc_overlays/mutau_2016_cat_eq1_eq0_signal_linear_lepton_lepton2_pt.png}
         \includegraphics[width=0.3\textwidth]{chapters/Analysis/sectionPlots/figures/data_mc_overlays/mutau_2016_cat_gt2_eq0_signal_linear_lepton_lepton2_pt.png}        
@@ -132,6 +139,9 @@
         \column{0.33\textwidth}
         \begin{tcolorbox}[colframe=OliveGreen,colback=white]{finer $n_j$ binning}
             \begin{center}
+            \color{OliveGreen}
+            \smaller \smaller
+            $n_j$ distribution of \cet\\
             \includegraphics[width=\textwidth]{chapters/Analysis/sectionPlots/figures/data_mc_overlays/etau_2016_inclusive_linear_jet_n_jets.png}
             \end{center}
         \end{tcolorbox}
@@ -139,6 +149,9 @@
         \column{0.6\textwidth}
         \begin{tcolorbox}[colframe=blue,colback=white]{$\WW \to \Pe \PGm$}
             \begin{center}
+            \color{blue}
+            \smaller \smaller
+            $\cem: n_j=0, n_b=0$ \hspace{0.1\textwidth} $n_j=1, n_b=0$  \\
             \includegraphics[width=0.48\textwidth]{chapters/Analysis/sectionPlots/figures/data_mc_overlays/emu_2016_cat_eq0_eq0_a_signal_linear_lepton_lepton2_pt.png}
             \includegraphics[width=0.48\textwidth]{chapters/Analysis/sectionPlots/figures/data_mc_overlays/emu_2016_cat_eq1_eq0_a_signal_linear_lepton_lepton2_pt.png}
             \end{center}
@@ -148,6 +161,9 @@
     
     \begin{tcolorbox}[colframe=orange,colback=white]{$\ttbar$ extra}
         \begin{center}
+        \color{orange}
+        \smaller \smaller
+        $\cet: n_j=1, n_b=1$ \hspace{0.04\textwidth} $\cmt: n_j=1, n_b=1$ \hspace{0.04\textwidth} $\cem: n_j=1, n_b=1$ \hspace{0.04\textwidth} $\cem: n_j\geq2, n_b=0$ \\
         \includegraphics[width=0.24\textwidth]{chapters/Analysis/sectionPlots/figures/data_mc_overlays/etau_2016_cat_eq1_eq1_signal_linear_lepton_lepton2_pt.png}
         \includegraphics[width=0.24\textwidth]{chapters/Analysis/sectionPlots/figures/data_mc_overlays/mutau_2016_cat_eq1_eq1_signal_linear_lepton_lepton2_pt.png}
         \includegraphics[width=0.24\textwidth]{chapters/Analysis/sectionPlots/figures/data_mc_overlays/emu_2016_cat_eq1_eq1_a_signal_linear_lepton_lepton2_pt.png}
@@ -245,13 +261,13 @@
         \column{0.6\textwidth}
         \begin{itemize}
             \item Perform a customized measurement of scale factors accounting for the difference of the single electron trigger efficiency in data and simulation.
-            \item Use tag-prob approach.
+            \item Use tag-prob approach:
             \begin{itemize} 
             \smaller
-                \item electron: same as object selection.
-                \item tagged electron: $\pt > 30\GeV$ , matched with \texttt{HLT\_Ele27\_WPTight\_Gsf}
-                \item two opposite electrons (at least one tagged)
-                \item $60<m_{\cee}<120\GeV$
+                \item electron: same as object selection;
+                \item tagged electron: $\pt > 30\GeV$ triggered;
+                \item \alert{two opposite electrons (at least one tagged);}
+                \item $60<m_{\cee}<120\GeV$;
                 \item for each tagged electron, the other electron become prob for measurement.
             \end{itemize}
             \item Trigger efficiency is defined as 
@@ -263,7 +279,8 @@
         \end{itemize}
         
         \column{0.35\textwidth}
-        \begin{block}{$m_{\cee}$ distribution}
+        \begin{block}{}
+            \centering
             dominated by \zjets
             \includegraphics[width=\textwidth]{chapters/Analysis/sectionCalibration/figures/eTrigger/dileptonMass_tag30.png}
         \end{block}
@@ -295,11 +312,11 @@
         \column{0.55\textwidth}
         \begin{itemize}
             \item Perform a customized measurement of scale factors accounting for the difference of the $j\to \PGth$ fake rate in data and simulation.
-            \item $SF_{j \to \PGth}(\pt)$ is measured in $j \to \PGth$ enriched regions
+            \item $SF_{j \to \PGth}(\pt)$ is measured in $j \to \PGth$ enriched regions:
             \begin{itemize}
             \smaller
-                \item $\cmm + \PGth$ and $\cmm + \PGth$ enriched with light jet faking \PGth.
-                \item $\cem + \PGth$ enriched with b jet faking \PGth.
+                \item \alert{$\cee/\cmm + \PGth$} dominated by \zjets, enriched with light jet faking \PGth;
+                \item \alert{$\cem + \PGth$} dominated by \ttbar, enriched with b jet faking \PGth.
             \end{itemize}
             \item The origins of \PGth are found by matching with gen-level particles.
             \item Both Tight and VTight \PGth identification working points are considered.
@@ -317,19 +334,28 @@
 
 
 \subsection{QCD Estimation}
+
 \begin{frame}{QCD estimation}
 \smaller \smaller
     \begin{block}{\cmt and \cet}
-    \begin{itemize}
-        \item Estimated by $n_{\rm data} - \sum n_{\rm MC}$ in the side-band region with \textcolor{red}{same-sign} leptons.
-        \item Scale the estimation with a transfer factor \textcolor{blue}{$SF^{\rm SS \to OS}$} measured separately in orthogonal regions: 
-        \begin{itemize} 
-        \smaller
-            \item counting: $\ell \PGth$ with $n_j\geq2,n_b=0$;
-            \item shape: $\ell \PGth$ with anti-iso $\ell$ and $n_j=0,n_b=0$.
+    \begin{columns}[c]
+        \column{0.7\textwidth}
+        \begin{itemize}
+            \item Estimated by $n_{\rm data} - \sum n_{\rm MC}$ in the side-band region with \textcolor{red}{same-sign} leptons.
+            \item Scale the estimation with a transfer factor \textcolor{blue}{$SF^{\rm SS \to OS}$} measured separately in orthogonal regions: 
+            \begin{itemize} 
+            \smaller
+                \item counting: $\ell \PGth$ with $n_j\geq2,n_b=0$;
+                \item shape: $\ell \PGth$ with anti-iso $\ell$ and $n_j=0,n_b=0$.
+            \end{itemize}
+            % \item Assign 25\% uncertainty to the normalization. [double c]
         \end{itemize}
-        \item Assign 25\% uncertainty to the normalization. [double c]
-    \end{itemize}
+        
+        \column{0.3\textwidth}
+        \centering
+        \cmt $n_j=0,n_b=0$
+        \includegraphics[width=0.8\textwidth]{chapters/Analysis/sectionPlots/figures/data_mc_overlays/mutau_2016_cat_eq0_eq0_signal_linear_lepton_lepton2_pt.png}
+    \end{columns}
     \end{block}
     
     
@@ -342,8 +368,8 @@
             \item Estimated by $n_{\rm data} - \sum n_{\rm MC}$ in the side-band region with \textcolor{red}{anti-isolated} leptons.
             \item Anti-isolated leptons requires passing Loose but not Tight isolation working point.
             \item Scale the estimation with a transfer factor \textcolor{blue}{ $SF^{\rm \overline{iso} \to iso} (\pt, \eta)$}, measured separately in orthogonal regions ($\ell h$ with $1\leq n_j \leq3, n_b=1$).
-            \item ??? estimation in \ceh is re-normalized by HT-binned QCD ???
-            \item Assign 25\% uncertainty to the normalization. 
+            % \item ??? estimation in \ceh is re-normalized by HT-binned QCD ???
+            % \item Assign 25\% uncertainty to the normalization. 
         \end{itemize}
         
         \column{0.3\textwidth}

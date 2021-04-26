@@ -59,10 +59,11 @@
 
 % extra beamer settings
 \AtBeginSection[]{\begin{frame}{Outline}\setcounter{tocdepth}{2}\tableofcontents[currentsection, hideothersubsections]\end{frame}}
-
+\setbeamertemplate{itemize subitem}{\smaller $\bullet$}
+\setbeamertemplate{itemize subsubitem}{\smaller \smaller $\bullet$}
 
 % slides information
-\title[\BWl measurement]{Measurement of W boson Branching Fraction in p-p Collisions at $\sqrt{s} = 13\TeV$  with the CMS Experiment}
+\title[\BWl measurement]{Measurement of W Boson Branching Fraction in Proton-Proton Collisions at $\sqrt{s} = 13\TeV$  with the CMS Experiment}
 \date{\today}
 \author[Z. Chen]{Ziheng Chen}
 \institute[NWU]{Department of Physics and Astronomy, \\ Northwestern University}
@@ -77,14 +78,18 @@
 
 % contents page
 \begin{frame}{Outline}
-\setcounter{tocdepth}{1}
-\tableofcontents
-    % \begin{columns}[t]
-    %     \column{.5\textwidth}
-    %     \tableofcontents[sections={1-3}]
-    %     \column{.5\textwidth}
-    %     \tableofcontents[sections={4-7}]
-    % \end{columns}
+
+    \begin{columns}
+        \column{.6\textwidth}
+        \setcounter{tocdepth}{1}
+        \tableofcontents
+        
+        \column{.3\textwidth}
+        \begin{block}
+            \centering
+            \includegraphics[width=\textwidth]{slides/figures/thesisFrontPage.png}
+        \end{block}
+    \end{columns}
 \end{frame}
 
 

@@ -66,19 +66,19 @@
         % \end{tcolorbox}
     \end{columns}
     
-    \vspace{0.05\textheight}
+    \vspace{0.03\textheight}
     \begin{center}
-        \includegraphics[width=0.8\textwidth,trim=3cm 0 3cm 0, clip]{chapters/Analysis/sectionStatisticalAnalysis/figures/acc_mu1b.png}
+        \includegraphics[width=0.8\textwidth,trim=3cm 0 3cm 0, clip]{chapters/Analysis/sectionStatisticalAnalysis/figures/acc_mu1b.png} \\
         % \includegraphics[width=0.7\textwidth]{chapters/Analysis/sectionStatisticalAnalysis/figures/acc_mu2b.png}
         % \includegraphics[width=0.7\textwidth]{chapters/Analysis/sectionStatisticalAnalysis/figures/acc_e1b.png}
         % \includegraphics[width=0.7\textwidth]{chapters/Analysis/sectionStatisticalAnalysis/figures/acc_e2b.png}
+       \footnotesize{ $\boldsymbol{E}$ matrix of \cme, \cmm, \cmt, \cmh channels with $n_j\geq2, n_b=1$.}
     \end{center}
 
     %\vspace{-0.08in}
 
 
-    \footnotetext[1]{\alert{\tiny N.B. W+jets accounted for just using the vector $\beta$ and the
-    corresponding vector of efficiencies.}}
+    \footnotetext[1]{\tiny W+jets accounted for just using the vector $\beta$ and the corresponding vector of efficiencies.}
 \end{frame}
 
 
@@ -157,7 +157,7 @@
 
 	\column{.55\textwidth}
     \begin{itemize}
-        \item In the $\{\beta_{e},\beta_{\mu},\beta_{\tau}\}$ space, three quadratic equations are three hyperbolic planes, intersection of which is the solution.
+        \item In the $\{\beta_{e},\beta_{\mu},\beta_{\tau}\}$ space, three quadratic equations are three hyperbolic planes, intersection of which is the solution:
 		\begin{equation*} 
             \small
             \begin{bmatrix} \bwe \\ \bwm \\ \bwt \end{bmatrix} = \text{Sol} 
@@ -167,7 +167,7 @@
                 \textcolor{OliveGreen}{F_\PGt (\bwe,\bwm,\bwt) = 0}
                 \end{bmatrix}
 		\end{equation*}
-        \item The results from four different data categories are analytically combined considering the uncorrelated statistical error and correlated systematic errors.  
+        \item The results from different trigger and $n_b$ categories are analytically combined by $\chi^2$ considering the uncorrelated statistical errors and correlated systematic errors.  
         \end{itemize}
 
 	\end{columns}
@@ -197,10 +197,10 @@
                 \begin{itemize}
                 \smaller
                     \item lepton $\pt$ is by far still strongest source of discrimination
-                    \item additional observables complicates accounting for systematic uncertainties
+                    \item additional observables complicates treatment of systematic uncertainties
                 \end{itemize}
-                \item Trailing muon impact parameter considered (as for ATLAS), but was poorly calibrated
-                \item Histograms binning are generated using the Bayesian Block algorithm (arXiv:1708.00810)
+                \item Trailing muon impact parameter considered (as for ATLAS), but requires extra calibration.
+                \item Histograms binning are generated using the Bayesian Block algorithm \tiny{(B. Pollack, S. Bhattacharya, M. Schmitt, arXiv:1708.00810)}. 
             \end{itemize}
 
         \end{block}
@@ -242,11 +242,11 @@
 
     \begin{itemize}
         \smaller
-        \item 30 categories based on jet and b tag multiplicities 
-        \item total of 72 template components, w/ only $\sim 10$ are relevant to any specific category
-        \item $\sim 100$ non-MC stat nuisance parameters
-        \item $\sim 400$ bins in total 
-        \item template morphing and MC stat. variation implemented according to arXiv:1103.0354
+        \item 30 categories based on jet and b tag multiplicities;
+        \item total of 74 template components, w/ only $\sim 10$ are relevant to any specific category;
+        \item $\sim 100$ non-MC stat nuisance parameters;
+        \item $\sim 400$ bins in total;
+        \item template morphing and MC stat. variation implemented according to arXiv:1103.0354;
         \item minimization using \textcolor{blue}{\texttt{scipy.optimize.minimize}}
     \end{itemize}
     

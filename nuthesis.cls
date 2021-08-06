@@ -290,7 +290,9 @@ All Rights Reserved
 \begin{center}
 NORTHWESTERN UNIVERSITY\par
 \vfill
+\begin{spacing}{1} %ziheng added
 {\large \@title}\par
+\end{spacing} %ziheng added
 \vfill
 A DISSERTATION\par
 \vspace{0.5cm}

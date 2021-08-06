@@ -3,7 +3,7 @@
 
 
 
-Having carried out the event selection as described in section~\ref{sec:analysis:selection}, the estimation of the \PW branching fraction is carried out using two different approaches.  Before describing the two approaches, it will be useful to describe the formalism that is common to both.
+Having carried out the event selection as described in Section~\ref{sec:analysis:selection}, the estimation of the \PW branching fraction is carried out using two different approaches.  Before describing the two approaches, it will be useful to describe the formalism that is common to both.
 
 
 
@@ -73,7 +73,7 @@ The quantities of interest are the four \PW branching fractions,
 \subsection{Shape Analysis}
 \label{sec:analysis:method:mle}
 
-In this approach, a maximum likelihood estimation of the branching fractions is carried out.  The data is divided into categories based on the multiplicity and flavor of leptons, jet multiplicity, and \PQb tag multiplicities as described in section~\ref{sec:analysis:selection:event}.  Additional discriminating information is included by further binning the data according to a single kinematic observable in each category category. The observable is selected to enhance the discrimination between decay products that come directly from the \PW boson decay and decay products where a tau lepton is an intermediate product.  The variables that are selected by each lepton flavor category are as follows:
+In this approach, a maximum likelihood estimation of the branching fractions is carried out.  The data is divided into categories based on the multiplicity and flavor of leptons, jet multiplicity, and \PQb tag multiplicities as described in Section~\ref{sec:analysis:selection:event}.  Additional discriminating information is included by further binning the data according to a single kinematic observable in each category category. The observable is selected to enhance the discrimination between decay products that come directly from the \PW boson decay and decay products where a tau lepton is an intermediate product.  The variables that are selected by each lepton flavor category are as follows:
 \begin{itemize}
     \item \cee, \cmm, \cem: the trailing lepton \pt
     \item \cet and \cmt: the hadronic tau \pt
@@ -164,7 +164,7 @@ The modification to the objective function follows the approach recommended by C
 \label{eqn:analysis:method:mel_nll_full}
     NLL(\vbw, \vnp) = \sum_{\mathrm{i \in bins}} \left[-y_{i}\ln f_{i}(\vbw, \vnp) + f_{i}(\vbw, \vnp)\right] + \pi(\vnp).
 \end{equation}
-Nuisance parameters are assumed to be Gaussian constrained unless otherwise noted. Thus the corresponding negative log likelihood term takes the form of L2 regularization $\pi(\vnp) = \frac{1}{2} \abs{\vnp}^2$. In the predictive model $f_{i}(\vbw, \vnp)$, the nuisance parameters are treated either as normalization parameters (multiplicative factors which are bin independent) or shape nuisance parameters which vary depending on the bin they are applied to.  In the latter case, morphing templates are generated for the cases that the nuisance parameters are shifted up and down by one standard deviation. The details for each source of systematic uncertainty is described in section~\ref{sec:analysis:systematics}. A quadratic morphing of the bin content as a function of a nuisance parameter is used for values $\theta \in [-1, 1]$,
+Nuisance parameters are assumed to be Gaussian constrained unless otherwise noted. Thus the corresponding negative log likelihood term takes the form of L2 regularization $\pi(\vnp) = \frac{1}{2} \abs{\vnp}^2$. In the predictive model $f_{i}(\vbw, \vnp)$, the nuisance parameters are treated either as normalization parameters (multiplicative factors which are bin independent) or shape nuisance parameters which vary depending on the bin they are applied to.  In the latter case, morphing templates are generated for the cases that the nuisance parameters are shifted up and down by one standard deviation. The details for each source of systematic uncertainty is described in Section~\ref{sec:analysis:systematics}. A quadratic morphing of the bin content as a function of a nuisance parameter is used for values $\theta \in [-1, 1]$,
 \begin{equation}
 \label{eqn:analysis:method:shape_param}
     f(\theta) = \frac{\theta(\theta - 1)}{2}f^{-} - (\theta - 1)(\theta +1)f^{0} + \frac{\theta(\theta + 1)}{2}f^{+},

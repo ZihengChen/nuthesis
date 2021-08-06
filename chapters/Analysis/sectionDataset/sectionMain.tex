@@ -5,7 +5,7 @@
 \subsection{Data}
 \label{sec:analysis:dataset:data}
 
-In this analysis, data is selected based on the presence of at least one muon or one electron. The single muon dataset requires that events contain at least one muon with $\pt > 25\GeV$ and passing the loose track isolation criterion, $\rm Iso_{track} < 0.1$. The single electron dataset requires that there be at least one electron satisfying the requirement that $\pt > 30\GeV$ and that it passes the tight identification requirements as defined by the EGamma POG.  The specific dataset names and the associated integrated luminosities are listed in Table~\ref{tab:analysis:dataset:data2016}.
+In this analysis, data is selected based on the presence of at least one muon or one electron. The single muon dataset requires that events contain at least one muon with transverse momentum $\pt > 25\GeV$ and passing the loose track isolation criterion, $\rm Iso_{track} < 0.1$. The single electron dataset requires that there be at least one electron satisfying the requirement that $\pt > 30\GeV$ and that it passes the tight identification requirements as defined by the CMS Physics Object Group for electron and photon (EGamma POG).  The specific dataset names and the associated integrated luminosities are listed in Table~\ref{tab:analysis:dataset:data2016}.
 
 \begin{table}[ht]
     \centering
@@ -17,7 +17,7 @@ In this analysis, data is selected based on the presence of at least one muon or
 
 
 
-\noindent Run ranges where data quality is determined to be insufficient are filtered removed from the datset by applying a luminosity mask. The following file is provided in JSON format from the CMS PPD group:
+\noindent Run ranges where data quality is determined to be insufficient are removed from the datset by applying a luminosity mask. The following file is provided in JSON format from the CMS Physics Performance and Dataset (PPD) group:
 
 \texttt{Cert\_271036-284044\_13TeV\_23Sep2016ReReco\_Collisions16\_JSON.txt}
 
@@ -29,7 +29,7 @@ In this analysis, data is selected based on the presence of at least one muon or
 \subsection{Simulated Dataset}
 \label{sec:analysis:dataset:simulation}
 
-Simulated datasets are used for modelling the major SM processes, including SM diboson, $\PW/\PZ/\PGg$ associated with jets, single-top and \ttbar. The background from multijet QCD is estimated by a data-driven approach discussed in section~\ref{sec:analysis:background} The simulated samples used in modelling the background and signal are shown in table~\ref{tab:analysis:dataset:mc2016}.  The production of the samples was carried during the Summer 2016 campaingn and the production of the mini Analysis Oriented Data format (miniAOD) was done using CMSSW release \texttt{8\_0\_26\_patch2}. The same release was used for processing both the data and the simulated samples. Lepton universality is assumed for the simulated datasets, namely $ \BWl = 10.8\%$. To account for the deviation from the data, some reweightings of the simulated dataset are applied, commonly including reweightings for pile-up, top \pt, \WW \pt and \PZ \pt.
+Simulated datasets are used for modelling the major SM processes, including SM diboson, $\PW/\PZ/\PGg$ associated with jets, single-top and \ttbar. The background from multijet QCD is estimated by a data-driven approach discussed in Section~\ref{sec:analysis:background} The simulated samples used in modelling the background and signal are shown in Table~\ref{tab:analysis:dataset:mc2016}.  The production of the samples was carried during the Summer 2016 campaign and the production of the mini Analysis Oriented Data format (miniAOD) was done using CMSSW release \texttt{8\_0\_26\_patch2}. The same release was used for processing both the data and the simulated samples. Lepton universality is assumed for the simulated datasets, namely $ \BWl = 10.8\%$. To account for the deviation from the data, some corrections and reweightings of the simulated dataset are applied, which are discussed in Section~\ref{sec:analysis:calibration}.
 
 \begin{table}[ht]
     \centering

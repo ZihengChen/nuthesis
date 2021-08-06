@@ -35,24 +35,30 @@ contours have been drawn and are shown in Figure~\ref{fig:analysis:result:contou
     \renewcommand{\arraystretch}{1.5}
     \caption{Values of branching fractions determined in both
         analysis approaches and the PDG values.  The errors include
-        statistical and systematic uncertainties.
+        statistical (first) and systematic (second) uncertainties.
     \label{tab:results}}
-    \begin{tabular}{l|ccc}
-                           & counting              & shape                 & LEP \\
-    \hline                                                                 
-    w/o LU &&& \\
-    \hline
-    $\BWe$      & $(11.15 \pm 0.27) \%$ & $(10.77 \pm 0.1) \%$  & $(10.71 \pm 0.16)$ \% \\
-    $\BWm$      & $(11.13 \pm 0.22) \%$ & $(10.91 \pm 0.08) \%$ & $(10.63 \pm 0.15)$ \% \\
-    $\BWt$      & $(10.63 \pm 0.65) \%$ & $(10.89 \pm 0.21) \%$ & $(11.38 \pm 0.21)$ \% \\
-    $\BWh$      & $(67.08 \pm 0.72) \%$ & $(67.42 \pm 0.28) \%$ & $(-- \pm --)$ \% \\
-    \hline
-    w/ LU &&& \\
-    \hline
-    $\BWl$      & $(-- \pm --)\%$       & $(10.87 \pm 0.07)\%$  & $(10.86 \pm 0.09)\%$  \\
-    $\BWh$      & $(-- \pm --)\%$       & $(67.38 \pm 0.22)\%$  & $(67.41 \pm 0.27)\%$  \\
-    \end{tabular}
+    
+    
+    \resizebox{0.98\textwidth}{!}{
+        \begin{tabular}{l|ccc}
+                               & counting              & shape                 & LEP \\
+        \hline                                                                 
+        w/o LU &&& \\
+        \hline
+        $\BWe$      & $(11.16 \pm 0.04 \pm 0.27) \%$ & $(10.83 \pm 0.01 \pm 0.10) \%$  & $(10.71 \pm 0.14 \pm 0.07)$ \% \\
+        $\BWm$      & $(11.13 \pm 0.03 \pm 0.21) \%$ & $(10.94 \pm 0.01 \pm 0.08) \%$ & $(10.63 \pm 0.13 \pm 0.07)$ \% \\
+        $\BWt$      & $(10.64 \pm 0.08 \pm 0.65) \%$ & $(10.77 \pm 0.05 \pm 0.21) \%$ & $(11.38 \pm 0.17 \pm 0.11)$ \% \\
+        $\BWh$      & $(67.08 \pm 0.07 \pm 0.72) \%$ & $(67.46 \pm 0.04 \pm 0.28) \%$ & $(-- \pm --)$ \% \\
+        \hline
+        w/ LU &&& \\
+        \hline
+        $\BWl$      & $(-- \pm --)\%$       & $(10.89 \pm 0.01 \pm 0.08)\%$  & $(10.86 \pm 0.06 \pm 0.09)\%$  \\
+        $\BWh$      & $(-- \pm --)\%$       & $(67.32 \pm 0.02 \pm 0.23)\%$  & $(67.41 \pm 0.18 \pm 0.20)\%$  \\
+        \end{tabular}
+        }
 \end{table}
+
+
 
 
 \begin{table}[htb!]
@@ -60,12 +66,12 @@ contours have been drawn and are shown in Figure~\ref{fig:analysis:result:contou
     \renewcommand{\arraystretch}{1.5}
     \caption{Correlation matrix of leptonic branching fractions.}
     \label{tab:results_corr}
-    \resizebox{0.9\textwidth}{!}{
+    \resizebox{0.8\textwidth}{!}{
     \begin{tabular}{ccc}
-        counting              & shape                 & LEP \\
-      $\begin{bmatrix} 1 &+0.576 &-0.060 \\  +0.576 &1 &-0.265 \\ -0.265 &+0.714 &1 \end{bmatrix}$  
-    & $\begin{bmatrix} 1 &+0.439 &+0.138 \\  +0.439 &1 &+0.190 \\ +0.138 &+0.190 &1 \end{bmatrix}$ 
-    & $\begin{bmatrix} 1 &+0.136 &-0.201 \\  +0.136 &1 &-0.122 \\ -0.201 &-0.122 &1 \end{bmatrix}$ \\
+            counting              & shape                 & LEP \\
+          $\begin{bmatrix} 1 &+0.59 &-0.06 \\  +0.59 &1 &-0.27 \\ -0.06 &-0.27 &1 \end{bmatrix}$  
+        & $\begin{bmatrix} 1 &+0.47 &+0.09 \\  +0.47 &1 &+0.14 \\ +0.09 &+0.14 &1 \end{bmatrix}$ 
+        & $\begin{bmatrix} 1 &+0.17 &-0.20 \\  +0.17 &1 &-0.12 \\ -0.20 &-0.12 &1 \end{bmatrix}$ \\
     \end{tabular}}
 \end{table}
 
@@ -118,7 +124,7 @@ contours have been drawn and are shown in Figure~\ref{fig:analysis:result:contou
 \label{sec:analysis:result:derived}
 
 Having measured the branching fractions, it is of interest to calculate the
-ratios between branching fractions and their pdfs to compare to values obtained
+ratios between branching fractions and their probability distribution functions to compare to values obtained
 at other experiments where only ratios are measured.  To transform the
 likelihood of the branching fractions to the likelihood for ratios, the following
 integral transformation is evaluated\cite{10.2307/2334671},
@@ -134,7 +140,7 @@ integral transformation is evaluated\cite{10.2307/2334671},
     d\beta_{\PGt}
 \end{equation}
 
-where $r_{\PGt/\Pe} = \bwt/\bwe$ and $r_{\PGt/\PGm} = \bwt/\bwm$ and $g(\bwe,\bwm, bwt)$  is the PDF of the branching fractions which is normal distribution with parameters
+\noindent where $r_{\PGt/\Pe} = \bwt/\bwe$ and $r_{\PGt/\PGm} = \bwt/\bwm$ and $g(\bwe,\bwm, \bwt)$  is the PDF of the branching fractions which is normal distribution with parameters
 determined from the \BWl measurement.  The resulting ratios are shown in in Figure~\ref{fig:analysis:result:ratios_2D}.
 Table~\ref{tab:analysis:result:ratios} shows comparisons between the ratios constructed from
 the measurements described above, and those measured by LEP and ATLAS.

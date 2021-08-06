@@ -56,7 +56,7 @@ The quantities of interest are the four \PW branching fractions,
 \noindent where $w^{k}$ is the weight for event $k$ and $N_{gen}$ is the total number of events generated for a given process.  Based on this, the estimated number of events for a signal process, $s$, that produces two \PW bosons can be written,
 \begin{equation}
 \label{eqn:analysis:method:effMatrix:data_model}
-    N_{s} = \sigma_{s} L \boldsymbol{E}_{s,ij} \Bij ,
+    N_{s} = \sigma_{s} L \sum_{ij} \boldsymbol{E}_{s,ij} \Bij ,
 \end{equation}
 \noindent where $\sigma_{s}$ is the cross-section for process under consideration, $L$ is the integrated luminosity.  Having established these preliminaries, the particulars of the twoanalysis approaches will be described in detail in the next two sections.
 \FloatBarrier
@@ -73,7 +73,7 @@ The quantities of interest are the four \PW branching fractions,
 \subsection{Shape Analysis}
 \label{sec:analysis:method:mle}
 
-In this approach, a maximum likelihood estimation of the branching fractions is carried out.  The data is divided into categories based on the multiplicity and flavor of leptons, jet multiplicity, and \PQb tag multiplicities as described in section~\ref{sec:analysis:event}.  Additional discriminating information is included by further binning the data according to a single kinematic observable in each category category. The observable is selected to enhance the discrimination between decay products that come directly from the \PW boson decay and decay products where a tau lepton is an intermediate product.  The variables that are selected by each lepton flavor category are as follows:
+In this approach, a maximum likelihood estimation of the branching fractions is carried out.  The data is divided into categories based on the multiplicity and flavor of leptons, jet multiplicity, and \PQb tag multiplicities as described in section~\ref{sec:analysis:selection:event}.  Additional discriminating information is included by further binning the data according to a single kinematic observable in each category category. The observable is selected to enhance the discrimination between decay products that come directly from the \PW boson decay and decay products where a tau lepton is an intermediate product.  The variables that are selected by each lepton flavor category are as follows:
 \begin{itemize}
     \item \cee, \cmm, \cem: the trailing lepton \pt
     \item \cet and \cmt: the hadronic tau \pt
@@ -141,14 +141,14 @@ In this approach, a maximum likelihood estimation of the branching fractions is 
 
 
 
-Effectively, this parameterizes the efficiency matrix in Equation~\ref{eqn:analysis:method:effMatrix:eff_matrix} by the observables listed above, the number of jets, and the number of \PQb tags.  Having constructed the data model, the negative log likelihood can be constructed,
+Effectively, this parameterizes the efficiency matrix in Equation~\ref{eqn:analysis:method:effMatrix:eff_matrix} by the observables listed above, the number of jets, and the number of \PQb tags.  Having constructed the data model, the negative log likelihood can be calculated,
 \begin{equation}
 \label{eqn:analysis:method:mel_nll}
     NLL(\vbw) = \sum_{\mathrm{i\in bin}} \left[ - y_{i}\ln f_{i}(\vbw) + f_{i}(\vbw) \right],
 \end{equation}
 \noindent where $y_{i}$ is the data yield in bin $i$.  The predicted yields, $f_{i}$ are a sum of signal and background templates, 
 \begin{equation}
-    f(\vbw) = \sum_{\rm sig.}s(\vbw) + \sum_{\rm bkg.} b.
+    f_i(\vbw) = \sum_{\rm sig.}s_i(\vbw) + \sum_{\rm bkg.} b_i.
 \end{equation}
 \noindent where the signal term, $s(\vbw)$ is as written in Equation~\ref{eqn:analysis:method:effMatrix:data_model} and the background term $b$ is estimated by either simulated dataset or data driven approach described in Section~\ref{sec:analysis:background}.
 
@@ -157,7 +157,7 @@ Effectively, this parameterizes the efficiency matrix in Equation~\ref{eqn:analy
 \subsubsection{Assessment of Systematic Uncertainties}
 \label{sec:analysis:shape_syst}
 
-The shape analysis accounts for the effects of various sources of systematic uncertainties by incorporating nuisance parameters into the fit~\cite{Conway:2011in}.  The individual sources of systematics uncertainties are described in section~\ref{sec:analysis:systematics}.  This approach to the systematic uncertainties has the benefit that all correlations between the various nuisance parameters that exist in the model definition are accounted for when the regression is carried out.  In some cases, the nuisance parameters can become constrained by the fit.  Additionally, it is straight forward to incorporate auxiliary control regions ($\PZ\to\PGtl\PGth$) to improve the constraints on background normalizations and uncertainties on the modeling of physics objects in simulation.
+The shape analysis accounts for the effects of various sources of systematic uncertainties by incorporating nuisance parameters into the fit~\cite{Conway:2011in}.  The individual sources of systematics uncertainties are described in Section~\ref{sec:analysis:systematics}.  This approach to the systematic uncertainties has the benefit that all correlations between the various nuisance parameters that exist in the model definition are accounted for when the fit is carried out.  In some cases, the nuisance parameters can become constrained by the fit.  Additionally, it is straight forward to incorporate auxiliary control regions ($\PZ\to\PGtl\PGth$) to improve the constraints on background normalizations and uncertainties on the modeling of physics objects in simulation.
 
 The modification to the objective function follows the approach recommended by Conway, i.e., adding additional terms, $\pi(\vnp)$, to the cost function to account for the priors on the nuisance parameters, $\theta$,
 \begin{equation}
@@ -203,22 +203,22 @@ Nuisance parameters are assumed to be Gaussian constrained unless otherwise note
 The branching fraction estimates are determined by minimizing the $NLL$ Equation~\ref{eqn:analysis:method:mel_nll_full} with respect to all parameters.  This is done for all final state channels and \PQb tag bins simultaneously which accounts for correlations between common nuisance parameters and the \PW branching fractions.
 
 \subsubsection{Assessment of Statistical Uncertainty}
-In addition to various sources of uncertainty associated with the detector and with the modeling of physical processes, there is a non-negligible uncertainty arising from the finite and limited statistics of the simulated samples used to model the data.  Ideally, the simulated samples would have $>5$ times the number of events collected in data for each process.  This is generally not the case, and in some cases, the number of simulated events is less than the number of corresponding events collected in data.  With this in mind, the Barlow-Beeston lite method is adopted to account for the resulting uncertainty.  In brief, this entails introducing a nuisance parameter for each bin in the analysis that controls the normalization of that bin and is constrained according to the variance associated with the statistics of the simulated samples.  Because, these n.p. are to first order not correlated across bins, they can be solved for analytically as described in section 5 of Conway~\cite{Conway:2011in}.
+In addition to various sources of uncertainty associated with the detector and with the modeling of physical processes, there is a non-negligible uncertainty arising from the finite and limited statistics of the simulated samples used to model the data.  Ideally, the simulated samples would have $>5$ times the number of events collected in data for each process.  This is generally not the case, and in some cases, the number of simulated events is less than the number of corresponding events collected in data.  With this in mind, the Barlow-Beeston lite method \cite{barlow1993fitting} is adopted to account for the resulting uncertainty.  In brief, this method entails introducing a nuisance parameter for each bin in the analysis that controls the normalization of that bin and is constrained according to the variance associated with the statistics of the simulated samples.  Because these nuisance parameters are to the first order not correlated across bins, they can be solved for analytically as described in Section 5 of Conway~\cite{Conway:2011in}.
 
-% originally from the systematic uncertainty
-This analysis relies heavily on simulated samples to estimate backgrounds and the signal processes.  The number of events generated in each simulated sample is frequently limited so an additional uncertainty must be assessed to account for this.  For the most part, it is not an issue in the counting analysis, but it is still accounted for by varying the MC templates within their statistical uncertainties and carrying out the analysis.  For the shape analysis, the Barlow-Beeston method~\cite{Amsler:2008zzb} is adopted.  This method includes an intermediate step in the minimization of the $NLL$ where the $NLL$ is minimized with respect to nuisance parameters associated with the normalization of individual bins.  The nuisance parameters are allowed to vary within the combined MC statistical uncertainty associated with the bin.  The impact of this is particularly large where the normalization of the Drell-Yan sample is concerned since the size of the simulated sample is on the order of the number of events produced in data.
+% % originally from the systematic uncertainty
+% This analysis relies heavily on simulated samples to estimate backgrounds and the signal processes.  The number of events generated in each simulated sample is frequently limited so an additional uncertainty must be assessed to account for this.  For the most part, it is not an issue in the counting analysis, but it is still accounted for by varying the MC templates within their statistical uncertainties and carrying out the analysis.  For the shape analysis, the Barlow-Beeston method~\cite{Amsler:2008zzb} is adopted.  This method includes an intermediate step in the minimization of the $NLL$ where the $NLL$ is minimized with respect to nuisance parameters associated with the normalization of individual bins.  The nuisance parameters are allowed to vary within the combined MC statistical uncertainty associated with the bin.  The impact of this is particularly large where the normalization of the Drell-Yan sample is concerned since the size of the simulated sample is on the order of the number of events produced in data.
 
 
 
 \subsubsection{Bias Study of Parameter Extraction}
 
-It is desirable that the method produces an unbiased measurement of the \PW branching fractions.  Even though it is not expected that bias should arise, it is worth verifying this with a toy MC study.  This is carried out by generating ten thousand pseudo-datasets from the nominal data model templates with values of the branching fractions samples in the ranges $\bwe, \bwm, \bwt \in [0.1, 0.12]$ with $\bwh = 1 - (\bwe + \bwm + \bwt)$.  For each of the ten thousand quadruplets, a pseudo-dataset is generated accounting for Poisson statistics of each individual signal and background template, and the search procedure is carried out, i.e., Equation~\ref{eqn:analysis:method:mel_nll} is minimized to determine the observed estimator.  From this, the bias can be determined,
+It is desirable that the method produces an unbiased measurement of the \PW branching fractions.  Even though it is not expected that bias should arise, it is important to verify no bias with a toy Monte Carlo study.  This study is carried out by generating $10^4$ pseudo-datasets from the nominal data model templates with values of the branching fractions samples in the ranges $\bwe, \bwm, \bwt \in [0.1, 0.12]$ with $\bwh = 1 - (\bwe + \bwm + \bwt)$.  For each of the $10^4$ quadruplets, a pseudo-dataset is generated accounting for Poisson statistics of each individual signal and background template, and the search procedure is carried out, i.e., Equation~\ref{eqn:analysis:method:mel_nll} is minimized to determine the observed estimator.  From this, the bias can be determined,
 \begin{equation}
 \label{eqn:analysis:method:mle:bias}
     \mathrm{bias} = \frac{\beta_{\rm true} - \beta_{\rm  obs}}{\beta_{ \rm  true}}.
 \end{equation}
 
-The results of this study are shown in figures~\ref{fig:analysis:method:mle:bias_scan} and \ref{fig:analysis:method:mle:bias_test}.  The mean value of the bias shows no deviation from zero within the variance.  There is also no indication that there is a dependence of the bias on the true value of the branching fraction used to generate the data.
+The results of this study are shown in Figures~\ref{fig:analysis:method:mle:bias_scan} and \ref{fig:analysis:method:mle:bias_test}.  The mean value of the bias shows no deviation from zero within a standard deviation.  There is also no indication that there is a dependence of the bias on the true value of the branching fraction used to generate the data.
 
 \begin{figure}[htb!]
     \centering
@@ -234,11 +234,11 @@ The results of this study are shown in figures~\ref{fig:analysis:method:mle:bias
     \label{fig:analysis:method:mle:bias_test}
 \end{figure}
 
-This study also allows for an independent estimation of the uncertainty on each of the parameters.  The resulting uncertainties estimated from the toy data are found to be close to the values calculated by carrying out a numerical estimation of the $NLL$ Hessian about its minimum.  This comparison is shown in Figure~\ref{fig:analysis:method:mle:pulls_comparison}.
+This study also allows for an independent estimation of the uncertainty on each of the parameters.  The resulting uncertainties estimated from the toy Monte Carlo datasets are found to be close to the values calculated by carrying out a numerical estimation of the $NLL$ Hessian about its minimum.  This comparison is shown in Figure~\ref{fig:analysis:method:mle:pulls_comparison}.
 
 \begin{sidewaysfigure}[htb!]
     \centering
-    \includegraphics[width=0.9\textheight]{chapters/Analysis/sectionStatisticalAnalysis/figures/new_pulls}
+    \includegraphics[width=0.9\textheight, angle=180]{chapters/Analysis/sectionStatisticalAnalysis/figures/new_pulls}
     \caption{Pulls for nuisance parameters based on toy data while scanning the \PW boson leptonic branching fractions.  The black dots indicate the values for individual trials, the blue bars show the standard error estimated from those trials, and the orange bar are the values estimated from the Hessian of the negative log-likelihood $NLL$.}
     \label{fig:analysis:method:mle:pulls_comparison}
 \end{sidewaysfigure}
@@ -248,9 +248,9 @@ This study also allows for an independent estimation of the uncertainty on each 
 
 \subsubsection{Profile Likelihood Scans}
 
-The covariance matrix associated with the likelihood is estimated using numerical differentiation tools~\cite{numdifftools}.  In addition to this, the variance associated with each parameter can be estimated by scanning over values of the parameter near its minimum and minimizing the likelihood while holding the parameter's value fixed.  The resulting values of the $NLL$ can then be fitted with a parabola to get the associated standard error.  Because the full likelihood is just a sum of the Poisson likelihoods for each bin, the likelihood associated with each bin can also be studied.  This is useful for analyzing which categories and which parts of the kinematical space are more sensitive to different fit parameters.  
+The covariance matrix associated with the likelihood is estimated using numerical differentiation tools~\cite{numdifftools}.  In addition to this, the variance associated with each parameter can be estimated by scanning over values of the parameter near its minimum and minimizing the likelihood while holding the parameter's value fixed.  The resulting values of the $NLL$ can then be fitted with a parabola to get the associated standard deviation.  Because the full likelihood is just a sum of the Poisson likelihoods for each bin, the likelihood associated with each bin can also be studied.  This is useful for analyzing which categories and which parts of the kinematic space are more sensitive to different fit parameters.  
 
-The result of scanning over the three leptonic branching fractions is shown in figure~\ref{fig:analysis:method:mle:beta_scan_1D}.  Curvatures of the $NLL$ in each bin of the analysis are estimated in the same way and presented in figures~\ref{fig:analysis:method:mle:ele_scan_bins}, \ref{fig:analysis:method:mle:mu_scan_bins}, \ref{fig:analysis:method:mle:tau_scan_bins}. The figure shows the estimated curvature (variance) in each bin normalized to the total variance.  The simplest way to interpret what is shown is that a larger bar corresponds to a more significant contribution to the sensitivity to the parameter under consideration.
+The result of scanning over the three leptonic branching fractions is shown in Figure~\ref{fig:analysis:method:mle:beta_scan_1D}.  Curvatures of the $NLL$ in each bin of the analysis are estimated in the same way and presented in Figures~\ref{fig:analysis:method:mle:ele_scan_bins}, \ref{fig:analysis:method:mle:mu_scan_bins}, \ref{fig:analysis:method:mle:tau_scan_bins}. The figure shows the estimated curvature (variance) in each bin normalized to the total variance.  The simplest way to interpret what is shown is that a larger bar corresponds to a more significant contribution to the sensitivity to the parameter under consideration.
 
 \begin{figure}[h]
     \centering
@@ -301,7 +301,7 @@ The result of scanning over the three leptonic branching fractions is shown in f
     \label{fig:analysis:method:counting:groupsofchannel}
 \end{figure}
 
-In this approach, channels are divided into four mutually-exclusive groups based on the trigger types and the \PQb tag multiplicities. The trigger types include the single-muon and the single-electron trigger. The \PQb tag multiplicity can be either $n_\PQb=1$ or $n_\PQb \geq 2$. The configuration of four channel groups is shown in figure~\ref{fig:analysis:method:counting:groupsofchannel}. Namely,
+In this approach, channels are divided into four mutually-exclusive groups based on the trigger types and the \PQb tag multiplicities. The trigger types include the single-muon and the single-electron trigger. The \PQb tag multiplicity can be either $n_\PQb=1$ or $n_\PQb \geq 2$. The configuration of four channel groups is shown in Figure~\ref{fig:analysis:method:counting:groupsofchannel}. Namely,
 
 \begin{itemize}
     \item single-$\PGm$ trigger with $n_\PQb=1$ or $n_\PQb \geq 2$ : $\big \{ \PGm e, \PGm\PGm, \PGm\PGt, \PGm h \big  \}$.
@@ -314,7 +314,7 @@ In this approach, channels are divided into four mutually-exclusive groups based
 
 
 
-To reduce contamination from $j\to \PGt$ fakes and QCD background, in the counting analysis, the thresholds of leptons' \pt  and working point for the hadronic tau isolation are slightly tighten. This results in slightly different signal efficiencies comparing with the shape analysis. For the eight channels under consideration, the signal efficiencies determined from simulated \ttbar and \tW events are shown in Tables \ref{tab:sanalysis:method:counting:igacc} and Figure~\ref{fig:analysis:method:counting:efficencyMatrix}. 
+To reduce contamination from $j\to \PGt$ fakes and QCD background, in the counting analysis, the thresholds of leptons' \pt  and working point for the hadronic tau isolation are slightly tighten. This results in slightly different signal efficiencies comparing with the shape analysis. For the eight channels under consideration, the signal efficiencies determined from simulated \ttbar and \tW events are shown in Tables \ref{tab:analysis:method:counting:sigacc} and Figure~\ref{fig:analysis:method:counting:efficencyMatrix}. 
 
 %In each of 16 channels, the signal constituents break down to 21 decay
 %final states is shown in percentage in Table \ref{sigcomp}.
@@ -351,17 +351,17 @@ To reduce contamination from $j\to \PGt$ fakes and QCD background, in the counti
 \subsubsection{Parameter Extraction}
 
 
-In each of the groups above, three branching fractions $\bwe,\bwm,\bwt$ are extracted by solving a set of three quadratic equations. Then the results from all four groups are combined taking into account the uncorrelated statistical uncertainties and full-correlated systematic uncertainties. The details of the combine is described in Section~\ref{sec:analysis:systematics}. Here gives the method of parameter extraction by establishing and solving quadratic equations.
+In each of the groups above, three branching fractions $\bwe,\bwm,\bwt$ are extracted by solving a set of three quadratic equations. Then the results from all four groups are combined taking into account the uncorrelated statistical uncertainties and full-correlated systematic uncertainties. The details of the combination is described in Section~\ref{sec:analysis:systematics}. Here we give the method of parameter extraction by establishing and solving quadratic equations.
 
 
-The normalized yield $X$, which is constructed in a similar manner to the branching fractions, is the ratio of yield in one channel over the sum of yields in the channel group. For channel group using single-electron and single-muon trigger, denoting the triggering lepton as $\mathrm{t} \in \{\PGm, \Pe\}$, the normalized yields $X$'s are defined as
+The normalized yield $X$, which is constructed in a similar manner to the branching fractions, is the ratio of yield in one channel over the sum of yields in the channel group. For channel groups using single-electron and single-muon trigger, denoting the triggering lepton as $\mathrm{t} \in \{\PGm, \Pe\}$, the normalized yields $X$'s are defined as
 \begin{equation}
     X_\Pe   = \frac{n^{\ctre}  }{n^{\ctre} + n^{\ctrm} + n^{\ctrt} + n^{\ctrh}},
     X_\PGm  = \frac{n^{\ctrm}  }{n^{\ctre} + n^{\ctrm} + n^{\ctrt} + n^{\ctrh}}, 
     X_\PGt  = \frac{n^{\ctrt}  }{n^{\ctre} + n^{\ctrm} + n^{\ctrt} + n^{\ctrh}},
 \end{equation}
 
-\noindent where $n \equiv N - \sum_{b} N_b $ is the data yield with background subtracted. Based on Eqn \ref{eqn:analysis:method:effMatrix:data_model}, the normalized yields $\{X_\Pe,X_\PGm,X_\PGt\}$ from data should equal to the same calculation based on the efficiency $\boldsymbol{E}$ matrix and the branching fraction matrix $\boldsymbol{B}$:
+\noindent where $n \equiv N - \sum_{b} N_b $ is the data yield with background subtracted. Based on Equation~\ref{eqn:analysis:method:effMatrix:data_model}, the normalized yields $\{X_\Pe,X_\PGm,X_\PGt\}$ from data should equal to the same calculation based on the efficiency $\boldsymbol{E}$ matrix and the branching fraction matrix $\boldsymbol{B}$:
 % 
 \begin{equation} \label{eqn:analysis:method:counting:quadEqA}
     \begin{split}
@@ -391,7 +391,7 @@ three quadratic equations with three unknowns $\{\bwe,\bwm,\bwt\}$.
 % \end{singlespace}
 
 
-\noindent where the coefficients $c_{lk}$, with the index $l\in \{ \Pe,\PGm,\PGt \}$ corresponding to the three equations $F_\Pe=0,F_\PGm=0,F_\PGt=0$ and the index $k\in\{ 0,1,2,\dots 9\}$, are fully determined by efficiency matrix $\boldsymbol{E}$ and normalized yields $\{X_e,X_\PGm,X_\PGt\}$. The analytical result of $c_{lk}$ is listed in table~\ref{tab:analysis:method:counting:quadcoeff}.
+\noindent where the coefficients $c_{lk}$, with the index $l\in \{ \Pe,\PGm,\PGt \}$ corresponding to the three equations $F_\Pe=0,F_\PGm=0,F_\PGt=0$ and the index $k\in\{ 0,1,2,\dots 9\}$, are fully determined by efficiency matrix $\boldsymbol{E}$ and normalized yields $\{X_e,X_\PGm,X_\PGt\}$. The analytical result of $c_{lk}$ is listed in Table~\ref{tab:analysis:method:counting:quadcoeff}.
 
 \input{chapters/Analysis/sectionStatisticalAnalysis/tables/table_quadcoeff.tex}
 
@@ -420,16 +420,16 @@ In the $\{\bwe,\bwm,\bwt\}$ parameter space, Equation~\ref{eqn:analysis:method:c
 \subsubsection{Assessment of Statistical Uncertainties}
 The statistical uncertainties of data are propagated to the branching fraction via the numerically calculated partial derivatives $\partial_{N} \beta$. The statistical uncertainties of yields in different channels are treated as uncorrelated, and are summed in quadrature after being propagated to $\beta$.
 
-The statistical uncertainties due to the simulation are estimated by the same error propagation approach. For \ttbar and \tW simulation, the statistical uncertainties are embedded in the statistical uncertainties of the $E$ matrix based on equation~\ref{eqn:analysis:method:effMatrix:model_eff}. The statistical uncertainty of efficiency, obtained by an integral of beta distribution, the conjugate of the binomial distribution, is propagated to the $\beta$ the partial derivatives $\partial_{\epsilon} \beta$. The 21 efficiencies in the $E$ matrix are treated as uncorrelated and their impacts to $\beta$ are summed in quadrature. For other background simulation, the statistical uncertainties is propagated to $\beta$ via partial derivatives $\partial_{N_{\rm bkg}} \beta$ similar to that of data.
+The statistical uncertainties due to the simulation are estimated by the same error propagation approach. For \ttbar and \tW simulation, the statistical uncertainties are embedded in the statistical uncertainties of the $E$ matrix based on Equation~\ref{eqn:analysis:method:effMatrix:model_eff}. The statistical uncertainty of efficiency, obtained by an integral of beta distribution, the conjugate of the binomial distribution, is propagated to the branching fractions via their partial derivatives with respect to efficiency, $\partial_{\epsilon} \beta$. The statistical uncertainties of 21 efficiencies in the $E$ matrix are treated as uncorrelated and their impacts to $\beta$ are summed in quadrature. For other background simulation, the statistical uncertainties is propagated to $\beta$ via partial derivatives $\partial_{N_{\rm bkg}} \beta$ similar to that of data.
 
 
 \subsubsection{Assessment of Systematic Uncertainties}
 
-The systematic uncertainties are estimated by variating up and down the systematic parameters, and then repeating the same process of parameter extraction. The corresponding deviations with respect to the nominal $\beta$ represent the systematic uncertainties. Different systematic sources are treated as independent. The systematic uncertainties in different trigger-$n_\PQb$ groups are fully-correlated.
+The systematic uncertainties are estimated by varying the systematic parameters up and down, and then repeating the same process of parameter extraction. The corresponding deviations with respect to the nominal $\beta$ represent the systematic uncertainties. Different systematic sources are treated as independent. The systematic uncertainties in different trigger-$n_\PQb$ groups are fully correlated.
 
 
 \subsubsection{Bias Study of Parameter Extraction}
-A test of parameter extraction is performed using toy datasets. In toy datasets, the yield $N$ follow the normal distribution with a mean value equals to the expected yield based on simulated datasets and QCD estimation, and a standard deviation equals $\delta N = \sqrt{N}$. Then $\beta$ are extracted from each toy dataset. In total, two thousand toy datasets are generated. The \PW to lepton branching fractions in the simulation is $10.8\%$, which is the ground truth to compare the extracted parameters. The distribution of two thousand $\{\bwe,\bwm,\bwt\}$ extracted are shown in Figure~\ref{fig:analysis:method:counting:test_toy}. The centers of distributions are consistent with the assumed branching fraction in the simulation, while widths of distributions are consistent with the data statistical uncertainty calculated by error propagation.
+A test of parameter extraction is performed using toy MC datasets. In toy MC datasets, the yield $N$ follows the normal distribution with a mean value equal to the expected yield based on simulated datasets and QCD estimation, and the standard deviation equals $\delta N = \sqrt{N}$. The branching fractions $\beta$ are extracted from each toy MC dataset. In total, 2000 toy MC datasets are generated. The \PW to lepton branching fractions in the simulation is $10.8\%$, which is the ground truth to compare the extracted parameters. The distribution of 2000 $\{\bwe,\bwm,\bwt\}$ extracted are shown in Figure~\ref{fig:analysis:method:counting:test_toy}. The centers of the distributions are consistent with the assumed branching fraction in the simulation, while widths of distributions are consistent with the data statistical uncertainty calculated by error propagation.
 
 
 
@@ -443,7 +443,7 @@ A test of parameter extraction is performed using toy datasets. In toy datasets,
     \includegraphics[width=7cm]{chapters/Analysis/sectionStatisticalAnalysis/figures/test_e2b.png}
     
     %--------------------------
-    \caption{ Distribution of $\{\bwe,\bwm,\bwt\}$ extracted from two thousand toy datasets. }
+    \caption{ Distribution of $\{\bwe,\bwm,\bwt\}$ extracted from 2000 toy MC datasets. The curves are Gaussian fit to the distributions.}
     \label{fig:analysis:method:counting:test_toy}
 \end{figure}
 

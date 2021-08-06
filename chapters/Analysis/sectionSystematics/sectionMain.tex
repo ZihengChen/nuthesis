@@ -2,7 +2,7 @@
 \label{sec:analysis:systematics}
 
 
-The various sources of uncertainty that have been considered are described in the following sections. As described in Section~\ref{sec:analysis:method},  the treatment of systematics differs between the two analysis approaches: the shape analysis makes use of nuisance parameters; the counting analysis is carried out varying each systematic individually and assessing the variation on the estimates of the branching fractions.
+Various sources of systematic uncertainties are described in this sections. As discussed in Section~\ref{sec:analysis:method}, the treatment of systematics differs between the two analysis approaches: the shape analysis makes use of nuisance parameters; the counting analysis is carried out varying each systematic individually and assessing the variation on the estimates of the branching fractions. This section first presents the sources of systematic uncertainties and then estimates their impacts to the measurement in shape and counting analysis.
 
 
 \subsection{Sources of Systematic Uncertainties}
@@ -10,15 +10,17 @@ The various sources of uncertainty that have been considered are described in th
 
 
 \subsubsection{Luminosity} 
-The uncertainty on the CMS luminosity measurement is estimated to be 2.5\% for the 2016 run~\cite{CMS-PAS-LUM-17-001}.  This uncertainty effects the overall scale of the all predicted yields in a fully correlated manner. 
+The uncertainty on the CMS luminosity measurement is taken to be 2.5\% for the 2016 run~\cite{CMS-PAS-LUM-17-001}.  This uncertainty effects the overall scale of all predicted yields in a fully correlated manner. 
 % In shape analysis, it is handled as a normalization nuisance parameter. In counting analysis, its effect on signal simulations is cancelled and effect on background simulation gets propagated.
 
 
-\subsubsection{Data-driven background estimates}
+\subsubsection{Data-driven estimations for QCD background}
 
 The uncertainty is split into four normalization parameters: one for each of the final states \cet, \cmt, \ceh, and \cmh.  
 
-\subsubsection{Cross section for simulated processes}
+\subsubsection{Cross section for simulated processes} 
+
+We assign the following uncertainties to the cross sections for simulated processes.
 
 \begin{itemize}
     \item \ttbar: 5\%, (and PDF, $\alpha_{s}$, $\mu_{R}/\mu_{F}$ in shape analysis)
@@ -29,10 +31,10 @@ The uncertainty is split into four normalization parameters: one for each of the
     \item diboson: 10\%
 \end{itemize}
 % For diboson, shape analysis treats \PWW as a signal and its cross-section is not constrained.
-Since shape analysis also incorporate \zjets control regions and is sensitive to the \ttbar cross-section, the cross-section of \zjets and \ttbar is further decomposed into extra nuisance parameters, including PDF, $\alpha_{s}$, $\mu_{R}/\mu_{F}$. The counting analysis does not have \zjets control regions and is insensitive to \ttbar cross-section due to the construction of ratio of channels. So overall uncertainties of \ttbar and \zjets are used.
+Since shape analysis also incorporates \zjets control regions and is sensitive to the \ttbar cross-section, the cross-section of \zjets and \ttbar is further decomposed into extra nuisance parameters, including PDF, $\alpha_{s}$, $\mu_{R}/\mu_{F}$. The counting analysis does not have \zjets control regions and is insensitive to \ttbar cross-section due to the construction of ratio of channels. So overall uncertainties of \ttbar and \zjets are used.
 
 \subsubsection{\WW \pt reweighting}
-Shape analysis treats \WW as a signal. The reweighting of the \WW \pt is accounted for by including two nuisance parameter for the resummation and factorization variations as described in section~\ref{sec:analysis:calibration:genlevel}. In the \ttbar signal region employed by the counting analysis, there is little contamination from \WW process. Thus the \WW \pt reweighting and associated systematic effects are neglected.
+The shape analysis treats \WW as a signal. The reweighting of the \WW \pt is accounted for by including two nuisance parameter for the resummation and factorization variations as described in section~\ref{sec:analysis:calibration:genlevel}. In the \ttbar signal region employed by the counting analysis, there is little contamination from \WW process. Thus the \WW \pt reweighting and associated systematic effects are neglected.
 
 \subsubsection{top \pt reweighting}
 Top \pt reweighting is applied in nominal case because it is observed as unnecessary, but is used to estimate the associated uncertainties. In shape analysis, the uncertainty on the top \pt scale is included as a one-sided morphing templates generated based on previous top studies in shape analysis and it turns out to be highly constrained. In counting analysis, the construction of ratios allow cancellations of \ttbar related systematics and 1\% of the top \pt scale is used as the size of uncertainty, which gets propagated through the parameter extraction.
@@ -86,7 +88,7 @@ Each event is weighted with a scale factor to account for differences in the pil
         \mathcal{B}(\PGth\to3\PGp^\pm \PGp^0)  = 0.0462(5).           
     \end{split}
     \end{equation*}
-    \noindent Since different decay modes are reconstructed separately by the CMS \PGth identification and thus have different efficiencies. The uncertainties of different \PGth widths could propagate to the \PGth identification efficiencies and lead to some impacts on the final results. To decide the impact, we tag the generator-level decay mode of reconstructed \PGth and variate the event weight accounting to the relative uncertainty of the tau decay branching fraction. Figure~\ref{fig:analysis:systematics:tauhDecayMode} shows the distribution of gen-level \PGth decay modes of $\ttbar \to cmt$ simulated events selected in the \cmt channel. Considering the above five major \PGth decay mode, the corresponding uncertainties on the \BWl are found to be less then 0.1\% relatively, small enough to neglect.
+    \noindent Since different decay modes are reconstructed separately by the CMS \PGth identification and thus have different efficiencies. The uncertainties of different \PGth widths could propagate to the \PGth identification efficiencies and lead to some impacts on the final results. To decide the impact, we tag the generator-level decay mode of reconstructed \PGth and vary the event weight accounting to the relative uncertainty of the tau decay branching fraction. Figure~\ref{fig:analysis:systematics:tauhDecayMode} shows the distribution of gen-level \PGth decay modes of $\ttbar \to \cmt$ simulated events selected in the \cmt channel. Considering the above five major \PGth decay mode, the corresponding uncertainties on the \BWl are found to be less then 0.1\% relatively, small enough to neglect.
     
     \begin{figure}
     \centering
@@ -110,7 +112,7 @@ Each event is weighted with a scale factor to account for differences in the pil
         \item \textit{energy scale}: the jet energy scale is varied by
             the various uncertainty sources on the jet energy
             corrections provided by the JetMET POG.  These are included
-            as 18 shape nuisance parameter's (N.B. the lepton kinematic quantities
+            as 18 shape nuisance parameters (the lepton kinematic quantities
             which are fit are generally not affected by variation of the
             jet energy scale, but migration between different \PQb tag
             categories does happen)
@@ -175,7 +177,7 @@ variation is very large (up to 20\%) in the \ceh categories.  This
 level of variation would be corrected for in the scale factors
 accounting for the difference in ID/misID efficiency for identified
 $\PGth$ candidates, and that uncertainty in general would be much
-smaller, $<5\%$. 
+smaller, below $5\%$. 
 
 
 
@@ -217,19 +219,19 @@ needs removal, while the effect from the ISR, MEPS and UE are neglectable.
     \label{fig:analysis:systematics:sf_fsr}
 \end{figure}
 
-% \begin{figure}
-%     \centering
-%     \includegraphics[width=0.4\textwidth]{chapters/Analysis/sectionSystematics/figures/ttTheoretical/2020_MCRatio_isr_tauGenFlavor_tauTight.png}
-%     \includegraphics[width=0.4\textwidth]{chapters/Analysis/sectionSystematics/figures/ttTheoretical/2020_MCRatio_isr_tauGenFlavor_tauVTight.png}
-%     \includegraphics[width=0.4\textwidth]{chapters/Analysis/sectionSystematics/figures/ttTheoretical/2020_MCRatio_meps_tauGenFlavor_tauTight.png}
-%     \includegraphics[width=0.4\textwidth]{chapters/Analysis/sectionSystematics/figures/ttTheoretical/2020_MCRatio_meps_tauGenFlavor_tauVTight.png}
-%     \includegraphics[width=0.4\textwidth]{chapters/Analysis/sectionSystematics/figures/ttTheoretical/2020_MCRatio_ue_tauGenFlavor_tauTight.png}
-%     \includegraphics[width=0.4\textwidth]{chapters/Analysis/sectionSystematics/figures/ttTheoretical/2020_MCRatio_ue_tauGenFlavor_tauVTight.png}
-%     \caption{ISR, MEPS, UE effect on the $\PGth$ identification and $j \to \PGth$ misidentification obtained from the dedicated and the nominal \ttbar samples.
-%     The Tight and VTight WP are shown on the left and right, respectively.
-%     }
-%     \label{fig:analysis:systematics:sf_isr_MEPS_UE}
-% \end{figure}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.49\textwidth]{chapters/Analysis/sectionSystematics/figures/ttTheoretical/2020_MCRatio_isr_tauGenFlavor_tauTight.png}
+    \includegraphics[width=0.49\textwidth]{chapters/Analysis/sectionSystematics/figures/ttTheoretical/2020_MCRatio_isr_tauGenFlavor_tauVTight.png}
+    \includegraphics[width=0.49\textwidth]{chapters/Analysis/sectionSystematics/figures/ttTheoretical/2020_MCRatio_meps_tauGenFlavor_tauTight.png}
+    \includegraphics[width=0.49\textwidth]{chapters/Analysis/sectionSystematics/figures/ttTheoretical/2020_MCRatio_meps_tauGenFlavor_tauVTight.png}
+    \includegraphics[width=0.49\textwidth]{chapters/Analysis/sectionSystematics/figures/ttTheoretical/2020_MCRatio_ue_tauGenFlavor_tauTight.png}
+    \includegraphics[width=0.49\textwidth]{chapters/Analysis/sectionSystematics/figures/ttTheoretical/2020_MCRatio_ue_tauGenFlavor_tauVTight.png}
+    \caption{ISR, MEPS, UE effect on the $\PGth$ identification and $j \to \PGth$ misidentification obtained from the dedicated and the nominal \ttbar samples.
+    The Tight and VTight WP are shown on the left and right, respectively.
+    }
+    \label{fig:analysis:systematics:sf_isr_MEPS_UE}
+\end{figure}
 
 
 
@@ -263,8 +265,8 @@ The up and down variations given by the dedicated MC samples lead to envelops on
 As discussed in section~\ref{sec:analysis:method}, there are 21 \ttbar event efficiencies corresponding to 21 different
 $\WW$ decay scenarios. For VTight WP, the 21 envelops on efficiencies due to FSR, ISR, MEPS, and UE variations are shown in 
 Figure~\ref{fig:analysis:systematics:effAfterCorrFSR}-\ref{fig:analysis:systematics:effAfterCorrUE}. 
-Due to the finite statistics of the dedicated MC samples, the envelops edges are smear by the MC statistics, 
-which are also shown in the Figure~\ref{fig:analysis:systematics:effAfterCorrFSR}-\ref{fig:analysis:systematics:effAfterCorrUE}.
+Due to the finite statistics of the dedicated MC samples, the envelops edges are smeared by the MC statistics, 
+which are also shown in the Figure~\ref{fig:analysis:systematics:effAfterCorrFSR} - \ref{fig:analysis:systematics:effAfterCorrUE}.
 
 
 \begin{figure}
@@ -365,7 +367,7 @@ the shape analysis by including one or more associated nuisance
 parameters.  After minimizing the likelihood, post-fit values for the
 nuisance parameters and their associated uncertainties are obtained.
 This is illustrated in Figure~\ref{fig:analysis:systematics:pulls_all}.  In general, the
-pulls on the nuisance parameters do not exceed two sigma of their
+pulls on the nuisance parameters do not exceed two standard deviations of their
 initial uncertainty, but many of the nuisance parameters do become
 constrained.  Additionally, the correlations for each parameter can be
 obtained and are displayed in Figure~\ref{fig:analysis:systematics:corr_matrix}.  In order to
@@ -451,15 +453,25 @@ $\beta_0$ is the nominal value of the four measurements in the \gmb, \gmbb, \geb
     \label{fig:corBetaBar}
 \end{figure}
 
-\begin{table}[]
+\begin{sidewaysfigure}[ht]
+    \centering
+    \includegraphics[width=\textwidth]{chapters/Analysis/sectionSystematics/figures/systematics_impact_counting.pdf}
+    \caption{Statistical uncertainties and impacts of systematic parameters in counting analysis.}
+    \label{fig:analysis:systematics:pulls_all}
+\end{sidewaysfigure}
+
+\begin{table}[ht]
   \renewcommand{\arraystretch}{1.1}
   \setlength{\tabcolsep}{0.4em}
   \centering
   \caption{ Statistical and systematic uncertainties in counting analysis. }
   \resizebox{\textwidth}{!}{\input{chapters/Analysis/sectionSystematics/tables/syst_alt.tex}}
- 
   \label{tab:syst_alt}
 \end{table}
+
+
+
+
 
 
 

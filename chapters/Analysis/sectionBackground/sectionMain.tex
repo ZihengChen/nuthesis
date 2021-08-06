@@ -11,7 +11,7 @@ The \BWl measurement has four sources of standard model backgrounds:
     \item multijet QCD
 \end{itemize}
 
-It is worth pointing out the \wjets and $\PW\PW$ are treated as backgrounds in counting analysis whereas as signals in shape analysis in addition to \ttbar and \tW. This is because the counting analysis uses only the \ttbar enriched signal region, while the shape analysis includes extra control regions with relaxed jet multiplicities requirement. Overall, vector boson plus jets are the most prominent source of backgrounds. The contributions from \gjets are much smaller and mainly in \ceh channel. The contributions from diboson processes $\PW\PW$, $\PZ\PZ$, $\PZ\PW$ are even smaller. In the \ttbar regions, the contributions from these backgrounds are very small in comparison with the signals. The backgrounds from \zjets, \wjets, \gjets and diboson processes are all well modeled by the simulated datasets. Non-negligible contamination from QCD processes are found in \cet, \cmt, \ceh, \cmh channels. The \HT-binned QCD simulations are evaluated, and statistically speaking, turn out to be moderately sufficient for the normalization in the $\ceh$ and $\cmh$ channels which requires high jet multiplicities $n_j\geq 4$. However, the number of simulated QCD events is insufficient for accurately modelling shape of kinematics distributions. Therefore, data-driven approaches are employed to estimate the QCD background in the \cet, \cmt, \ceh, \cmh channels. For \cet, \cmt channel, same-sign region is used. For \ceh, \cmh channel, the region with inverted lepton isolation is used.
+It is worth pointing out that the \wjets and $\PW\PW$ processes are treated as backgrounds in counting analysis, but the shape analysis treats them as signals. This is because the counting analysis uses only the \ttbar enriched signal region, while the shape analysis includes extra control regions with relaxed jet multiplicities requirement. Overall, vector boson plus jets are the most prominent source of backgrounds. The contributions from \gjets are much smaller and mainly in the \ceh channel. The contributions from diboson processes $\PW\PW$, $\PZ\PZ$, $\PZ\PW$ are even smaller. In the \ttbar regions, the contributions from these backgrounds are very small in comparison with the signals. The backgrounds from \zjets, \wjets, \gjets and diboson processes are all well modeled by the simulated datasets. Non-negligible contamination from QCD processes are found in \cet, \cmt, \ceh, \cmh channels. The \HT-binned QCD simulations are evaluated, and turn out to be statistically sufficient at an acceptable level for the normalization in the $\ceh$ and $\cmh$ channels which requires high jet multiplicities $n_j\geq 4$. However, the number of simulated QCD events is insufficient for accurately modelling shape of kinematics distributions. Therefore, data-driven approaches are employed to estimate the QCD background in the \cet, \cmt, \ceh, \cmh channels. For \cet, \cmt channel, a same-sign region is used. For \ceh, \cmh channel, the region with inverted lepton isolation is used.
 
 
 
@@ -30,12 +30,13 @@ The same-sign (SS) to opposite-sign (OS) transfer scale factor transfer factor i
 
 
 
-For shape analysis, this region is treated as signal region. So the regions with anti-isolated electron or muon plus \PGth with $n_j=0$ are used which is shown in Figure~\ref{fig:background:ltau:mass_ltau_antiiso}.
+For shape analysis, this region is treated as a signal region. So the regions with anti-isolated electron or muon plus \PGth with $n_j=0$ are used to measure  $SF^{\rm SS \to OS}$. Figure~\ref{fig:background:ltau:mass_ltau_antiiso} shows the $m_{\cet}$ and $m_{\cmt}$ distributions distributions in the same-sign and opposite-sign regions of \cet (on the right) and \cmt (on the left) channel with the anti-isolated lepton and zero jets.
+
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.49\textwidth]{chapters/Analysis/sectionBackground/figures/ltau_kinematics/mutau_cr.pdf}
     \includegraphics[width=0.49\textwidth]{chapters/Analysis/sectionBackground/figures/ltau_kinematics/etau_cr.pdf}
-    \caption{The $m_{\cet}$ and $m_{\cmt}$ distributions in the same-sign and opposite-sign regions of \cet and \cmt channel with the anti-isolated lepton and zero jets.}
+    \caption{The $m_{\cet}$ and $m_{\cmt}$ distributions in the same-sign and opposite-sign regions of \cet (on the right) and \cmt (on the left) channel with the anti-isolated lepton and zero jets.}
     \label{fig:background:ltau:mass_ltau_antiiso}
 \end{figure}
 
@@ -132,7 +133,7 @@ SF^{\rm \overline{iso} \to iso} (\pt, \eta) =  \frac{N^{\rm iso}_{\rm data} (\pt
 
 
 
-Applying the measured $SF^{\rm \overline{iso} \to iso}$ in the signal region (\ceh and \cmh channels with $n_j\geq4$ and $n_\PQb\geq1$), the result QCD estimations obtained are shown in Figure~\ref{fig:background:lh:application_ddNorm_ddShape}. It is observed that the QCD estimation in the \cmh channel is reasonable, while that in the \ceh channel is over-estimated. The isolated and anti-isolated regions of \ceh and \cmh channels with $n_j\geq4$ and $n_\PQb\geq1$ are shown in Figure~\ref{fig:background:lh:4j1b}, where the left and right two columns are for the \cmh channel and \ceh channel, respectively. Comparing the data-simulation difference in the isolated and anti-isolated regions, their shapes do demonstrate similarities. The over-estimation in the \ceh channel could come from the normalization of $SF^{\rm \overline{iso} \to iso}$. In Figure~\ref{fig:background:lh:4j1b}, the QCD estimation from the \HT-binned QCD simulated  datasets is shown as red lines, which gives a decent estimation to the QCD normalization. If scale the anti-isolated region with the normalization of simulated dataset instead of the $SF^{\rm \overline{iso} \to iso}$, one gets a QCD estimation with data-driven shape and simulation-based normalization, shown in Figure~\ref{fig:app:QCD:application_SFNorm_ddShape}
+Applying the measured $SF^{\rm \overline{iso} \to iso}$ in the signal region (\ceh and \cmh channels with $n_j\geq4$ and $n_\PQb\geq1$), the result QCD estimations obtained are shown in Figure~\ref{fig:background:lh:application_ddNorm_ddShape}. It is observed that the QCD estimation in the \cmh channel is reasonable, while that in the \ceh channel is over-estimated. The isolated and anti-isolated regions of \ceh and \cmh channels with $n_j\geq4$ and $n_\PQb\geq1$ are shown in Figure~\ref{fig:background:lh:4j1b}, where the left and right two columns are for the \cmh channel and \ceh channel, respectively. Comparing the data-simulation difference in the isolated and anti-isolated regions, their shapes do demonstrate similarities. The over-estimation in the \ceh channel could come from the normalization of $SF^{\rm \overline{iso} \to iso}$. In Figure~\ref{fig:background:lh:4j1b}, the QCD estimation from the \HT-binned QCD simulated  datasets is shown as red lines, which gives a decent estimation to the QCD normalization. If scale the anti-isolated region with the normalization of simulated dataset instead of the $SF^{\rm \overline{iso} \to iso}$, one gets a QCD estimation with data-driven shape and simulation-based normalization, shown in Figure~\ref{fig:app:QCD:application_SFNorm_ddShape}.
 
 \begin{figure}
     \centering
@@ -148,7 +149,7 @@ Applying the measured $SF^{\rm \overline{iso} \to iso}$ in the signal region (\c
 \end{figure}
 
 
-For counting analysis, the simulation-based normalization obtained from the HT-binned QCD simulated datasets is used. The statistical uncertainty of the simulation is about 4\%. To be conservative, 30\% uncertainty is assigned to the QCD estimation. For shape analysis, the shape of estimated QCD is from the anti-isolated region while the normalization is treated as a free parameters.
+For the counting analysis, the simulation-based normalization obtained from the HT-binned QCD simulated datasets is used. The statistical uncertainty of the simulation is about 4\%. To be conservative, a 30\% uncertainty is assigned to the QCD estimation. For the shape analysis, the shape of estimated QCD is from the anti-isolated region while the normalization is treated as a free parameters.
 
 
 
